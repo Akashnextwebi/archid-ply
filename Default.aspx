@@ -69,7 +69,7 @@
                             <!-- <h3 class="card-title lh-45px mw-md-60 pe-xl-15 fs-3 pe-0">
                           Intensive Glow C&#43; Serum
                         </h3> -->
-                            <img src="assets/imgs/purple-ply.png"
+                            <img src="/assets/imgs/pure-ply-logo.jpg"
                                 alt=""
                                 class="sister-company" />
                             <div class="mt-7">
@@ -97,7 +97,7 @@
                                 alt=""
                                 class="sister-company" />
                             <div class="mt-7">
-                                <a href="products-categories/bon-vivant" class="btn btn-white shadow-sm">Shop Now</a>
+                                <a href="products-categories/bon-vivant" class="btn btn-white shadow-sm">Explore More</a>
                             </div>
                         </div>
                     </div>

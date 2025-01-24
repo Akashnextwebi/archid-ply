@@ -29,7 +29,6 @@ public partial class UserMaster : System.Web.UI.MasterPage
         }
         bindMenu();
     }
-   
     public void bindMenu()
     {
         try
@@ -41,47 +40,22 @@ public partial class UserMaster : System.Web.UI.MasterPage
             {
                 foreach (Category category in categories)
                 {
-                    strFooterCat += @"<li class='pt-3 mb-4'><a href='/products-categories/" + category.CategoryUrl + @"'>" + category.CategoryName + @"</a></li>";
-                    string subCatgurjan = "";
-                    string subCatdecorative = "";
-                    string subCatlaminated = "";
-                    string subCatvivant = "";
-                    string subCatpurely = "";
+                    strFooterCat += @"<li class='pt-3 mb-4'><a href='/products/" + category.CategoryUrl + @"'>" + category.CategoryName + @"</a></li>";
+                    string subCat = "";
+                    string subMobilCat = "";
                     List<SubCategory> subCategories = SubCategory.GetSubCategoryByCat(conAP, Convert.ToString(category.Id)).Where(s => s.DisplayHome == "Yes").OrderBy(s => s.DisplayOrder).ToList();
                     if (subCategories.Count > 0)
                     {
                         foreach (SubCategory subCategory in subCategories)
                         {
-                            if (subCategory.CategoryName.ToLower() == "gurjan based plywood")
-                            {
-                                subCatgurjan += @"<ul class='list-unstyled mb-0'><li><a href='/products-categories/" + category.CategoryUrl + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
-                            }
-                            else if (subCategory.CategoryName.ToLower() == "the decorative veneer collection")
-                            {
-                                subCatdecorative += @"<ul class='list-unstyled mb-0'><li><a href='/products-categories/" + category.CategoryUrl + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
-                            }
-                            else if (subCategory.CategoryName.ToLower() == "archidply decor's pre-laminated boards range")
-                            {
-                                subCatlaminated += @"<ul class='list-unstyled mb-0'><li><a href='/products-categories/" + category.CategoryUrl + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
-                            }
-                            else if (subCategory.CategoryName.ToLower() == "bon vivant")
-                            {
-                                subCatvivant += @"<ul class='list-unstyled mb-0'><li><a href='/products-categories/" + category.CategoryUrl + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
-                            }
-                            else if (subCategory.CategoryName.ToLower() == "pureply")
-                            {
-                                subCatpurely += @"<ul class='list-unstyled mb-0'><li><a href='/products-categories/" + category.CategoryUrl + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
-                            }
-                            else
-                            {
-                            }
+                            subCat += @"<ul class='list-unstyled mb-0'><li><a href='/products/" + subCategory.Url + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
+                            subMobilCat += @"<ul'><li><a href='/products/" + subCategory.Url + @"' ><span>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
                         }
-                        strGurjan += subCatgurjan;
-                        strdec += subCatdecorative;
-                        strlam += subCatlaminated;
-                        strviva += subCatvivant;
-                        strpureply += subCatpurely;
                     }
+                    subCat = "<div class='col'><a href='/products-categories/" + category.CategoryUrl + @"'><h6 class='fs-18px'>" + category.CategoryName + @"</h6></a>" + subCat + "</div>";
+                    subMobilCat = "<div><a href='/products-categories/" + category.CategoryUrl + @"'><h6>" + category.CategoryName + @"</h6></a>" + subCat + "</div>";
+                    strDeskMenu += subCat;
+                    strMobMenu += subMobilCat;
                 }
 
             }
@@ -91,7 +65,72 @@ public partial class UserMaster : System.Web.UI.MasterPage
             CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "bindMenu()", ex.Message);
 
         }
+
+
     }
+
+    //public void bindMenu()
+    //{
+    //    try
+    //    {
+    //        strDeskMenu = "";
+    //        strMobMenu = "";
+    //        List<Category> categories = Category.GetAllCategory(conAP).Where(s => s.DisplayHome == "Yes").OrderBy(s => s.DisplayOrder).ToList();
+    //        if (categories.Count > 0)
+    //        {
+    //            foreach (Category category in categories)
+    //            {
+    //                strFooterCat += @"<li class='pt-3 mb-4'><a href='/products-categories/" + category.CategoryUrl + @"'>" + category.CategoryName + @"</a></li>";
+    //                string subCatgurjan = "";
+    //                string subCatdecorative = "";
+    //                string subCatlaminated = "";
+    //                string subCatvivant = "";
+    //                string subCatpurely = "";
+    //                List<SubCategory> subCategories = SubCategory.GetSubCategoryByCat(conAP, Convert.ToString(category.Id)).Where(s => s.DisplayHome == "Yes").OrderBy(s => s.DisplayOrder).ToList();
+    //                if (subCategories.Count > 0)
+    //                {
+    //                    foreach (SubCategory subCategory in subCategories)
+    //                    {
+    //                        if (subCategory.CategoryName.ToLower() == "gurjan based plywood")
+    //                        {
+    //                            subCatgurjan += @"<ul class='list-unstyled mb-0'><li><a href='/products-categories/" + category.CategoryUrl + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
+    //                        }
+    //                        else if (subCategory.CategoryName.ToLower() == "the decorative veneer collection")
+    //                        {
+    //                            subCatdecorative += @"<ul class='list-unstyled mb-0'><li><a href='/products-categories/" + category.CategoryUrl + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
+    //                        }
+    //                        else if (subCategory.CategoryName.ToLower() == "archidply decor's pre-laminated boards range")
+    //                        {
+    //                            subCatlaminated += @"<ul class='list-unstyled mb-0'><li><a href='/products-categories/" + category.CategoryUrl + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
+    //                        }
+    //                        else if (subCategory.CategoryName.ToLower() == "bon vivant")
+    //                        {
+    //                            subCatvivant += @"<ul class='list-unstyled mb-0'><li><a href='/products-categories/" + category.CategoryUrl + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
+    //                        }
+    //                        else if (subCategory.CategoryName.ToLower() == "pureply")
+    //                        {
+    //                            subCatpurely += @"<ul class='list-unstyled mb-0'><li><a href='/products-categories/" + category.CategoryUrl + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
+    //                        }
+    //                        else
+    //                        {
+    //                        }
+    //                    }
+    //                    strGurjan += subCatgurjan;
+    //                    strdec += subCatdecorative;
+    //                    strlam += subCatlaminated;
+    //                    strviva += subCatvivant;
+    //                    strpureply += subCatpurely;
+    //                }
+    //            }
+
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "bindMenu()", ex.Message);
+
+    //    }
+    //}
     public void LoginCheck()
     {
         try

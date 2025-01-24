@@ -141,91 +141,7 @@
                                                 aria-labelledby="menu-item-shop">
                                                 <div class="megamenu-shop container-wide py-8 px-12">
                                                     <div class="row">
-                                                        <%--  <%=strDeskMenu %>--%>
-                                                        <div class='col'>
-                                                            <h6 class='fs-18px'>Gurjan Based Plywood</h6>
-                                                            <%=strGurjan %>
-                                                        </div>
-                                                        <div class="col">
-                                                            <h6 class="fs-18px">The Decorative Veneer Collection</h6>
-                                                            <%=strdec %>
-
-                                                            <%--<ul class="list-unstyled mb-0">
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Premium </span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Decorative Veneers  </span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Teak Veneers </span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Engineered Veneer</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">New Arivals </span></a>
-                                                    </li>
-                                                </ul>--%>
-                                                        </div>
-
-                                                        <div class="col">
-                                                            <h6 class="fs-18px">Archidply  Pre-laminated Boards Range</h6>
-                                                            <%=strlam %>
-
-                                                            <%--<ul class="list-unstyled mb-0">
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Pre-laminated Particle Board and MDF</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Pre-laminated MDF Board</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Plain Particle Board </span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Plain MDF</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Pre-veneered Particle Board and MDF </span></a>
-                                                    </li>
-                                                </ul>--%>
-                                                        </div>
-                                                        <div class="col">
-                                                            <h6 class="fs-18px">Bon Vivant</h6>
-                                                            <%=strviva %>
-
-                                                            <%--<ul class="list-unstyled mb-0">
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Coating Services</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Decorative Lumber</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Solid Wood Flooring </span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Tabletops</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-category.aspx" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Veneered Wallpanel </span></a>
-                                                    </li>
-                                                </ul>--%>
-                                                        </div>
-
-                                                        <div class="col">
-                                                            <h6 class="fs-18px">PUREPLY</h6>
-                                                            <img src="/assets/imgs/pure-ply-logo.jpg" width="200" class="img-fluid mb-10" />
-                                                            <%=strpureply %>
-                                                            <%--<a href="/products-categories/pureply">
-                                                                <h6 class="fs-18px">Decorative Veneered Doors</h6>
-                                                            </a>
-                                                            <a href="/products-categories/pureply">
-                                                                <h6 class="fs-18px">Veneered Wallpanel</h6>
-                                                            </a>--%>
-                                                            <h6 class="fs-18px"></h6>
-                                                        </div>
+                                                          <%=strDeskMenu %>
                                                     </div>
                                                 </div>
 
@@ -440,10 +356,6 @@
                             </li>
                             <li class="pt-3 mb-4">
                                 <a href="/product-stories" title="Best Sellers" class="">Product Stories</a>
-                            </li>
-
-                            <li class="pt-3 mb-4">
-                                <a href="#" title="Bundle &amp; Save" class="">Return Policy</a>
                             </li>
 
                             <li class="pt-3 mb-4">
@@ -1883,7 +1795,8 @@
                                 aria-labelledby="menu-item-shop-canvas">
                                 <div class="megamenu-shop container-wide py-8 px-12">
                                     <div class="row">
-                                        <div class="col">
+                                        <%=strMobMenu %>
+                                       <%-- <div class="col">
                                             <h6 class="fs-16px">Gurjan Based Plywood</h6>
                                             <ul class="list-unstyled mb-0">
                                                 <li>
@@ -1963,8 +1876,6 @@
 
                                             </ul>
                                         </div>
-
-
                                         <div class="col">
                                             <h6 class="fs-16px">PUREPLY</h6>
                                             <h6 class="fs-16px">Decorative Veneered Doors
@@ -1972,7 +1883,7 @@
 
                                             <h6 class="fs-16px">Veneered Wallpanel
                                         </h6>
-                                        </div>
+                                        </div>--%>
 
                                     </div>
                                 </div>

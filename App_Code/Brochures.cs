@@ -19,6 +19,7 @@ public class Brochures
     public string AddedBy { get; set; }
     public string Status { get; set; }
 
+
     public static int InsertBrochures(SqlConnection conAP, Brochures cat)
     {
         int result = 0;

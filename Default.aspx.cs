@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -44,7 +45,7 @@ public partial class _Default : System.Web.UI.Page
                             </div>
                             <div class='icon-box-content card-body pt-4'>
                                 <h3 class='icon-box-title card-title fs-5 mb-0 pb-0'>" + nb.Title + @"</h3>
-                                <a href='/" + nb.PDF + @"' download class='btn btn-link p-0 mt-2 text-decoration-none green-text fw-semibold'>Download<i class='far fa-download ps-2 fs-13px'></i>
+                                <a href='javascript:void(0)' data-id='" + nb.Id + @"'  class='btn btn-link p-0 mt-2 text-decoration-none green-text fw-semibold hidenId' data-bs-target='#exampleModal' data-bs-toggle='modal'>Download<i class='far fa-download ps-2 fs-13px'></i>
                                 </a>
                             </div>
                         </div>
@@ -300,6 +301,42 @@ public partial class _Default : System.Web.UI.Page
         {
 
             CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "BindTop3Blog", ex.Message);
+        }
+    }
+
+
+    [WebMethod(EnableSession = true)]
+    public static string SaveDownloadEnquiry(string name, string email, string contact, int Id)
+    {
+        SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
+
+        try
+        {
+            ResourceRequests RE = new ResourceRequests();
+            List<Brochures> ResName = Brochures.GetBrochures(conAP, Id);
+            RE.Name = name;
+            RE.ResourceName = ResName[0].Title;
+            RE.EmailId = email;
+            RE.ContactNo = contact;
+            RE.AddedIp = CommonModel.IPAddress();
+            RE.AddedOn = TimeStamps.UTCTime();
+            RE.Status = "Active";
+            int result = ResourceRequests.InserResourceRequests(conAP, RE);
+
+            if (result > 0)
+            {
+
+                return "Success | " + ResName[0].PDF;
+            }
+            else
+            {
+                return "Error";
+            }
+        }
+        catch (Exception ex)
+        {
+            ExceptionCapture.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "SaveDownloadEnquiry", ex.Message);
+            return "Error";
         }
     }
 

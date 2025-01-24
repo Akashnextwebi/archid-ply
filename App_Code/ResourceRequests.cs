@@ -7,9 +7,10 @@ using System.Web;
 
 public class ResourceRequests
 {
+  
     #region Contactus region
     public int Id { set; get; }
-    public string Message { get; set; }
+    public string ResourceName { get; set; }
     public string EmailId { get; set; }
     public string ContactNo { get; set; }
     public string Name { get; set; }
@@ -34,7 +35,7 @@ public class ResourceRequests
                              Name = Convert.ToString(dr["Name"]),
                              EmailId = Convert.ToString(dr["Email"]),
                              ContactNo = Convert.ToString(dr["Phone"]),
-                             Message = Convert.ToString(dr["Message"]),
+                             ResourceName = Convert.ToString(dr["ResourceName"]),
                              AddedOn = Convert.ToDateTime(Convert.ToString(dr["AddedOn"])),
                              AddedIp = Convert.ToString(dr["AddedIP"]),
                          }).ToList();
@@ -52,14 +53,14 @@ public class ResourceRequests
         int result = 0;
         try
         {
-            string query = "Insert Into ResourceRequests (Status,Name,Email,Phone,Message,AddedOn,AddedIp) values(@Status,@Name,@Email,@Phone,@Message,@AddedOn,@AddedIp)";
+            string query = "Insert Into ResourceRequests (Status,Name,Email,Phone,ResourceName,AddedOn,AddedIp) values(@Status,@Name,@Email,@Phone,@ResourceName,@AddedOn,@AddedIp)";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = Blog.Name;
                 cmd.Parameters.AddWithValue("@Email", SqlDbType.NVarChar).Value = Blog.EmailId;
                 cmd.Parameters.AddWithValue("@Status", SqlDbType.NVarChar).Value = "Active";
                 cmd.Parameters.AddWithValue("@Phone", SqlDbType.NVarChar).Value = Blog.ContactNo;
-                cmd.Parameters.AddWithValue("@Message", SqlDbType.NVarChar).Value = Blog.Message;
+                cmd.Parameters.AddWithValue("@ResourceName", SqlDbType.NVarChar).Value = Blog.ResourceName;
                 cmd.Parameters.AddWithValue("@AddedOn", SqlDbType.DateTime).Value = CommonModel.UTCTime();
                 cmd.Parameters.AddWithValue("@AddedIp", SqlDbType.NVarChar).Value = CommonModel.IPAddress();
                 conAP.Open();
@@ -96,12 +97,12 @@ public class ResourceRequests
     }
 
 
-    public static string GetMessageById(SqlConnection conAP, string id)
+    public static string GetResourceNameById(SqlConnection conAP, string id)
     {
         string result = null;
         try
         {
-            string cmdText = "select Message from ResourceRequests WHERE Id = @Id";
+            string cmdText = "select ResourceName from ResourceRequests WHERE Id = @Id";
             using (SqlCommand sqlCommand = new SqlCommand(cmdText, conAP))
             {
                 sqlCommand.Parameters.AddWithValue("@Id", id);
@@ -116,7 +117,7 @@ public class ResourceRequests
         }
         catch (Exception ex)
         {
-            ExceptionCapture.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "GetMessageById", ex.Message);
+            ExceptionCapture.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "GetResourceNameById", ex.Message);
         }
         finally
         {

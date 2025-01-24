@@ -656,7 +656,7 @@
                         </div>
                     </div>--%>
 
-                  <%--  <div class="new-bg-product">
+                    <%--  <div class="new-bg-product">
                         <div class="row align-items-center justify-content-between ">
 
                             <div class="col-lg-6 px-lg-10 py-lg-0 py-13">
@@ -1031,7 +1031,38 @@
                     +91 7022012573</a>
             </div>
         </div>
+        <div class="modal fade sucess" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header text-center border-0 pb-0">
+                        <button type="button"
+                            class="btn-close position-absolute end-5 top-5"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                        </button>
+                        <h3 class="modal-title w-100" id="signInModalLabel">Download Resources</h3>
+                    </div>
+                    <div class="modal-body px-sm-13 px-8">
+                        <p class="text-center fs-16 mb-10">
+                           By filling the below form you can download resource
+                        </p>
+                        <div action="#">
+                                    <div class="error-message alert alert-danger d-block d-none fw-bold"></div>
+
+                            <asp:TextBox ID="textFname" runat="server" class="form-control textFname mb-7" MaxLength="100" placeholder="Full Name"></asp:TextBox>
+                            <asp:TextBox ID="txtemailAdress" class="form-control txtemailAdress mb-7" runat="server" MaxLength="100" placeholder="Email"></asp:TextBox>
+                            <asp:TextBox ID="txtContact" class="form-control txtContact mb-7" runat="server" MaxLength="15" placeholder="Contact Number"></asp:TextBox>
+                            
+                            <asp:LinkButton runat="server" ID="BtnSubmit" CssClass="btn btn-dark btn-hover-bg-primary btn-hover-border-primary mt-10 w-100 mb-6 submitdata BtnSubmit" ValidationGroup="Save">Download<i class="fal fa-arrow-right-long"></i></asp:LinkButton>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="/Admin/assets/libs/snackbar/snackbar.min.js"></script>
+        <script src="/assets/js/Pages/defaultpage.js"></script>
     </main>
+
 </asp:Content>
 

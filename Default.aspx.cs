@@ -15,10 +15,11 @@ public partial class _Default : System.Web.UI.Page
 {
     SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
 
-    public string strBlog, strClientStories , strFeatureProducts, strBannerImages , strTags, strResources = "";
+    public string strBlog, strClientStories, strProductStories, strFeatureProducts, strBannerImages, strTags, strResources = "";
     protected void Page_Load(object sender, EventArgs e)
     {
         BindTop3Blog();
+        GetTop3Stories();
         BindClientStories();
         BindFeatureProducts();
         BindBannerImages();
@@ -39,11 +40,11 @@ public partial class _Default : System.Web.UI.Page
                 Resources += @"<div class='col-xl-3 col-md-6 col-6 animate__fadeInUp animate__animated' data-animate='fadeInUp'>
                         <div class='icon-box icon-box-style-1 card border-0 text-center'>
                             <div class='icon-box-icon card-img text-primary'>
-                                <img src='/"+nb.Image+@"' width='65' />
+                                <img src='/" + nb.Image + @"' width='65' />
                             </div>
                             <div class='icon-box-content card-body pt-4'>
-                                <h3 class='icon-box-title card-title fs-5 mb-0 pb-0'>"+nb.Title+@"</h3>
-                                <a href='/"+nb.PDF+@"' download class='btn btn-link p-0 mt-2 text-decoration-none green-text fw-semibold'>Download<i class='far fa-download ps-2 fs-13px'></i>
+                                <h3 class='icon-box-title card-title fs-5 mb-0 pb-0'>" + nb.Title + @"</h3>
+                                <a href='/" + nb.PDF + @"' download class='btn btn-link p-0 mt-2 text-decoration-none green-text fw-semibold'>Download<i class='far fa-download ps-2 fs-13px'></i>
                                 </a>
                             </div>
                         </div>
@@ -60,13 +61,73 @@ public partial class _Default : System.Web.UI.Page
                 </div>
             </div>
             <div class='container-xxl mt-10'>
-                <div class='row gy-4'>"+ Resources + @"</div>
+                <div class='row gy-4'>" + Resources + @"</div>
             </div>
         </section>";
         }
         catch (Exception ex)
         {
             ExceptionCapture.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "GetAllBrochures", ex.Message);
+        }
+    }
+    public void GetTop3Stories()
+    {
+        try
+        {
+            strProductStories = "";
+            string galImgs = "";
+            List<ProductStories> stories = ProductStories.GetTop3Stories(conAP);
+            if (stories.Count > 0)
+            {
+                foreach (ProductStories s in stories)
+                {
+
+                    List<StoriesGallery> StoreGal = StoriesGallery.GetGallery(conAP, Convert.ToString(s.Id));
+                    if (StoreGal.Count > 0)
+                    {
+                        foreach (StoriesGallery sg in StoreGal)
+                        {
+                            galImgs += @"<div class='px-6'>
+                    <a href='/" + sg.Images + @"' title='instagram-01' class='hover-zoom-in hover-shine card-img-overlay-hover hover-zoom-in hover-shine d-block'>
+                        <img class='lazy-image img-fluid w-100 ' width='314' height='314' data-src='/" + sg.Images + @"' alt='instagram-01' src='/" + sg.Images + @"'>
+                        <span class='card-img-overlay bg-dark bg-opacity-30'></span>
+                    </a>
+                </div>";
+                        }
+
+                        strProductStories += @"<div class='new-bg-product'>
+                        <div class='row align-items-center justify-content-between '>
+                            <div class='col-lg-6 px-lg-10 py-lg-0 py-13'>
+                                <div class='text-left new-pro-stories'>
+                                    <div class='section-title'>
+                                        <h2>" + s.Title + @"</h2>
+                                    </div>
+                                    " + s.FullDesc + @"
+                                </div>
+                            </div>
+                            <div class='col-lg-6 position-relative'>
+                                <div class='about-img'>
+                                    <div class='container-fluid'>
+                                        <div class='px-md-6'>
+<div class=""mx-n6 slick-slider"" data-slick-options='{""slidesToShow"": 1,""infinite"":false,""autoplay"":true,""dots"":true,""arrows"":false,""responsive"":[{""breakpoint"": 1366,""settings"": {""slidesToShow"":1 }},{""breakpoint"": 992,""settings"": {""slidesToShow"":1}},{""breakpoint"": 768,""settings"": {""slidesToShow"": 1}},{""breakpoint"": 576,""settings"": {""slidesToShow"": 1}}]}'>
+                                                " + galImgs + @"                                           
+                                                 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>";
+                    }
+
+                }
+
+            }
+        }
+        catch (Exception ex)
+        {
+
+            CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "BindTop3Blog", ex.Message);
         }
     }
     public void BindTop3Blog()
@@ -82,8 +143,8 @@ public partial class _Default : System.Web.UI.Page
                     strBlog += @"<div class='slick-slide slick-current slick-active' data-slick-index='0' aria-hidden='false' tabindex='0' style='width: 480px;'>
                     <article class='card card-post-grid-3 bg-transparent border-0 animate__fadeInUp animate__animated' data-animate='fadeInUp'>
                         <figure class='card-img-top mb-8 position-relative'>
-                            <a href='/blog/" + blog.Url +"' class='hover-shine hover-zoom-in d-block' title='"+blog.Title+@"' tabindex='0'>
-                                <img data-src='"+blog.ImageUrl+ @"' class='img-fluid w-100 loaded' alt='unavailable' width='450' height='290' src='"+blog.ImageUrl+@"' loading='lazy' data-ll-status='loaded'>
+                            <a href='/blog/" + blog.Url + "' class='hover-shine hover-zoom-in d-block' title='" + blog.Title + @"' tabindex='0'>
+                                <img data-src='" + blog.ImageUrl + @"' class='img-fluid w-100 loaded' alt='unavailable' width='450' height='290' src='" + blog.ImageUrl + @"' loading='lazy' data-ll-status='loaded'>
                             </a>
                         </figure>
                         <div class='card-body p-0'>
@@ -92,7 +153,7 @@ public partial class _Default : System.Web.UI.Page
                                 <li class='border-start list-inline-item'>" + (blog.PostedOn).ToString("MMM dd, yyyy") + @"</li>
                             </ul>
                             <h4 class='card-title lh-base mt-5 pt-2 mb-0 fs-20px'>
-                                <a class='text-decoration-none' href='/blog/" + blog.Url +"' title='" + blog.Title+@"' tabindex='0'>"+blog.Title+@"</a>
+                                <a class='text-decoration-none' href='/blog/" + blog.Url + "' title='" + blog.Title + @"' tabindex='0'>" + blog.Title + @"</a>
                             </h4>
                         </div>
                     </article>
@@ -119,10 +180,10 @@ public partial class _Default : System.Web.UI.Page
                     strClientStories += @" <div class='mb-6'>
                     <div class='card card-product grid-2 bg-transparent border-0'>
                         <div class='testimonial-card' data-animate='fadeInUp'>
-                            <p>"+ story.Details+ @"</p>
+                            <p>" + story.Details + @"</p>
                             <div class='meta-details'>
-                                <h4>"+ story.Name + @"</h4>
-                                <span>"+story.Designation+@"</span>
+                                <h4>" + story.Name + @"</h4>
+                                <span>" + story.Designation + @"</span>
                             </div>
                         </div>
                     </div>
@@ -148,12 +209,12 @@ public partial class _Default : System.Web.UI.Page
                 {
                     strTags += @" <div class='col-md-6 col-xl-3 col-6' data-animate='fadeInUp'>
                         <div class='card border-0 rounded-0 hover-zoom-in hover-shine'>
-                            <img class='lazy-image card-img object-fit-cover new-heigh' src='/"+t.TagImage+@"'  width='330' height='450' alt='Not Avail' />
+                            <img class='lazy-image card-img object-fit-cover new-heigh' src='/" + t.TagImage + @"'  width='330' height='450' alt='Not Avail' />
                             <div class='card-img-overlay d-inline-flex flex-column p-lg-8 p-4 justify-content-end text-center bg-dark bg-opacity-25'>
-                                <h3 class='card-title text-white lh-25px lh-lg-45px font-primary fw-normal  fs-6 fs-lg-3'>"+t.Title+@"
+                                <h3 class='card-title text-white lh-25px lh-lg-45px font-primary fw-normal  fs-6 fs-lg-3'>" + t.Title + @"
                                 </h3>
                                 <div>
-                                    <a href='/shop/"+t.TagURL+@"' class='btn btn btn-link new-font p-0 fw-semibold text-white border-bottom border-0 rounded-0 border-currentColor text-decoration-none'>Shop Now</a>
+                                    <a href='/shop/" + t.TagURL + @"' class='btn btn btn-link new-font p-0 fw-semibold text-white border-bottom border-0 rounded-0 border-currentColor text-decoration-none'>Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -180,15 +241,15 @@ public partial class _Default : System.Web.UI.Page
                     strFeatureProducts += @" <div data-animate='fadeInUp'>
                     <div class='card card-product grid-1 bg-transparent border-0'>
                         <figure class='card-img-top position-relative mb-7 overflow-hidden'>
-                            <a href='/shop-products/" + pd.ProductUrl+@"'
+                            <a href='/shop-products/" + pd.ProductUrl + @"'
                                class='hover-zoom-in d-block'
                                title='Perfecting Facial Oil'>
-                                <img src='/"+pd.ProductImage+@"' class='img-fluid lazy-image w-100' alt='"+pd.ProductName+ @"' width='330' height='440' />
+                                <img src='/" + pd.ProductImage + @"' class='img-fluid lazy-image w-100' alt='" + pd.ProductName + @"' width='330' height='440' />
                             </a>
                         </figure>
                         <div class='card-body text-center p-0'>
                             <div class='product-details'>
-                               <a href='/shop-products/" + pd.ProductUrl+@"'><h3>" + pd.ProductName+ @"</h3></a>
+                               <a href='/shop-products/" + pd.ProductUrl + @"'><h3>" + pd.ProductName + @"</h3></a>
                             </div>
                         </div>
                     </div>
@@ -202,42 +263,7 @@ public partial class _Default : System.Web.UI.Page
             CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "BindTop3Blog", ex.Message);
         }
     }
-    protected void Subscribe_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            if (Page.IsValid)
-            {
-                EmailSubscribe cat = new EmailSubscribe();
-                cat.EmailId = txtSubscribeEmail.Text.Trim();
-                List<EmailSubscribe> EmailExist = EmailSubscribe.GetAllEmailSubscribedCheck(conAP, txtSubscribeEmail.Text.Trim());
-                if (EmailExist.Count > 0)
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Subscribed successfully.',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
-                    txtSubscribeEmail.Text = "";
-                    return;
-                }
 
-                int result = EmailSubscribe.InserEmailSubscribe(conAP, cat);
-                if (result > 0)
-                {
-                    txtSubscribeEmail.Text = "";
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Subscribed successfully.',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
-
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'There is some problem now. Please try after some time',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'There is some problem now. Please try after some time',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
-            CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "Subscribe_Click", ex.Message);
-        }
-
-    }
     public void BindBannerImages()
     {
         try
@@ -250,9 +276,9 @@ public partial class _Default : System.Web.UI.Page
                 {
                     images += @"<div class='vh-100 d-flex align-items-center'>
       <div class='z-index-2 container container-xxl py-21 pt-xl-10 pb-xl-11'>
-          <div class='hero-content text-start'>"+ban.Description+@"
+          <div class='hero-content text-start'>" + ban.Description + @"
               <div class='cta-btn' data-animate='fadeInDown'>
-                  <a href='/"+ban.Link+@"' class='btn orange-btn'>
+                  <a href='/" + ban.Link + @"' class='btn orange-btn'>
                       Explore Now <i class='fa-solid fa-arrow-circle-right'></i>
                   </a>
               </div>
@@ -276,4 +302,41 @@ public partial class _Default : System.Web.UI.Page
             CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "BindTop3Blog", ex.Message);
         }
     }
+
+    //protected void Subscribe_Click(object sender, EventArgs e)
+    //{
+    //    try
+    //    {
+    //        if (Page.IsValid)
+    //        {
+    //            EmailSubscribe cat = new EmailSubscribe();
+    //            cat.EmailId = txtSubscribeEmail.Text.Trim();
+    //            List<EmailSubscribe> EmailExist = EmailSubscribe.GetAllEmailSubscribedCheck(conAP, txtSubscribeEmail.Text.Trim());
+    //            if (EmailExist.Count > 0)
+    //            {
+    //                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Subscribed successfully.',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
+    //                txtSubscribeEmail.Text = "";
+    //                return;
+    //            }
+
+    //            int result = EmailSubscribe.InserEmailSubscribe(conAP, cat);
+    //            if (result > 0)
+    //            {
+    //                txtSubscribeEmail.Text = "";
+    //                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Subscribed successfully.',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
+
+    //            }
+    //            else
+    //            {
+    //                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'There is some problem now. Please try after some time',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+    //            }
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'There is some problem now. Please try after some time',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+    //        CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "Subscribe_Click", ex.Message);
+    //    }
+
+    //}
 }

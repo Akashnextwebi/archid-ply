@@ -42,7 +42,24 @@
         </section>
     </main>
 
-    <section class="why-choose-us section-padding ">
+    <div id="StoryListBindingSec"></div>
+<div class="row mt-12">
+    <div class="col-12 text-center">
+        <ul class="pagination pPagination justify-content-center">
+
+        </ul>
+    </div>
+</div>
+
+  <%--  <div id="StoryListBindingSec"></div>
+                                <div class="row mt-12">
+    <div class="col-12 text-center">
+        <ul class="pagination pPagination justify-content-center">
+        </ul>
+    </div>
+</div>--%>
+
+    <%--    <section class="why-choose-us section-padding ">
         <div class="container container-xxl">
             <div class="row align-items-center justify-content-between">
 
@@ -51,34 +68,8 @@
                         <div class="section-title">
                             <h2>Bungalow, Bhopal
                             </h2>
-                            <p>
-                                At Archidply, we see every project as a challenge that allows us to create something novel and breathtaking. And here’s how we used Archidply Club Plywood and Natural Decorative Veneers to add a touch of magic to this property.
-
-
-                            </p>
-                        </div>
-                        <div class="why-choose-content">
-                            <h5 class="">Other products used:
-                            </h5>
-                            <ul>
-                                <li>
-                                    <i class="fa-solid fa-check-circle"></i><span>Royal Vintage Oak
-                                    </span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check-circle"></i><span>Royal Burberry
-                                    </span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check-circle"></i><span>Royal Euro Walnut
-                                    </span>
-                                </li>
-
-                            </ul>
                         </div>
                     </div>
-
-
                 </div>
                 <div class="col-lg-6 position-relative">
                     <div class="about-img">
@@ -86,12 +77,6 @@
                             <div class="px-md-6">
                                 <div class="mx-n6 slick-slider" data-slick-options='{"slidesToShow": 1,"infinite":false,"autoplay":true,"dots":true,"arrows":false,"responsive":[{"breakpoint": 1366,"settings": {"slidesToShow":1 }},{"breakpoint": 992,"settings": {"slidesToShow":1}},{"breakpoint": 768,"settings": {"slidesToShow": 1}},{"breakpoint": 576,"settings": {"slidesToShow": 1}}]}'>
 
-                                    <a href="assets/imgs/ps/05-1.jpg" data-lity>
-                                        <img src="assets/imgs/ps/05-1.jpg" alt="Your Image Description">
-                                    </a>
-                                    <a href="assets/imgs/ps/06-1.jpg" data-lity>
-                                        <img src="assets/imgs/ps/06-1.jpg" alt="Your Image Description">
-                                    </a>
                                     <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
                                         <img src="assets/imgs/ps/Bhopal1.jpg" alt="Your Image Description">
                                     </a>
@@ -102,38 +87,67 @@
                                     <a href="https://www.youtube.com/embed/4ORbpY6d9Zk?si=s_s67Cv7ao4yVchT" data-lity>
                                         <img src="assets/imgs/ps/bangalore1.jpg" alt="Your Image Description">
                                     </a>
-
-                                    <%--<div class="px-6">
-                                        <a href="assets/imgs/ps/05-1.jpg" title="instagram-01" data-gallery="instagram1" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
-                                            <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="assets/imgs/ps/05-1.jpg" alt="instagram-01" src="#">
-                                            <span class="card-img-overlay bg-dark bg-opacity-30"></span>
-                                        </a>
-                                    </div>
-
-                                    <div class="px-6">
-                                        <a href="assets/imgs/ps/06-1.jpg" title="instagram-02" data-gallery="instagram1" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
-                                            <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="assets/imgs/ps/06-1.jpg" alt="instagram-02" src="#">
-                                            <span class="card-img-overlay bg-dark bg-opacity-30"></span>
-                                        </a>
-                                    </div>
-
-                                    <div class="px-6">
-                                        <a href="assets/imgs/ps/Bhopal1.jpg" title="instagram-03" data-gallery="instagram1" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
-                                            <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="assets/imgs/ps/Bhopal1.jpg" alt="instagram-03" src="#">
-                                            <span class="card-img-overlay bg-dark bg-opacity-30"></span>
-                                        </a>
-                                    </div>
-                                    <div class="px-6">
-                                        <a href="assets/imgs/ps/Bhopal3.jpg" title="instagram-03" data-gallery="instagram1" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
-                                            <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="assets/imgs/ps/Bhopal3.jpg" alt="instagram-03" src="#">
-                                            <span class="card-img-overlay bg-dark bg-opacity-30"></span>
-                                        </a>
-                                    </div>--%>
-
-
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="why-choose-us section-padding">
+    <div class="container container-xxl">
+        <div class="row align-items-center justify-content-between">
 
+            <!-- Left Side Content -->
+            <div class="col-lg-6 px-lg-10 py-lg-0 py-13">
+                <div class="text-left">
+                    <div class="section-title">
+                        <h2>Bungalow, Bhopal</h2>
+                        <p>At Archidply, we see every project as a challenge that allows us to create something novel
+                            and breathtaking. And here’s how we used Archidply Club Plywood and Natural Decorative
+                            Veneers to add a touch of magic to this property.</p>
+                        <h5>Other Products Used:</h5>
+                        <ul class="product-list">
+                            <li><i class="fa fa-check-circle"></i> Royal Vintage Oak</li>
+                            <li><i class="fa fa-check-circle"></i> Royal Burberry</li>
+                            <li><i class="fa fa-check-circle"></i> Royal Euro Walnut</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side Image Slider -->
+            <div class="col-lg-6 position-relative">
+                <div class="about-img">
+                    <div class="container-fluid">
+                        <div class="px-md-6">
+                            <div class="mx-n6 slick-slider" 
+                                 data-slick-options='{
+                                     "slidesToShow": 1,
+                                     "infinite": true,
+                                     "autoplay": true,
+                                     "dots": true,
+                                     "arrows": false,
+                                     "responsive": [
+                                         {"breakpoint": 1366, "settings": {"slidesToShow": 1}},
+                                         {"breakpoint": 992, "settings": {"slidesToShow": 1}},
+                                         {"breakpoint": 768, "settings": {"slidesToShow": 1}},
+                                         {"breakpoint": 576, "settings": {"slidesToShow": 1}}
+                                     ]
+                                 }'>
+                                <!-- Images -->
+                                <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
+                                    <img src="assets/imgs/ps/Bhopal1.jpg" alt="Bhopal Image 1">
+                                </a>
+                                <a href="assets/imgs/ps/Bhopal3.jpg" data-lity>
+                                    <img src="assets/imgs/ps/Bhopal3.jpg" alt="Bhopal Image 2">
+                                </a>
+                                <!-- Video -->
+                                <a href="https://www.youtube.com/embed/4ORbpY6d9Zk?si=s_s67Cv7ao4yVchT" data-lity>
+                                    <img src="assets/imgs/ps/bangalore1.jpg" alt="Video Thumbnail">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -141,8 +155,128 @@
             </div>
 
         </div>
+    </div>
+</section>--%>
+<%--    <section class="why-choose-us section-padding">
+        <div class="container container-xxl">
+            <div class="row align-items-center justify-content-between">
+
+                <!-- Left Side Content -->
+                <div class="col-lg-6 px-lg-10 py-lg-0 py-13">
+                    <div class="text-left">
+                        <div class="section-title">
+                            <h2>Bungalow, Bhopal</h2>
+                            <p>
+                                At Archidply, we see every project as a challenge that allows us to create something novel
+                            and breathtaking. And here’s how we used Archidply Club Plywood and Natural Decorative
+                            Veneers to add a touch of magic to this property.
+                            </p>
+                            <h5>Other Products Used:</h5>
+                            <ul class="product-list">
+                                <li><i class="fa fa-check-circle"></i>Royal Vintage Oak</li>
+                                <li><i class="fa fa-check-circle"></i>Royal Burberry</li>
+                                <li><i class="fa fa-check-circle"></i>Royal Euro Walnut</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Image Slider -->
+                <div class="col-lg-6 position-relative">
+                    <div class="about-img">
+                        <div class="container-fluid">
+                            <div class="px-md-6">
+                                <div class="mx-n6 slick-slider"
+                                    data-slick-options='{
+                                     "slidesToShow": 1,
+                                     "infinite": true,
+                                     "autoplay": true,
+                                     "dots": true,
+                                     "arrows": false,
+                                     "responsive": [
+                                         {"breakpoint": 1366, "settings": {"slidesToShow": 1}},
+                                         {"breakpoint": 992, "settings": {"slidesToShow": 1}},
+                                         {"breakpoint": 768, "settings": {"slidesToShow": 1}},
+                                         {"breakpoint": 576, "settings": {"slidesToShow": 1}}
+                                     ]
+                                 }'>
+                                    <!-- Images -->
+                                    <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
+                                        <img src="assets/imgs/ps/Bhopal1.jpg" alt="Bhopal Image 1">
+                                    </a>
+                                    <a href="assets/imgs/ps/Bhopal3.jpg" data-lity>
+                                        <img src="assets/imgs/ps/Bhopal3.jpg" alt="Bhopal Image 2">
+                                    </a>
+                                    <!-- Video -->
+                                    <a href="https://www.youtube.com/embed/4ORbpY6d9Zk?si=s_s67Cv7ao4yVchT" data-lity>
+                                        <img src="assets/imgs/ps/bangalore1.jpg" alt="Video Thumbnail">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
+
     <section class="why-choose-us section-padding bg-light ">
+        <div class="container container-xxl">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6 position-relative">
+                    <div class="about-img">
+                        <div class="container-fluid">
+                            <div class="px-md-6">
+                                <div class="mx-n6 slick-slider"
+                                    data-slick-options='{
+          "slidesToShow": 1,
+          "infinite": true,
+          "autoplay": true,
+          "dots": true,
+          "arrows": false,
+          "responsive": [
+              {"breakpoint": 1366, "settings": {"slidesToShow": 1}},
+              {"breakpoint": 992, "settings": {"slidesToShow": 1}},
+              {"breakpoint": 768, "settings": {"slidesToShow": 1}},
+              {"breakpoint": 576, "settings": {"slidesToShow": 1}}
+          ]
+      }'>
+                                    <!-- Images -->
+                                    <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
+                                        <img src="assets/imgs/ps/Bhopal1.jpg" alt="Bhopal Image 1">
+                                    </a>
+                                    <a href="assets/imgs/ps/Bhopal3.jpg" data-lity>
+                                        <img src="assets/imgs/ps/Bhopal3.jpg" alt="Bhopal Image 2">
+                                    </a>
+                                    <!-- Video -->
+                                    <a href="https://www.youtube.com/embed/4ORbpY6d9Zk?si=s_s67Cv7ao4yVchT" data-lity>
+                                        <img src="assets/imgs/ps/bangalore1.jpg" alt="Video Thumbnail">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 px-lg-10 py-lg-0 py-13">
+                    <div class="text-left">
+                        <div class="section-title">
+                            <h2>Bungalow, Raipur
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>--%>
+
+    <%--    <section class="why-choose-us section-padding bg-light ">
         <div class="container container-xxl">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 position-relative">
@@ -568,7 +702,9 @@ property — with the help of Archidply Club Plus and select veneers from our De
             </div>
 
         </div>
-    </section>
+    </section>--%>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js" integrity="sha512-UU0D/t+4/SgJpOeBYkY+lG16MaNF8aqmermRIz8dlmQhOlBnw6iQrnt4Ijty513WB3w+q4JO75IX03lDj6qQNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/Pages/product-stories-bind.js"></script>
+
 </asp:Content>
 

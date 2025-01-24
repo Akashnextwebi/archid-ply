@@ -632,9 +632,31 @@
                 </div>
             </div>
             <div class="container container-xxl mt-12 pt-3">
-                <div class="slick-slider"
-                    data-slick-options="{&#34;arrows&#34;:false,&#34;dots&#34;:false,&#34;responsive&#34;:[{&#34;breakpoint&#34;:1200,&#34;settings&#34;:{&#34;slidesToShow&#34;:1}},{&#34;breakpoint&#34;:992,&#34;settings&#34;:{&#34;dots&#34;:true,&#34;slidesToShow&#34;:1}},{&#34;breakpoint&#34;:768,&#34;settings&#34;:{&#34;dots&#34;:true,&#34;slidesToShow&#34;:1}}],&#34;slidesToShow&#34;:1}">
-                    <div class="new-bg-product">
+                <div class="slick-slider" data-slick-options="{&#34;arrows&#34;:false,&#34;dots&#34;:false,&#34;responsive&#34;:[{&#34;breakpoint&#34;:1200,&#34;settings&#34;:{&#34;slidesToShow&#34;:1}},{&#34;breakpoint&#34;:992,&#34;settings&#34;:{&#34;dots&#34;:true,&#34;slidesToShow&#34;:1}},{&#34;breakpoint&#34;:768,&#34;settings&#34;:{&#34;dots&#34;:true,&#34;slidesToShow&#34;:1}}],&#34;slidesToShow&#34;:1}">
+                    <%=strProductStories %>
+                    <%--<div class='new-bg-product'>
+                        <div class='row align-items-center justify-content-between '>
+                            <div class='col-lg-6 px-lg-10 py-lg-0 py-13'>
+                                <div class='text-left new-pro-stories'>
+                                    <div class='section-title'>
+                                        <h2>Bungalow, Bhopal
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col-lg-6 position-relative'>
+                                <div class='about-img'>
+                                    <div class='container-fluid'>
+                                        <div class='px-md-6'>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>--%>
+
+                  <%--  <div class="new-bg-product">
                         <div class="row align-items-center justify-content-between ">
 
                             <div class="col-lg-6 px-lg-10 py-lg-0 py-13">
@@ -793,87 +815,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="new-bg-product">
-                        <div class="row align-items-center justify-content-between ">
-
-                            <div class="col-lg-6 px-lg-10 py-lg-0 py-13">
-                                <div class="text-left new-pro-stories">
-                                    <div class="section-title">
-                                        <h2>Bungalow, Bhopal
-                                        </h2>
-                                        <p>
-                                            At Archidply, we see every project as a challenge that allows us to create something novel and breathtaking. And here’s how we used Archidply Club Plywood and Natural Decorative Veneers to add a touch of magic to this property.
-
-
-                                        </p>
-                                    </div>
-                                    <div class="why-choose-content">
-                                        <h5 class="">Other products used:
-                                        </h5>
-                                        <ul>
-                                            <li>
-                                                <i class="fa-solid fa-check-circle"></i><span>Royal Vintage Oak
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <i class="fa-solid fa-check-circle"></i><span>Royal Burberry
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <i class="fa-solid fa-check-circle"></i><span>Royal Euro Walnut
-                                                </span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="col-lg-6 position-relative">
-                                <div class="about-img">
-                                    <div class="container-fluid">
-                                        <div class="px-md-6">
-                                            <div class="mx-n6 slick-slider" data-slick-options='{"slidesToShow": 1,"infinite":false,"autoplay":true,"dots":true,"arrows":false,"responsive":[{"breakpoint": 1366,"settings": {"slidesToShow":1 }},{"breakpoint": 992,"settings": {"slidesToShow":1}},{"breakpoint": 768,"settings": {"slidesToShow": 1}},{"breakpoint": 576,"settings": {"slidesToShow": 1}}]}'>
-
-                                                <div class="px-6">
-                                                    <a href="assets/imgs/ps/05-1.jpg" title="instagram-01" data-gallery="instagram1" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
-                                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="assets/imgs/ps/05-1.jpg" alt="instagram-01" src="#">
-                                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="px-6">
-                                                    <a href="assets/imgs/ps/06-1.jpg" title="instagram-02" data-gallery="instagram1" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
-                                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="assets/imgs/ps/06-1.jpg" alt="instagram-02" src="#">
-                                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="px-6">
-                                                    <a href="assets/imgs/ps/Bhopal1.jpg" title="instagram-03" data-gallery="instagram1" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
-                                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="assets/imgs/ps/Bhopal1.jpg" alt="instagram-03" src="#">
-                                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
-                                                    </a>
-                                                </div>
-                                                <div class="px-6">
-                                                    <a href="assets/imgs/ps/Bhopal3.jpg" title="instagram-03" data-gallery="instagram1" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
-                                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="assets/imgs/ps/Bhopal3.jpg" alt="instagram-03" src="#">
-                                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
-                                                    </a>
-                                                </div>
-
-
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>--%>
 
                     <%-- <%=strBlog %>--%>
 
@@ -1053,7 +995,7 @@
                 </div>
             </div>
         </section>--%>
-        <section class="bg-section-2 pt-lg-17 pb-lg-17 pt-15 pb-15" style="background: #fff2d6">
+        <%--<section class="bg-section-2 pt-lg-17 pb-lg-17 pt-15 pb-15" style="background: #fff2d6">
             <div class="container text-center">
                 <div class="mx-auto mb-11 text-center" style="max-width: 500px" data-animate="fadeInUp">
                     <h3 class="mb-6 new-cta-font">Stay Up to Date with All News and Exclusive Offers</h3>
@@ -1074,7 +1016,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>--%>
         <div class="whatsapp-fixed">
             <div class="whatsapp-icon">
                 <a href="https://wa.me/+917022012573" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>

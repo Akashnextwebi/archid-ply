@@ -74,7 +74,7 @@ public partial class Admin_add_products_stories : System.Web.UI.Page
                 }
                 else if (resmsg == "Size")
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Category image size should be 300*300 px',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Image size should be 1200*800 px',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
 
                     return;
 
@@ -161,7 +161,7 @@ public partial class Admin_add_products_stories : System.Web.UI.Page
                 {
                     System.Drawing.Bitmap bmpPostedImageBig = new System.Drawing.Bitmap(FileUpload1.PostedFile.InputStream);
                     System.Drawing.Image objImagesmallBig = CommonModel.ScaleImageBig(bmpPostedImageBig, bmpPostedImageBig.Height, bmpPostedImageBig.Width);
-                    if (bmpPostedImageBig.Height != 500 && bmpPostedImageBig.Width != 500)
+                    if (bmpPostedImageBig.Height != 800 && bmpPostedImageBig.Width != 1200)
                     {
                         return "Size";
                     }

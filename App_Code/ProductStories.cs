@@ -36,9 +36,87 @@ public class ProductStories
     public string UpdatedBy { get; set; }
 
     public string Status { get; set; }
-
+    public List<StoriesGallery> StoriesGal { get; set; }
     public string Featured { get; set; }
+    public int RowNumber { get; set; }
+    public int TotalCount { get; set; }
 
+    public static List<ProductStories> GetTop3Stories(SqlConnection conAP)
+    {
+        List<ProductStories> ProductStories = new List<ProductStories>();
+        try
+        {
+            string query = "SELECT Top 3 * FROM ProductStories WHERE Status = 'Active' and Featured='Yes'";
+            using (SqlCommand cmd = new SqlCommand(query, conAP))
+            {
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                ProductStories = (from DataRow dr in dt.Rows
+                                  select new ProductStories()
+                                  {
+                                      Id = Convert.ToInt32(Convert.ToString(dr["Id"])),
+                                      URL = Convert.ToString(dr["URL"]),
+                                      Title = Convert.ToString(dr["Title"]),
+                                      Link = Convert.ToString(dr["Link"]),
+                                      Image = Convert.ToString(dr["Image"]),
+                                      FullDesc = Convert.ToString(dr["FullDesc"]),
+                                      Featured = Convert.ToString(dr["Featured"]),
+                                      AddedBy = Convert.ToString(dr["AddedBy"]),
+                                      AddedOn = Convert.ToDateTime(Convert.ToString(dr["AddedOn"])),
+                                      UpdatedOn = Convert.ToDateTime(Convert.ToString(dr["UpdatedOn"])),
+                                      Status = Convert.ToString(dr["Status"])
+                                  }).ToList();
+            }
+        }
+        catch (Exception ex)
+        {
+            ExceptionCapture.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "GetAllProductStories", ex.Message);
+        }
+        return ProductStories;
+    }
+
+    public static List<ProductStories> GetAllListProductStories(SqlConnection conAP, int cPage)
+    {
+        List<ProductStories> ProductStories = new List<ProductStories>();
+        try
+        {
+            string qrury = @"Select top 6 * from 
+(Select ROW_NUMBER() OVER(Order by  AddedOn desc) AS RowNo,
+(select count(id) from ProductStories where status='Active') as TotalCount,
+* from ProductStories
+where Status='Active') x where RowNo >" + (6 * (cPage - 1));
+            using (SqlCommand cmd = new SqlCommand(qrury, conAP))
+            {
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                ProductStories = (from DataRow dr in dt.Rows
+                         select new ProductStories()
+                         {
+                             Id = Convert.ToInt32(Convert.ToString(dr["Id"])),
+                             RowNumber = Convert.ToInt32(Convert.ToString(dr["RowNo"])),
+                             TotalCount = Convert.ToInt32(Convert.ToString(dr["TotalCount"])),
+                             URL = Convert.ToString(dr["URL"]),
+                             Title = Convert.ToString(dr["Title"]),
+                             Link = Convert.ToString(dr["Link"]),
+                             Image = Convert.ToString(dr["Image"]),
+                             FullDesc = Convert.ToString(dr["FullDesc"]),
+                             Featured = Convert.ToString(dr["Featured"]),
+                             AddedBy = Convert.ToString(dr["AddedBy"]),
+                             AddedOn = Convert.ToDateTime(Convert.ToString(dr["AddedOn"])),
+                             UpdatedOn = Convert.ToDateTime(Convert.ToString(dr["UpdatedOn"])),
+                             StoriesGal = StoriesGallery.GetGallery(conAP, Convert.ToString(dr["Id"])),
+                             Status = Convert.ToString(dr["Status"])
+                         }).ToList();
+            }
+        }
+        catch (Exception ex)
+        {
+            ExceptionCapture.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "GetAllProductStories", ex.Message);
+        }
+        return ProductStories;
+    }
     public static int InsertProductStoriesInfo(SqlConnection conAS, ProductStories vehicle)
     {
         int result = 0;

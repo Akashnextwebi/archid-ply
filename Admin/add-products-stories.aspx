@@ -2,7 +2,6 @@
 
 <%@ Register Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:ToolkitScriptManager ID="sc1" runat="server"></asp:ToolkitScriptManager>
@@ -32,36 +31,36 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4 mb-3">
-                                        <label>Title<sup>*</sup></label>
-                                        <asp:TextBox runat="server" MaxLength="100" class="form-control mb-2 mr-sm-2 txtTitle" ID="txtTitle" />
-                                        <asp:RequiredFieldValidator ID="req1" runat="server" ControlToValidate="txtTitle" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
+                                    <label>Title<sup>*</sup></label>
+                                    <asp:TextBox runat="server" MaxLength="100" class="form-control mb-2 mr-sm-2 txtTitle" ID="txtTitle" />
+                                    <asp:RequiredFieldValidator ID="req1" runat="server" ControlToValidate="txtTitle" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
+                                </div>
+                                <div class="col-md-4 mb-3 d-none">
+                                    <label>Url<sup>*</sup></label>
+                                    <asp:TextBox runat="server" class="form-control mb-2 mr-sm-2 txtUrl" ID="txtUrl" />
+                                </div>
+
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label">Youtube Link</label>
+                                    <asp:TextBox runat="server" MaxLength="50" class="form-control mb-2 mr-sm-2" ID="txtLink" />
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                        <label>Url<sup>*</sup></label>
-                                        <asp:TextBox runat="server" class="form-control mb-2 mr-sm-2 txtUrl" ID="txtUrl" />
-                                        <asp:RequiredFieldValidator ID="reqProductUrl" runat="server" ControlToValidate="txtUrl" Display="Dynamic" ForeColor="Red" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Enter a valid Name." ValidationExpression="^[a-zA-Z ]*$" ControlToValidate="txtUrl" ValidationGroup="Contact" ForeColor="Red" Display="Dynamic"></asp:RegularExpressionValidator>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                        <label class="form-label">Youtube Link</label>
-                                        <asp:TextBox runat="server" MaxLength="50" class="form-control mb-2 mr-sm-2" ID="txtLink"  />
+                                    <label>Featured ?</label>
+                                    <asp:CheckBox CssClass="form-control" ID="chbFeatured" runat="server" />
+                                    <span></span>
                                 </div>
                                 <div class="col-md-12 mb-3">
-                                        <label>Full Description<sup>*</sup></label>
-                                        <asp:TextBox runat="server" TextMode="MultiLine" class="form-control mb-2 mr-sm-2 summernote" ID="txtDesc" Placeholder="Full Description ....." />
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtDesc" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
+                                    <label>Full Description<sup>*</sup></label>
+                                    <asp:TextBox runat="server" TextMode="MultiLine" class="form-control mb-2 mr-sm-2 summernote" ID="txtDesc" Placeholder="Full Description ....." />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtDesc" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                        <label>Thumbnail Image<sup class="text-danger">*</sup></label>
-                                        <asp:FileUpload ID="FileUpload1" runat="server" CssClass="form-control"></asp:FileUpload>
-                                        <small style="color: red;">.png, .jpeg, .jpg, .gif, .webp formats are required, Image Size Should be 1200*800 px</small><br />
-                                        <%=strImage %>
+                                    <label>Thumbnail Image<sup class="text-danger">*</sup></label>
+                                    <asp:FileUpload ID="FileUpload1" runat="server" CssClass="form-control"></asp:FileUpload>
+                                    <small style="color: red;">.png, .jpeg, .jpg, .gif, .webp formats are required, Image Size Should be 1200*800 px</small><br />
+                                    <%=strImage %>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                        <label>Featured ?</label>
-                                        <asp:CheckBox CssClass="form-control" ID="chbFeatured" runat="server" />
-                                        <span></span>
-                                </div>
+
                             </div>
                             <!-- end card body -->
                             <div class="row">
@@ -80,7 +79,7 @@
                     </div>
                 </div>
             </div>
-           
+
 
         </div>
     </div>
@@ -89,7 +88,7 @@
             $(".txtTitle").change(function () {
                 $(".txtUrl").val($(".txtTitle").val().toLowerCase().replace(/\./g, '').replace(/\//g, '').replace(/\&/g, 'and').replace(/\\/g, '').replace(/\*/g, '').replace(/\?/g, '').replace(/\~/g, '').replace(/\ /g, '-'));
             });
-            });
+        });
     </script>
 </asp:Content>
 

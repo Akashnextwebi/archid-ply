@@ -74,7 +74,6 @@
                                     <label>Page Title</label>
                                     <asp:TextBox runat="server" class="form-control mb-2 mr-sm-2 textcount1" ID="txtPTitle" />
                                 </div>
-
                                 <div class="col-lg-4 mb-3">
                                     <label>Meta Keys</label>
                                     <asp:TextBox runat="server" TextMode="MultiLine" Style="height: 100px !important;" class="form-control mb-2 mr-sm-2 textcount1" ID="txtMKeys" />
@@ -103,7 +102,6 @@
                                     <br />
                                     <%=strBannerImage %>
                                 </div>
-
                                 <div class="col-lg-4 mb-3">
                                     <label>Item Number</label>
                                     <asp:TextBox runat="server" ID="txtItemNum" CssClass="form-control" />

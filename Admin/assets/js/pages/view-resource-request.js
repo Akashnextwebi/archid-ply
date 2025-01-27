@@ -48,7 +48,7 @@
                     async: false,
                     success: function (data2) {
                         if (data2.d.toString() == "Success") {
-                            Swal.fire({ title: "Deleted!", text: "Subscribe has been deleted.", icon: "success", confirmButtonClass: "btn btn-primary w-xs mt-2", buttonsStyling: false })
+                            Swal.fire({ title: "Deleted!", text: "Item has been deleted.", icon: "success", confirmButtonClass: "btn btn-primary w-xs mt-2", buttonsStyling: false })
                             elem.parent().parent().remove();
                         }
                         else if (data2.d.toString() == "Permission") {

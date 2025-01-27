@@ -3,6 +3,65 @@
 <%@ Register Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style>
+        modal-backdrop {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .m-content {
+            background: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .m-header {
+            background: #e9f5ff;
+            color: #0d6efd;
+            border-bottom: none;
+        }
+
+        .m-title {
+            font-size: 1.75rem;
+            font-weight: bold;
+        }
+
+        .btn-close {
+            color: #0d6efd;
+        }
+
+        .m-body {
+            padding: 2rem;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+            .form-control:focus {
+                box-shadow: 0px 0px 8px rgba(13, 110, 253, 0.5);
+                border-color: #0d6efd;
+            }
+
+        .btn-primary {
+            background: #0d6efd;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            transition: background 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background: #0056b3;
+            }
+
+        .fade.modal.show .modal-dialog {
+            transform: translateY(-20px);
+            opacity: 1;
+            transition: all 0.3s ease-out;
+        }
+    </style>
     <link href="/Admin/assets/libs/snackbar/snackbar.min.css" rel="stylesheet" />
 
 </asp:Content>
@@ -914,7 +973,7 @@
                 </div>--%>
                 </div>
                 <div class="text-center pt-2" data-animate="fadeInUp">
-                    <a href="/product-stories.aspx" class="mt-12 btn green-btn">View All Product Stories <i class="fa-solid fa-check-circle"></i>
+                    <a href="/product-stories" class="mt-12 btn green-btn">View All Product Stories <i class="fa-solid fa-check-circle"></i>
                     </a>
                 </div>
             </div>
@@ -1031,6 +1090,53 @@
                     +91 7022012573</a>
             </div>
         </div>
+
+        <%--Qucik enquiry modal--%>
+        <div class="modal fade" id="quickEnquiryModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="quickEnquiryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content m-content">
+                    <div class="modal-header m-header">
+                        <h5 class="modal-title m-title" id="quickEnquiryModalLabel">Quick Enquiry</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body m-body">
+                        <asp:UpdatePanel runat="server">
+                            <ContentTemplate>
+                                <div id="enquiryForm">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Name<sup class="text-danger">*</sup></label>
+                                        <asp:TextBox ID="txtName" runat="server" MaxLength="100" CssClass="form-control acceptOnlyAlpha" Placeholder="Enter your name"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfv1" runat="server" Display="Dynamic" ForeColor="Red" ControlToValidate="txtName" SetFocusOnError="true" ValidationGroup="quick" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Contact No<sup class="text-danger">*</sup></label>
+                                        <asp:TextBox ID="txtPhone" runat="server" MaxLength="10" CssClass="form-control onlyNum" Placeholder="Enter your contact no"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfv4" runat="server" Display="Dynamic" ForeColor="Red" ControlToValidate="txtPhone" SetFocusOnError="true" ValidationGroup="quick" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPhone" Display="Dynamic" ValidationGroup="quick" ForeColor="Red" SetFocusOnError="true" ErrorMessage="Enter 10 Digit Valid Phone Number" ValidationExpression="^\d{10}$"></asp:RegularExpressionValidator>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email<sup class="text-danger">*</sup></label>
+                                        <asp:TextBox ID="txtEmail" runat="server" MaxLength="150" CssClass="form-control" Placeholder="Enter your email"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfv2" runat="server" Display="Dynamic" ForeColor="Red" ControlToValidate="txtEmail" SetFocusOnError="true" ValidationGroup="quick" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="rev1" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ValidationGroup="quick" ForeColor="Red" SetFocusOnError="true" ErrorMessage="Invalid E-mail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message</label>
+                                        <asp:TextBox ID="txtMessage" runat="server" MaxLength="300" CssClass="form-control" TextMode="MultiLine" Rows="3" placeholder="Enter your message"></asp:TextBox>
+                                    </div>
+                                    <asp:Button ID="btnSendMessage" ValidationGroup="quick" runat="server" CssClass="btn btn-primary w-100 mt-10" Text="Send Message" OnClick="btnSendMessage_click" />
+                                </div>
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="btnSendMessage" EventName="Click" />
+                            </Triggers>
+                        </asp:UpdatePanel>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%--Resource dowmnlod modal--%>
         <div class="modal fade sucess" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
@@ -1044,16 +1150,16 @@
                     </div>
                     <div class="modal-body px-sm-13 px-8">
                         <p class="text-center fs-16 mb-10">
-                           By filling the below form you can download resource
+                            By filling the below form you can download resource
                         </p>
                         <div action="#">
-                                    <div class="error-message alert alert-danger d-block d-none fw-bold"></div>
+                            <div class="error-message alert alert-danger d-block d-none fw-bold"></div>
 
                             <asp:TextBox ID="textFname" runat="server" class="form-control textFname mb-7" MaxLength="100" placeholder="Full Name"></asp:TextBox>
                             <asp:TextBox ID="txtemailAdress" class="form-control txtemailAdress mb-7" runat="server" MaxLength="100" placeholder="Email"></asp:TextBox>
                             <asp:TextBox ID="txtContact" class="form-control txtContact mb-7" runat="server" MaxLength="10" placeholder="Contact Number"></asp:TextBox>
                             <asp:TextBox ID="txtProfession" class="form-control txtProfession mb-7" runat="server" MaxLength="100" placeholder="Profession"></asp:TextBox>
-                            
+
                             <asp:LinkButton runat="server" ID="BtnSubmit" CssClass="btn btn-dark btn-hover-bg-primary btn-hover-border-primary mt-10 w-100 mb-6 submitdata BtnSubmit" ValidationGroup="Save">Download<i class="fal fa-arrow-right-long"></i></asp:LinkButton>
 
                         </div>
@@ -1063,6 +1169,14 @@
         </div>
         <script src="/Admin/assets/libs/snackbar/snackbar.min.js"></script>
         <script src="/assets/js/Pages/defaultpage.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                setTimeout(function () {
+                    const myModal = new bootstrap.Modal(document.getElementById('quickEnquiryModal'));
+                    myModal.show();
+                }, 5000);
+            });
+  </script>
     </main>
 
 </asp:Content>

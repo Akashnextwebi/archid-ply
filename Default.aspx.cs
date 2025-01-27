@@ -341,40 +341,39 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-    //protected void Subscribe_Click(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        if (Page.IsValid)
-    //        {
-    //            EmailSubscribe cat = new EmailSubscribe();
-    //            cat.EmailId = txtSubscribeEmail.Text.Trim();
-    //            List<EmailSubscribe> EmailExist = EmailSubscribe.GetAllEmailSubscribedCheck(conAP, txtSubscribeEmail.Text.Trim());
-    //            if (EmailExist.Count > 0)
-    //            {
-    //                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Subscribed successfully.',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
-    //                txtSubscribeEmail.Text = "";
-    //                return;
-    //            }
+    protected void btnSendMessage_click(object sender, EventArgs e)
+    {
+        try
+        {
+            if (Page.IsValid)
+            {
+                ContactUs cat = new ContactUs();
+                cat.UserName = txtName.Text.Trim();
+                cat.ContactNo = txtPhone.Text.Trim();
+                cat.EmailId = txtEmail.Text.Trim();
+                cat.Message = txtMessage.Text.Trim();
+                int result = ContactUs.InserContactUs(conAP, cat);
+                if (result > 0)
+                {
+                    txtName.Text = "";
+                    txtPhone.Text = "";
+                    txtEmail.Text = "";
+                    txtMessage.Text = "";
+                    Emails.ContactRequest(cat);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'We’ll get back to you shortly. Thank you for reaching out!',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "CloseModalScript", "$('#quickEnquiryModal').modal('hide');", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'There is some problem now. Please try after some time',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'There is some problem now. Please try after some time',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+            CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "btnSendMessage_click", ex.Message);
+        }
 
-    //            int result = EmailSubscribe.InserEmailSubscribe(conAP, cat);
-    //            if (result > 0)
-    //            {
-    //                txtSubscribeEmail.Text = "";
-    //                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Subscribed successfully.',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
-
-    //            }
-    //            else
-    //            {
-    //                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'There is some problem now. Please try after some time',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
-    //            }
-    //        }
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'There is some problem now. Please try after some time',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
-    //        CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "Subscribe_Click", ex.Message);
-    //    }
-
-    //}
+    }
 }

@@ -56,7 +56,7 @@
                                 <div class="col-lg-4 mb-3">
                                     <label>Tag Image<sup>*</sup></label>
                                     <asp:FileUpload ID="FileUpload1" runat="server" CssClass="form-control"></asp:FileUpload>
-                                    <small style="color: red;">.png, .jpeg, .jpg, .gif, .webp formats are required, Image Size Should be 1600*500 px</small><br />
+                                    <small style="color: red;">.png, .jpeg, .jpg, .gif, .webp formats are required, Image Size Should be 300*300 px</small><br />
                                     <%=strImage %>
                                 </div>
                                 <div class="col-lg-6 mb-3">

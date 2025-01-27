@@ -184,7 +184,7 @@ public partial class Admin_space : System.Web.UI.Page
                 }
                 else if (resmsg == "Size")
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Category image size should be 300*300 px',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Tag image size should be 300*300 px',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
 
                     return;
 

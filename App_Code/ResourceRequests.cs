@@ -12,6 +12,7 @@ public class ResourceRequests
     public int Id { set; get; }
     public string ResourceName { get; set; }
     public string EmailId { get; set; }
+    public string Profession { get; set; }
     public string ContactNo { get; set; }
     public string Name { get; set; }
     public DateTime AddedOn { set; get; }
@@ -33,6 +34,7 @@ public class ResourceRequests
                          {
                              Id = Convert.ToInt32(Convert.ToString(dr["Id"])),
                              Name = Convert.ToString(dr["Name"]),
+                             Profession = Convert.ToString(dr["Profession"]),
                              EmailId = Convert.ToString(dr["Email"]),
                              ContactNo = Convert.ToString(dr["Phone"]),
                              ResourceName = Convert.ToString(dr["ResourceName"]),
@@ -53,10 +55,11 @@ public class ResourceRequests
         int result = 0;
         try
         {
-            string query = "Insert Into ResourceRequests (Status,Name,Email,Phone,ResourceName,AddedOn,AddedIp) values(@Status,@Name,@Email,@Phone,@ResourceName,@AddedOn,@AddedIp)";
+            string query = "Insert Into ResourceRequests (Status,Name,Email,Phone,ResourceName,AddedOn,AddedIp,Profession) values(@Status,@Name,@Email,@Phone,@ResourceName,@AddedOn,@AddedIp,@Profession)";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = Blog.Name;
+                cmd.Parameters.AddWithValue("@Profession", SqlDbType.NVarChar).Value = Blog.Profession;
                 cmd.Parameters.AddWithValue("@Email", SqlDbType.NVarChar).Value = Blog.EmailId;
                 cmd.Parameters.AddWithValue("@Status", SqlDbType.NVarChar).Value = "Active";
                 cmd.Parameters.AddWithValue("@Phone", SqlDbType.NVarChar).Value = Blog.ContactNo;

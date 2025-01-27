@@ -119,7 +119,7 @@
 
         <section class="pt-15 pb-16 pt-lg-17 pb-lg-18 mx-auto" style="max-width: 750px" data-animated-id="3">
             <div class="container text-center">
-                <h2 class="mb-10 fs-3">Sent A Message</h2>
+                <h2 class="mb-10 fs-3">Get in Touch</h2>
                 <div class="contact-form" method="post" action="#">
                     <div class="row mb-8 mb-md-10">
                         <div class="col-md-6 col-12 mb-8 mb-md-0">

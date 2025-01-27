@@ -24,6 +24,7 @@ public partial class Admin_view_emailsubscribe : System.Web.UI.Page
                 strRequests += @"<tr>
                                 <td>" + (i + 1) + @"</td>                                           
                                 <td>" + pro.Name + @"</td> 
+                                <td>" + pro.Profession + @"</td> 
                                 <td>" + pro.ContactNo + @"</td> 
                                 <td>" + pro.EmailId + @"</td> 
                                 <td>" + pro.AddedOn.ToString("dd/MM/yyyy hh:mm tt") + @"</td> 

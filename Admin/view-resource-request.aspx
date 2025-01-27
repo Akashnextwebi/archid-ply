@@ -35,6 +35,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
+                                        <th>Profession</th>
                                         <th>Phone</th>
                                         <th>Email Address</th>
                                         <th>AddedOn</th>

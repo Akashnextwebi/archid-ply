@@ -306,7 +306,7 @@ public partial class _Default : System.Web.UI.Page
 
 
     [WebMethod(EnableSession = true)]
-    public static string SaveDownloadEnquiry(string name, string email, string contact, int Id)
+    public static string SaveDownloadEnquiry(string name, string email, string contact, int Id,string prof)
     {
         SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
 
@@ -317,6 +317,7 @@ public partial class _Default : System.Web.UI.Page
             RE.Name = name;
             RE.ResourceName = ResName[0].Title;
             RE.EmailId = email;
+            RE.Profession = prof;
             RE.ContactNo = contact;
             RE.AddedIp = CommonModel.IPAddress();
             RE.AddedOn = TimeStamps.UTCTime();

@@ -1051,7 +1051,8 @@
 
                             <asp:TextBox ID="textFname" runat="server" class="form-control textFname mb-7" MaxLength="100" placeholder="Full Name"></asp:TextBox>
                             <asp:TextBox ID="txtemailAdress" class="form-control txtemailAdress mb-7" runat="server" MaxLength="100" placeholder="Email"></asp:TextBox>
-                            <asp:TextBox ID="txtContact" class="form-control txtContact mb-7" runat="server" MaxLength="15" placeholder="Contact Number"></asp:TextBox>
+                            <asp:TextBox ID="txtContact" class="form-control txtContact mb-7" runat="server" MaxLength="10" placeholder="Contact Number"></asp:TextBox>
+                            <asp:TextBox ID="txtProfession" class="form-control txtProfession mb-7" runat="server" MaxLength="100" placeholder="Profession"></asp:TextBox>
                             
                             <asp:LinkButton runat="server" ID="BtnSubmit" CssClass="btn btn-dark btn-hover-bg-primary btn-hover-border-primary mt-10 w-100 mb-6 submitdata BtnSubmit" ValidationGroup="Save">Download<i class="fal fa-arrow-right-long"></i></asp:LinkButton>
 

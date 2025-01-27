@@ -37,7 +37,7 @@ public partial class dealers : System.Web.UI.Page
                 ddlCity.DataTextField = "CityName";
                 ddlCity.DataBind();
             }
-            ddlCity.Items.Insert(0, new ListItem("Select a City to filter dealers", ""));
+            ddlCity.Items.Insert(0, new ListItem("Select a city to filter dealers", ""));
         }
         catch (Exception ex)
         {

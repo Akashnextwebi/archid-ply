@@ -60,7 +60,7 @@ public class DealersList
         List<DealersList> result = new List<DealersList>();
         try
         {
-            string cmdText = "Select * from DealersList where Status=@Status and City=@City or @City=''";
+            string cmdText = "Select *,(SELECT TOP 1 CityName FROM City WHERE id = City) AS CityName from DealersList where Status=@Status and City=@City or @City=''";
             using (SqlCommand sqlCommand = new SqlCommand(cmdText, conAP))
             {
                 sqlCommand.Parameters.AddWithValue("@City", SqlDbType.Int).Value = city;
@@ -74,6 +74,7 @@ public class DealersList
                               Id = Convert.ToInt32(Convert.ToString(dr["Id"])),
                               Logo = Convert.ToString(dr["Logo"]),
                               City = Convert.ToString(dr["City"]),
+                              CityName = Convert.ToString(dr["CityName"]),
                               Link = Convert.ToString(dr["Link"]),
                               AddedBy = Convert.ToString(dr["AddedBy"]),
                               AddedOn = Convert.ToDateTime(Convert.ToString(dr["AddedOn"])),

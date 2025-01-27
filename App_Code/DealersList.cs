@@ -55,6 +55,45 @@ public class DealersList
         return result;
     }
 
+    public static List<DealersList> GetDealerListByCity(SqlConnection conAP, string city)
+    {
+        List<DealersList> result = new List<DealersList>();
+        try
+        {
+            string cmdText = "Select * from DealersList where Status=@Status and City=@City or @City=''";
+            using (SqlCommand sqlCommand = new SqlCommand(cmdText, conAP))
+            {
+                sqlCommand.Parameters.AddWithValue("@City", SqlDbType.Int).Value = city;
+                sqlCommand.Parameters.AddWithValue("@Status", SqlDbType.NVarChar).Value = "Active";
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                result = (from DataRow dr in dataTable.Rows
+                          select new DealersList
+                          {
+                              Id = Convert.ToInt32(Convert.ToString(dr["Id"])),
+                              Logo = Convert.ToString(dr["Logo"]),
+                              City = Convert.ToString(dr["City"]),
+                              Link = Convert.ToString(dr["Link"]),
+                              AddedBy = Convert.ToString(dr["AddedBy"]),
+                              AddedOn = Convert.ToDateTime(Convert.ToString(dr["AddedOn"])),
+                              AddedIp = Convert.ToString(dr["AddedIp"]),
+                              Status = Convert.ToString(dr["Status"]),
+                              Name = Convert.ToString(dr["Name"]),
+                              EmailId = Convert.ToString(dr["EmailId"]),
+                              Phone = Convert.ToString(dr["Phone"]),
+                              Address = Convert.ToString(dr["Address"])
+                          }).ToList();
+            }
+
+        }
+        catch (Exception ex)
+        {
+            ExceptionCapture.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "GetDealerList", ex.Message);
+        }
+
+        return result;
+    }
     public static int UpdateDealerList(SqlConnection conAP, DealersList dealer)
     {
         int result = 0;

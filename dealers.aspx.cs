@@ -17,14 +17,43 @@ public partial class dealers : System.Web.UI.Page
     public string strDealers= "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        BindDealerList();
+        BindDealerList("");
+        if (!IsPostBack)
+        {
+            BindDealerList("");
+            GetAllCity();
+        }
     }
-    public void BindDealerList()
+    public void GetAllCity()
+    {
+        try
+        {
+            List<City> comps = City.GetAllCity(conAP);
+            if (comps.Count > 0)
+            {
+                ddlCity.Items.Clear();
+                ddlCity.DataSource = comps;
+                ddlCity.DataValueField = "Id";
+                ddlCity.DataTextField = "CityName";
+                ddlCity.DataBind();
+            }
+            ddlCity.Items.Insert(0, new ListItem("Select a City to filter dealers", ""));
+        }
+        catch (Exception ex)
+        {
+            ExceptionCapture.CaptureException(Request.Url.PathAndQuery, "GetAllCity", ex.Message);
+        }
+    }
+    protected void ddlCity_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        BindDealerList(ddlCity.SelectedItem.Value);
+    }
+    public void BindDealerList(string city)
     {
         try
         {
             strDealers = "";
-            List<DealersList> dealers = DealersList.GetAllDealerList(conAP);
+            List<DealersList> dealers = DealersList.GetDealerListByCity(conAP, city);
             if (dealers.Count > 0)
             {
                 foreach (DealersList del in dealers)
@@ -61,7 +90,7 @@ public partial class dealers : System.Web.UI.Page
                            <div>
                                <h3 class='fs-5 mb-6'>Contact</h3>
                                <div class='fs-6'>
-                                   <p class='mb-3 fs-6'>Mobile:<span class='text-body-emphasis'>"+ del.Phone+@"</span></p><p class='mb-0 fs-6'>
+                                   <p class='mb-3 fs-6'>City :<span class='text-body-emphasis'>"+ del.CityName+@"</span></p><p class='mb-3 fs-6'>Mobile :<span class='text-body-emphasis'>"+ del.Phone+@"</span></p><p class='mb-0 fs-6'>
                                        E-mail: "+ del.EmailId+@"
                                    </p>
                                </div>

@@ -156,6 +156,7 @@ public partial class Admin_add_enquiry_products : System.Web.UI.Page
                         if (res.Count > 0 && res[0].Id != Convert.ToInt32(Request.QueryString["id"]))
                         {
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Product Already Exist For this Subcategory Please Check',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+                            return;
                         }
                         cat.Id =Convert.ToInt32(Request.QueryString["id"]);
                         int result = EnquiryProduct.UpdateEnquiryProduct(conAP, cat);

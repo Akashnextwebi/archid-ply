@@ -1,8 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.master" AutoEventWireup="true" CodeFile="factory.aspx.cs" Inherits="factory" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style>
+        .new-bg {
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .new-left {
+            padding-left: 30px;
+        }
+
+            .new-left iframe {
+                border-radius: 6px;
+            }
+    </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <main id="content" class="wrapper layout-page">
 
 
@@ -35,12 +50,11 @@
         </div>
 
 
-        
 
 
-        <main id="content" class="wrapper layout-page">
-          
-            <section class="container  pt-6 pb-13 pb-lg-20">
+
+
+        <%--<section class="container  pt-6 pb-13 pb-lg-20">
                 <div class="row ">
                     <div class="col-md-12 col-xl-8 pe-lg-13">
 
@@ -80,11 +94,100 @@
                     </div>
 
                 </div>
-            </section>
-           
-            
-        </main>
-    
+            </section>--%>
+
+        <section class="container  pt-6 pb-13 pb-lg-20">
+            <div class="row new-bg align-items-center">
+                <div class="col-lg-7">
+                    <div class="text-start">
+                        <div class="text-start">
+                            <h2 class="fs-28px mb-3">Factory Name</h2>
+                            <p class="fs-18px">We’re talking about clean beauty gift sets, of course – and we’ve got a bouquet of beauties for yourself or someone you love.</p>
+                        </div>
+
+                    </div>
+                    <div class="d-flex align-items-start">
+
+
+                        <div>
+                            <h3 class="fs-5 mb-6">Address</h3>
+                            <div class="fs-6">
+                                <p class="mb-2 pb-4 fs-6">
+                                    3245 Abbot Kinney BLVD –
+                                        <br>
+                                    PH Venice, CA 124
+                                </p>
+                                <p>
+                                    76 East Houston Street
+                                        <br>
+                                    PH Venice, CA 124
+                                </p>
+                            </div>
+                            <a href="#" class="text-decoration-none border-bottom border-currentColor fw-semibold fs-6" contenteditable="false" style="cursor: pointer;">Get Direction</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="new-left">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d317859.6089702069!2d-0.075949!3d51.508112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760349331f38dd%3A0xa8bf49dde1d56467!2sTower%20of%20London!5e0!3m2!1sen!2sus!4v1719221598456!5m2!1sen!2sus" width="100%" height="394" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <h4 class="fw-bold mt-3">Gallery</h4>
+                    <div class="about-img">
+                        <div class="">
+                            <div class="">
+                                <div class="mx-n6 slick-slider"
+                                    data-slick-options='{
+                     "slidesToShow": 4,
+                     "infinite": true,
+                     "autoplay": true,
+                     "dots": true,
+                     "arrows": false,
+                     "responsive": [
+                         {"breakpoint": 1366, "settings": {"slidesToShow": 4}},
+                         {"breakpoint": 992, "settings": {"slidesToShow": 3}},
+                         {"breakpoint": 768, "settings": {"slidesToShow": 2}},
+                         {"breakpoint": 576, "settings": {"slidesToShow": 1}}
+                     ]
+                 }'>
+                                    <!-- Images -->
+                                    <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
+                                        <img src="assets/imgs/ps/Bhopal1.jpg" alt="Bhopal Image 1">
+                                    </a>
+                                    <a href="assets/imgs/ps/Bhopal3.jpg" data-lity>
+                                        <img src="assets/imgs/ps/Bhopal3.jpg" alt="Bhopal Image 2">
+                                    </a>
+                                      <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
+      <img src="assets/imgs/ps/Bhopal1.jpg" alt="Bhopal Image 1">
+  </a>
+  <a href="assets/imgs/ps/Bhopal3.jpg" data-lity>
+      <img src="assets/imgs/ps/Bhopal3.jpg" alt="Bhopal Image 2">
+  </a>
+                                                                      <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
+                                      <img src="assets/imgs/ps/Bhopal1.jpg" alt="Bhopal Image 1">
+                                  </a>
+                                  <a href="assets/imgs/ps/Bhopal3.jpg" data-lity>
+                                      <img src="assets/imgs/ps/Bhopal3.jpg" alt="Bhopal Image 2">
+                                  </a>
+                                    <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
+    <img src="assets/imgs/ps/Bhopal1.jpg" alt="Bhopal Image 1">
+</a>
+<a href="assets/imgs/ps/Bhopal3.jpg" data-lity>
+    <img src="assets/imgs/ps/Bhopal3.jpg" alt="Bhopal Image 2">
+</a>
+                                    <!-- Video -->
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -344,69 +447,91 @@
         </symbol>
         <symbol id="icon-box-01" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.6857" d="M16.133 16l-0.133 12.851"></path>
+                stroke-width="0.6857" d="M16.133 16l-0.133 12.851">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.6857"
-                  d="M27.5 21.917v-11.833c0-0.177-0.047-0.351-0.136-0.504s-0.218-0.279-0.372-0.367l-10.5-5.935c-0.15-0.085-0.32-0.129-0.492-0.129s-0.342 0.045-0.492 0.129l-10.5 5.935c-0.154 0.087-0.282 0.214-0.372 0.367s-0.136 0.327-0.136 0.504v11.833c0 0.177 0.047 0.351 0.136 0.504s0.218 0.279 0.372 0.367l10.5 5.935c0.15 0.085 0.32 0.129 0.492 0.129s0.342-0.045 0.492-0.129l10.5-5.935c0.154-0.087 0.282-0.214 0.372-0.367s0.136-0.327 0.136-0.504v0z"></path>
+                stroke-width="0.6857"
+                d="M27.5 21.917v-11.833c0-0.177-0.047-0.351-0.136-0.504s-0.218-0.279-0.372-0.367l-10.5-5.935c-0.15-0.085-0.32-0.129-0.492-0.129s-0.342 0.045-0.492 0.129l-10.5 5.935c-0.154 0.087-0.282 0.214-0.372 0.367s-0.136 0.327-0.136 0.504v11.833c0 0.177 0.047 0.351 0.136 0.504s0.218 0.279 0.372 0.367l10.5 5.935c0.15 0.085 0.32 0.129 0.492 0.129s0.342-0.045 0.492-0.129l10.5-5.935c0.154-0.087 0.282-0.214 0.372-0.367s0.136-0.327 0.136-0.504v0z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.6857" d="M27.363 9.578l-11.23 6.422-11.495-6.423"></path>
+                stroke-width="0.6857" d="M27.363 9.578l-11.23 6.422-11.495-6.423">
+            </path>
         </symbol>
         <symbol id="icon-box-02" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.6857"
-                  d="M6 13c0 9 10 16 10 16s10-7 10-16c0-2.652-1.054-5.196-2.929-7.071s-4.419-2.929-7.071-2.929-5.196 1.054-7.071 2.929c-1.875 1.875-2.929 4.419-2.929 7.071z"></path>
+                stroke-width="0.6857"
+                d="M6 13c0 9 10 16 10 16s10-7 10-16c0-2.652-1.054-5.196-2.929-7.071s-4.419-2.929-7.071-2.929-5.196 1.054-7.071 2.929c-1.875 1.875-2.929 4.419-2.929 7.071z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.6857" d="M16 3v26"></path>
+                stroke-width="0.6857" d="M16 3v26">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.6857" d="M16 23l-10-10"></path>
+                stroke-width="0.6857" d="M16 23l-10-10">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.6857" d="M16 17l-8.784-8.784"></path>
+                stroke-width="0.6857" d="M16 17l-8.784-8.784">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.6857" d="M16 11l-6-6"></path>
+                stroke-width="0.6857" d="M16 11l-6-6">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4"
-                  stroke-width="0.6857" d="M16 11l-6-6"></path>
+                stroke-width="0.6857" d="M16 11l-6-6">
+            </path>
         </symbol>
         <symbol id="icon-box-03" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.9143"
-                  d="M8.948 18l-4.948 4v-16c0-0.265 0.105-0.52 0.293-0.707s0.442-0.293 0.707-0.293h16c0.265 0 0.52 0.105 0.707 0.293s0.293 0.442 0.293 0.707v11c0 0.265-0.105 0.52-0.293 0.707s-0.442 0.293-0.707 0.293h-12.052z"></path>
+                stroke-width="0.9143"
+                d="M8.948 18l-4.948 4v-16c0-0.265 0.105-0.52 0.293-0.707s0.442-0.293 0.707-0.293h16c0.265 0 0.52 0.105 0.707 0.293s0.293 0.442 0.293 0.707v11c0 0.265-0.105 0.52-0.293 0.707s-0.442 0.293-0.707 0.293h-12.052z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.9143"
-                  d="M10 18v5c0 0.265 0.105 0.52 0.293 0.707s0.442 0.293 0.707 0.293h12.052l4.948 4v-16c0-0.265-0.105-0.52-0.293-0.707s-0.442-0.293-0.707-0.293h-5"></path>
+                stroke-width="0.9143"
+                d="M10 18v5c0 0.265 0.105 0.52 0.293 0.707s0.442 0.293 0.707 0.293h12.052l4.948 4v-16c0-0.265-0.105-0.52-0.293-0.707s-0.442-0.293-0.707-0.293h-5">
+            </path>
         </symbol>
         <symbol id="icon-box-04" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.9143"
-                  d="M28 7h-24c-0.552 0-1 0.448-1 1v16c0 0.552 0.448 1 1 1h24c0.552 0 1-0.448 1-1v-16c0-0.552-0.448-1-1-1z"></path>
+                stroke-width="0.9143"
+                d="M28 7h-24c-0.552 0-1 0.448-1 1v16c0 0.552 0.448 1 1 1h24c0.552 0 1-0.448 1-1v-16c0-0.552-0.448-1-1-1z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.9143" d="M20.999 21h4"></path>
+                stroke-width="0.9143" d="M20.999 21h4">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.9143" d="M14.999 21h2"></path>
+                stroke-width="0.9143" d="M14.999 21h2">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="0.9143" d="M2.999 12.106h26"></path>
+                stroke-width="0.9143" d="M2.999 12.106h26">
+            </path>
         </symbol>
         <symbol id="icon-box-05" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.6" d="M19.927 5c1.695 0.456 3.241 1.349 4.482 2.591s2.135 2.787 2.591 4.482"></path>
+                stroke-width="1.6" d="M19.927 5c1.695 0.456 3.241 1.349 4.482 2.591s2.135 2.787 2.591 4.482">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.6" d="M18.892 8.865c1.017 0.274 1.945 0.81 2.689 1.554s1.281 1.672 1.554 2.689"></path>
+                stroke-width="1.6" d="M18.892 8.865c1.017 0.274 1.945 0.81 2.689 1.554s1.281 1.672 1.554 2.689">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.6"
-                  d="M11.56 15.602c1.037 2.121 2.756 3.832 4.882 4.859 0.156 0.074 0.328 0.106 0.499 0.093s0.337-0.070 0.479-0.167l3.13-2.087c0.138-0.092 0.298-0.149 0.463-0.164s0.332 0.011 0.485 0.077l5.855 2.509c0.199 0.084 0.365 0.231 0.473 0.418s0.153 0.404 0.127 0.619c-0.185 1.448-0.892 2.779-1.987 3.744s-2.505 1.497-3.965 1.497c-4.509 0-8.833-1.791-12.021-4.979s-4.979-7.512-4.979-12.021c0-1.46 0.532-2.87 1.497-3.965s2.296-1.802 3.744-1.987c0.214-0.026 0.432 0.019 0.619 0.127s0.334 0.274 0.418 0.473l2.511 5.86c0.065 0.152 0.091 0.317 0.077 0.481s-0.069 0.322-0.16 0.46l-2.080 3.178c-0.095 0.143-0.151 0.308-0.162 0.479s0.021 0.342 0.095 0.497v0z"></path>
+                stroke-width="1.6"
+                d="M11.56 15.602c1.037 2.121 2.756 3.832 4.882 4.859 0.156 0.074 0.328 0.106 0.499 0.093s0.337-0.070 0.479-0.167l3.13-2.087c0.138-0.092 0.298-0.149 0.463-0.164s0.332 0.011 0.485 0.077l5.855 2.509c0.199 0.084 0.365 0.231 0.473 0.418s0.153 0.404 0.127 0.619c-0.185 1.448-0.892 2.779-1.987 3.744s-2.505 1.497-3.965 1.497c-4.509 0-8.833-1.791-12.021-4.979s-4.979-7.512-4.979-12.021c0-1.46 0.532-2.87 1.497-3.965s2.296-1.802 3.744-1.987c0.214-0.026 0.432 0.019 0.619 0.127s0.334 0.274 0.418 0.473l2.511 5.86c0.065 0.152 0.091 0.317 0.077 0.481s-0.069 0.322-0.16 0.46l-2.080 3.178c-0.095 0.143-0.151 0.308-0.162 0.479s0.021 0.342 0.095 0.497v0z">
+            </path>
         </symbol>
         <symbol id="icon-box-06" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10"
-                  stroke-width="1.6"
-                  d="M16 28c6.627 0 12-5.373 12-12s-5.373-12-12-12c-6.627 0-12 5.373-12 12s5.373 12 12 12z"></path>
+                stroke-width="1.6"
+                d="M16 28c6.627 0 12-5.373 12-12s-5.373-12-12-12c-6.627 0-12 5.373-12 12s5.373 12 12 12z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.6" d="M16 9v7h7"></path>
+                stroke-width="1.6" d="M16 9v7h7">
+            </path>
         </symbol>
         <symbol id="icon-box-07" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.6" d="M16 17c2.209 0 4-1.791 4-4s-1.791-4-4-4c-2.209 0-4 1.791-4 4s1.791 4 4 4z"></path>
+                stroke-width="1.6" d="M16 17c2.209 0 4-1.791 4-4s-1.791-4-4-4c-2.209 0-4 1.791-4 4s1.791 4 4 4z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.6"
-                  d="M26 13c0 9-10 16-10 16s-10-7-10-16c0-2.652 1.054-5.196 2.929-7.071s4.419-2.929 7.071-2.929 5.196 1.054 7.071 2.929c1.875 1.875 2.929 4.419 2.929 7.071v0z"></path>
+                stroke-width="1.6"
+                d="M26 13c0 9-10 16-10 16s-10-7-10-16c0-2.652 1.054-5.196 2.929-7.071s4.419-2.929 7.071-2.929 5.196 1.054 7.071 2.929c1.875 1.875 2.929 4.419 2.929 7.071v0z">
+            </path>
         </symbol>
         <symbol id="icon-arrows-left-right-light" viewBox="0 0 32 32">
             <path d="M28.629 22.407c-0.002 0.003-0.003 0.005-0.005 0.008-0.029 0.043-0.060 0.081-0.095 0.116v0l-4 4c-0.136 0.136-0.323 0.219-0.53 0.219-0.414 0-0.75-0.336-0.75-0.75 0-0.207 0.084-0.394 0.219-0.53v0l2.72-2.72h-22.189c-0.414 0-0.75-0.336-0.75-0.75s0.336-0.75 0.75-0.75v0h22.189l-2.72-2.72c-0.136-0.136-0.219-0.323-0.219-0.53 0-0.414 0.336-0.75 0.75-0.75 0.207 0 0.394 0.084 0.53 0.219v0l4 4c0.035 0.035 0.066 0.072 0.093 0.113l0.002 0.003c0.002 0.003 0.003 0.005 0.005 0.008 0.023 0.035 0.045 0.075 0.062 0.117l0.002 0.005c0.001 0.003 0.002 0.006 0.003 0.009 0.015 0.037 0.029 0.080 0.038 0.125l0.001 0.005c0 0.002 0.001 0.005 0.001 0.007 0.008 0.041 0.013 0.089 0.013 0.138s-0.005 0.096-0.014 0.143l0.001-0.005c-0 0.002-0.001 0.005-0.001 0.007-0.010 0.050-0.023 0.094-0.040 0.135l0.002-0.005c-0.001 0.003-0.002 0.006-0.003 0.009-0.020 0.047-0.041 0.087-0.066 0.125l0.002-0.003zM3.306 9.715c-0.001 0.003-0.002 0.006-0.003 0.009-0.015 0.037-0.029 0.080-0.038 0.126l-0.001 0.005c-0.001 0.002-0.001 0.005-0.001 0.007-0.008 0.041-0.013 0.089-0.013 0.138s0.005 0.097 0.014 0.143l-0.001-0.005c0 0.002 0.001 0.005 0.001 0.007 0.010 0.050 0.023 0.094 0.040 0.135l-0.002-0.005c0.001 0.003 0.002 0.006 0.003 0.009 0.020 0.047 0.041 0.087 0.066 0.125l-0.002-0.003c0.002 0.003 0.003 0.005 0.005 0.008 0.029 0.043 0.060 0.081 0.095 0.116v0l4 4c0.136 0.136 0.323 0.22 0.531 0.22 0.414 0 0.75-0.336 0.75-0.75 0-0.207-0.084-0.395-0.22-0.531v0l-2.72-2.72h22.189c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0h-22.189l2.72-2.72c0.136-0.136 0.22-0.323 0.22-0.531 0-0.414-0.336-0.75-0.75-0.75-0.207 0-0.395 0.084-0.531 0.22v0l-3.999 4c-0.035 0.035-0.066 0.072-0.093 0.113l-0.002 0.003c-0.002 0.003-0.003 0.005-0.005 0.008-0.023 0.035-0.045 0.075-0.062 0.117l-0.002 0.005z"></path>
@@ -428,44 +553,57 @@
         </symbol>
         <symbol id="icon-Pencil" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2"
-                  d="M11.586 27h-5.586c-0.265 0-0.52-0.105-0.707-0.293s-0.293-0.442-0.293-0.707v-5.586c0-0.131 0.026-0.261 0.076-0.383s0.124-0.232 0.217-0.324l15-15c0.188-0.188 0.442-0.293 0.707-0.293s0.52 0.105 0.707 0.293l5.586 5.586c0.188 0.188 0.293 0.442 0.293 0.707s-0.105 0.52-0.293 0.707l-15 15c-0.093 0.093-0.203 0.166-0.324 0.217s-0.251 0.076-0.383 0.076z"></path>
+                stroke-width="2"
+                d="M11.586 27h-5.586c-0.265 0-0.52-0.105-0.707-0.293s-0.293-0.442-0.293-0.707v-5.586c0-0.131 0.026-0.261 0.076-0.383s0.124-0.232 0.217-0.324l15-15c0.188-0.188 0.442-0.293 0.707-0.293s0.52 0.105 0.707 0.293l5.586 5.586c0.188 0.188 0.293 0.442 0.293 0.707s-0.105 0.52-0.293 0.707l-15 15c-0.093 0.093-0.203 0.166-0.324 0.217s-0.251 0.076-0.383 0.076z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2" d="M17 8l7 7"></path>
+                stroke-width="2" d="M17 8l7 7">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2" d="M11.937 26.936l-6.872-6.873"></path>
+                stroke-width="2" d="M11.937 26.936l-6.872-6.873">
+            </path>
         </symbol>
         <symbol id="icon-ChatsCircle" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2"
-                  d="M4.259 17.593c-1.118-1.885-1.51-4.113-1.101-6.267s1.589-4.083 3.32-5.428c1.731-1.344 3.893-2.011 6.080-1.874s4.25 1.068 5.799 2.617c1.55 1.55 2.48 3.612 2.617 5.799s-0.53 4.35-1.874 6.080c-1.344 1.731-3.275 2.911-5.428 3.32s-4.382 0.017-6.267-1.101h0l-3.108 0.888c-0.129 0.037-0.265 0.038-0.394 0.005s-0.248-0.101-0.342-0.196c-0.095-0.094-0.162-0.213-0.196-0.342s-0.032-0.265 0.005-0.394l0.888-3.108z"></path>
+                stroke-width="2"
+                d="M4.259 17.593c-1.118-1.885-1.51-4.113-1.101-6.267s1.589-4.083 3.32-5.428c1.731-1.344 3.893-2.011 6.080-1.874s4.25 1.068 5.799 2.617c1.55 1.55 2.48 3.612 2.617 5.799s-0.53 4.35-1.874 6.080c-1.344 1.731-3.275 2.911-5.428 3.32s-4.382 0.017-6.267-1.101h0l-3.108 0.888c-0.129 0.037-0.265 0.038-0.394 0.005s-0.248-0.101-0.342-0.196c-0.095-0.094-0.162-0.213-0.196-0.342s-0.032-0.265 0.005-0.394l0.888-3.108z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2"
-                  d="M11.508 21.987c0.442 1.256 1.158 2.398 2.095 3.344s2.072 1.673 3.324 2.128c1.252 0.455 2.588 0.626 3.914 0.502s2.608-0.541 3.753-1.22v0l3.108 0.888c0.129 0.037 0.265 0.039 0.394 0.005s0.248-0.101 0.342-0.196 0.162-0.213 0.196-0.342c0.034-0.129 0.032-0.266-0.005-0.394l-0.888-3.108c0.789-1.331 1.222-2.843 1.257-4.389s-0.33-3.076-1.058-4.441c-0.728-1.365-1.797-2.519-3.101-3.351s-2.801-1.314-4.346-1.399"></path>
+                stroke-width="2"
+                d="M11.508 21.987c0.442 1.256 1.158 2.398 2.095 3.344s2.072 1.673 3.324 2.128c1.252 0.455 2.588 0.626 3.914 0.502s2.608-0.541 3.753-1.22v0l3.108 0.888c0.129 0.037 0.265 0.039 0.394 0.005s0.248-0.101 0.342-0.196 0.162-0.213 0.196-0.342c0.034-0.129 0.032-0.266-0.005-0.394l-0.888-3.108c0.789-1.331 1.222-2.843 1.257-4.389s-0.33-3.076-1.058-4.441c-0.728-1.365-1.797-2.519-3.101-3.351s-2.801-1.314-4.346-1.399">
+            </path>
         </symbol>
         <symbol id="icon-Camera" viewBox="0 0 30 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.6842"
-                  d="M24.632 24.965h-18.947c-0.503 0-0.984-0.2-1.34-0.555s-0.555-0.837-0.555-1.34v-13.263c0-0.503 0.2-0.984 0.555-1.34s0.837-0.555 1.34-0.555h3.789l1.895-2.842h7.579l1.895 2.842h3.79c0.503 0 0.984 0.2 1.34 0.555s0.555 0.837 0.555 1.34v13.263c0 0.503-0.2 0.984-0.555 1.34s-0.837 0.555-1.34 0.555z"></path>
+                stroke-width="1.6842"
+                d="M24.632 24.965h-18.947c-0.503 0-0.984-0.2-1.34-0.555s-0.555-0.837-0.555-1.34v-13.263c0-0.503 0.2-0.984 0.555-1.34s0.837-0.555 1.34-0.555h3.789l1.895-2.842h7.579l1.895 2.842h3.79c0.503 0 0.984 0.2 1.34 0.555s0.555 0.837 0.555 1.34v13.263c0 0.503-0.2 0.984-0.555 1.34s-0.837 0.555-1.34 0.555z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.6842"
-                  d="M15.158 20.228c2.355 0 4.263-1.909 4.263-4.263s-1.909-4.263-4.263-4.263c-2.354 0-4.263 1.909-4.263 4.263s1.909 4.263 4.263 4.263z"></path>
+                stroke-width="1.6842"
+                d="M15.158 20.228c2.355 0 4.263-1.909 4.263-4.263s-1.909-4.263-4.263-4.263c-2.354 0-4.263 1.909-4.263 4.263s1.909 4.263 4.263 4.263z">
+            </path>
         </symbol>
         <symbol id="icon-SlidersHorizontal" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2" d="M18.5 21.499h-13.5"></path>
+                stroke-width="2" d="M18.5 21.499h-13.5">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2" d="M27 21.499h-3.5"></path>
+                stroke-width="2" d="M27 21.499h-3.5">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2"
-                  d="M21 23.999c1.381 0 2.5-1.119 2.5-2.5s-1.119-2.5-2.5-2.5c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5z"></path>
+                stroke-width="2"
+                d="M21 23.999c1.381 0 2.5-1.119 2.5-2.5s-1.119-2.5-2.5-2.5c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2" d="M10.5 10.499l-5.5-0"></path>
+                stroke-width="2" d="M10.5 10.499l-5.5-0">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2" d="M27 10.499l-11.5 0"></path>
+                stroke-width="2" d="M27 10.499l-11.5 0">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2"
-                  d="M13 12.999c1.381 0 2.5-1.119 2.5-2.5s-1.119-2.5-2.5-2.5c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5z"></path>
+                stroke-width="2"
+                d="M13 12.999c1.381 0 2.5-1.119 2.5-2.5s-1.119-2.5-2.5-2.5c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5z">
+            </path>
         </symbol>
         <symbol id="icon-text-align-left-light" viewBox="0 0 32 32">
             <path d="M4.25 8.5c0-0.414 0.336-0.75 0.75-0.75h22c0.414 0 0.75 0.336 0.75 0.75s-0.336 0.75-0.75 0.75v0h-22c-0.414-0-0.75-0.336-0.75-0.75v0zM5 14.25h16c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0h-16c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0zM27 17.75h-21.999c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h21.999c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM21 22.75h-15.999c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h15.999c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0z"></path>
@@ -478,12 +616,15 @@
         </symbol>
         <symbol id="icon-Timer" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10"
-                  stroke-width="2.4"
-                  d="M16 28.6c6.075 0 11-4.925 11-11s-4.925-11-11-11c-6.075 0-11 4.925-11 11s4.925 11 11 11z"></path>
+                stroke-width="2.4"
+                d="M16 28.6c6.075 0 11-4.925 11-11s-4.925-11-11-11c-6.075 0-11 4.925-11 11s4.925 11 11 11z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2.4" d="M16 17.6l4.95-4.95"></path>
+                stroke-width="2.4" d="M16 17.6l4.95-4.95">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2.4" d="M13 2.6h6"></path>
+                stroke-width="2.4" d="M13 2.6h6">
+            </path>
         </symbol>
         <symbol id="icon-delivery-1" viewBox="0 0 32 32">
             <path d="M24.168 19.025c-2.224 0-4.034 1.809-4.034 4.034s1.809 4.034 4.034 4.034c2.225 0 4.034-1.809 4.034-4.034s-1.809-4.034-4.034-4.034zM24.168 25.075c-1.112 0-2.017-0.904-2.017-2.017s0.904-2.017 2.017-2.017 2.017 0.905 2.017 2.017c0 1.112-0.904 2.017-2.017 2.017z"></path>
@@ -498,14 +639,18 @@
         </symbol>
         <symbol id="icon-Package" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.92" d="M16.117 16l-0.133 12.851"></path>
+                stroke-width="1.92" d="M16.117 16l-0.133 12.851">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.92"
-                  d="M27.484 21.917v-11.833c0-0.177-0.047-0.351-0.136-0.504s-0.218-0.279-0.372-0.367l-10.5-5.935c-0.15-0.085-0.32-0.129-0.492-0.129s-0.342 0.045-0.492 0.129l-10.5 5.935c-0.154 0.087-0.282 0.214-0.372 0.367s-0.136 0.327-0.136 0.504v11.833c0 0.177 0.047 0.351 0.136 0.504s0.218 0.28 0.372 0.367l10.5 5.935c0.15 0.085 0.32 0.129 0.492 0.129s0.342-0.045 0.492-0.129l10.5-5.935c0.154-0.087 0.282-0.214 0.372-0.367s0.136-0.327 0.136-0.504v0z"></path>
+                stroke-width="1.92"
+                d="M27.484 21.917v-11.833c0-0.177-0.047-0.351-0.136-0.504s-0.218-0.279-0.372-0.367l-10.5-5.935c-0.15-0.085-0.32-0.129-0.492-0.129s-0.342 0.045-0.492 0.129l-10.5 5.935c-0.154 0.087-0.282 0.214-0.372 0.367s-0.136 0.327-0.136 0.504v11.833c0 0.177 0.047 0.351 0.136 0.504s0.218 0.28 0.372 0.367l10.5 5.935c0.15 0.085 0.32 0.129 0.492 0.129s0.342-0.045 0.492-0.129l10.5-5.935c0.154-0.087 0.282-0.214 0.372-0.367s0.136-0.327 0.136-0.504v0z">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.92" d="M27.35 9.578l-11.23 6.422-11.495-6.423"></path>
+                stroke-width="1.92" d="M27.35 9.578l-11.23 6.422-11.495-6.423">
+            </path>
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="1.92" d="M22.129 18.564v-6l-11.597-6.48"></path>
+                stroke-width="1.92" d="M22.129 18.564v-6l-11.597-6.48">
+            </path>
         </symbol>
         <symbol id="icon-plus" viewBox="0 0 32 32">
             <path d="M28 16c0 0 0 0 0 0 0 0.552-0.448 1-1 1 0 0-0 0-0 0h-10v10c0 0.552-0.448 1-1 1s-1-0.448-1-1v0-10h-10c-0.552 0-1-0.448-1-1s0.448-1 1-1v0h10v-10c0-0.552 0.448-1 1-1s1 0.448 1 1v0 10h10c0 0 0 0 0 0 0.552 0 1 0.448 1 1 0 0 0 0 0 0v0z"></path>
@@ -515,34 +660,43 @@
         </symbol>
         <symbol id="icon-ShareNetwork" viewBox="0 0 32 32">
             <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4"
-                  d="M8 20c2.209 0 4-1.791 4-4s-1.791-4-4-4c-2.209 0-4 1.791-4 4s1.791 4 4 4z"></path>
+                d="M8 20c2.209 0 4-1.791 4-4s-1.791-4-4-4c-2.209 0-4 1.791-4 4s1.791 4 4 4z">
+            </path>
             <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4"
-                  d="M22 29c2.209 0 4-1.791 4-4s-1.791-4-4-4c-2.209 0-4 1.791-4 4s1.791 4 4 4z"></path>
+                d="M22 29c2.209 0 4-1.791 4-4s-1.791-4-4-4c-2.209 0-4 1.791-4 4s1.791 4 4 4z">
+            </path>
             <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4"
-                  d="M22 11c2.209 0 4-1.791 4-4s-1.791-4-4-4c-2.209 0-4 1.791-4 4s1.791 4 4 4z"></path>
+                d="M22 11c2.209 0 4-1.791 4-4s-1.791-4-4-4c-2.209 0-4 1.791-4 4s1.791 4 4 4z">
+            </path>
             <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4"
-                  d="M18.634 9.163l-7.271 4.674"></path>
+                d="M18.634 9.163l-7.271 4.674">
+            </path>
             <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4"
-                  d="M11.363 18.163l7.271 4.674"></path>
+                d="M11.363 18.163l7.271 4.674">
+            </path>
         </symbol>
         <symbol id="icon-card" viewBox="0 0 39 32">
             <path fill="currentColor" stroke="currentColor"
-                  d="M38.685 3.756c-0.51-0.603-1.225-0.972-2.012-1.037l-27.735-2.316c-0.788-0.066-1.553 0.179-2.157 0.689-0.601 0.508-0.969 1.219-1.037 2.003l-0.558 5.235h-2.228c-1.631 0-2.958 1.327-2.958 2.958v17.362c0 1.631 1.327 2.958 2.958 2.958h27.832c1.631 0 2.958-1.327 2.958-2.958v-2.816l0.988 0.082c0.083 0.007 0.166 0.010 0.248 0.010 1.521 0 2.817-1.17 2.946-2.712l1.445-17.301c0.066-0.787-0.179-1.553-0.689-2.157v0zM2.958 9.868h27.832c0.783 0 1.42 0.637 1.42 1.42v1.582h-30.671v-1.582c0-0.783 0.637-1.42 1.42-1.42v0zM1.538 14.409h30.671v3.191h-30.671v-3.191zM30.79 30.069h-27.832c-0.783 0-1.42-0.637-1.42-1.42v-9.511h30.671v9.511c0 0.783-0.637 1.42-1.42 1.42zM37.841 5.785l-1.445 17.301c-0.065 0.78-0.753 1.362-1.533 1.297l-1.116-0.093v-13.001c0-1.631-1.327-2.958-2.958-2.958h-24.056l0.541-5.080c0.001-0.006 0.001-0.012 0.002-0.018 0.065-0.78 0.753-1.362 1.533-1.297l27.735 2.316c0.378 0.032 0.721 0.208 0.966 0.498s0.362 0.657 0.331 1.035v0z"></path>
+                d="M38.685 3.756c-0.51-0.603-1.225-0.972-2.012-1.037l-27.735-2.316c-0.788-0.066-1.553 0.179-2.157 0.689-0.601 0.508-0.969 1.219-1.037 2.003l-0.558 5.235h-2.228c-1.631 0-2.958 1.327-2.958 2.958v17.362c0 1.631 1.327 2.958 2.958 2.958h27.832c1.631 0 2.958-1.327 2.958-2.958v-2.816l0.988 0.082c0.083 0.007 0.166 0.010 0.248 0.010 1.521 0 2.817-1.17 2.946-2.712l1.445-17.301c0.066-0.787-0.179-1.553-0.689-2.157v0zM2.958 9.868h27.832c0.783 0 1.42 0.637 1.42 1.42v1.582h-30.671v-1.582c0-0.783 0.637-1.42 1.42-1.42v0zM1.538 14.409h30.671v3.191h-30.671v-3.191zM30.79 30.069h-27.832c-0.783 0-1.42-0.637-1.42-1.42v-9.511h30.671v9.511c0 0.783-0.637 1.42-1.42 1.42zM37.841 5.785l-1.445 17.301c-0.065 0.78-0.753 1.362-1.533 1.297l-1.116-0.093v-13.001c0-1.631-1.327-2.958-2.958-2.958h-24.056l0.541-5.080c0.001-0.006 0.001-0.012 0.002-0.018 0.065-0.78 0.753-1.362 1.533-1.297l27.735 2.316c0.378 0.032 0.721 0.208 0.966 0.498s0.362 0.657 0.331 1.035v0z">
+            </path>
             <path fill="currentColor" stroke="currentColor"
-                  d="M28.99 21.425h-7.403c-0.425 0-0.769 0.344-0.769 0.769v4.83c0 0.425 0.344 0.769 0.769 0.769h7.403c0.425 0 0.769-0.344 0.769-0.769v-4.83c0-0.425-0.344-0.769-0.769-0.769zM28.221 26.255h-5.865v-3.291h5.865v3.291z"></path>
+                d="M28.99 21.425h-7.403c-0.425 0-0.769 0.344-0.769 0.769v4.83c0 0.425 0.344 0.769 0.769 0.769h7.403c0.425 0 0.769-0.344 0.769-0.769v-4.83c0-0.425-0.344-0.769-0.769-0.769zM28.221 26.255h-5.865v-3.291h5.865v3.291z">
+            </path>
         </symbol>
         <symbol id="icon-paylay" viewBox="0 0 32 32">
             <path d="M28.982 7.663c-0.102-1.629-0.636-3.023-1.596-4.162-1.829-2.17-5.116-3.314-9.507-3.314-1.708-0-10.539-0.186-10.628-0.186-0.006 0-0.011 0-0.017 0-0.355 0-0.665 0.239-0.743 0.587l-5.922 26.421c-0.051 0.226 0.004 0.455 0.149 0.636s0.363 0.278 0.594 0.278h3.927l-0.716 3.139c-0.052 0.226 0.002 0.467 0.147 0.648s0.363 0.291 0.595 0.291h9.904c0.364 0 0.679-0.259 0.747-0.618l1.242-6.457 4.638-0.038c0.023-0 0.046-0.001 0.069-0.004 0.078-0.008 7.864-0.884 9.416-9.937 0.668-3.902-0.81-6.095-2.299-7.282zM7.841 1.523c2.068 0.045 8.561 0.19 10.038 0.19 3.871 0 6.834 1 8.343 2.791 1.125 1.335 1.496 3.201 1.103 5.493-1.401 8.175-7.955 9.166-8.546 9.234l-5.531 0.064c-0.002 0-0.004 0-0.005 0-0.364 0-0.677 0.152-0.747 0.51l-1.318 6.601h-8.914l5.577-24.882zM29.78 14.687c-1.319 7.695-7.49 8.61-8.036 8.676l-5.223 0.042c-0.362 0.003-0.672 0.266-0.741 0.622l-1.24 6.457h-8.319l0.581-2.562h5.002c0.364 0 0.677-0.25 0.747-0.607l1.318-6.699 4.943 0.036c0.025 0 0.051 0 0.077-0.002 0.083-0.008 8.3-0.886 9.938-10.446 0.027-0.158 0.051-0.315 0.072-0.47 0.938 1.236 1.235 2.895 0.883 4.953z"></path>
         </symbol>
         <symbol id="icon-Play" viewBox="0 0 32 32">
             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2"
-                  d="M28.519 15.147l-17.997-10.999c-0.152-0.093-0.325-0.143-0.503-0.147s-0.353 0.041-0.508 0.128c-0.155 0.087-0.284 0.213-0.374 0.367s-0.137 0.328-0.137 0.505v21.997c0 0.178 0.047 0.352 0.137 0.505s0.219 0.28 0.374 0.367c0.155 0.087 0.33 0.131 0.508 0.128s0.351-0.054 0.503-0.147l17.997-10.999c0.146-0.089 0.267-0.215 0.351-0.364s0.128-0.318 0.128-0.489-0.044-0.34-0.128-0.489c-0.084-0.149-0.205-0.275-0.351-0.364z"></path>
+                stroke-width="2"
+                d="M28.519 15.147l-17.997-10.999c-0.152-0.093-0.325-0.143-0.503-0.147s-0.353 0.041-0.508 0.128c-0.155 0.087-0.284 0.213-0.374 0.367s-0.137 0.328-0.137 0.505v21.997c0 0.178 0.047 0.352 0.137 0.505s0.219 0.28 0.374 0.367c0.155 0.087 0.33 0.131 0.508 0.128s0.351-0.054 0.503-0.147l17.997-10.999c0.146-0.089 0.267-0.215 0.351-0.364s0.128-0.318 0.128-0.489-0.044-0.34-0.128-0.489c-0.084-0.149-0.205-0.275-0.351-0.364z">
+            </path>
         </symbol>
         <symbol id="icon-play-fill" viewBox="0 0 32 32">
             <path fill="True" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
-                  stroke-width="2"
-                  d="M28.519 15.147l-17.997-10.999c-0.152-0.093-0.325-0.143-0.503-0.147s-0.353 0.041-0.508 0.128c-0.155 0.087-0.284 0.213-0.374 0.367s-0.137 0.328-0.137 0.505v21.997c0 0.178 0.047 0.352 0.137 0.505s0.219 0.28 0.374 0.367c0.155 0.087 0.33 0.131 0.508 0.128s0.351-0.054 0.503-0.147l17.997-10.999c0.146-0.089 0.267-0.215 0.351-0.364s0.128-0.318 0.128-0.489-0.044-0.34-0.128-0.489c-0.084-0.149-0.205-0.275-0.351-0.364z"></path>
+                stroke-width="2"
+                d="M28.519 15.147l-17.997-10.999c-0.152-0.093-0.325-0.143-0.503-0.147s-0.353 0.041-0.508 0.128c-0.155 0.087-0.284 0.213-0.374 0.367s-0.137 0.328-0.137 0.505v21.997c0 0.178 0.047 0.352 0.137 0.505s0.219 0.28 0.374 0.367c0.155 0.087 0.33 0.131 0.508 0.128s0.351-0.054 0.503-0.147l17.997-10.999c0.146-0.089 0.267-0.215 0.351-0.364s0.128-0.318 0.128-0.489-0.044-0.34-0.128-0.489c-0.084-0.149-0.205-0.275-0.351-0.364z">
+            </path>
         </symbol>
         <symbol id="icon-chevron-left" viewBox="0 0 256 512">
             <path d="M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z" />
@@ -632,8 +786,8 @@
             <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
         </symbol>
         <svg id="moon-stars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21"
-             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-             class="feather feather-moon icon">
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-moon icon">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
     </svg>
@@ -674,7 +828,7 @@
                 <table class="table table-borderless">
                     <thead>
                         <tr class="fw-500">
-                            <td colspan="3" class="border-bottom pb-6"><i class="far fa-check fs-12px border me-4 px-2 py-1 text-body-emphasis border-dark rounded-circle"></i> Your cart is saved for the next <span class="text-body-emphasis">4m34s</span></td>
+                            <td colspan="3" class="border-bottom pb-6"><i class="far fa-check fs-12px border me-4 px-2 py-1 text-body-emphasis border-dark rounded-circle"></i>Your cart is saved for the next <span class="text-body-emphasis">4m34s</span></td>
                         </tr>
                     </thead>
                     <tbody>
@@ -883,10 +1037,14 @@
                                     </div>
                                 </div>
                                 <div id="slider" class="slick-slider slick-slider-arrow-inside slick-slider-dots-inside slick-slider-dots-light g-0" data-slick-options='{&#34;arrows&#34;:false,&#34;asNavFor&#34;:&#34;#slider-thumb&#34;,&#34;dots&#34;:false,&#34;slidesToShow&#34;:1}'>
-                                    <a href="assets/images/shop/product-gallery-05.jpg" data-gallery="gallery1" data-thumb-src="assets/images/shop/product-gallery-05.jpg"><img src="#" data-src="./assets/images/shop/product-gallery-05.jpg" class="h-auto lazy-image" width="540" height="720" alt=""></a>
-                                    <a href="assets/images/shop/product-gallery-06.jpg" data-gallery="gallery1" data-thumb-src="assets/images/shop/product-gallery-06.jpg"><img src="#" data-src="./assets/images/shop/product-gallery-06.jpg" class="h-auto lazy-image" width="540" height="720" alt=""></a>
-                                    <a href="assets/images/shop/product-gallery-07.jpg" data-gallery="gallery1" data-thumb-src="assets/images/shop/product-gallery-07.jpg"><img src="#" data-src="./assets/images/shop/product-gallery-07.jpg" class="h-auto lazy-image" width="540" height="720" alt=""></a>
-                                    <a href="assets/images/shop/product-gallery-08.jpg" data-gallery="gallery1" data-thumb-src="assets/images/shop/product-gallery-08.jpg"><img src="#" data-src="./assets/images/shop/product-gallery-08.jpg" class="h-auto lazy-image" width="540" height="720" alt=""></a>
+                                    <a href="assets/images/shop/product-gallery-05.jpg" data-gallery="gallery1" data-thumb-src="assets/images/shop/product-gallery-05.jpg">
+                                        <img src="#" data-src="./assets/images/shop/product-gallery-05.jpg" class="h-auto lazy-image" width="540" height="720" alt=""></a>
+                                    <a href="assets/images/shop/product-gallery-06.jpg" data-gallery="gallery1" data-thumb-src="assets/images/shop/product-gallery-06.jpg">
+                                        <img src="#" data-src="./assets/images/shop/product-gallery-06.jpg" class="h-auto lazy-image" width="540" height="720" alt=""></a>
+                                    <a href="assets/images/shop/product-gallery-07.jpg" data-gallery="gallery1" data-thumb-src="assets/images/shop/product-gallery-07.jpg">
+                                        <img src="#" data-src="./assets/images/shop/product-gallery-07.jpg" class="h-auto lazy-image" width="540" height="720" alt=""></a>
+                                    <a href="assets/images/shop/product-gallery-08.jpg" data-gallery="gallery1" data-thumb-src="assets/images/shop/product-gallery-08.jpg">
+                                        <img src="#" data-src="./assets/images/shop/product-gallery-08.jpg" class="h-auto lazy-image" width="540" height="720" alt=""></a>
                                 </div>
                             </div>
                             <div class="mt-6">
@@ -905,8 +1063,7 @@
                                 <span class="badge text-bg-primary fs-6 fw-semibold ms-7 px-6 py-3">20%</span>
                             </p>
                             <h1 class="mb-4 pb-2 fs-4">
-                                <a href="shop/" title="Natural Coconut Cleansing Oil">
-                                    Natural Coconut Cleansing Oil
+                                <a href="shop/" title="Natural Coconut Cleansing Oil">Natural Coconut Cleansing Oil
                                 </a>
                             </h1>
                             <div class="d-flex align-items-center fs-15px mb-6">
@@ -941,7 +1098,7 @@
                                             </span>
                                         </div>
                                         <div class="filled-stars"
-                                             style="width: 100%">
+                                            style="width: 100%">
                                             <span class="star">
                                                 <svg class="icon star text-primary">
                                                     <use xlink:href="#star"></use>
@@ -983,12 +1140,14 @@
                                     17 people
                                 </span>
                                 are viewing this right now
+                           
                             </p>
                             <p class="mb-4 pb-2 text-body-emphasis">
                                 <svg class="icon fs-5 me-4 pe-2 align-text-bottom">
                                     <use xlink:href="#icon-Timer"></use>
                                 </svg>
                                 Only 9 left in stock
+                           
                             </p>
                             <div class="progress mb-7" style="height: 4px;">
                                 <div class="progress-bar w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -1008,6 +1167,7 @@
                                     <div class="col-sm-8 pt-9 mt-2 mt-sm-0 pt-sm-0">
                                         <button type="submit" class="btn-hover-bg-primary btn-hover-border-primary btn btn-lg btn-dark w-100">
                                             Add To Bag
+                                       
                                         </button>
                                     </div>
                                 </div>
@@ -1018,14 +1178,16 @@
                                     <svg class="icon fs-28px me-2 pe-4">
                                         <use xlink:href="#icon-delivery-1"></use>
                                     </svg>Get it between:
-                                </span> Feb 3 - Feb 14,2021
+                                </span>Feb 3 - Feb 14,2021
+                           
                             </p>
                             <p class="mb-4 pb-2">
                                 <span class="text-body-emphasis">
                                     <svg class="icon fs-28px me-2 pe-4">
                                         <use xlink:href="#icon-Package"></use>
                                     </svg>Free Shipping & Returns:
-                                </span> On all orders over $200
+                                </span>On all orders over $200
+                           
                             </p>
                             <div class="card border-0 bg-body-tertiary rounded text-center mt-7">
                                 <div class="pt-8 px-5">
@@ -1048,13 +1210,13 @@
 
                             <ul class="list-inline d-flex justify-content-start mb-0 fs-6">
                                 <li class="list-inline-item">
-                                    <a class="text-body text-decoration-none product-info-share product-info-share" href="#"><i class="fab fa-facebook-f me-4"></i> Facebook</a>
+                                    <a class="text-body text-decoration-none product-info-share product-info-share" href="#"><i class="fab fa-facebook-f me-4"></i>Facebook</a>
                                 </li>
                                 <li class="list-inline-item ms-7">
-                                    <a class="text-body text-decoration-none product-info-share product-info-share" href="#"><i class="fab fa-instagram me-4"></i> Instagram</a>
+                                    <a class="text-body text-decoration-none product-info-share product-info-share" href="#"><i class="fab fa-instagram me-4"></i>Instagram</a>
                                 </li>
                                 <li class="list-inline-item ms-7">
-                                    <a class="text-body text-decoration-none product-info-share product-info-share" href="#"><i class="fab fa-youtube me-4"></i> Youtube</a>
+                                    <a class="text-body text-decoration-none product-info-share product-info-share" href="#"><i class="fab fa-youtube me-4"></i>Youtube</a>
                                 </li>
                             </ul>
 
@@ -1091,101 +1253,105 @@
 
                     <li class="nav-item transition-all-xl-1 py-0 dropdown dropdown-fullwidth position-static">
                         <a class="nav-link d-flex justify-content-between position-relative text-uppercase fw-semibold ls-1 fs-15px dropdown-toggle"
-                           href="/shop" data-bs-toggle="dropdown" id="menu-item-shop-canvas" aria-haspopup="true" aria-expanded="false">OUR PRODUCTS</a><div class="dropdown-menu mega-menu start-0 py-6  w-100"
-                                                                                                                                                                  aria-labelledby="menu-item-shop-canvas">
-                            <div class="megamenu-shop container-wide py-8 px-12">
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 class="fs-18px">Gurjan Based Plywood</h6><ul class="list-unstyled mb-0">
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Premium Plywood   </span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Archidply Club Plus </span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Archidply Club </span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Archidply Flexible Plywood</span></a>
-                                            </li>
+                            href="/shop" data-bs-toggle="dropdown" id="menu-item-shop-canvas" aria-haspopup="true" aria-expanded="false">OUR PRODUCTS</a><div class="dropdown-menu mega-menu start-0 py-6  w-100"
+                                aria-labelledby="menu-item-shop-canvas">
+                                <div class="megamenu-shop container-wide py-8 px-12">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 class="fs-18px">Gurjan Based Plywood</h6>
+                                            <ul class="list-unstyled mb-0">
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Premium Plywood   </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Archidply Club Plus </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Archidply Club </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Archidply Flexible Plywood</span></a>
+                                                </li>
 
-                                        </ul>
-                                    </div><div class="col">
-                                        <h6 class="fs-18px">The Decorative Veneer Collection</h6>
-                                        <ul class="list-unstyled mb-0">
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Premium </span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Decorative Veneers   <sup>v2</sup></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Teak Veneers </span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Engineered Veneer</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">New Arivals </span></a>
-                                            </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col">
+                                            <h6 class="fs-18px">The Decorative Veneer Collection</h6>
+                                            <ul class="list-unstyled mb-0">
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Premium </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Decorative Veneers   <sup>v2</sup></span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Teak Veneers </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Engineered Veneer</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">New Arivals </span></a>
+                                                </li>
 
-                                        </ul>
-                                    </div><div class="col">
-                                        <h6 class="fs-18px">Pre-laminated Particle Board</h6><ul class="list-unstyled mb-0">
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Pre-laminated Particle Board and MDF</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Pre-laminated MDF Board</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Plain Particle Board </span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Plain MDF</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Pre-veneered Particle Board and MDF </span></a>
-                                            </li>
-                                        </ul>
-                                    </div><div class="col">
-                                        <h6 class="fs-18px">Bon Vivant</h6><ul class="list-unstyled mb-0">
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Coating Services</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Decorative Lumber</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Solid Wood Flooring </span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Tabletops</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Veneered Wallpanel </span></a>
-                                            </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col">
+                                            <h6 class="fs-18px">Pre-laminated Particle Board</h6>
+                                            <ul class="list-unstyled mb-0">
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Pre-laminated Particle Board and MDF</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Pre-laminated MDF Board</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Plain Particle Board </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Plain MDF</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Pre-veneered Particle Board and MDF </span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col">
+                                            <h6 class="fs-18px">Bon Vivant</h6>
+                                            <ul class="list-unstyled mb-0">
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Coating Services</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Decorative Lumber</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Solid Wood Flooring </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Bon Vivant Tabletops</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Veneered Wallpanel </span></a>
+                                                </li>
 
-                                        </ul>
-                                    </div>
+                                            </ul>
+                                        </div>
 
 
-                                    <div class="col">
-                                        <h6 class="fs-18px">PUREPLY</h6>
-                                        <h6 class="fs-18px">
-                                            Decorative Veneered Doors
+                                        <div class="col">
+                                            <h6 class="fs-18px">PUREPLY</h6>
+                                            <h6 class="fs-18px">Decorative Veneered Doors
                                         </h6>
 
-                                        <h6 class="fs-18px">
-                                            Veneered Wallpanel
+                                            <h6 class="fs-18px">Veneered Wallpanel
                                         </h6>
-                                    </div>
+                                        </div>
 
+                                    </div>
                                 </div>
-                            </div>
 
-                        </div>
+                            </div>
                     </li>
 
                     <li>
@@ -1199,18 +1365,18 @@
 
                     <li class="nav-item transition-all-xl-1 py-xl-11 py-0 px-xxl-8 px-xl-6 dropdown dropdown-hover dropdown-fullwidth">
                         <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px dropdown-toggle"
-                           href="#"
-                           data-bs-toggle="dropdown"
-                           id="menu-item-docs"
-                           aria-haspopup="true"
-                           aria-expanded="false">Contact Us</a>
+                            href="#"
+                            data-bs-toggle="dropdown"
+                            id="menu-item-docs"
+                            aria-haspopup="true"
+                            aria-expanded="false">Contact Us</a>
                         <div class="dropdown-menu mega-menu start-0 py-6"
-                             aria-labelledby="menu-item-docs">
+                            aria-labelledby="menu-item-docs">
                             <div class="menumega-docs px-8" style="min-width: 250px">
 
                                 <a href="#"
-                                   class="d-flex text-decoration-none mb-4 mb-lg-0"
-                                   title="UI Kit">
+                                    class="d-flex text-decoration-none mb-4 mb-lg-0"
+                                    title="UI Kit">
                                     <div class="flex-grow-1 ps-6">
                                         <h6 class="mb-2">Factory</h6>
                                     </div>
@@ -1219,8 +1385,8 @@
                                 <hr class="dropdown-divider mx-n8" />
 
                                 <a href="#"
-                                   class="d-flex text-decoration-none mb-4 mb-lg-0"
-                                   title="Changelog">
+                                    class="d-flex text-decoration-none mb-4 mb-lg-0"
+                                    title="Changelog">
                                     <div class="flex-grow-1 ps-6">
                                         <h6 class="mb-2">Showroom</h6>
                                     </div>
@@ -1229,8 +1395,8 @@
                                 <hr class="dropdown-divider mx-n8" />
 
                                 <a href="#"
-                                   class="d-flex text-decoration-none mb-4 mb-lg-0"
-                                   title="Changelog">
+                                    class="d-flex text-decoration-none mb-4 mb-lg-0"
+                                    title="Changelog">
                                     <div class="flex-grow-1 ps-6">
                                         <h6 class="mb-2">Offices</h6>
                                     </div>
@@ -1239,9 +1405,9 @@
                                 <hr class="dropdown-divider mx-n8" />
 
                                 <a href="#"
-                                   class="d-flex text-decoration-none mb-4 mb-lg-0"
-                                   title="Support"
-                                   target="_blank">
+                                    class="d-flex text-decoration-none mb-4 mb-lg-0"
+                                    title="Support"
+                                    target="_blank">
                                     <div class="flex-grow-1 ps-6">
                                         <h6 class="mb-2">Dealers</h6>
                                     </div>
@@ -1254,31 +1420,34 @@
             </div>
             <hr class="mb-0">
             <div class="offcanvas-footer bg-body-tertiary">
-                © 2023 Archidply Decor. <br>
+                © 2023 Archidply Decor.
+                    <br>
                 All rights reserved.
+           
             </div>
         </div>
     </div>
 
     <div class="position-fixed z-index-10 bottom-0 end-0 p-10">
         <a href="#"
-           class="gtf-back-to-top text-decoration-none bg-body text-primary bg-primary-hover text-light-hover shadow square p-0 rounded-circle d-flex align-items-center justify-content-center"
-           title="Back To Top" style="--square-size: 48px"><i class="fa-solid fa-arrow-up"></i></a>
+            class="gtf-back-to-top text-decoration-none bg-body text-primary bg-primary-hover text-light-hover shadow square p-0 rounded-circle d-flex align-items-center justify-content-center"
+            title="Back To Top" style="--square-size: 48px"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
 
     <div class="modal"
-         id="teammodal"
-         tabindex="-1"
-         aria-labelledby="certimodal"
-         aria-hidden="true">
+        id="teammodal"
+        tabindex="-1"
+        aria-labelledby="certimodal"
+        aria-hidden="true">
         <div class="modal-dialog certi-modal modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header text-center border-0 pb-0">
                     <button type="button"
-                            class="btn-close position-absolute end-5 top-5"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">  Mr. Shyam Daga</h3>
+                        class="btn-close position-absolute end-5 top-5"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                    </button>
+                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">Mr. Shyam Daga</h3>
 
 
                 </div>
@@ -1286,9 +1455,12 @@
                     <p class="card-text text-center text-success font-bold">- Chairman & Managing Director</p>
                     <p>
                         Mr. Shyam Daga is the Chairman & Managing Director of the Company which is having its manufacturing unit in Chintamani, Karnataka. He is a commerce graduate from St Xavier’s, Kolkata University. He joined the Archidply Industries Limited (AIL) in 1996 and has been instrumental in growing the AIL single manufacturing facility into three.
-                    </p><p>
+                   
+                    </p>
+                    <p>
                         He played a significant role in managing The Mysore Chipboards Ltd from 1996-2005. He then went on to set up the AIL’s Greenfield project at Uttaranchal in 2006. He also spearheaded AIL’s maiden public issue in 2007 and set up a separate Greenfield manufacturing unit at Chintamani, Karnataka in 2008. In addition he has set up a 100% FDI unit in Burma in 2015 for manufacturing Teak and Gurjan veneers. Currently he is involved in the day to day operations of the Chintamani Unit of the Company and is on Board as an Executive Director of Archidply Industries Limited
 
+                   
                     </p>
                 </div>
             </div>
@@ -1298,18 +1470,19 @@
 
 
     <div class="modal"
-         id="teammodal1"
-         tabindex="-1"
-         aria-labelledby="teammodal1"
-         aria-hidden="true">
+        id="teammodal1"
+        tabindex="-1"
+        aria-labelledby="teammodal1"
+        aria-hidden="true">
         <div class="modal-dialog certi-modal modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header text-center border-0 pb-0">
                     <button type="button"
-                            class="btn-close position-absolute end-5 top-5"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">  Mr. Rajiv Daga</h3>
+                        class="btn-close position-absolute end-5 top-5"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                    </button>
+                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">Mr. Rajiv Daga</h3>
 
 
                 </div>
@@ -1317,10 +1490,13 @@
                     <p class="card-text text-center text-success font-bold">- Director</p>
                     <p>
                         Mr. Rajiv Daga holds Bachelor’s in Industrial Engineering and Economic degree from Purdue University in the United States. He has a working experience with a Software firm situated at Atlanta in the field of Supply Chain Management consultancy. He is the Managing Director of Archidply Industries Limited and was instrumental in doubling the capacity of Rudrapur unit within a time span of 3 years and achieved 100% capacity utilization.
-                    </p><p>
+                   
+                    </p>
+                    <p>
                         Over the last 5 years he has successfully developed Laminate export business in 20 countries. At present he is Director of the Mysore Chipboards Limited, and Assam Timber Products P Limited.
 
 
+                   
                     </p>
                 </div>
             </div>
@@ -1328,31 +1504,36 @@
     </div>
 
     <div class="modal"
-         id="teammodal2"
-         tabindex="-1"
-         aria-labelledby="teammodal2"
-         aria-hidden="true">
+        id="teammodal2"
+        tabindex="-1"
+        aria-labelledby="teammodal2"
+        aria-hidden="true">
         <div class="modal-dialog certi-modal modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header text-center border-0 pb-0">
                     <button type="button"
-                            class="btn-close position-absolute end-5 top-5"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">  Mr K.R Hegde</h3>
+                        class="btn-close position-absolute end-5 top-5"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                    </button>
+                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">Mr K.R Hegde</h3>
 
 
                 </div>
                 <div class="modal-body px-sm-13 px-8 pt-0">
                     <p class="card-text text-center text-success font-bold">
                         - Independent Director
+                   
                     </p>
                     <p>
                         After receiving post graduate Degree in M.A. from University of Dharwad, Karnataka and CAIIB from Indian Institute of Bankers Mumbai, He joined Vijaya Bank ( Now Bank of Baroda) and retired as a General Manager from 1974-2012.
-                    </p><p>
+                   
+                    </p>
+                    <p>
                         His qualification is MA, CAIIB, worked as a branch manager, Regional head in Kolkotta, Delhi and also in head office He Served nearly 39 years in the Bank and subsequently nearly 4 years as Managing Trustee of the trustee in the same organization
 
 
+                   
                     </p>
                 </div>
             </div>
@@ -1361,18 +1542,19 @@
 
 
     <div class="modal"
-         id="teammodal3"
-         tabindex="-1"
-         aria-labelledby="teammodal3"
-         aria-hidden="true">
+        id="teammodal3"
+        tabindex="-1"
+        aria-labelledby="teammodal3"
+        aria-hidden="true">
         <div class="modal-dialog certi-modal modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header text-center border-0 pb-0">
                     <button type="button"
-                            class="btn-close position-absolute end-5 top-5"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">  Akshatha Rai</h3>
+                        class="btn-close position-absolute end-5 top-5"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                    </button>
+                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">Akshatha Rai</h3>
 
 
                 </div>
@@ -1383,6 +1565,7 @@
                         Finance and Accounts of Moongate Events Venue she ventured into Hospitality with Avora Tree Hotel as a promoter. Presently the CEO of this Boutique fast growing hotel chain is in charge of making all ownership decisions and collaborations.
 
 
+                   
                     </p>
                 </div>
             </div>
@@ -1390,27 +1573,30 @@
     </div>
 
     <div class="modal"
-         id="teammodal4"
-         tabindex="-1"
-         aria-labelledby="teammodal4"
-         aria-hidden="true">
+        id="teammodal4"
+        tabindex="-1"
+        aria-labelledby="teammodal4"
+        aria-hidden="true">
         <div class="modal-dialog certi-modal modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header text-center border-0 pb-0">
                     <button type="button"
-                            class="btn-close position-absolute end-5 top-5"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">  Mr. DINESH KUMAR MARDA</h3>
+                        class="btn-close position-absolute end-5 top-5"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                    </button>
+                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">Mr. DINESH KUMAR MARDA</h3>
 
 
                 </div>
                 <div class="modal-body px-sm-13 px-8 pt-0">
                     <p class="card-text text-center text-success font-bold">- Independent Director</p>
-                    <p>He is a commerce graduate and having over 30 years of rich experience in successfully running the business of Granites and Paper business. He is a partner in Sunshine Granites. </p><p>
+                    <p>He is a commerce graduate and having over 30 years of rich experience in successfully running the business of Granites and Paper business. He is a partner in Sunshine Granites. </p>
+                    <p>
                         He is also the Director in the Sai Shakti Kraft Papers Private Limited. He has over all three decades of expertise in Business Management, Finance and Accounts of the Company
 
 
+                   
                     </p>
                 </div>
             </div>
@@ -1419,18 +1605,19 @@
 
 
     <div class="modal"
-         id="teammodal5"
-         tabindex="-1"
-         aria-labelledby="teammodal5"
-         aria-hidden="true">
+        id="teammodal5"
+        tabindex="-1"
+        aria-labelledby="teammodal5"
+        aria-hidden="true">
         <div class="modal-dialog certi-modal modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header text-center border-0 pb-0">
                     <button type="button"
-                            class="btn-close position-absolute end-5 top-5"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">  Mr. NEERAJ KUMAR MITTAL</h3>
+                        class="btn-close position-absolute end-5 top-5"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                    </button>
+                    <h3 class="modal-title w-100 mb-0" id="signInModalLabel">Mr. NEERAJ KUMAR MITTAL</h3>
 
 
                 </div>
@@ -1438,17 +1625,17 @@
                     <p class="card-text text-center text-success font-bold">- Independent Director</p>
                     <p>
                         He is a commerce graduate and having over 25 years of rich experience in field of plastics business. He is the Director in Plasmix Private Ltd which is one of the leading manufacturers of antifibrillant master batches, additive master batches, colour master batches and engineering compounds in south India for the past 15 years.
-                    </p><p>
+                   
+                    </p>
+                    <p>
                         He is also a director in M.G. Metals Private Limited and Micro Carbonates Private Limited. He has over all 25 years of expertise in Business Management, Finance and Accounts of the Company.
 
 
+                   
                     </p>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 </asp:Content>
 

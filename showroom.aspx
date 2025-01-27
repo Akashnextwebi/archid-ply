@@ -1,6 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.master" AutoEventWireup="true" CodeFile="showroom.aspx.cs" Inherits="showroom" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style>   .new-bg {
+       background: #f1f1f1;
+       padding: 20px;
+       border-radius: 12px;
+   }
+
+   .new-left {
+       padding-left: 30px;
+   }
+
+       .new-left iframe {
+           border-radius: 6px;
+       }</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <main id="content" class="wrapper layout-page">
@@ -34,36 +47,97 @@
         
 
 
-        <main id="content" class="wrapper layout-page">
           
-            <section class="container  pt-6 pb-13 pb-lg-20">
-                <div class="row ">
-                    <div class="col-md-12 col-xl-12 pe-lg-13">
+                    <section class="container  pt-6 pb-13 pb-lg-20">
+            <div class="row new-bg align-items-center">
+                <div class="col-lg-7">
+                    <div class="text-start">
+                        <div class="text-start">
+                            <h2 class="fs-28px mb-3">Showroom Name</h2>
+                            <p class="fs-18px">We’re talking about clean beauty gift sets, of course – and we’ve got a bouquet of beauties for yourself or someone you love.</p>
+                        </div>
 
-                        <div class="row g-5">
-                            <div class="col-4">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                    </div>
+                    <div class="d-flex align-items-start">
+
+
+                        <div>
+                            <h3 class="fs-5 mb-6">Address</h3>
+                            <div class="fs-6">
+                                <p class="mb-2 pb-4 fs-6">
+                                    3245 Abbot Kinney BLVD –
+                                        <br>
+                                    PH Venice, CA 124
+                                </p>
+                                <p>
+                                    76 East Houston Street
+                                        <br>
+                                    PH Venice, CA 124
+                                </p>
                             </div>
-                            <div class="col-4">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpgg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                            </div>
-                            <div class="col-4">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                            </div>
-                            <div class="col-4">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                            </div>
-                            <div class="col-4">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                            </div>
-                            <div class="col-4">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                            <a href="#" class="text-decoration-none border-bottom border-currentColor fw-semibold fs-6" contenteditable="false" style="cursor: pointer;">Get Direction</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="new-left">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d317859.6089702069!2d-0.075949!3d51.508112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760349331f38dd%3A0xa8bf49dde1d56467!2sTower%20of%20London!5e0!3m2!1sen!2sus!4v1719221598456!5m2!1sen!2sus" width="100%" height="394" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <h4 class="fw-bold mt-3">Gallery</h4>
+                    <div class="about-img">
+                        <div class="">
+                            <div class="">
+                                <div class="mx-n6 slick-slider"
+                                    data-slick-options='{
+                     "slidesToShow": 4,
+                     "infinite": true,
+                     "autoplay": true,
+                     "dots": true,
+                     "arrows": false,
+                     "responsive": [
+                         {"breakpoint": 1366, "settings": {"slidesToShow": 4}},
+                         {"breakpoint": 992, "settings": {"slidesToShow": 3}},
+                         {"breakpoint": 768, "settings": {"slidesToShow": 2}},
+                         {"breakpoint": 576, "settings": {"slidesToShow": 1}}
+                     ]
+                 }'>
+                                    <!-- Images -->
+                                    <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
+                                        <img src="assets/imgs/ps/Bhopal1.jpg" alt="Bhopal Image 1">
+                                    </a>
+                                    <a href="assets/imgs/ps/Bhopal3.jpg" data-lity>
+                                        <img src="assets/imgs/ps/Bhopal3.jpg" alt="Bhopal Image 2">
+                                    </a>
+                                      <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
+      <img src="assets/imgs/ps/Bhopal1.jpg" alt="Bhopal Image 1">
+  </a>
+  <a href="assets/imgs/ps/Bhopal3.jpg" data-lity>
+      <img src="assets/imgs/ps/Bhopal3.jpg" alt="Bhopal Image 2">
+  </a>
+                                                                      <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
+                                      <img src="assets/imgs/ps/Bhopal1.jpg" alt="Bhopal Image 1">
+                                  </a>
+                                  <a href="assets/imgs/ps/Bhopal3.jpg" data-lity>
+                                      <img src="assets/imgs/ps/Bhopal3.jpg" alt="Bhopal Image 2">
+                                  </a>
+                                    <a href="assets/imgs/ps/Bhopal1.jpg" data-lity>
+    <img src="assets/imgs/ps/Bhopal1.jpg" alt="Bhopal Image 1">
+</a>
+<a href="assets/imgs/ps/Bhopal3.jpg" data-lity>
+    <img src="assets/imgs/ps/Bhopal3.jpg" alt="Bhopal Image 2">
+</a>
+                                    <!-- Video -->
+                                   
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
-            </section>
+            </div>
+        </section>
            
             
         </main>

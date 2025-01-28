@@ -71,7 +71,7 @@
     <link href="Admin/assets/libs/snackbar/snackbar.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <main id="content" class="wrapper layout-page">
+   <main id="content" class="wrapper layout-page investor-contact pt-5 pb-10" style="background: #f1efec url('assets/imgs/bg-img2.png'); background-repeat: no-repeat; background-position: right; background-attachment: fixed">
         <section class="position-relative custom-overlay" id="about_introduction">
 
             <div class="lazy-bg bg-overlay position-absolute z-index-1 w-100 h-100   light-mode-img" data-bg-src="assets/imgs/about-banner.jpg">
@@ -94,7 +94,7 @@
                 </nav>
             </div>
         </div>
-        <section class="pt-15 pb-16 pt-lg-17 pb-lg-18 mx-auto" style="max-width: 750px" data-animated-id="3">
+        <section class="pt-5 pb-16 pt-lg-17 pb-lg-18 mx-auto" style="max-width: 750px" data-animated-id="3">
             <div class="container text-center">
                 <h2 class="mb-10 fs-3">Get in Touch</h2>
                 <div class="contact-form" method="post" action="#">

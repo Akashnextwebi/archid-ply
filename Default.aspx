@@ -130,7 +130,7 @@
                             <!-- <h3 class="card-title lh-45px mw-md-60 pe-xl-15 fs-3 pe-0">
                           Intensive Glow C&#43; Serum
                         </h3> -->
-                            <img src="/assets/imgs/pure-ply-logo.jpg"
+                            <img src="/assets/imgs/pplogo.png"
                                 alt=""
                                 class="sister-company" />
                             <div class="mt-7">

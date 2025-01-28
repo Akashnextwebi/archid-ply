@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.master" AutoEventWireup="true" CodeFile="dealers.aspx.cs" Inherits="dealers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style>
+        .form-select{
+            background-color:#fff;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
@@ -31,24 +36,25 @@
         </div>
         <div class="container">
     <div class="row justify-content-center mt-5">
-        <div class="col-lg-4 col-ms-6 col-sm-12 col-12">
-            <div class="mx-auto" >
-                <div class="input-group form-border-transparent d-flex">
-                    <asp:DropDownList runat="server" class="form-select" AutoPostBack="true" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged" ID="ddlCity">
-                        <asp:ListItem Value="">Select City</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-            </div>
-        </div>
+       
     </div>
 </div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="dashboard-page-content" data-animated-id="1">
                     <div class="row mb-9 align-items-center">
-                        <div class="col-sm-12 mb-10 mb-sm-0 text-center">
+                        <div class="col-lg-8 mb-10 mb-sm-0 text-start">
                             <h2 class=" mb-0">Dealers</h2>
                         </div>
+                         <div class="col-lg-4 col-ms-6 col-sm-12 col-12">
+     <div class="mx-auto" >
+         <div class="input-group form-border-transparent d-flex">
+             <asp:DropDownList runat="server" class="form-select" AutoPostBack="true" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged" ID="ddlCity">
+                 <asp:ListItem Value="">Select City</asp:ListItem>
+             </asp:DropDownList>
+         </div>
+     </div>
+ </div>
                     </div>
                     <div class="row">
                         <%=strDealers %>

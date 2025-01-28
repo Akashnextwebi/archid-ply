@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -88,12 +89,17 @@ public partial class _Default : System.Web.UI.Page
                     {
                         foreach (StoriesGallery sg in StoreGal)
                         {
-                            galImgs += @"<div class='px-6'>
-                    <a href='/" + sg.Images + @"' title='instagram-01' class='hover-zoom-in hover-shine card-img-overlay-hover hover-zoom-in hover-shine d-block'>
-                        <img class='lazy-image img-fluid w-100 ' width='314' height='314' data-src='/" + sg.Images + @"' alt='instagram-01' src='/" + sg.Images + @"'>
-                        <span class='card-img-overlay bg-dark bg-opacity-30'></span>
-                    </a>
-                </div>";
+                            var id= "gallery"+sg.Id;
+                            galImgs += @"<a style='height:355px !important' href='/" + sg.Images+ @"' data-gallery='"+ id + "' data-thumb-src='/"+sg.Images+@"'><img src='#' data-src='/"+sg.Images+"' class='img-fluid lazy-image h-auto' alt='Unavailable'></a>";
+                        }
+                        var vlink = "";
+                        if (s.Link!=null)
+                        {
+                            vlink += @"<div style='height:355px !important' class='bg-image video-01 d-flex justify-content-center align-items-center h-lg-85 position-relative py-18 py-lg-0 py-md-23 lazy-bg' data-bg-src='/" + s.Image+@"'><a href='"+s.Link+@"' class='view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1'><svg class='icon'><use xlink:href='#icon-play-fill'></use></svg></a></div>";
+                        }
+                        else
+                        {
+                            vlink += @"<a href='/" + s.Image + @"' data-gallery='gal1' data-thumb-src='/" + s.Image + @"'><img style='height:355px !important' src='#' data-src='/" + s.Image + "' class='img-fluid lazy-image h-auto'  alt='Unavailable'></a>";
                         }
 
                         strProductStories += @"<div class='new-bg-product'>
@@ -111,7 +117,7 @@ public partial class _Default : System.Web.UI.Page
                                     <div class='container-fluid'>
                                         <div class='px-md-6'>
 <div class=""mx-n6 slick-slider"" data-slick-options='{""slidesToShow"": 1,""infinite"":false,""autoplay"":true,""dots"":true,""arrows"":false,""responsive"":[{""breakpoint"": 1366,""settings"": {""slidesToShow"":1 }},{""breakpoint"": 992,""settings"": {""slidesToShow"":1}},{""breakpoint"": 768,""settings"": {""slidesToShow"": 1}},{""breakpoint"": 576,""settings"": {""slidesToShow"": 1}}]}'>
-                                                " + galImgs + @"                                           
+                                                " + galImgs + vlink + @"                                           
                                                  </div>
                                         </div>
                                     </div>
@@ -212,7 +218,7 @@ public partial class _Default : System.Web.UI.Page
                         <div class='card border-0 rounded-0 hover-zoom-in hover-shine'>
                             <img class='lazy-image card-img object-fit-cover new-heigh' src='/" + t.TagImage + @"'  width='330' height='450' alt='Not Avail' />
                             <div class='card-img-overlay d-inline-flex flex-column p-lg-8 p-4 justify-content-end text-center bg-dark bg-opacity-25'>
-                                <h3 class='card-title text-white lh-25px lh-lg-45px font-primary fw-normal  fs-6 fs-lg-4'>" + t.Title + @"
+                                <h3 class='card-title text-white lh-25px lh-lg-45px font-primary fw-normal fs-6 fs-lg-4'>" + t.Title + @"
                                 </h3>
                                 <div>
                                     <a href='/shop/" + t.TagURL + @"' class='btn btn btn-link new-font p-0 fw-semibold text-white border-bottom border-0 rounded-0 border-currentColor text-decoration-none'>Shop Now</a>

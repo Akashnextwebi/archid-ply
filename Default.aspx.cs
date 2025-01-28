@@ -212,7 +212,7 @@ public partial class _Default : System.Web.UI.Page
                         <div class='card border-0 rounded-0 hover-zoom-in hover-shine'>
                             <img class='lazy-image card-img object-fit-cover new-heigh' src='/" + t.TagImage + @"'  width='330' height='450' alt='Not Avail' />
                             <div class='card-img-overlay d-inline-flex flex-column p-lg-8 p-4 justify-content-end text-center bg-dark bg-opacity-25'>
-                                <h3 class='card-title text-white lh-25px lh-lg-45px font-primary fw-normal  fs-6 fs-lg-3'>" + t.Title + @"
+                                <h3 class='card-title text-white lh-25px lh-lg-45px font-primary fw-normal  fs-6 fs-lg-4'>" + t.Title + @"
                                 </h3>
                                 <div>
                                     <a href='/shop/" + t.TagURL + @"' class='btn btn btn-link new-font p-0 fw-semibold text-white border-bottom border-0 rounded-0 border-currentColor text-decoration-none'>Shop Now</a>

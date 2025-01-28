@@ -7,7 +7,7 @@ $(document).ready(function () {
         var ele = $(this);
         $(".pPagination a").removeClass("current");
         ele.addClass("current");
-        BindAllStories(); 
+        BindAllStories();
     });
 
     $(document.body).on('click', ".prPVClick", function () {
@@ -22,7 +22,7 @@ $(document).ready(function () {
 
         $(".pPagination a").removeClass("current");
         ele.addClass("current");
-        BindAllStories(); 
+        BindAllStories();
     });
 
     $(document.body).on('click', ".nxPVClick", function () {
@@ -38,7 +38,7 @@ $(document).ready(function () {
 
         $(".pPagination a").removeClass("current");
         ele.addClass("current");
-        BindAllStories(); 
+        BindAllStories();
     });
 
     function BindAllStories() {
@@ -64,18 +64,18 @@ $(document).ready(function () {
                     const img = `/${product.Image}`;
                     const detail = product.FullDesc;
 
-                    const vlink = product.Link
-                        ? `<a href='${product.Link}' data-lity><img src='${img}' alt='Youtube Video' title='Click to play video'></a>`
-                        : `<a href='${img}' data-lity><img src='${img}' alt='Youtube Video'></a>`;
+                    //const vlink = product.Link
+                    //    ? `<a href='${product.Link}' data-lity><img src='${img}' alt='Youtube Video' title='Click to play video'></a>`
+                    //    : `<a href='${img}' data-lity><img src='${img}' alt='Youtube Video'></a>`;
 
-                    const StoreImg = product.StoriesGal?.map(gal => `
-                    <a href='/${gal.Images}' data-lity>
-                        <img src='/${gal.Images}' alt='Your Image Description'>
-                    </a>
-                `).join("") || "";
+
+                    const vlink = product.Link ? `<div class='bg-image video-01 d-flex justify-content-center align-items-center h-lg-85 position-relative py-18 py-lg-0 py-md-23 lazy-bg'
+ data-bg-src='${img}'>
+<a href='${product.Link}' class='view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1'><svg class='icon'><use xlink:href='#icon-play-fill'></use></svg></a>` : `<a href='${img}' data-gallery='gallery7' data-thumb-src='${img}'><img src='${img}' data-src='${img}' class='img-fluid lazy-image h-auto' width='540' height='720' alt=''></a>`
+
+                    const StoreImg = product.StoriesGal?.map(gal => `<a href='/${gal.Images}' data-gallery='gallery7' data-thumb-src='/${gal.Images}'><img src='/${gal.Images}' data-src='/${gal.Images}' class='img-fluid lazy-image h-auto' width='540' height='720' alt=''></a>` ).join("") || "";
 
                     if (i % 2 === 0) {
-                        // Left Content, Right Image
                         listings += `
                     <section class='why-choose-us section-padding'>
                         <div class='container container-xxl'>
@@ -175,7 +175,7 @@ $(document).ready(function () {
     }
     function BindPPage(pageS, cPage, pCount) {
         var noOfPagesCreated = Math.ceil(parseFloat(pCount) / parseInt(pageS));
-        $(".pPagination").empty(); 
+        $(".pPagination").empty();
 
         let pagesss = "";
 

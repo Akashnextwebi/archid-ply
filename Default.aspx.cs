@@ -16,7 +16,7 @@ public partial class _Default : System.Web.UI.Page
 {
     SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
 
-    public string strBlog, strClientStories, strProductStories, strFeatureProducts, strBannerImages, strTags, strResources = "";
+    public string strBlog,strMobileBanner, strClientStories, strProductStories, strFeatureProducts, strBannerImages, strTags, strResources = "";
     protected void Page_Load(object sender, EventArgs e)
     {
         BindTop3Blog();
@@ -269,13 +269,15 @@ public partial class _Default : System.Web.UI.Page
     {
         try
         {
-            string images = "";
+            string Deskimages = "";
+            string Mobimages = "";
             List<BannerImages> banner = BannerImages.GetBannerImage(conAP);
             if (banner.Count > 0)
             {
                 foreach (BannerImages ban in banner)
                 {
-                    images += @"<div class='vh-100 d-flex align-items-center'>
+                    //desktop
+                    Deskimages += @"<div class='vh-100 d-flex align-items-center'>
       <div class='z-index-2 container container-xxl py-21 pt-xl-10 pb-xl-11'>
           <div class='hero-content text-start'>" + ban.Description + @"
               <div class='cta-btn' data-animate='fadeInDown'>
@@ -288,13 +290,37 @@ public partial class _Default : System.Web.UI.Page
       <div class='lazy-bg bg-overlay position-absolute z-index-1 w-100 h-100'
            data-bg-src='" + ban.DesktopImage + @"'></div>
   </div>";
+                    //mobile
+                    Mobimages += @"<div class='vh-100 d-flex align-items-center'>
+      <div class='z-index-2 container container-xxl py-21 pt-xl-10 pb-xl-11'>
+          <div class='hero-content text-start'>" + ban.Description + @"
+              <div class='cta-btn' data-animate='fadeInDown'>
+                  <a href='/" + ban.Link + @"' class='btn orange-btn'>
+                      Explore Now <i class='fa-solid fa-arrow-circle-right'></i>
+                  </a>
+              </div>
+          </div>
+      </div>
+      <div class='lazy-bg bg-overlay position-absolute z-index-1 w-100 h-100'
+           data-bg-src='" + ban.MobileImage + @"'></div>
+  </div>";
+
+
                 }
                 strBannerImages += @"<section class='home-banner'>
          <div class='slick-slider hero hero-header-02 slick-slider-dots-inside'
               data-slick-options='{&#34;arrows&#34;:true,&#34;autoplay&#34;:true,&#34;autoplaySpeed&#34;:9000,&#34;cssEase&#34;:&#34;ease-in-out&#34;,&#34;dots&#34;:false,&#34;fade&#34;:true,&#34;infinite&#34;:true,&#34;slidesToShow&#34;:1,&#34;speed&#34;:600}'>
-           " + images + @"
+           " + Deskimages + @"
          </div>
      </section>";
+
+                strMobileBanner += @"<section class='home-banner'>
+         <div class='slick-slider hero hero-header-02 slick-slider-dots-inside'
+              data-slick-options='{&#34;arrows&#34;:true,&#34;autoplay&#34;:true,&#34;autoplaySpeed&#34;:9000,&#34;cssEase&#34;:&#34;ease-in-out&#34;,&#34;dots&#34;:false,&#34;fade&#34;:true,&#34;infinite&#34;:true,&#34;slidesToShow&#34;:1,&#34;speed&#34;:600}'>
+           " + Mobimages + @"
+         </div>
+     </section>";
+
             }
         }
         catch (Exception ex)

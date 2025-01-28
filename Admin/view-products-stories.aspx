@@ -1,25 +1,25 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPage.master" AutoEventWireup="true" CodeFile="view-products-stories.aspx.cs" Inherits="Admin_view_products_stories" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style>
-            /*     .ImagesLoaded {
+        /*     .ImagesLoaded {
         margin: 20px;
         border: 1px solid #ddd;
         border-radius: 10px;
         padding: 20px;
     }*/
 
-    #left-defaults {
-        padding-left: 0px;
-    }
-
-        #left-defaults .maindiv {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin: 15px;
-            padding: 15px;
+        #left-defaults {
+            padding-left: 0px;
         }
-    /*  .deleteGalleryItem{
+
+            #left-defaults .maindiv {
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin: 15px;
+                padding: 15px;
+            }
+        /*  .deleteGalleryItem{
             display: inline-block;
 background: red;
 color: #fff;
@@ -33,37 +33,37 @@ background: #fff;
 color: red;
     }*/
 
-    #GalleryModal .card {
-        box-shadow: unset;
-    }
+        #GalleryModal .card {
+            box-shadow: unset;
+        }
 
-    .ImageUploadBox {
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 15px;
-        position: sticky;
-        top: 30px;
-    }
+        .ImageUploadBox {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            position: sticky;
+            top: 30px;
+        }
 
-    .stickyGalleryOrder {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: sticky;
-        top: 0px;
-        background: #ffffff;
-        z-index: 999;
-    }
+        .stickyGalleryOrder {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0px;
+            background: #ffffff;
+            z-index: 999;
+        }
 
-    #GalleryModal .modal-body {
-        padding-top: 0px;
-    }
+        #GalleryModal .modal-body {
+            padding-top: 0px;
+        }
     </style>
-     
-  <!-- dropzone css -->
-  <link rel="stylesheet" href="assets/libs/dropzone/dropzone.css" type="text/css" />
-  <link href="assets/libs/dragula/dragula.min.css" rel="stylesheet" />
-  <link href="assets/libs/dragula/example.css" rel="stylesheet" />
+
+    <!-- dropzone css -->
+    <link rel="stylesheet" href="assets/libs/dropzone/dropzone.css" type="text/css" />
+    <link href="assets/libs/dragula/dragula.min.css" rel="stylesheet" />
+    <link href="assets/libs/dragula/example.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="page-content">
@@ -115,7 +115,7 @@ color: red;
 
         </div>
     </div>
-        <!-- Full screen modal content -->
+    <!-- Full screen modal content -->
     <div class="modal fade exampleModalFullscreen" tabindex="-1" id="GalleryModal" aria-labelledby="exampleModalFullscreenLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
@@ -160,6 +160,7 @@ color: red;
                                                             <h4>Drop files here or click to upload.</h4>
                                                         </div>
                                                     </div>
+                                                    <small class="d-block link-danger mt-2">.png, .jpeg, .jpg, .webp formats are required, Image Size Should be 500*800 px</small>
 
                                                     <ul class="list-unstyled mb-0" id="dropzone-preview">
                                                         <li class="mt-2" id="dropzone-preview-list">

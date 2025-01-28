@@ -70,6 +70,8 @@
 
     <main id="content" class="wrapper layout-page">
         <%=strBannerImages %>
+      <%--  <%=strMobileBanner %>--%>
+
         <%--<section class='home-banner'>
             <div class='slick-slider hero hero-header-02 slick-slider-dots-inside'
                 data-slick-options='{&#34;arrows&#34;:true,&#34;autoplay&#34;:true,&#34;autoplaySpeed&#34;:9000,&#34;cssEase&#34;:&#34;ease-in-out&#34;,&#34;dots&#34;:false,&#34;fade&#34;:true,&#34;infinite&#34;:true,&#34;slidesToShow&#34;:1,&#34;speed&#34;:600}'>

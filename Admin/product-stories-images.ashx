@@ -6,13 +6,13 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
 
-public class product_stories_images : IHttpHandler 
-    {
+public class product_stories_images : IHttpHandler
+{
     public void ProcessRequest(HttpContext context)
     {
         if (context.Request.Files.Count > 0)
         {
-                SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
+            SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
 
             string strVid = context.Request["Vid"];
             if (CreateUser.CheckAccess(conAP, "view-products-stories.aspx", "Add", HttpContext.Current.Request.Cookies["ap_aid"].Value))
@@ -32,24 +32,35 @@ public class product_stories_images : IHttpHandler
                         }
                         else
                         {
-                            System.Drawing.Bitmap bmpPostedImageBig = new System.Drawing.Bitmap(file.InputStream);
-                            System.Drawing.Image objImagesmallBig = CommonModel.ScaleImageBig(bmpPostedImageBig, bmpPostedImageBig.Height, bmpPostedImageBig.Width);
-                            
-                                if (fileExtension == ".png")
+                            if (fileExtension == ".png")
+                            {
+                                System.Drawing.Bitmap bmpPostedImageBig = new System.Drawing.Bitmap(file.InputStream);
+                                if ((bmpPostedImageBig.PhysicalDimension.Height != 500) && (bmpPostedImageBig.PhysicalDimension.Width != 800))
                                 {
-                                    CommonModel.SavePNG(iconPath, objImagesmallBig, 80);
-
+                                    context.Response.Write("Image size should be " + 500 + "*" + 800 + " Px ");
+                                    return;
                                 }
-                                else if (fileExtension == ".gif")
-                                {
-                                    file.SaveAs(iconPath);
-                                }
-
                                 else
                                 {
-                                    CommonModel.SaveJpeg(iconPath, objImagesmallBig, 80);
-
+                                    System.Drawing.Image objImagesmallBig = CommonModel.ScaleImageBig(bmpPostedImageBig, bmpPostedImageBig.Height, bmpPostedImageBig.Width);
+                                    CommonModel.SavePNG(iconPath, objImagesmallBig, 99);
                                 }
+                            }
+                            else
+                            {
+                                System.Drawing.Bitmap bmpPostedImageBig = new System.Drawing.Bitmap(file.InputStream);
+                                if ((bmpPostedImageBig.PhysicalDimension.Height != 500) && (bmpPostedImageBig.PhysicalDimension.Width != 800))
+                                {
+                                    context.Response.Write("Image size should be " + 500 + "*" + 800 + " Px ");
+                                    return;
+                                }
+                                else
+                                {
+                                    System.Drawing.Image objImagesmallBig = CommonModel.ScaleImageBig(bmpPostedImageBig, bmpPostedImageBig.Height, bmpPostedImageBig.Width);
+                                    CommonModel.SaveJpeg(iconPath, objImagesmallBig, 80);
+                                }
+
+                            }
                         }
 
                         string bImage = "UploadImages/" + ImageGuid1 + "_storygallery" + fileExtension;

@@ -1098,7 +1098,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content m-content">
                     <div class="modal-header m-header">
-                        <h5 class="modal-title m-title" id="quickEnquiryModalLabel">Quick Enquiry</h5>
+                        <h5 class="modal-title m-title mt-0" id="quickEnquiryModalLabel">Quick Enquiry</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body m-body">

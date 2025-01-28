@@ -1160,7 +1160,7 @@
                             <asp:TextBox ID="txtContact" class="form-control txtContact mb-7" runat="server" MaxLength="10" placeholder="Contact Number"></asp:TextBox>
                             <asp:TextBox ID="txtProfession" class="form-control txtProfession mb-7" runat="server" MaxLength="100" placeholder="Profession"></asp:TextBox>
 
-                            <asp:LinkButton runat="server" ID="BtnSubmit" CssClass="btn btn-dark btn-hover-bg-primary btn-hover-border-primary mt-10 w-100 mb-6 submitdata BtnSubmit" ValidationGroup="Save">Download<i class="fal fa-arrow-right-long"></i></asp:LinkButton>
+                            <asp:LinkButton runat="server" ID="BtnSubmit" CssClass="btn btn-dark btn-hover-bg-primary btn-hover-border-primary mt-10 w-100 mb-6 submitdata BtnSubmit" ValidationGroup="Save">Download<i class="far fa-download ps-2 fs-13px"></i></asp:LinkButton>
 
                         </div>
                     </div>

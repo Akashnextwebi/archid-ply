@@ -119,6 +119,8 @@
                                     <br />
                                     Karnataka 563125
                                 </p>
+                                <p>
+                                    Phone no : 094484 19394                                </p>
                             </div>
                             <a href="https://maps.app.goo.gl/XZmJrFXwoQnYZDFg7"  class="text-decoration-none border-bottom border-currentColor fw-semibold fs-6" contenteditable="false" style="cursor: pointer;">Get Direction</a>
                         </div>

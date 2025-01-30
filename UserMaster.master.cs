@@ -40,7 +40,7 @@ public partial class UserMaster : System.Web.UI.MasterPage
             {
                 foreach (Category category in categories)
                 {
-                    strFooterCat += @"<li class='pt-3 mb-4'><a href='/products/" + category.CategoryUrl + @"'>" + category.CategoryName + @"</a></li>";
+                    strFooterCat += @"<li class='pt-3 mb-4'><a href='/products-categories/" + category.CategoryUrl + @"'>" + category.CategoryName + @"</a></li>";
                     string subCat = "";
                     string subMobilCat = "";
                     List<SubCategory> subCategories = SubCategory.GetSubCategoryByCat(conAP, Convert.ToString(category.Id)).Where(s => s.DisplayHome == "Yes").OrderBy(s => s.DisplayOrder).ToList();

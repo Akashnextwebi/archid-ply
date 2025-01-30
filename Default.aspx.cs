@@ -17,7 +17,7 @@ public partial class _Default : System.Web.UI.Page
 {
     SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
 
-    public string strBlog,strMobileBanner, strClientStories, strProductStories, strFeatureProducts, strBannerImages, strTags, strResources = "";
+    public string strBlog, strMobileBanner, strClientStories, strProductStories, strFeatureProducts, strBannerImages, strTags, strResources = "";
     protected void Page_Load(object sender, EventArgs e)
     {
         BindTop3Blog();
@@ -83,24 +83,24 @@ public partial class _Default : System.Web.UI.Page
             {
                 foreach (ProductStories s in stories)
                 {
-
+                    var vlink = "";
+                    if (s.Link != "")
+                    {
+                        vlink += @"<div style='height:355px !important' class='bg-image video-01 d-flex justify-content-center align-items-center h-lg-85 position-relative py-18 py-lg-0 py-md-23 lazy-bg' data-bg-src='/" + s.Image + @"'><a href='" + s.Link + @"' class='view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1'><svg class='icon'><use xlink:href='#icon-play-fill'></use></svg></a></div>";
+                    }
+                    else
+                    {
+                        vlink += @"<a href='/" + s.Image + @"' data-gallery='gal22' data-thumb-src='/" + s.Image + @"'><img style='height:355px !important' src='#' data-src='/" + s.Image + "' class='img-fluid lazy-image h-auto'  alt='Unavailable'></a>";
+                    }
                     List<StoriesGallery> StoreGal = StoriesGallery.GetGallery(conAP, Convert.ToString(s.Id));
                     if (StoreGal.Count > 0)
                     {
                         foreach (StoriesGallery sg in StoreGal)
                         {
-                            var id= "gallery"+sg.Id;
-                            galImgs += @"<a style='height:355px !important' href='/" + sg.Images+ @"' data-gallery='"+ id + "' data-thumb-src='/"+sg.Images+@"'><img src='#' data-src='/"+sg.Images+"' class='img-fluid lazy-image h-auto' alt='Unavailable'></a>";
+                            var id = "galleries" + sg.Id;
+                            galImgs += @"<a style='height:355px !important' href='/" + sg.Images + @"' data-gallery='" + id + "' data-thumb-src='/" + sg.Images + @"'><img src='/" + sg.Images + @"' data-src='/" + sg.Images + "' class='img-fluid lazy-image h-auto' alt='Unavailable'></a>";
                         }
-                        var vlink = "";
-                        if (s.Link!=null)
-                        {
-                            vlink += @"<div style='height:355px !important' class='bg-image video-01 d-flex justify-content-center align-items-center h-lg-85 position-relative py-18 py-lg-0 py-md-23 lazy-bg' data-bg-src='/" + s.Image+@"'><a href='"+s.Link+@"' class='view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1'><svg class='icon'><use xlink:href='#icon-play-fill'></use></svg></a></div>";
-                        }
-                        else
-                        {
-                            vlink += @"<a href='/" + s.Image + @"' data-gallery='gal1' data-thumb-src='/" + s.Image + @"'><img style='height:355px !important' src='#' data-src='/" + s.Image + "' class='img-fluid lazy-image h-auto'  alt='Unavailable'></a>";
-                        }
+
 
                         strProductStories += @"<div class='new-bg-product'>
                         <div class='row align-items-center justify-content-between '>
@@ -126,7 +126,6 @@ public partial class _Default : System.Web.UI.Page
                         </div>
                     </div>";
                     }
-
                 }
 
             }
@@ -338,7 +337,7 @@ public partial class _Default : System.Web.UI.Page
 
 
     [WebMethod(EnableSession = true)]
-    public static string SaveDownloadEnquiry(string name, string email, string contact, int Id,string prof)
+    public static string SaveDownloadEnquiry(string name, string email, string contact, int Id, string prof)
     {
         SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
 

@@ -19,10 +19,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <main id="content" class="wrapper layout-page">
-
-
-
-
         <section class="position-relative custom-overlay" id="about_introduction">
 
             <div class="lazy-bg bg-overlay position-absolute z-index-1 w-100 h-100   light-mode-img" data-bg-src="assets/imgs/about-banner.jpg">

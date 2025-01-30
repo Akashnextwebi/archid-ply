@@ -141,7 +141,7 @@
                                                 aria-labelledby="menu-item-shop">
                                                 <div class="megamenu-shop container-wide py-8 px-12">
                                                     <div class="row">
-                                                          <%=strDeskMenu %>
+                                                        <%=strDeskMenu %>
                                                     </div>
                                                 </div>
 
@@ -310,7 +310,7 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item me-8">
-                                    <a class="" href="https://archidplydecor.com/wp-content/plugins/simple-social-icons/symbol-defs.svg#social-instagram" target="_blank">
+                                    <a class="" href="https://www.linkedin.com/company/archidplydecor-bonvivant" target="_blank">
                                         <i class="fab fa-linkedin"></i>
                                     </a>
                                 </li>
@@ -326,7 +326,7 @@
                                     <i class="fa-solid fa-location-dot"></i>
                                     <span>No.50, Millenium Towrs, Shivajinagar Bangalore —
                                 560051
-                            </span>
+                                    </span>
                                 </a>
                             </li>
                             <li>
@@ -357,7 +357,9 @@
                             <li class="pt-3 mb-4">
                                 <a href="/product-stories" title="Best Sellers" class="">Product Stories</a>
                             </li>
-
+                            <li class="pt-3 mb-4">
+                                <a href="/faqs.aspx" title="FAQ" class="">FAQ's</a>
+                            </li>
                             <li class="pt-3 mb-4">
                                 <a href="#" title="Online Gift Card" class="">Privacy policy</a>
                             </li>
@@ -1796,7 +1798,7 @@
                                 <div class="megamenu-shop container-wide py-8 px-12">
                                     <div class="row">
                                         <%=strMobMenu %>
-                                       <%-- <div class="col">
+                                        <%-- <div class="col">
                                             <h6 class="fs-16px">Gurjan Based Plywood</h6>
                                             <ul class="list-unstyled mb-0">
                                                 <li>
@@ -1884,7 +1886,6 @@
                                             <h6 class="fs-16px">Veneered Wallpanel
                                         </h6>
                                         </div>--%>
-
                                     </div>
                                 </div>
 

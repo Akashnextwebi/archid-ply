@@ -597,6 +597,15 @@
     <script src="/Admin/assets/libs/fSelect/fSelect.js"></script>
     <script>
         $(document).ready(function () {
+
+
+            var maxHeight1 = Math.max.apply(null, $(".mega-menu .megamenu-shop h6").map(function () {
+                return $(this).height();
+            }).get());
+            $(".mega-menu .megamenu-shop h6").css("min-height", maxHeight1);
+
+
+
             DecimalInputValidator.init('.decimalInput');
             TaxValidator.init('.taxPercentInput');
             OnlyNumbersValidator.init('.numberOnlyInput,.onlyNum,.numberonly');

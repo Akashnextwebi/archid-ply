@@ -165,7 +165,7 @@ $(document).ready(function () {
                 $("#StoryListBindingSec").empty();
                 if (products.length > 0) {
                     $("#StoryListBindingSec").append(listings);
-                    BindPPage(6, parseInt(pno), products[0].TotalCount);
+                    BindPPage(10, parseInt(pno), products[0].TotalCount);
                 }
             },
             error: function (xhr, status, error) {

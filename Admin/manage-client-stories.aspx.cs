@@ -37,21 +37,20 @@ public partial class Admin_manage_client_stories : System.Web.UI.Page
         {
             if (Page.IsValid)
             {
-                string pageName = Path.GetFileName(Request.Path);
-                string resmsg = CheckImageFormat();
-                if (resmsg == "Format")
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Invalid image format.',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+               string pageName = Path.GetFileName(Request.Path);
+                /*   string resmsg = CheckImageFormat();
+                  if (resmsg == "Format")
+                  {
+                      ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Invalid image format.',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
 
-                    return;
-                }
-                else if (resmsg == "Size")
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Image size should be 300*300 px',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+                      return;
+                  }
+                  else if (resmsg == "Size")
+                  {
+                      ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Image size should be 300*300 px',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
 
-                    return;
-
-                }
+                      return;
+                  }*/
                 ClientStories cs = new ClientStories();
                 if (btnSave.Text == "Update")
                 {
@@ -59,7 +58,7 @@ public partial class Admin_manage_client_stories : System.Web.UI.Page
                     cs.Name = txtName.Text.Trim();
                     cs.Details = txtDetails.Text.Trim();
                     cs.Designation = txtDesignation.Text.Trim();
-                    cs.Image = UploadImage();
+                    cs.Image = "";//UploadImage();
                     cs.AddedIp = CommonModel.IPAddress();
                     cs.AddedOn = TimeStamps.UTCTime();
                     cs.Status = "Active";
@@ -92,17 +91,17 @@ public partial class Admin_manage_client_stories : System.Web.UI.Page
                     cs.Name = txtName.Text.Trim();
                     cs.Details = txtDetails.Text.Trim();
                     cs.Designation = txtDesignation.Text.Trim();
-                    cs.Image = UploadImage();
+                    cs.Image = "";// UploadImage();
                     cs.Id = Convert.ToInt32(Request.QueryString["id"]);
                     cs.AddedIp = CommonModel.IPAddress();
                     cs.AddedOn = TimeStamps.UTCTime();
                     cs.Status = "Active";
                     cs.AddedBy = Request.Cookies["ap_aid"].Value;
-                    if (cs.Image == "")
+                   /* if (cs.Image == "")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Upload Image',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
                         return;
-                    }
+                    }*/
 
                     if (CreateUser.CheckAccess(conAP, pageName, "add", Request.Cookies["ap_aid"].Value))
                     {
@@ -132,7 +131,7 @@ public partial class Admin_manage_client_stories : System.Web.UI.Page
             ExceptionCapture.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "btnSave_Click", ex.Message);
         }
     }
-    public string CheckImageFormat()
+   /* public string CheckImageFormat()
     {
         #region upload image
         string thumbImage = "";
@@ -215,7 +214,7 @@ public partial class Admin_manage_client_stories : System.Web.UI.Page
         }
         #endregion
         return thumbImage;
-    }
+    }*/
     public void GetAllStories()
     {
         try
@@ -228,7 +227,6 @@ public partial class Admin_manage_client_stories : System.Web.UI.Page
 
                 strStories += @"<tr>
                                  <td>" + (i + 1) + @"</td>  
-                                 <td><img src='/"+ nb.Image + @"' class='img-responsive' alt='Not available' width='20px' height='20px' title='" + nb.Name + @"'/></td>
                                  <td>" + nb.Name + @"</td>
                                  <td>" + nb.Designation + @"</td>
                                  <td class='text-wrap-auto'>" + nb.Details + @"</td>
@@ -260,12 +258,6 @@ public partial class Admin_manage_client_stories : System.Web.UI.Page
                 txtName.Text = PD.Name;
                 txtDesignation.Text = PD.Designation;
                 txtDetails.Text = PD.Details;
-                if (PD.Image != "")
-                {
-                    lblThumb.Text = PD.Image;
-                    strImage = @"<img src='/" + PD.Image + @"' class='img-responsive' width='60px' height='60px' title='" + PD.Image + @"'/>";
-
-                }
 
             }
         }

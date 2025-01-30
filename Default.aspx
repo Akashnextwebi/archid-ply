@@ -154,7 +154,7 @@
                         >
                           Makeup with extended range in colors for every human.
                         </p> -->
-                            <img src="assets/imgs/bonvivant-decorative.png"
+                            <img src="assets/imgs/bonvivant-decorative1.png"
                                 alt=""
                                 class="sister-company" />
                             <div class="mt-7">
@@ -419,7 +419,7 @@
             </div>
         </section>
 
-        <section class="why-choose-us section-padding pb-md-5 d-none">
+        <section class="why-choose-us section-padding pb-md-5">
             <div class="container container-xxl">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-6 position-relative order-lg-0 order-1" data-animate="fadeIn">

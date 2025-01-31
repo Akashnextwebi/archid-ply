@@ -698,3 +698,19 @@ h2 span{
         margin: 0;
         padding: 0;
     }
+
+.fact-card {
+    background: #fff;
+    position:relative;
+    border:1px solid #eee;
+}
+.fact-card span{
+    padding:5px 10px 5px;
+    position:absolute;
+    bottom:10px;
+    background:#fff;
+    left:10px;
+    margin-bottom:0px;
+    font-size:16px;
+    font-weight:600;
+}

@@ -7,7 +7,9 @@
             list-style: none;
             padding: 0;
         }
-
+        .product-category{
+            overflow:hidden;
+        }
         .page-item {
             margin: 0 5px;
         }
@@ -31,6 +33,9 @@
 
         .custom-align-right {
             text-align: right;
+        }
+        .product-category{
+            overflow:hidden;
         }
     </style>
 </asp:Content>

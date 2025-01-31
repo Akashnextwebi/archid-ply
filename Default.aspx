@@ -70,7 +70,7 @@
 
     <main id="content" class="wrapper layout-page">
         <%=strBannerImages %>
-      <%--  <%=strMobileBanner %>--%>
+        <%--  <%=strMobileBanner %>--%>
 
         <%--<section class='home-banner'>
             <div class='slick-slider hero hero-header-02 slick-slider-dots-inside'
@@ -1078,6 +1078,47 @@
                 </div>
             </div>
         </section>--%>
+
+        <section class="section-padding">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6" data-animate="fadeInRight">
+                        <div class="fact-card">
+                            <div class="bg-image video-01 d-flex justify-content-center align-items-center  position-relative py-18 py-lg-0 py-md-23 lazy-bg"
+                                data-bg-src="images_/show/factory.jpg" style="height: 400px">
+
+                                <a href="https://www.youtube.com/watch?v=QSYS7-IJvdk" class="view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1">
+                                    <svg class="icon">
+                                        <use xlink:href="#icon-play-fill"></use></svg></a>
+
+
+
+
+
+                            </div>
+                            <span>Factory</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-animate="fadeInRight">
+                        <div class="fact-card">
+                            <div class="bg-image video-01 d-flex justify-content-center align-items-center position-relative py-18 py-lg-0 py-md-23 lazy-bg"
+                                data-bg-src="images_/s1/SDP_4622.jpg" style="height: 400px">
+                                <a href="https://www.youtube.com/watch?v=QSYS7-IJvdk" class="view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1">
+                                    <svg class="icon">
+                                        <use xlink:href="#icon-play-fill"></use></svg></a>
+
+
+
+
+
+                            </div>
+                            <span>Showroom</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
         <div class="whatsapp-fixed">
             <div class="whatsapp-icon">
                 <a href="https://wa.me/+917022012573" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
@@ -1178,7 +1219,7 @@
                     myModal.show();
                 }, 5000);
             });
-  </script>
+        </script>
     </main>
 
 </asp:Content>

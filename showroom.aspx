@@ -15,6 +15,9 @@
             .new-left iframe {
                 border-radius: 6px;
             }
+            .hover-shine img{
+                height:250px !important;
+            }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -88,10 +91,10 @@
                                 <div class="mx-n6 slick-slider"
                                     data-slick-options='{
              "slidesToShow": 4,
-             "infinite": true,
-             "autoplay": true,
-             "dots": true,
-             "arrows": false,
+  "infinite": false,
+  "autoplay": false,
+  "dots": true,
+  "arrows": false,
              "responsive": [
                  {"breakpoint": 1366, "settings": {"slidesToShow": 4}},
                  {"breakpoint": 992, "settings": {"slidesToShow": 3}},
@@ -100,29 +103,39 @@
              ]
          }'>
                                     <!-- Images -->
-                                    <a href="/images_/showroom-banglore/bvshowroom1.jpg" data-gallery="gallery111" data-thumb-src="/images_/showroom-banglore/bvshowroom1.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/bvshowroom1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                                    <a href="images_/s1/SDP_4544.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4544.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/s1/SDP_4575.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4575.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
 
-                                    <a href="/images_/showroom-banglore/bvshowroom1.jpg" data-gallery="gallery222" data-thumb-src="/images_/showroom-banglore/bvshowroom1.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/bvshowroom1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/showroom-banglore/bvshowroom3.jpg" data-gallery="gallery333" data-thumb-src="/images_/showroom-banglore/bvshowroom3.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/bvshowroom3.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/showroom-banglore/bvshowroom4.jpg" data-gallery="gallery444" data-thumb-src="/images_/showroom-banglore/bvshowroom4.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/bvshowroom4.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/showroom-banglore/bvshowroom5.jpg" data-gallery="gallery555" data-thumb-src="/images_/showroom-banglore/bvshowroom5.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/bvshowroom5.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/showroom-banglore/bvshowroom6.jpg" data-gallery="gallery666" data-thumb-src="/images_/showroom-banglore/bvshowroom6.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/bvshowroom6.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/showroom-banglore/bvshowroom7.jpg" data-gallery="gallery777" data-thumb-src="/images_/showroom-banglore/bvshowroom7.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/bvshowroom7.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/showroom-banglore/bvshowroom8.jpg" data-gallery="gallery888" data-thumb-src="/images_/showroom-banglore/bvshowroom8.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/bvshowroom8.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                                    <a href="images_/s1/SDP_4602.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4602.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/s1/SDP_4622.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4622.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/s1/SDP_4678.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4678.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/s1/SDP_4712.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4712.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/s1/SDP_4728.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4728.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/s1/SDP_4731.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4731.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
 
                                     <!-- Video -->
 
@@ -183,10 +196,10 @@
                                 <div class="mx-n6 slick-slider"
                                     data-slick-options='{
              "slidesToShow": 4,
-             "infinite": true,
-             "autoplay": true,
-             "dots": true,
-             "arrows": false,
+               "infinite": false,
+  "autoplay": false,
+  "dots": true,
+  "arrows": false,
              "responsive": [
                  {"breakpoint": 1366, "settings": {"slidesToShow": 4}},
                  {"breakpoint": 992, "settings": {"slidesToShow": 3}},
@@ -195,22 +208,35 @@
              ]
          }'>
                                     <!-- Images -->
+                                    <a href="images_/s2/s1.jpg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s1.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/s2/s2.jpg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s2.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/s2/s3.jpg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s3.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/s2/s4.jpg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s4.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/s2/s5.jpeg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s5.jpeg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/s2/s6.jpeg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s6.jpegg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
 
-                                    <a href="/images_/showroom-banglore/Inshowroom1.jpg" data-gallery="gallery1111" data-thumb-src="/images_/showroom-banglore/Inshowroom1.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/Inshowroom1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/showroom-banglore/Inshowroom2.jpg" data-gallery="gallery2222" data-thumb-src="/images_/showroom-banglore/Inshowroom2.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/Inshowroom2.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/showroom-banglore/Inshowroom3.jpg" data-gallery="gallery3333" data-thumb-src="/images_/showroom-banglore/Inshowroom3.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/Inshowroom3.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/showroom-banglore/Inshowroom4.jpg" data-gallery="gallery4444" data-thumb-src="/images_/showroom-banglore/Inshowroom4.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/Inshowroom4.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/showroom-banglore/Inshowroom5.jpg" data-gallery="gallery5555" data-thumb-src="/images_/showroom-banglore/Inshowroom5.jpg">
-                                        <img src="#" data-src="/images_/showroom-banglore/Inshowroom5.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                                    <!-- Video -->
+                                    <a href="images_/s2/s7.jpeg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s7.jpegg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
 
                                 </div>
                             </div>

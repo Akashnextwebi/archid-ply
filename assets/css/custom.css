@@ -701,12 +701,16 @@ h2 span{
 
 .fact-card {
     background: #fff;
-    padding:20px;
+    position:relative;
     border:1px solid #eee;
 }
-.fact-card h4{
-    padding:10px 0px 0px;
+.fact-card span{
+    padding:5px 10px 5px;
+    position:absolute;
+    bottom:10px;
+    background:#fff;
+    left:10px;
     margin-bottom:0px;
-    font-size:20px;
-    font-weight:500;
+    font-size:16px;
+    font-weight:600;
 }

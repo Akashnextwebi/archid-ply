@@ -1096,7 +1096,7 @@
 
 
                             </div>
-                            <h4>Factory</h4>
+                            <span>Factory</span>
                         </div>
                     </div>
                     <div class="col-lg-6" data-animate="fadeInRight">
@@ -1112,7 +1112,7 @@
 
 
                             </div>
-                            <h4>Showroom</h4>
+                            <span>Showroom</span>
                         </div>
                     </div>
                 </div>

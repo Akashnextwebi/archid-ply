@@ -261,8 +261,7 @@
                             aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample2">
                             <div class="py-8">
                                 <p>
-                                    Veneer paneling is one type of decorative covering for a wall or surface where thin layers of real wood veneer are used and applied over a base material, for instance, plywood, MDF, or particleboard. The veneer is bonded onto the surface to resemble the appearance of wood but using less real wood; hence, veneer paneling is commonly used indoors to add warmth, texture, and luxury to any space, such as living rooms, offices, and restaurants. In comparison with the use of natural wood, the production of veneer wall pan
-                               
+                                    Veneer paneling is one type of decorative covering for a wall or surface where thin layers of real wood veneer are used and applied over a base material, for instance, plywood, MDF, or particleboard. The veneer is bonded onto the surface to resemble the appearance of wood but using less real wood; hence, veneer paneling is commonly used indoors to add warmth, texture, and luxury to any space, such as living rooms, offices, and restaurants. In comparison with the use of natural wood, the production of veneer wall panels is less expensive; it can also be produced in a lot of varieties of wood and finishes.
                                 </p>
                             </div>
                         </div>
@@ -407,7 +406,7 @@ Strength and Durability: BWP is stronger and way more durable than MDF because i
                     <h2 class="fs-3">Warrenty</h2>
                 </div>
                 <div class="col-md-9">
-                    <div class="accordion accordion-flush" id="accordionFlushExample4">
+                    <div class="accordion accordion-flush" id="accordionFlushExample11">
                         <div class="accordion-item pb-5 pt-11 pt-md-0">
                             <h2 class="accordion-header" id="flush-headingWarrentyOne">
                                 <a class="product-info-accordion collapsed text-decoration-none" href="#"
@@ -449,7 +448,7 @@ Strength and Durability: BWP is stronger and way more durable than MDF because i
                             </div>
                         </div>
 
-                        <div class="accordion-item pb-4 pt-11">
+                        <%-- <div class="accordion-item pb-4 pt-11">
                             <h2 class="accordion-header" id="flush-headingWarrentyThree">
                                 <a class="product-info-accordion collapsed text-decoration-none" href="#"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseWarrentyThree" aria-expanded="false"
@@ -467,7 +466,7 @@ Strength and Durability: BWP is stronger and way more durable than MDF because i
                                     Yes
                                 </p>
                             </div>
-                        </div>
+                        </div>--%>
 
                         <div class="accordion-item pb-4 pt-11">
                             <h2 class="accordion-header" id="flush-headingWarrentyFour">
@@ -485,13 +484,13 @@ Strength and Durability: BWP is stronger and way more durable than MDF because i
                             aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample2">
                             <div class="py-8">
                                 <p>
-                                    -Bonvivant is giving a lifetime warranty & Club Plus 710 is giving a 25 years warranty .
+                                    Bonvivant is giving a lifetime warranty & Club Plus 710 is giving a 25 years warranty .
 
                                 </p>
                             </div>
                         </div>
 
-                        <div class="accordion-item pb-4 pt-11">
+                        <%--                        <div class="accordion-item pb-4 pt-11">
                             <h2 class="accordion-header" id="flush-headingWarrentyFive">
                                 <a class="product-info-accordion collapsed text-decoration-none" href="#"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseWarrentyFive" aria-expanded="false"
@@ -509,7 +508,7 @@ Strength and Durability: BWP is stronger and way more durable than MDF because i
                                     Yes
                                 </p>
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
             </div>
@@ -649,7 +648,7 @@ Strength and Durability: BWP is stronger and way more durable than MDF because i
 
             <div class="row py-15 py-lg-17">
                 <div class="col-md-3">
-                    <h2 class="fs-3">Veneers</h2>
+                    <h2 class="fs-3">Doors</h2>
                 </div>
                 <div class="col-md-9">
                     <div class="accordion accordion-flush" id="accordionFlushExample6">
@@ -658,7 +657,7 @@ Strength and Durability: BWP is stronger and way more durable than MDF because i
                                 <a class="product-info-accordion collapsed text-decoration-none" href="#"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseDoorsOne" aria-expanded="false"
                                     aria-controls="flush-collapseDoorsOne">
-                                    <span class="fs-18px">Can doors be customized in specific dimensions ?
+                                    <span class="fs-18px">1.Can doors be customized in specific dimensions ?
                                     </span>
                                 </a>
                             </h2>
@@ -668,7 +667,6 @@ Strength and Durability: BWP is stronger and way more durable than MDF because i
                             <div class="py-8">
                                 <p>
                                     Yes, many of our doors can be customized to fit specific dimensions, providing a tailored solution.
-	
                                 </p>
                             </div>
                         </div>
@@ -758,7 +756,7 @@ Strength and Durability: BWP is stronger and way more durable than MDF because i
 
             <div class="row">
                 <div class="col-md-3">
-                    <h2 class="fs-3">Water Proof </h2>
+                    <h2 class="fs-3">Particle Board </h2>
                 </div>
                 <div class="col-md-9">
                     <div class="accordion accordion-flush" id="accordionFlushExample7">

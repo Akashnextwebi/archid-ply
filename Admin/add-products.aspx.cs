@@ -394,7 +394,7 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
         if (FileUpload1.HasFile)
         {
             string fileExtension = Path.GetExtension(FileUpload1.PostedFile.FileName.ToLower()),
-                ImageGuid1 = txtURL.Text.Trim().Replace(" ", "-").Replace(".", "");
+                ImageGuid1 = Guid.NewGuid().ToString().Replace(" ", "-").Replace(".", "");
             string iconPath = Server.MapPath(".") + "\\../UploadImages\\" + ImageGuid1 + "" + fileExtension;
             try
             {

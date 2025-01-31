@@ -59,7 +59,7 @@ public partial class shop_product_detail : System.Web.UI.Page
                 if (galleries.Count > 0)
                 {
                     var img = "";
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < galleries.Count; i++)
                     {
                         img += @"<a href='/" + galleries[i].Images + @"' data-gallery='gallery3'>
                         <img src='/" + galleries[i].Images + "' class='lazy-image mb-7 img-fluid h-auto' width='540' height='720' alt=''></a>";

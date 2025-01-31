@@ -63,7 +63,7 @@ public partial class _Default : System.Web.UI.Page
                 </div>
             </div>
             <div class='container-xxl mt-10'>
-                <div class='row gy-4'>" + Resources + @"</div>
+                <div class='row gy-4 justify-content-center text-center'>" + Resources + @"</div>
             </div>
         </section>";
         }

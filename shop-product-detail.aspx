@@ -197,12 +197,6 @@
                             <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                 <div class="pt-8 pb-3">
                                     <p class="mb-2 pb-4"><%=strProdDetails %></p>
-                                    <p class="fw-semibold text-body-emphasis mb-2 pb-4">Benefits</p>
-                                    <ul class="mb-5 ps-6">
-                                        <li class="mb-1">Buildable medium-to-full coverage</li>
-                                        <li class="mb-1">Weightless, airy feel—no caking!</li>
-                                        <li class="mb-1">Long-wearing</li>
-                                    </ul>
                                 </div>
                             </div>
                             <div class="accordion-item pb-4 mt-7">

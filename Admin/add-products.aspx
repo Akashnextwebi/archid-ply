@@ -146,7 +146,7 @@
                                                     <label>Tags</label>
                                                     <asp:ListBox ID="drpTag" runat="server" CssClass="form-control lvTest  mb-2 mr-sm-2" SelectionMode="Multiple" MaxLength="100"></asp:ListBox>
                                                 </div>
-                                                
+
                                                 <div class="col-lg-4 mb-3">
                                                     <label>SKU Code</label>
                                                     <asp:TextBox runat="server" MaxLength="100" class="form-control mb-2 mr-sm-2" ID="txtSKUCode" />
@@ -154,19 +154,26 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-lg-6 mb-3">
+                                                <div class="col-lg-12 mb-3">
                                                     <label>Short Description<sup>*</sup></label>
                                                     <asp:TextBox runat="server" TextMode="MultiLine" MaxLength="1500" Rows="4" class="form-control mb-2 mr-sm-2" ID="txtShort" />
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtShort" Display="Dynamic" ForeColor="Red" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
-                                                
+
                                                 </div>
-                                                <div class="col-lg-6 mb-3">
+                                                <div class="col-lg-12 mb-3">
                                                     <label>Specifications<sup>*</sup></label>
-                                                    <asp:TextBox runat="server" MaxLength="1500" TextMode="MultiLine" Rows="4" class="form-control mb-2 mr-sm-2 " ID="txtIngr" />
+                                                    <asp:TextBox runat="server" MaxLength="1500" TextMode="MultiLine" class="form-control mb-2 mr-sm-2 summernote" ID="txtIngr" />
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtIngr" Display="Dynamic" ForeColor="Red" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
-                                                
+
                                                 </div>
 
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 mb-3">
+                                                    <label>Product Details</label>
+                                                    <asp:TextBox runat="server" TextMode="MultiLine" class="form-control mb-2 mr-sm-2 summernote" Style="height: 100px !important;" ID="txtProductDesc" />
+                                                </div>
                                                 <div class="col-lg-4 mb-3">
                                                     <label>Place of Origin</label>
                                                     <asp:TextBox runat="server" MaxLength="100" class="form-control mb-2 mr-sm-2 acceptOnlyAlpha" ID="txtOrigin" />
@@ -178,12 +185,6 @@
                                                 <div class="col-lg-4 mb-3">
                                                     <label>Item Number</label>
                                                     <asp:TextBox runat="server" ID="txtItemNum" MaxLength="100" CssClass="form-control numOnly" />
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12 mb-3">
-                                                    <label>Full Description</label>
-                                                    <asp:TextBox runat="server" TextMode="MultiLine" class="form-control mb-2 mr-sm-2 summernote" Style="height: 100px !important;" ID="txtProductDesc" />
                                                 </div>
                                                 <div class="col-lg-2 mb-3">
                                                     <label>In Stock</label>
@@ -207,7 +208,8 @@
                                                     <label>Enquiry</label>
                                                     <asp:CheckBox CssClass="form-control" ID="chkEnquiry" runat="server" />
                                                 </div>
-                                                <div class="col-lg-2 mb-3 d-none">">
+                                                <div class="col-lg-2 mb-3 d-none">
+                                                    ">
                                                     <label>Shop</label>
                                                     <asp:CheckBox CssClass="form-control" ID="chkShop" runat="server" />
                                                 </div>

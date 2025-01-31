@@ -275,7 +275,7 @@
              convert_urls: false,
              images_upload_url: 'file-upload.ashx',
              skin: "<%=((Request.Cookies["lg_theme"] == null  ) ? "oxide" : Context.Request.Cookies["lg_theme"].Value == "dark" ? "oxide-dark" :"oxide" ) %>",
-           content_css: "<%=((Request.Cookies["lg_theme"] == null  ) ? "default" : Context.Request.Cookies["lg_theme"].Value == "dark" ? "dark" :"default" ) %>",
+             content_css: "<%=((Request.Cookies["lg_theme"] == null  ) ? "default" : Context.Request.Cookies["lg_theme"].Value == "dark" ? "dark" :"default" ) %>",
              plugins: [
                  'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
                  'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
@@ -285,6 +285,7 @@
                  'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
                  'forecolor backcolor emoticons | help',
              menubar: 'file edit view insert format tools table help',
+
          });
          $(".fSelect").fSelect();
          $(".fs-wrap").each(function () {

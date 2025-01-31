@@ -161,7 +161,7 @@ public partial class Admin_add_products_stories : System.Web.UI.Page
                 {
                     System.Drawing.Bitmap bmpPostedImageBig = new System.Drawing.Bitmap(FileUpload1.PostedFile.InputStream);
                     System.Drawing.Image objImagesmallBig = CommonModel.ScaleImageBig(bmpPostedImageBig, bmpPostedImageBig.Height, bmpPostedImageBig.Width);
-                    if (bmpPostedImageBig.Height != 800 && bmpPostedImageBig.Width != 1200)
+                    if (bmpPostedImageBig.Height != 500 && bmpPostedImageBig.Width != 800)
                     {
                         return "Size";
                     }

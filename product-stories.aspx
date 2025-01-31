@@ -41,7 +41,7 @@
             </div>
         </section>
     </main>
-
+        
     <div id="StoryListBindingSec"></div>
 <div class="row mt-12">
     <div class="col-12 text-center">
@@ -50,7 +50,6 @@
         </ul>
     </div>
 </div>
-
   <%--  <div id="StoryListBindingSec"></div>
                                 <div class="row mt-12">
     <div class="col-12 text-center">

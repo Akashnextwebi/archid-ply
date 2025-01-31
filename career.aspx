@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="text-center pt-13 mb-13 mb-lg-15">
                     <div class="text-center">
-                        <h2 class="fs-36px mb-7">ArchidPly Decor Career</h2>
+                        <h2 class="fs-36px mb-7">Archidply Decor Career</h2>
                         <p class="fs-18px mb-0 w-lg-60 w-xl-50 mx-md-13 mx-lg-auto">Discover endless possibilities and unleash your potential. Join a team where your dreams turn into achievements.</p>
                     </div>
                 </div>
@@ -30,9 +30,9 @@
             <div class="row align-items-center mb-10">
                 <div class="col-xl-4 col-lg-6 cl-sm-6 offset-xl-1 mb-13 mb-lg-0 animate__fadeInUp animate__animated " data-animate="fadeInUp">
                     <div class="text-left">
-                        <p class="font-primary fs-5 text-body-emphasis mb-5">ArchidPly Decor career.....</p>
+                        <p class="font-primary fs-5 text-body-emphasis mb-5">Archidply Decor career.....</p>
                         <h2 class="text-uppercase fs-1 fw-bold mb-6">Shape Your Future with Us!</h2>
-                        <p class="fs-18px mb-2">Welcome to ArchidPly Decor Careers! We’re not just a workplace; we’re a community of innovators, dreamers, and achievers. Whether you're a seasoned professional or just starting your journey, we offer opportunities to grow, learn, and make a difference. Join us in shaping the future and achieving greatness together.</p>
+                        <p class="fs-18px mb-2">Welcome to Archidply Decor Careers! We’re not just a workplace; we’re a community of innovators, dreamers, and achievers. Whether you're a seasoned professional or just starting your journey, we offer opportunities to grow, learn, and make a difference. Join us in shaping the future and achieving greatness together.</p>
                     </div>
                     <p class="font-primary fs-5 text-body-emphasis mb-5">Want Join Us?</p>
                     <p class="fs-18px mb-12">Ready to take the next step in your career? Explore opportunities and join a team that values your unique creativity and perspectives</p>

@@ -39,15 +39,9 @@
                                     <asp:TextBox runat="server" MaxLength="100" class="form-control mb-2 mr-sm-2" ID="txtDesignation" />
                                     <asp:RequiredFieldValidator ID="req5" runat="server" ControlToValidate="txtDesignation" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
                                 </div>
-                                <div class="col-lg-4 mb-2">
-                                    <label>Image<sup>*</sup></label>
-                                    <asp:FileUpload CssClass="form-control" ID="FileUpload1" runat="server" />
-                                    <small style="color: red;">.png, .jpeg, .jpg formats to be uploaded and size should be 300*300 px</small>
-                                    <%=strImage %>
-                                </div>
                                 <div class="col-lg-12 mb-2">
                                     <label>Details<sup>*</sup></label>
-                                    <asp:TextBox ID="txtDetails" MaxLength="250" TextMode="MultiLine" class="form-control mb-2 mr-sm-2" Rows="3" runat="server" placeholder="Details"></asp:TextBox>
+                                    <asp:TextBox ID="txtDetails" MaxLength="250" TextMode="MultiLine" class="form-control mb-2 mr-sm-2" Rows="3" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDetails" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
                                 </div>
 
@@ -78,7 +72,6 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Image</th>
                                         <th>Name</th>
                                         <th>Designation/Role</th>
                                         <th>Details</th>

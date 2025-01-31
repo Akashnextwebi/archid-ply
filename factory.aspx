@@ -19,10 +19,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <main id="content" class="wrapper layout-page">
-
-
-
-
         <section class="position-relative custom-overlay" id="about_introduction">
 
             <div class="lazy-bg bg-overlay position-absolute z-index-1 w-100 h-100   light-mode-img" data-bg-src="assets/imgs/about-banner.jpg">
@@ -101,7 +97,7 @@
                 <div class="col-lg-7">
                     <div class="text-start">
                         <div class="text-start">
-                            <h2 class="fs-28px mb-3">Factory Name</h2>
+                            <h2 class="fs-28px mb-3">ARCHIDPLY DECOR LIMITED</h2>
                             <p class="fs-18px">We’re talking about clean beauty gift sets, of course – and we’ve got a bouquet of beauties for yourself or someone you love.</p>
                         </div>
 
@@ -113,23 +109,22 @@
                             <h3 class="fs-5 mb-6">Address</h3>
                             <div class="fs-6">
                                 <p class="mb-2 pb-4 fs-6">
-                                    3245 Abbot Kinney BLVD –
+                                    KSSIDC Industrial Area, Bangalore,
                                         <br>
-                                    PH Venice, CA 124
+                                    Bangalore Rd, Katamachanhalli, Chintamani,
+                                    <br />
+                                    Karnataka 563125
                                 </p>
                                 <p>
-                                    76 East Houston Street
-                                        <br>
-                                    PH Venice, CA 124
-                                </p>
+                                    Phone no : 094484 19394                                </p>
                             </div>
-                            <a href="#" class="text-decoration-none border-bottom border-currentColor fw-semibold fs-6" contenteditable="false" style="cursor: pointer;">Get Direction</a>
+                            <a href="https://maps.app.goo.gl/XZmJrFXwoQnYZDFg7"  class="text-decoration-none border-bottom border-currentColor fw-semibold fs-6" contenteditable="false" style="cursor: pointer;">Get Direction</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="new-left">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d317859.6089702069!2d-0.075949!3d51.508112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760349331f38dd%3A0xa8bf49dde1d56467!2sTower%20of%20London!5e0!3m2!1sen!2sus!4v1719221598456!5m2!1sen!2sus" width="100%" height="394" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15526.155300184078!2d78.03343199915298!3d13.378927391600614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb204426dda505d%3A0x3cfa04e4ff68bf75!2sARCHIDPLY%20DECOR%20LIMITED!5e0!3m2!1sen!2sin!4v1738058577132!5m2!1sen!2sin" width="100%" height="394" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -152,30 +147,27 @@
                      ]
                  }'>
                                     <!-- Images -->
-                                    <a href="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg">
-                                        <img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                                    <a href="/images_/factory-imgs/factory1.jpg" data-gallery="gallery11" data-thumb-src="/images_/factory-imgs/factory1.jpg">
+                                        <img src="#" data-src="/images_/factory-imgs/factory1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
 
-                                    <a href="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg">
-                                        <img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                                    <a href="/images_/factory-imgs/factory2.jpg" data-gallery="gallery22" data-thumb-src="/images_/factory-imgs/factory2.jpg">
+                                        <img src="#" data-src="/images_/factory-imgs/factory2.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
 
-                                    <a href="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg">
-                                        <img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                                    <a href="/images_/factory-imgs/factory3.jpg" data-gallery="gallery33" data-thumb-src="/images_/factory-imgs/factory3.jpg">
+                                        <img src="#" data-src="/images_/factory-imgs/factory3.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
 
-                                    <a href="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg">
-                                        <img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                                    <a href="/images_/factory-imgs/factory4.jpg" data-gallery="gallery44" data-thumb-src="/images_/factory-imgs/factory4.jpg">
+                                        <img src="#" data-src="/images_/factory-imgs/factory4.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
 
-                                    <a href="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg">
-                                        <img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                                    <a href="/images_/factory-imgs/factory5.jpg" data-gallery="gallery55" data-thumb-src="/images_/factory-imgs/factory5.jpg">
+                                        <img src="#" data-src="/images_/factory-imgs/factory5.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
 
-                                    <a href="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg">
-                                        <img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                                    <a href="/images_/factory-imgs/factory6.jpg" data-gallery="gallery66" data-thumb-src="/images_/factory-imgs/factory6.jpg">
+                                        <img src="#" data-src="/images_/factory-imgs/factory6.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
 
-                                    <a href="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg">
-                                        <img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg">
-                                        <img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
+                                    <a href="/images_/factory-imgs/factory7.jpg" data-gallery="gallery77" data-thumb-src="/images_/factory-imgs/factory7.jpg">
+                                        <img src="#" data-src="/images_/factory-imgs/factory7.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                                    
                                     <!-- Video -->
 
                                 </div>

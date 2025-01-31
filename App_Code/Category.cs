@@ -134,7 +134,7 @@ public class Category
         {
             decimal ids = 0;
             decimal.TryParse(catg, out ids);
-            string query = "Select * from Category Where Status='Active' and CategoryUrl=@CategoryUrl";
+            string query = "Select * from Category Where Status='Active' and CategoryUrl=@CategoryUrl and DisplayHome='Yes' order by DisplayOrder";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 DataTable dt = new DataTable();

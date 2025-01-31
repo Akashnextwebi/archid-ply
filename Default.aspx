@@ -154,7 +154,7 @@
                         >
                           Makeup with extended range in colors for every human.
                         </p> -->
-                            <img src="assets/imgs/bonvivant-decorative.png"
+                            <img src="assets/imgs/bonvivant-decorative1.png"
                                 alt=""
                                 class="sister-company" />
                             <div class="mt-7">

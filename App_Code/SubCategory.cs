@@ -120,7 +120,7 @@ public class SubCategory
         {
             decimal ids = 0;
             decimal.TryParse(catg, out ids);
-            string query = "Select *,(SELECT TOP 1 CategoryName FROM Category WHERE id = @category) AS categoryName from SubCategory Where Status='Active' and Category=@Category";
+            string query = "Select *,(SELECT TOP 1 CategoryName FROM Category WHERE id = @category) AS categoryName from SubCategory Where Status='Active' and Category=@Category And DisplayHome='Yes' order by DisplayOrder";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 DataTable dt = new DataTable();

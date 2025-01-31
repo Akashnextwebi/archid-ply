@@ -15,6 +15,9 @@
             .new-left iframe {
                 border-radius: 6px;
             }
+            .hover-shine img{
+    height:250px !important;
+}
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -50,47 +53,7 @@
 
 
 
-        <%--<section class="container  pt-6 pb-13 pb-lg-20">
-                <div class="row ">
-                    <div class="col-md-12 col-xl-8 pe-lg-13">
 
-                        <div class="row g-5">
-                            <div class="col-6">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/11/about-slide1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                            </div>
-                            <div class="col-6">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpgg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                            </div>
-                            <div class="col-6">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                            </div>
-                            <div class="col-6">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                            </div>
-                            <div class="col-6">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                            </div>
-                            <div class="col-6">
-                                <a href="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" data-gallery="gallery7" data-thumb-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg"><img src="#" data-src="https://archidplydecor.com/wp-content/uploads/2018/12/achidply-myanmar-factory.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" data-animate="fadeInRight">
-                        <div class="bg-image video-01 d-flex justify-content-center align-items-center h-lg-85 position-relative py-18 py-lg-0 py-md-23 lazy-bg"
-                             data-bg-src="./assets/imgs/interior-design3.jpg">
-                          
-                            <a href="https://www.youtube.com/watch?v=QSYS7-IJvdk" class="view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1"><svg class="icon"><use xlink:href="#icon-play-fill"></use></svg></a>
-
-
-
-
-
-                        </div>
-                    </div>
-
-                </div>
-            </section>--%>
 
         <section class="container  pt-6 pb-13 pb-lg-20">
             <div class="row new-bg align-items-center">
@@ -116,9 +79,10 @@
                                     Karnataka 563125
                                 </p>
                                 <p>
-                                    Phone no : 094484 19394                                </p>
+                                    Phone no : 094484 19394                               
+                                </p>
                             </div>
-                            <a href="https://maps.app.goo.gl/XZmJrFXwoQnYZDFg7"  class="text-decoration-none border-bottom border-currentColor fw-semibold fs-6" contenteditable="false" style="cursor: pointer;">Get Direction</a>
+                            <a href="https://maps.app.goo.gl/XZmJrFXwoQnYZDFg7" class="text-decoration-none border-bottom border-currentColor fw-semibold fs-6" contenteditable="false" style="cursor: pointer;">Get Direction</a>
                         </div>
                     </div>
                 </div>
@@ -135,8 +99,8 @@
                                 <div class="mx-n6 slick-slider"
                                     data-slick-options='{
                      "slidesToShow": 4,
-                     "infinite": true,
-                     "autoplay": true,
+                     "infinite": false,
+                     "autoplay": false,
                      "dots": true,
                      "arrows": false,
                      "responsive": [
@@ -147,27 +111,39 @@
                      ]
                  }'>
                                     <!-- Images -->
-                                    <a href="/images_/factory-imgs/factory1.jpg" data-gallery="gallery11" data-thumb-src="/images_/factory-imgs/factory1.jpg">
-                                        <img src="#" data-src="/images_/factory-imgs/factory1.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
+                                    <a href="images_/show/fac-002.jpg" title="instagram-01" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/fac-002.jpg" alt="instagram-01" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/show/fac.jpg" title="instagram-02" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/fac.jpg" alt="instagram-02" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/show/fac005.jpg" title="instagram-03" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/fac005.jpg" alt="instagram-03" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/show/factory-00.jpg" title="instagram-04" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/factory-00.jpg" alt="instagram-04" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/show/factory-07.jpg" title="instagram-05" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/factory-07.jpg" alt="instagram-05" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/show/Factory-pic.jpg" title="instagram-06" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/Factory-pic.jpg" alt="instagram-06" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/show/factory.jpg" title="instagram-07" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/factory.jpg" alt="instagram-07" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
+                                    <a href="images_/show/factory01.jpg" title="instagram-08" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                        <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/factory01.jpg" alt="instagram-08" src="#">
+                                        <span class="card-img-overlay bg-dark bg-opacity-30"></span>
+                                    </a>
 
-                                    <a href="/images_/factory-imgs/factory2.jpg" data-gallery="gallery22" data-thumb-src="/images_/factory-imgs/factory2.jpg">
-                                        <img src="#" data-src="/images_/factory-imgs/factory2.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/factory-imgs/factory3.jpg" data-gallery="gallery33" data-thumb-src="/images_/factory-imgs/factory3.jpg">
-                                        <img src="#" data-src="/images_/factory-imgs/factory3.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/factory-imgs/factory4.jpg" data-gallery="gallery44" data-thumb-src="/images_/factory-imgs/factory4.jpg">
-                                        <img src="#" data-src="/images_/factory-imgs/factory4.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/factory-imgs/factory5.jpg" data-gallery="gallery55" data-thumb-src="/images_/factory-imgs/factory5.jpg">
-                                        <img src="#" data-src="/images_/factory-imgs/factory5.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/factory-imgs/factory6.jpg" data-gallery="gallery66" data-thumb-src="/images_/factory-imgs/factory6.jpg">
-                                        <img src="#" data-src="/images_/factory-imgs/factory6.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-
-                                    <a href="/images_/factory-imgs/factory7.jpg" data-gallery="gallery77" data-thumb-src="/images_/factory-imgs/factory7.jpg">
-                                        <img src="#" data-src="/images_/factory-imgs/factory7.jpg" class="img-fluid lazy-image h-auto" width="540" height="720" alt=""></a>
-                                    
                                     <!-- Video -->
 
                                 </div>
@@ -178,6 +154,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
 

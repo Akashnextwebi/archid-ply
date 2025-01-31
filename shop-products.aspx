@@ -34,6 +34,9 @@
         .custom-align-right {
             text-align: right;
         }
+        .product-category{
+            overflow:hidden;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">

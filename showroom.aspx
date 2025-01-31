@@ -103,36 +103,36 @@
              ]
          }'>
                                     <!-- Images -->
-                                    <a href="images_/s1/SDP_4544.jpg" title="instagram-01" data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s1/SDP_4544.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4544.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/s1/SDP_4575.jpg" title="instagram-01" data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s1/SDP_4575.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4575.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
 
-                                    <a href="images_/s1/SDP_4602.jpg" title="instagram-01" data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s1/SDP_4602.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4602.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/s1/SDP_4622.jpg" title="instagram-01" data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s1/SDP_4622.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4622.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/s1/SDP_4678.jpg" title="instagram-01" data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s1/SDP_4678.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4678.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/s1/SDP_4712.jpg" title="instagram-01" data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s1/SDP_4712.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4712.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/s1/SDP_4728.jpg" title="instagram-01" data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s1/SDP_4728.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4728.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/s1/SDP_4731.jpg" title="instagram-01" data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s1/SDP_4731.jpg"  data-gallery="gallery111" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s1/SDP_4731.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
@@ -208,32 +208,32 @@
              ]
          }'>
                                     <!-- Images -->
-                                    <a href="images_/s2/s1.jpg" title="instagram-01" data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s2/s1.jpg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s1.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/s2/s2.jpg" title="instagram-01" data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s2/s2.jpg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s2.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/s2/s3.jpg" title="instagram-01" data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s2/s3.jpg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s3.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/s2/s4.jpg" title="instagram-01" data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s2/s4.jpg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s4.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/s2/s5.jpeg" title="instagram-01" data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s2/s5.jpeg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s5.jpeg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/s2/s6.jpeg" title="instagram-01" data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s2/s6.jpeg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s6.jpegg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
 
-                                    <a href="images_/s2/s7.jpeg" title="instagram-01" data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
+                                    <a href="images_/s2/s7.jpeg"  data-gallery="gallery222" class=" hover-zoom-in hover-shine  card-img-overlay-hover hover-zoom-in hover-shine d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/s2/s7.jpegg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>

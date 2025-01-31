@@ -111,35 +111,35 @@
                      ]
                  }'>
                                     <!-- Images -->
-                                    <a href="images_/show/fac-002.jpg" title="instagram-01" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                    <a href="images_/show/fac-002.jpg" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/fac-002.jpg" alt="instagram-01" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/show/fac.jpg" title="instagram-02" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                    <a href="images_/show/fac.jpg"  data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/fac.jpg" alt="instagram-02" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/show/fac005.jpg" title="instagram-03" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                    <a href="images_/show/fac005.jpg"  data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/fac005.jpg" alt="instagram-03" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/show/factory-00.jpg" title="instagram-04" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                    <a href="images_/show/factory-00.jpg"  data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/factory-00.jpg" alt="instagram-04" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/show/factory-07.jpg" title="instagram-05" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                    <a href="images_/show/factory-07.jpg"  data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/factory-07.jpg" alt="instagram-05" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/show/Factory-pic.jpg" title="instagram-06" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                    <a href="images_/show/Factory-pic.jpg"  data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/Factory-pic.jpg" alt="instagram-06" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/show/factory.jpg" title="instagram-07" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                    <a href="images_/show/factory.jpg"  data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/factory.jpg" alt="instagram-07" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>
-                                    <a href="images_/show/factory01.jpg" title="instagram-08" data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
+                                    <a href="images_/show/factory01.jpg"  data-gallery="B1" class="hover-zoom-in hover-shine card-img-overlay-hover d-block">
                                         <img class="lazy-image img-fluid w-100" width="314" height="314" data-src="images_/show/factory01.jpg" alt="instagram-08" src="#">
                                         <span class="card-img-overlay bg-dark bg-opacity-30"></span>
                                     </a>

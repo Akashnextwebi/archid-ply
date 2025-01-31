@@ -4,6 +4,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="/Admin/assets/plugins/snackbar/snackbar.min.css" rel="stylesheet" />
+    <style>
+        .slick-prev {
+            right: 97%;
+            margin-right: 0.5rem;
+        }
+        .slick-next {
+    left: 97%;
+    margin-left: 0.5rem;
+}
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:ToolkitScriptManager ID="asp" runat="server"></asp:ToolkitScriptManager>

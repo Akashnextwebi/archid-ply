@@ -71,7 +71,7 @@ $(document).ready(function () {
 
                     const vlink = product.Link ? `<div class='bg-image video-01 d-flex justify-content-center align-items-center h-lg-85 position-relative py-18 py-lg-0 py-md-23 lazy-bg'
  data-bg-src='${img}'>
-<a href='${product.Link}' class='view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1'><svg class='icon'><use xlink:href='#icon-play-fill'></use></svg></a>` : `<a href='${img}' data-gallery='gallery7' data-thumb-src='${img}'><img src='${img}' data-src='${img}' class='img-fluid lazy-image h-auto' width='540' height='720' alt=''></a>`
+<a href='${product.Link}' class='view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1'><svg class='icon'><use xlink:href='#icon-play-fill'></use></svg></a></div>` : `<a href='${img}' data-gallery='gallery7' data-thumb-src='${img}'><img src='${img}' data-src='${img}' class='img-fluid lazy-image h-auto' width='540' height='720' alt=''></a>`
 
                     const StoreImg = product.StoriesGal?.map(gal => `<a href='/${gal.Images}' data-gallery='gallery7' data-thumb-src='/${gal.Images}'><img src='/${gal.Images}' data-src='/${gal.Images}' class='img-fluid lazy-image h-auto' width='540' height='720' alt=''></a>` ).join("") || "";
 

@@ -621,62 +621,82 @@
 
                 <div class="slick-slider thumb"
                     data-slick-options='{"slidesToShow": 6,"focusOnSelect": true,"arrows": false, "dots": false, "responsive":[{"breakpoint":992,"settings":{"dots":true,"slidesToShow":4}},{"breakpoint":768,"settings":{"dots":true,"slidesToShow":3}},{"breakpoint":576,"settings":{"dots":true,"slidesToShow":2}}] }'>
-                    <div class="client-logo-item" data-animate="fadeInUp">
 
-                        <a class="lh-1 color-inherit text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#certimodal">
+                    <div class="client-logo-item" data-animate="fadeInUp">
+                        <a class="lh-1 color-inherit text-decoration-none certi-trigger"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#certimodal"
+                            data-title="Goodness Certification"
+                            data-image="images_/certificates/bis.jpg">
                             <img class="w-auto mx-auto light-mode-img"
-                                src="assets/imgs/certificate-1.webp"
-                                data-src="assets/imgs/certificate-1.webp"
-                                alt="goodness" />
+                                src="images_/certificates/bis.jpg"
+                                alt="Goodness"  />
                         </a>
+                    </div>
 
-                    </div>
                     <div class="client-logo-item" data-animate="fadeInUp">
-                        <a class="lh-1 color-inherit text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#certimodal">
+                        <a class="lh-1 color-inherit text-decoration-none certi-trigger"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#certimodal"
+                            data-title="Grand Golden Certification"
+                            data-image="images_/certificates/greenpro.jpg">
                             <img class="w-auto mx-auto light-mode-img"
-                                src="assets/imgs/certificate-2.webp"
-                                data-src="assets/imgs/certificate-2.webp"
-                                alt="grandgolden" />
+                                src="images_/certificates/greenpro.jpg"
+                                alt="Grand Golden" />
                         </a>
                     </div>
+
                     <div class="client-logo-item" data-animate="fadeInUp">
-                        <a class="lh-1 color-inherit text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#certimodal">
+                        <a class="lh-1 color-inherit text-decoration-none certi-trigger"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#certimodal"
+                            data-title="Parker Certification"
+                            data-image="images_/certificates/igbc.jpg">
                             <img class="w-auto mx-auto light-mode-img"
-                                src="assets/imgs/certificate-3.webp"
-                                data-src="assets/imgs/certificate-3.webp"
-                                alt="parker" />
+                                src="images_/certificates/igbc.jpg"
+                                alt="Parker" />
                         </a>
                     </div>
+
                     <div class="client-logo-item" data-animate="fadeInUp">
-                        <a class="lh-1 color-inherit text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#certimodal">
+                        <a class="lh-1 color-inherit text-decoration-none certi-trigger"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#certimodal"
+                            data-title="The Beast Certification"
+                            data-image="images_/certificates/igbc1.jpg">
                             <img class="w-auto mx-auto light-mode-img"
-                                src="assets/imgs/certificate-4.webp"
-                                data-src="assets/imgs/certificate-4.webp"
-                                alt="thebeast" />
+                                src="images_/certificates/igbc1.jpg"
+                                alt="The Beast" />
                         </a>
                     </div>
+
                     <div class="client-logo-item" data-animate="fadeInUp">
-                        <a class="lh-1 color-inherit text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#certimodal">
+                        <a class="lh-1 color-inherit text-decoration-none certi-trigger"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#certimodal"
+                            data-title="Hayden Certification"
+                            data-image="images_/certificates/indonesian-legel-wood.png">
                             <img class="w-auto mx-auto light-mode-img"
-                                src="assets/imgs/certificate-5.webp"
-                                data-src="assets/imgs/certificate-5.webp"
-                                alt="hayden" />
+                                src="images_/certificates/indonesian-legel-wood.png"
+                                alt="Hayden" />
                         </a>
                     </div>
+
                     <div class="client-logo-item" data-animate="fadeInUp">
-                        <a class="lh-1 color-inherit text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#certimodal">
+                        <a class="lh-1 color-inherit text-decoration-none certi-trigger"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#certimodal"
+                            data-title="Good Mood Certification"
+                            data-image="images_/certificates/pefc.png">
                             <img class="w-auto mx-auto light-mode-img"
-                                src="assets/imgs/certificate-6.webp"
-                                data-src="assets/imgs/certificate-6.webp"
-                                alt="goodmood" />
-                        </a>
-                    </div>
-                    <div class="client-logo-item" data-animate="fadeInUp">
-                        <a class="lh-1 color-inherit text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#certimodal">
-                            <img class="w-auto mx-auto light-mode-img"
-                                src="assets/imgs/certificate-1.webp"
-                                data-src="assets/imgs/certificate-1.webp"
-                                alt="goodness" />
+                                src="images_/certificates/pefc.png"
+                                alt="Good Mood" />
                         </a>
                     </div>
                 </div>
@@ -1210,9 +1230,39 @@
                 </div>
             </div>
         </div>
+        <!-- Modal for certificate-->
+        <div class="modal" id="certimodal" tabindex="-1" aria-labelledby="certimodal" aria-hidden="true">
+            <div class="modal-dialog certi-modal modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header text-center border-0 pb-0">
+                        <button type="button"
+                            class="btn-close position-absolute end-5 top-5"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                        </button>
+                        <h3 class="modal-title w-100 text-center" id="certiTitle">Certificate Title</h3>
+                    </div>
+                    <div class="modal-body px-sm-13 px-8 text-center">
+                        <img id="certiImage" src="" class="img-fluid" />
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="/Admin/assets/libs/snackbar/snackbar.min.js"></script>
         <script src="/assets/js/Pages/defaultpage.js"></script>
         <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll(".certi-trigger").forEach(item => {
+                    item.addEventListener("click", function () {
+                        let title = this.getAttribute("data-title");
+                        let imageSrc = this.getAttribute("data-image");
+
+                        document.getElementById("certiTitle").textContent = title;
+                        document.getElementById("certiImage").src = imageSrc;
+                    });
+                });
+            });
+
             document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(function () {
                     const myModal = new bootstrap.Modal(document.getElementById('quickEnquiryModal'));

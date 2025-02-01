@@ -111,7 +111,7 @@ public partial class product_detail : System.Web.UI.Page
                         foreach (EnquiryProductGallery gal in galleries)
                         {
                             menuImg += @"<img src='/" + gal.Images + @"' lass='cursor-pointer lazy-image mx-3 mx-xl-0 px-0 mb-xl-7' width='75' height='100' title='' alt=''/>";
-                            mainImg += @"<a href='/" + gal.Images + @"' data-gallery='product-gallery' data-thumb-src=''><img src='/" + gal.Images + @"' width='540' height='720' title='' class='h-auto lazy-image' alt=''/></a>";
+                            mainImg += @"<a href='/" + gal.Images + @"' data-gallery='product-gallery' data-thumb-src='/" + gal.Images + @"'><img src='/" + gal.Images + @"' width='540' height='720' title='' class='h-auto lazy-image' alt=''/></a>";
                         }
 
 

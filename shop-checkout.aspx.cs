@@ -23,11 +23,17 @@ public partial class shop_checkout : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         BindCart();
+        if (Request.Cookies["arch_i"] != null)
+        {
+            GetUserDetailsByUid();
+            
+        } 
         if (Request.Cookies["arch_i"] == null)
         {
             Loginlink.Visible = true;
+
         }
-        GetUserDetailsByUid();
+        
     }
     protected void CheckBox2_CheckedChanged(object sender, EventArgs e)
     {
@@ -37,8 +43,8 @@ public partial class shop_checkout : System.Web.UI.Page
             DeliveryDiv.Visible = true;
             txtDelAddress1.Text = txtAddress1.Text;
             txtDelAddress2.Text = txtAddress2.Text;
-            txtDelCity.Text = txtCity.Text;
-            txtDelState.Text = txtState.Text;
+            txtDelCity.SelectedValue = ddlCity.SelectedValue;
+            txtDelState.SelectedValue = ddlState.SelectedValue;
             txtDelZip.Text = txtZip.Text;
             txtDelEmailID.Text = txtEmail.Text;
             txtDelPhone.Text = txtPhone.Text;
@@ -48,8 +54,8 @@ public partial class shop_checkout : System.Web.UI.Page
             DeliveryDiv.Visible = false;
             txtDelAddress1.Text = txtAddress1.Text;
             txtDelAddress2.Text = txtAddress2.Text;
-            txtDelCity.Text = txtCity.Text;
-            txtDelState.Text = txtState.Text;
+            txtDelCity.SelectedValue = ddlCity.SelectedValue;
+            txtDelState.SelectedValue = ddlState.SelectedValue;
             txtDelZip.Text = txtZip.Text;
             txtDelEmailID.Text = txtEmail.Text;
             txtDelPhone.Text = txtPhone.Text;
@@ -488,8 +494,8 @@ public partial class shop_checkout : System.Web.UI.Page
                     bill.Address1 = txtAddress1.Text.Trim();
                     bill.Address2 = txtAddress2.Text.Trim();
                     bill.Zip = txtZip.Text.Trim();
-                    bill.City = txtCity.Text.Trim();
-                    bill.State = txtState.Text.Trim();
+                    bill.City = ddlCity.SelectedValue;
+                    bill.State = ddlState.SelectedValue;
                     bill.AddedDateTime = orderedOn;
                     bill.Block = "";
                     bill.Country = ddlCountry.SelectedValue;
@@ -514,9 +520,9 @@ public partial class shop_checkout : System.Web.UI.Page
                         delA.Salutation = "";
                         delA.Address1 = txtAddress1.Text.Trim();
                         delA.Address2 = txtAddress2.Text.Trim();
-                        delA.City = txtCity.Text.Trim();
+                        delA.City = ddlCity.SelectedValue; ;
                         delA.Country = "India";
-                        delA.State = txtState.Text.Trim();
+                        delA.State = ddlState.SelectedValue;
                         delA.FirstName = txtFName.Text.Trim();
                         delA.LastName = txtLName.Text.Trim();
                         delA.Email = txtEmail.Text.Trim();
@@ -540,9 +546,9 @@ public partial class shop_checkout : System.Web.UI.Page
                         delA.Salutation = "";
                         delA.Address1 = txtDelAddress1.Text.Trim();
                         delA.Address2 = txtDelAddress2.Text.Trim();
-                        delA.City = txtDelCity.Text.Trim();
+                        delA.City = txtDelCity.SelectedValue;
                         delA.Country = "India";
-                        delA.State = txtDelState.Text.Trim();
+                        delA.State = txtDelState.SelectedValue;
                         delA.FirstName = txtFName.Text.Trim();
                         delA.LastName = txtLName.Text.Trim();
                         delA.Email = txtDelEmailID.Text.Trim();
@@ -557,9 +563,11 @@ public partial class shop_checkout : System.Web.UI.Page
                     }
 
                     decimal actdis = 0;
+                    decimal factdis = 0;
                     decimal mincart = 0;
                     decimal shipAmount = 0;
                     actdis = Convert.ToDecimal(actprice) - Convert.ToDecimal(discprice);
+                    factdis = actdis == 0 ? 00 : actdis;
                     #region Shipping price
 
                      mincart += Convert.ToDecimal(cart[0].MinCartPrice);
@@ -609,7 +617,7 @@ public partial class shop_checkout : System.Web.UI.Page
                     od.CODAmount = "0";
                     od.AdvAmount = Convert.ToString(adv);
                     od.BalAmount = Convert.ToString(blnc);
-                    od.Discount = actdis.ToString(".##");
+                    od.Discount = factdis.ToString(".##");
                     od.ShippingPrice = sh.ToString(".##");
                     od.SubTotal = discprice.ToString(".##");
                     od.SubTotalWithoutTax = (Convert.ToDecimal(discprice) - Convert.ToDecimal(taxAmount)).ToString(".##");

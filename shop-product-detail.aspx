@@ -365,7 +365,7 @@
             <div class="mb-11">
                 <div class=" d-md-flex justify-content-between align-items-center">
                     <div class=" d-flex align-items-center">
-                        <h4 class="fs-1 me-9 mb-0">4.86</h4>
+                        <h4 class="fs-1 me-9 mb-0"><%=strRatingTotalCount %></h4>
                         <div class="p-0">
                             <div class="d-flex align-items-center fs-6 ls-0 mb-4">
                                 <div class="rating">

@@ -412,17 +412,23 @@ public class UserCheckout
                     adv += @"<tr style='padding-bottom:5px;border-top:1px solid #856869'><th align='left' valign='top' style='float:left;width:46%;color:#856869;font-size:15px;padding:1%;' class='flexibleContainerCell'> Balance Amount </th><th align='left' valign='top' style='float:left;width:46%;color:#856869;font-size:15px;text-align:right;padding:1%;' class='flexibleContainerCell'>₹" + Convert.ToString(dt.Rows[0]["BalAmount"]) + "</th></tr>";
                 }
 
+                string discount = "";
+                if (!string.IsNullOrEmpty(Convert.ToString(dt.Rows[0]["Discount"])))
+                {
+                    discount += Convert.ToDecimal(Convert.ToString(dt.Rows[0]["Discount"]));
+                }
+                
                 string table = pTable +
-                    "<tr style='padding-bottom:5px;border-top:1px solid #856869'><th align='left' valign='top' style='border-top: 1px solid #573e40!important;float:left;width:46%;color:#856869;font-size:15px;padding:1%;' class='flexibleContainerCell'> Sub Total </th><th align='left' valign='top' style='border-top: 1px solid #573e40!important;float:left;width:46%;color:#856869;font-size:15px;text-align:right;padding:1%;' class='flexibleContainerCell'>₹" + (Convert.ToDecimal(Convert.ToString(dt.Rows[0]["SubTotal"])) + Convert.ToDecimal(Convert.ToString(dt.Rows[0]["Discount"]))).ToString() + "</th></tr>" +
+                    "<tr style='padding-bottom:5px;border-top:1px solid #856869'><th align='left' valign='top' style='border-top: 1px solid #573e40!important;float:left;width:46%;color:#856869;font-size:15px;padding:1%;' class='flexibleContainerCell'> Sub Total </th><th align='left' valign='top' style='border-top: 1px solid #573e40!important;float:left;width:46%;color:#856869;font-size:15px;text-align:right;padding:1%;' class='flexibleContainerCell'>₹" + (Convert.ToDecimal(Convert.ToString(dt.Rows[0]["SubTotal"])) + discount).ToString() + "</th></tr>" +
                      Disc + AddDisc + adv +
                     "<tr style='padding-bottom:5px;border-top:1px solid #856869'><th align='left' valign='top' style='float:left;width:46%;color:#856869;font-size:15px;padding:1%;' class='flexibleContainerCell'> Total Tax (included in price) </th><th align='left' valign='top' style='float:left;width:46%;color:#856869;font-size:15px;text-align:right;padding:1%;' class='flexibleContainerCell'>₹" + Convert.ToString(dt.Rows[0]["Tax"]) + "</th></tr>" +
                     ship +
                     "<tr style='padding-bottom:15px;'><td style='border-bottom: 1px solid #573e40!important;'><br /></td></tr>" +
                     "<tr style='padding-bottom:5px;border-top:1px solid #856869'><th align='left' valign='top' style='float:left;width:46%;color:#856869;font-size:15px;padding:1%;' class='flexibleContainerCell'>  Grand Total </th><th align='left' valign='top' style='float:left;width:46%;color:#856869;font-size:15px;text-align:right;padding:1%;' class='flexibleContainerCell'>₹" + Convert.ToString(dt.Rows[0]["TotalPrice"]) + "</th></tr>";
+               
                 Emails.BookingConfirmed(Convert.ToString(dt.Rows[0]["OrderId"]), table + "", Convert.ToString(dt.Rows[0]["Name1"]), Convert.ToString(dt.Rows[0]["email1"]), Convert.ToString(dt.Rows[0]["email2"]), Convert.ToString(dt.Rows[0]["TotalPrice"]), pType, address1, address2);
                 Emails.BookingConfirmedAdmin(Convert.ToString(dt.Rows[0]["OrderId"]), table + "", Convert.ToString(dt.Rows[0]["Name1"]), Convert.ToString(dt.Rows[0]["email1"]), Convert.ToString(dt.Rows[0]["TotalPrice"]), pType, address1, address2);
 
-                //SMSServices.SendOrderSuccess(Convert.ToString(dt.Rows[0]["Mobile1"]).Replace("-", ""), Convert.ToString(dt.Rows[0]["OrderId"]));
             }
         }
         catch (Exception ex)

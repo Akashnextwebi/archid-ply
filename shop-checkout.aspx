@@ -89,7 +89,7 @@
                             <div class="collapse" id="collapsecoupon">
                                 
                             </div>--%>
-                            <h4 class="fs-4 pt-4 mb-7">Shipping Information</h4>
+                            <h4 class="fs-4 pt-4 mb-7">Billing Information</h4>
                             <div class="mb-3">
                                 <label class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">name<span class="text-danger">*</span></label>
                                 <div class="row">
@@ -121,13 +121,19 @@
                                 <div class="row">
                                     <div class="col-md-4 mb-md-0 mb-5">
                                         <label for="city" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">City<span class="text-danger">*</span></label>
-                                        <asp:TextBox runat="server" MaxLength="100" ID="txtCity" CssClass="form-control mb-10"> </asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="rfv5" runat="server" Display="Dynamic" ForeColor="Red" ControlToValidate="txtCity" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
+                                        <asp:DropDownList ID="ddlCity" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
+                                            <asp:ListItem Text="Bengaluru" Value="Bengaluru" Selected="True"></asp:ListItem>
+                                        </asp:DropDownList>
+                                        <%--<asp:RequiredFieldValidator ID="rfv5" runat="server" Display="Dynamic" ForeColor="Red" ControlToValidate="txtCity" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>--%>
                                     </div>
                                     <div class="col-md-4 mb-md-0 mb-5">
                                         <label for="state" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">State<span class="text-danger">*</span></label>
-                                        <asp:TextBox runat="server" MaxLength="100" ID="txtState" CssClass="form-control mb-10"> </asp:TextBox>
+                                        <asp:DropDownList ID="ddlState" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
+                                            <asp:ListItem Text="Karnataka" Value="Karnataka" Selected="True"></asp:ListItem>
+                                        </asp:DropDownList>
+                                        <%-- <asp:TextBox runat="server" MaxLength="100" ID="txtState" CssClass="form-control mb-10"> </asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfv6" runat="server" Display="Dynamic" ForeColor="Red" ControlToValidate="txtState" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
+                                        --%>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="zip" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">zip code<span class="text-danger">*</span></label>
@@ -204,13 +210,21 @@
                                     <div class="row">
                                         <div class="col-md-4 mb-md-0 mb-5">
                                             <label for="city" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">City<span class="text-danger">*</span></label>
-                                            <asp:TextBox runat="server" MaxLength="100" ID="txtDelCity" CssClass="form-control mb-10"> </asp:TextBox>
+                                            <asp:DropDownList ID="txtDelCity" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
+                                                <asp:ListItem Text="Bengaluru" Value="Bengaluru" Selected="True"></asp:ListItem>
+                                            </asp:DropDownList>
+                                            <%--  <asp:TextBox runat="server" MaxLength="100" ID="txtDelCity" CssClass="form-control mb-10"> </asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" Display="Dynamic" runat="server" ForeColor="Red" ControlToValidate="txtDelCity" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
+                                            --%>
                                         </div>
                                         <div class="col-md-4 mb-md-0 mb-5">
                                             <label for="state" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">State<span class="text-danger">*</span></label>
-                                            <asp:TextBox runat="server" MaxLength="100" ID="txtDelState" CssClass="form-control mb-10"> </asp:TextBox>
+                                            <asp:DropDownList ID="txtDelState" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
+                                                <asp:ListItem Text="Karnataka" Value="Karnataka" Selected="True"></asp:ListItem>
+                                            </asp:DropDownList>
+                                            <%-- <asp:TextBox runat="server" MaxLength="100" ID="txtDelState" CssClass="form-control mb-10"> </asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" Display="Dynamic" runat="server" ForeColor="Red" ControlToValidate="txtDelState" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
+                                            --%>
                                         </div>
                                         <div class="col-md-4">
                                             <label for="zip" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">zip code<span class="text-danger">*</span></label>

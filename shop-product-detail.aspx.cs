@@ -409,6 +409,8 @@ public partial class shop_product_detail : System.Web.UI.Page
                         ago = currDate.TotalDays.ToString("N0") + " Years ago";
                     }
                     #endregion
+                    var profimg = rv.ImageUrl == "" ? "images_/others/user1.png" : rv.ImageUrl;
+
                     strReatings += @"<div class='border-bottom pb-7 pt-10'>
                     <div class='d-flex align-items-center mb-6'>
                         <div class='d-flex align-items-center fs-15px ls-0'>
@@ -422,7 +424,7 @@ public partial class shop_product_detail : System.Web.UI.Page
                     </div>
 
                     <div class='d-flex justify-content-start align-items-center mb-5'>
-                        <img src='/" + rv.ImageUrl + @"' class='me-6 lazy-image rounded-circle' width='60' height='60' alt='Avatar'>
+                        <img src='/" + profimg + @"' class='me-6 lazy-image rounded-circle' width='60' height='60' alt='Avatar'>
                         <div class=''>
                             <h5 class='mt-0 mb-4 fs-14px text-uppercase ls-1'>" + rv.UserName + @"</h5>
                             <p class='mb-0'>India</p>

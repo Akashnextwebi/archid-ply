@@ -622,30 +622,32 @@
                 <div class="slick-slider thumb"
                     data-slick-options='{"slidesToShow": 6,"focusOnSelect": true,"arrows": false, "dots": false, "responsive":[{"breakpoint":992,"settings":{"dots":true,"slidesToShow":4}},{"breakpoint":768,"settings":{"dots":true,"slidesToShow":3}},{"breakpoint":576,"settings":{"dots":true,"slidesToShow":2}}] }'>
 
+                    <%--multi imgs--%>
                     <div class="client-logo-item" data-animate="fadeInUp">
                         <a class="lh-1 color-inherit text-decoration-none certi-trigger"
                             href="#"
                             data-bs-toggle="modal"
                             data-bs-target="#certimodal"
-                            data-title="Goodness Certification"
-                            data-image="images_/certificates/bis.jpg">
-                            <img class="w-auto mx-auto light-mode-img"
-                                src="images_/certificates/bis.jpg"
-                                alt="Goodness"  />
-                        </a>
-                    </div>
-
-                    <div class="client-logo-item" data-animate="fadeInUp">
-                        <a class="lh-1 color-inherit text-decoration-none certi-trigger"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#certimodal"
-                            data-title="Grand Golden Certification"
-                            data-image="images_/certificates/greenpro.jpg">
+                            data-title="Green Certificates"
+                            data-image="images_/certificates/PlygreenproC.jpg, images_/certificates/VengreenproC.jpg, images_/certificates/PrelamgreenproCMDF.jpg, images_/certificates/DoorgreenproC.jpg, images_/certificates/PrelamPartgreenproC.jpg">
                             <img class="w-auto mx-auto light-mode-img"
                                 src="images_/certificates/greenpro.jpg"
-                                alt="Grand Golden" />
+                                alt="Green Certificates" />
                         </a>
+                    </div>
+                    <%--pfd--%>
+                    <div class="client-logo-item" data-animate="fadeInUp">
+                        <a class="lh-1 color-inherit text-decoration-none certi-trigger"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#certimodal"
+                            data-title="BUREAU OF INDIAN STANDARDS"
+                            data-image="images_/certificates/License%202202%20door.pdf">
+                            <img class="w-auto mx-auto light-mode-img"
+                                src="images_/certificates/pefc.png"
+                                alt="BUREAU OF INDIAN STANDARDS" />
+                        </a>
+
                     </div>
 
                     <div class="client-logo-item" data-animate="fadeInUp">
@@ -1231,8 +1233,8 @@
             </div>
         </div>
         <!-- Modal for certificate-->
-        <div class="modal" id="certimodal" tabindex="-1" aria-labelledby="certimodal" aria-hidden="true">
-            <div class="modal-dialog certi-modal modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal fade" id="certimodal" tabindex="-1" aria-labelledby="certimodal" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header text-center border-0 pb-0">
                         <button type="button"
@@ -1243,11 +1245,14 @@
                         <h3 class="modal-title w-100 text-center" id="certiTitle">Certificate Title</h3>
                     </div>
                     <div class="modal-body px-sm-13 px-8 text-center">
-                        <img id="certiImage" src="" class="img-fluid" />
+                        <div id="certiContent" class="d-flex flex-column align-items-center">
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <script src="/Admin/assets/libs/snackbar/snackbar.min.js"></script>
         <script src="/assets/js/Pages/defaultpage.js"></script>
         <script>
@@ -1255,10 +1260,33 @@
                 document.querySelectorAll(".certi-trigger").forEach(item => {
                     item.addEventListener("click", function () {
                         let title = this.getAttribute("data-title");
-                        let imageSrc = this.getAttribute("data-image");
+                        let imageData = this.getAttribute("data-image");
+                        let certiContent = document.getElementById("certiContent");
 
                         document.getElementById("certiTitle").textContent = title;
-                        document.getElementById("certiImage").src = imageSrc;
+                        certiContent.innerHTML = "";
+
+                        if (imageData.endsWith(".pdf")) {
+                            let pdfEmbed = document.createElement("embed");
+                            pdfEmbed.src = imageData;
+                            pdfEmbed.type = "application/pdf";
+                            pdfEmbed.width = "100%";
+                            pdfEmbed.height = "500px";
+                            certiContent.appendChild(pdfEmbed);
+                        } else if (imageData.includes(",")) {
+                            let imageArray = imageData.split(",");
+                            imageArray.forEach(imageSrc => {
+                                let imgElement = document.createElement("img");
+                                imgElement.src = imageSrc.trim();
+                                imgElement.classList.add("img-fluid", "mb-15");
+                                certiContent.appendChild(imgElement);
+                            });
+                        } else {
+                            let imgElement = document.createElement("img");
+                            imgElement.src = imageData;
+                            imgElement.classList.add("img-fluid");
+                            certiContent.appendChild(imgElement);
+                        }
                     });
                 });
             });

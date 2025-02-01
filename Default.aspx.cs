@@ -97,8 +97,8 @@ public partial class _Default : System.Web.UI.Page
                     {
                         foreach (StoriesGallery sg in StoreGal)
                         {
-                            //var id = "galleries" + sg.Id;
-                            galImgs += @"<a style='height:355px !important' href='/" + sg.Images + @"' data-gallery='gallery1' data-thumb-src='/" + sg.Images + @"'><img src='/" + sg.Images + @"' data-src='/" + sg.Images + "' class='img-fluid lazy-image h-auto' alt='Unavailable'></a>";
+                            var id = "galleries" + sg.Id;
+                            galImgs += @"<a style='height:355px !important' href='/" + sg.Images + @"' data-gallery='"+id+@"' data-thumb-src='/" + sg.Images + @"'><img src='/" + sg.Images + @"' data-src='/" + sg.Images + "' class='img-fluid lazy-image h-auto' alt='Unavailable'></a>";
                         }
 
 

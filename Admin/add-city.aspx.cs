@@ -32,6 +32,8 @@ public partial class Admin_add_city : System.Web.UI.Page
         {
             if (Page.IsValid)
             {
+                string pageName = Path.GetFileName(Request.Path);
+                string aid = Request.Cookies["ap_aid"].Value;
                 List<City> res = City.GetCityByCity(conAP, txtCityName.Text.Trim().ToLower());
                 City cs = new City();
                 if (btnSave.Text == "Update")
@@ -43,10 +45,15 @@ public partial class Admin_add_city : System.Web.UI.Page
                     cs.Status = "Active";
                     cs.AddedBy = Request.Cookies["ap_aid"].Value;
 
+                    if (!CreateUser.CheckAccess(conAP, pageName, "Add", aid))
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Oops! Access denied. Contact to your administrator',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+                        return;
+                    }
                     if (res.Count > 0 && res[0].Id != Convert.ToInt32(Request.QueryString["id"]))
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'City already exist...',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
-
+                        return;
                     }
                     else
                     {
@@ -66,11 +73,16 @@ public partial class Admin_add_city : System.Web.UI.Page
                 }
                 else
                 {
+                    if (!CreateUser.CheckAccess(conAP, pageName, "Add", aid))
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Oops! Access denied. Contact to your administrator',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+                        return;
+                    }
                     cs.AddedBy = Request.Cookies["ap_aid"].Value;
                     if (res.Count > 0)
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'City already exist...',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
-
+                        return;
                     }
                     cs.CityName = txtCityName.Text.Trim();
                     cs.AddedIp = CommonModel.IPAddress();

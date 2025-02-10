@@ -621,7 +621,7 @@
                         </li>
 
                         <li class="pt-3 mb-4">
-                            <a href="#" title="Online Gift Card" class="">Privacy policy</a>
+                            <a href="/privacy-policy" title="Online Gift Card" class="">Privacy policy</a>
                         </li>
                     </ul>
                 </div>

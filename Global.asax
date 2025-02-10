@@ -36,6 +36,7 @@
         routes.MapPageRoute("/Dealers", "dealers", "~/dealers.aspx");
         routes.MapPageRoute("/Career", "career", "~/career.aspx");
         routes.MapPageRoute("/Product-stories", "product-stories", "~/product-stories.aspx");
+        routes.MapPageRoute("/Privacy-policy", "privacy-policy", "~/privacy-policy.aspx");
     }
 
 

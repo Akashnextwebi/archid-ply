@@ -33,6 +33,7 @@ public partial class contact_us : System.Web.UI.Page
                 {
                     txtName.Text = txtEmail.Text  = txtMessage.Text = "";
                     Emails.ContactRequest(cat);
+                    Emails.ContactUSRequestToCustomer(txtName.Text.Trim(), txtEmail.Text.Trim());
                     Response.Redirect("/thank-you");
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Your query posted successfully. We will get back you soon...',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
                 }

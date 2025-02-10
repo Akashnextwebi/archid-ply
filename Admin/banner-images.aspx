@@ -49,7 +49,7 @@
                                 <div class="col-sm-6 mb-2">
                                     <label>Desktop Image<sup>*</sup></label>
                                     <asp:FileUpload ID="FileUpload1" runat="server" CssClass="form-control"></asp:FileUpload>
-                                    <small style="color: red;">.png, .jpeg, .jpg, .gif, .webp formats are required, Image Size Should be 1600*500 px</small><br />
+                                    <small style="color: red;">.png, .jpeg, .jpg, .gif, .webp formats are required, Image Size Should be 1920*1280 px</small><br />
                                     <%=strThumbImage %>
                                 </div>
                                 <div class="col-sm-6 mb-2">

@@ -53,7 +53,7 @@
                     <div class="text-start">
                         <div class="text-start">
                             <h2 class="fs-28px mb-3">ARCHIDPLY DECOR  LIMITED</h2>
-                            <p class="fs-18px">We’re talking about clean beauty gift sets, of course – and we’ve got a bouquet of beauties for yourself or someone you love.</p>
+                            <p class="fs-18px">Archidply Décor is a unique concept store for premium veneers with different finishes, Plywood decorative doors, Flooring, laminates, acrylic & many more under one roof , it is one stop shop for interior. It is located on the prime location of Queens Road with lot space of parking available .Step into the store to explore more.</p>
                         </div>
 
                     </div>
@@ -154,7 +154,7 @@
                     <div class="text-start">
                         <div class="text-start">
                             <h2 class="fs-28px mb-3">ARCHIDPLY DECOR  LIMITED</h2>
-                            <p class="fs-18px">We’re talking about clean beauty gift sets, of course – and we’ve got a bouquet of beauties for yourself or someone you love.</p>
+                            <p class="fs-18px">Archidply Décor  showroom is a retail space designed to display and sell various types of plywood and veneer materials used for furniture, interior decor, and construction. It’s typically a well-organized, well-lit area where customers can view the range of products available in different sizes, thicknesses, textures, and finishes.</p>
                         </div>
 
                     </div>

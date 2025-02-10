@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css" integrity="sha512-UiVP2uTd2EwFRqPM4IzVXuSFAzw+Vo84jxICHVbOA1VZFUyr4a6giD9O3uvGPFIuB2p3iTnfDVLnkdY7D/SJJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .section-padding {
-            padding: 80px 0px;
+            padding: 20px 0px;
         }
 
         .why-choose-content h5 {
@@ -23,10 +23,19 @@
             margin: 0;
             padding: 0;
         }
+        .new-pad{
+            padding:40px 0px;
+        }
+        .section-title h4{
+            font-size:20px !important;
+            line-height:30px !important;
+
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <main id="content" class="wrapper layout-page">
+       <main id="content" class="wrapper layout-page investor-contact pt-5 pb-10" style="background: #f1efec url('assets/imgs/bg-img2.png'); background-repeat: no-repeat; background-position: right; background-attachment: fixed">
+
         <section class="position-relative custom-overlay" id="about_introduction">
 
             <div class="lazy-bg bg-overlay position-absolute z-index-1 w-100 h-100   light-mode-img" data-bg-src="assets/imgs/about-banner.jpg">
@@ -40,17 +49,18 @@
                 </h2>
             </div>
         </section>
+               <div class="new-pad">
+        <div id="StoryListBindingSec"></div>
+        <div class="row mt-12">
+            <div class="col-12 text-center">
+                <ul class="pagination pPagination justify-content-center">
+                </ul>
+            </div>
+        </div>
+        </div>
     </main>
-        
-    <div id="StoryListBindingSec"></div>
-<div class="row mt-12">
-    <div class="col-12 text-center">
-        <ul class="pagination pPagination justify-content-center">
 
-        </ul>
-    </div>
-</div>
-  <%--  <div id="StoryListBindingSec"></div>
+    <%--  <div id="StoryListBindingSec"></div>
                                 <div class="row mt-12">
     <div class="col-12 text-center">
         <ul class="pagination pPagination justify-content-center">
@@ -156,7 +166,7 @@
         </div>
     </div>
 </section>--%>
-<%--    <section class="why-choose-us section-padding">
+    <%--    <section class="why-choose-us section-padding">
         <div class="container container-xxl">
             <div class="row align-items-center justify-content-between">
 
@@ -702,6 +712,7 @@ property — with the help of Archidply Club Plus and select veneers from our De
 
         </div>
     </section>--%>
+        </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js" integrity="sha512-UU0D/t+4/SgJpOeBYkY+lG16MaNF8aqmermRIz8dlmQhOlBnw6iQrnt4Ijty513WB3w+q4JO75IX03lDj6qQNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/Pages/product-stories-bind.js"></script>
 

@@ -98,10 +98,10 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
             {
                 drpTag.DataSource = cats;
                 drpTag.DataTextField = "Title";
-                drpTag.DataValueField = "Title";
+                drpTag.DataValueField = "TagURL";
                 drpTag.DataBind();
             }
-            drpTag.Items.Insert(0, new ListItem("Select Tags", ""));
+            drpTag.Items.Insert(0, new ListItem("- Select Tag -", "0"));
         }
         catch (Exception ex)
         {
@@ -139,18 +139,19 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
                 chkBestSeller.Checked = pds.BestSeller == "Yes" ? true : false;
                 chkShop.Checked = pds.Shop == "Yes" ? true : false;
                 chkEnquiry.Checked = pds.Enquiry == "Yes" ? true : false;
-                #region Product Tags
-                foreach (string vs in pds.ProductTags.Split('|'))
-                {
-                    foreach (ListItem li in drpTag.Items)
-                    {
-                        if (li.Text.Trim() == vs.Trim())
-                        {
-                            li.Selected = true;
-                        }
-                    }
-                }
-                #endregion
+                drpTag.SelectedValue = pds.ProductTags;
+                //#region Product Tags
+                //foreach (string vs in pds.ProductTags.Split('|'))
+                //{
+                //    foreach (ListItem li in drpTag.Items)
+                //    {
+                //        if (li.Text.Trim() == vs.Trim())
+                //        {
+                //            li.Selected = true;
+                //        }
+                //    }
+                //}
+                //#endregion
 
                 //#region Product Demand
                 //foreach (string Ls in pds.Demand.Split('|'))
@@ -263,7 +264,7 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
                 cat.DeliveryDays = txtDelDate.Text.Trim()==""?"": txtDelDate.Text.Trim();
 
                 string tags = "";
-                #region Product Tags
+                /*#region Product Tags
                 foreach (ListItem li in drpTag.Items)
                 {
                     if (li.Selected)
@@ -272,10 +273,10 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
                     }
                 }
                 tags = tags.TrimEnd('|');
-                #endregion
+                #endregion*/
 
 
-                cat.ProductTags = tags;
+                cat.ProductTags = drpTag.SelectedValue;
 
                 if (btnSave.Text == "Update")
                 {

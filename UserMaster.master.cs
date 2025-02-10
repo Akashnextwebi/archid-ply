@@ -20,6 +20,7 @@ public partial class UserMaster : System.Web.UI.MasterPage
         LoginCheck();
         if (!IsPostBack)
         {
+            LoginCheck();
             hdnModalVisibility.Value = "false";
             hdnModalVisibility1.Value = "false";
         }
@@ -170,7 +171,7 @@ public partial class UserMaster : System.Web.UI.MasterPage
     }
     public void CreateVisitedUser()
     {
-        if (HttpContext.Current.Request.Cookies["arch_v"] == null)
+        if (HttpContext.Current.Request.Cookies["arch_v"] == null || HttpContext.Current.Request.Cookies["arch_v"].Value == "")
         {
             HttpCookie cookie = new HttpCookie("arch_v");
             cookie.Value = Guid.NewGuid().ToString();
@@ -238,7 +239,7 @@ public partial class UserMaster : System.Web.UI.MasterPage
                             cookie.Expires = CommonModel.UTCTime().AddDays(30);
 
                         }
-                        
+
                         HttpCookie cookie_pass_key = new HttpCookie("arch_pkey");
                         cookie_pass_key.Value = Convert.ToString(ud.PassKey);
                         Response.Cookies.Add(cookie_pass_key);

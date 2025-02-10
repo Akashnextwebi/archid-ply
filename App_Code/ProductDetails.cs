@@ -93,7 +93,7 @@ public class ProductDetails
         List<ProductDetails> Products = new List<ProductDetails>();
         try
         {
-            var query = @"SELECT TOP 8 * FROM (SELECT ROW_NUMBER() OVER (ORDER BY ProductOrder DESC) AS RowNo, (SELECT COUNT(ID) FROM ProductDetails WHERE Status = 'Active' AND (@Category = '' OR Category = @Category) AND ProductTags LIKE '%' + @ProductTags + '%') AS TotalCount, * FROM ProductDetails WHERE Status = 'Active' AND (@Category = '' OR Category = @Category) AND ProductTags LIKE '%' + @ProductTags + '%') x WHERE RowNo > " + (8 * (cPage - 1));
+            var query = @"SELECT TOP 8 * FROM (SELECT ROW_NUMBER() OVER (ORDER BY ProductOrder DESC) AS RowNo, (SELECT COUNT(ID) FROM ProductDetails WHERE Status = 'Active' AND (@Category = '' OR Category = @Category) AND (@ProductTags='' or ProductTags=@ProductTags )) AS TotalCount, * FROM ProductDetails WHERE Status = 'Active' AND (@Category = '' OR Category = @Category) AND (@ProductTags='' or ProductTags=@ProductTags )) x WHERE RowNo > " + (8 * (cPage - 1));
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@Category", SqlDbType.Int).Value = Pcat;
@@ -942,7 +942,7 @@ public class ProductDetails
         List<ProductDetails> categories = new List<ProductDetails>();
         try
         {
-            string query = "select * from ProductDetails where Id in (SELECT CAST(value AS INT) FROM STRING_SPLIT(@Related, '|'))";
+            string query = "select * from ProductDetails where Id in (SELECT CAST(value AS INT) FROM STRING_SPLIT(@Related, '|')) and Status!='Deleted' order by Id ";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 DataTable dt = new DataTable();

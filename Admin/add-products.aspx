@@ -143,8 +143,10 @@
                                                     <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender6" runat="server" FilterMode="ValidChars" FilterType="Custom,LowercaseLetters,UppercaseLetters,Numbers" ValidChars="-" TargetControlID="txtUrl"></asp:FilteredTextBoxExtender>
                                                 </div>
                                                 <div class="col-lg-4 mb-3">
-                                                    <label>Tags</label>
-                                                    <asp:ListBox ID="drpTag" runat="server" CssClass="form-control lvTest  mb-2 mr-sm-2" SelectionMode="Multiple" MaxLength="100"></asp:ListBox>
+                                                    <label>Tag<sup>*</sup></label>
+                                                    <asp:DropDownList ID="drpTag" runat="server" CssClass="form-control mb-2 mr-sm-2" ></asp:DropDownList>
+                                                    <asp:RequiredFieldValidator ID="rfv3" runat="server" ControlToValidate="drpTag" InitialValue="0" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
+
                                                 </div>
 
                                                 <div class="col-lg-4 mb-3">

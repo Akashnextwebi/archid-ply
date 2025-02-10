@@ -361,7 +361,7 @@
                                 <a href="/faqs.aspx" title="FAQ" class="">FAQ's</a>
                             </li>
                             <li class="pt-3 mb-4">
-                                <a href="#" title="Online Gift Card" class="">Privacy policy</a>
+                                <a href="/privacy-policy" title="Online Gift Card" class="">Privacy policy</a>
                             </li>
                         </ul>
                     </div>
@@ -498,7 +498,7 @@
                                 <asp:RequiredFieldValidator ID="rfv7" runat="server" ForeColor="Red" ControlToValidate="txtSignUpPassword" SetFocusOnError="true" Display="Dynamic" ValidationGroup="signup" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
                                 <div class="d-flex align-items-center mt-8 mb-7">
                                     <asp:CheckBox ID="chkAgreePolicy" runat="server" CssClass="form-check-input rounded-0 me-3" />
-                                    <label for="chkAgreePolicy" class="custom-control-label text-body">Yes, I agree with Grace <a href="#" class="text-black">Privacy Policy</a> and <a href="#" class="text-black">Terms of Use</a></label>
+                                    <label for="chkAgreePolicy" class="custom-control-label text-body">Yes, I agree with Grace <a href="/privacy-policy" class="text-black">Privacy Policy</a> and <a href="/privacy-policy" class="text-black">Terms of Use</a></label>
                                 </div>
 
                                 <asp:Button ID="btnSignUp" ValidationGroup="signup" runat="server" CssClass="btn btn-dark btn-hover-bg-primary btn-hover-border-primary w-100" Text="Sign Up" OnClick="btnSignUp_Click" />

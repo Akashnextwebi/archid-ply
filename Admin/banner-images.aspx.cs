@@ -279,7 +279,7 @@ public partial class Admin_banner_images : System.Web.UI.Page
                 {
                     System.Drawing.Bitmap bmpPostedImageBig = new System.Drawing.Bitmap(FileUpload1.PostedFile.InputStream);
                     System.Drawing.Image objImagesmallBig = CommonModel.ScaleImageBig(bmpPostedImageBig, bmpPostedImageBig.Height, bmpPostedImageBig.Width);
-                    if (bmpPostedImageBig.Height == 500 && bmpPostedImageBig.Width == 1600)
+                    if (bmpPostedImageBig.Height == 1280 && bmpPostedImageBig.Width == 1920)
                     {
                         return thumbImage;
 

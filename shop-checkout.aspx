@@ -90,6 +90,9 @@
                                 
                             </div>--%>
                             <h4 class="fs-4 pt-4 mb-7">Billing Information</h4>
+                            <h5>
+                                <asp:Label runat="server" ID="lblCityValidation"  class="text-danger mb-1"></asp:Label>
+                            </h5>
                             <div class="mb-3">
                                 <label class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">name<span class="text-danger">*</span></label>
                                 <div class="row">
@@ -119,27 +122,30 @@
                             </div>
                             <div class="mb-3">
                                 <div class="row">
-                                    <div class="col-md-4 mb-md-0 mb-5">
-                                        <label for="city" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">City<span class="text-danger">*</span></label>
-                                        <asp:DropDownList ID="ddlCity" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
-                                            <asp:ListItem Text="Bengaluru" Value="Bengaluru" Selected="True"></asp:ListItem>
-                                        </asp:DropDownList>
-                                        <%--<asp:RequiredFieldValidator ID="rfv5" runat="server" Display="Dynamic" ForeColor="Red" ControlToValidate="txtCity" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>--%>
-                                    </div>
-                                    <div class="col-md-4 mb-md-0 mb-5">
-                                        <label for="state" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">State<span class="text-danger">*</span></label>
-                                        <asp:DropDownList ID="ddlState" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
-                                            <asp:ListItem Text="Karnataka" Value="Karnataka" Selected="True"></asp:ListItem>
-                                        </asp:DropDownList>
-                                        <%-- <asp:TextBox runat="server" MaxLength="100" ID="txtState" CssClass="form-control mb-10"> </asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="rfv6" runat="server" Display="Dynamic" ForeColor="Red" ControlToValidate="txtState" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
-                                        --%>
-                                    </div>
                                     <div class="col-md-4">
                                         <label for="zip" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">zip code<span class="text-danger">*</span></label>
                                         <asp:TextBox runat="server" MaxLength="6" ID="txtZip" CssClass="form-control mb-10"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Display="Dynamic" runat="server" ForeColor="Red" ControlToValidate="txtZip" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
                                     </div>
+                                    <div class="col-md-4 mb-md-0 mb-5">
+                                        <label for="city" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">City<span class="text-danger">*</span></label>
+                                        <%-- <asp:DropDownList ID="ddlCity" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
+                                            <asp:ListItem Text="Bengaluru" Value="Bengaluru" Selected="True"></asp:ListItem>
+                                        </asp:DropDownList>--%>
+                                        <asp:TextBox runat="server" MaxLength="100" ID="txtCity" CssClass="form-control mb-10"> </asp:TextBox>
+
+                                        <%--<asp:RequiredFieldValidator ID="rfv5" runat="server" Display="Dynamic" ForeColor="Red" ControlToValidate="txtCity" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>--%>
+                                    </div>
+                                    <div class="col-md-4 mb-md-0 mb-5">
+                                        <label for="state" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">State<span class="text-danger">*</span></label>
+                                        <%--   <asp:DropDownList ID="ddlState" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
+                                            <asp:ListItem Text="Karnataka" Value="Karnataka" Selected="True"></asp:ListItem>
+                                        </asp:DropDownList>--%>
+                                        <asp:TextBox runat="server" MaxLength="100" ID="txtState" CssClass="form-control mb-10"> </asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfv6" runat="server" Display="Dynamic" ForeColor="Red" ControlToValidate="txtState" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
+
+                                    </div>
+                                    <%--<label id="lblCityValidation" class="text-danger mb-3"></label>--%>
                                 </div>
                             </div>
                             <div class="mb-5">
@@ -169,17 +175,14 @@
                                 </div>
                             </div>
                             <div class="mt-6 mb-5 form-check">
-                                <asp:CheckBox ID="customCheck5" runat="server" CssClass="form-check-input rounded-0 me-4"
-                                    AutoPostBack="true" Checked="true" OnCheckedChanged="CheckBox2_CheckedChanged" />
+                                <asp:CheckBox ID="customCheck5" runat="server" CssClass="form-check-input rounded-0 me-4" Checked="true" />
                                 <label class="text-body-emphasis" for="customCheck5">
-                                    <span class="text-body-emphasis">Billing address is the same as shipping</span>
+                                    <span class="text-body-emphasis">Shipping address is the same as billing</span>
                                 </label>
-                                <h5>
-                                    <asp:Label runat="server" ID="lblzip" Visible="false"></asp:Label>
-                                </h5>
+
 
                             </div>
-                            <div runat="server" visible="false" id="DeliveryDiv">
+                            <div runat="server" id="DeliveryDiv">
                                 <h4 class="fs-4 pt-4 mb-7">shipping Information</h4>
                                 <div class="row">
                                     <div class="col-md-6 mb-md-0 mb-7">
@@ -208,29 +211,30 @@
                                 </div>
                                 <div class="mb-3">
                                     <div class="row">
-                                        <div class="col-md-4 mb-md-0 mb-5">
-                                            <label for="city" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">City<span class="text-danger">*</span></label>
-                                            <asp:DropDownList ID="txtDelCity" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
-                                                <asp:ListItem Text="Bengaluru" Value="Bengaluru" Selected="True"></asp:ListItem>
-                                            </asp:DropDownList>
-                                            <%--  <asp:TextBox runat="server" MaxLength="100" ID="txtDelCity" CssClass="form-control mb-10"> </asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" Display="Dynamic" runat="server" ForeColor="Red" ControlToValidate="txtDelCity" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
-                                            --%>
-                                        </div>
-                                        <div class="col-md-4 mb-md-0 mb-5">
-                                            <label for="state" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">State<span class="text-danger">*</span></label>
-                                            <asp:DropDownList ID="txtDelState" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
-                                                <asp:ListItem Text="Karnataka" Value="Karnataka" Selected="True"></asp:ListItem>
-                                            </asp:DropDownList>
-                                            <%-- <asp:TextBox runat="server" MaxLength="100" ID="txtDelState" CssClass="form-control mb-10"> </asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" Display="Dynamic" runat="server" ForeColor="Red" ControlToValidate="txtDelState" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
-                                            --%>
-                                        </div>
                                         <div class="col-md-4">
                                             <label for="zip" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">zip code<span class="text-danger">*</span></label>
                                             <asp:TextBox runat="server" MaxLength="6" ID="txtDelZip" CssClass="form-control mb-10"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" Display="Dynamic" runat="server" ForeColor="Red" ControlToValidate="txtDelZip" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
                                         </div>
+                                        <div class="col-md-4 mb-md-0 mb-5">
+                                            <label for="city" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">City<span class="text-danger">*</span></label>
+                                            <%--   <asp:DropDownList ID="txtDelCity" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
+                                                <asp:ListItem Text="Bengaluru" Value="Bengaluru" Selected="True"></asp:ListItem>
+                                            </asp:DropDownList>--%>
+                                            <asp:TextBox runat="server" MaxLength="100" ID="txtDelCity" CssClass="form-control mb-10"> </asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" Display="Dynamic" runat="server" ForeColor="Red" ControlToValidate="txtDelCity" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
+
+                                        </div>
+                                        <div class="col-md-4 mb-md-0 mb-5">
+                                            <label for="state" class="mb-5 fs-13px letter-spacing-01 fw-semibold text-uppercase">State<span class="text-danger">*</span></label>
+                                            <%--    <asp:DropDownList ID="txtDelState" runat="server" CssClass="form-select bg-body-secondary rounded p-5 text-secondary">
+                                                <asp:ListItem Text="Karnataka" Value="Karnataka" Selected="True"></asp:ListItem>
+                                            </asp:DropDownList>--%>
+                                            <asp:TextBox runat="server" MaxLength="100" ID="txtDelState" CssClass="form-control mb-10"> </asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" Display="Dynamic" runat="server" ForeColor="Red" ControlToValidate="txtDelState" SetFocusOnError="true" ValidationGroup="order" ErrorMessage="Fields can't be blank"></asp:RequiredFieldValidator>
+
+                                        </div>
+
                                     </div>
                                 </div>
 
@@ -244,6 +248,36 @@
         </section>
     </main>
     <%-- <script>
+
+        $(document.body).on("change", "#txtZip", function (e) {
+            $("#txtZip").parent().find(".error").remove();
+            if ($("#txtZip").val().length != 6) {
+                $("#txtZip").parent().append("<span class='error text-danger'>Enter 6 digit valid pincode</span>");
+            } else {
+                var val = $(this).val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'shop-checkout.aspx/PincodeValidation',
+                    data: "{val:'" + val + "'}",
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: "json",
+                    async: false,
+                    success: function (res) {
+                        var data = res.d.split('|');
+                        if (data[0] === "S") {
+                            $("#txtCity").val(data[1]);
+                            $("#txtState").val(data[2]);
+                        }
+                    }
+                });
+                $("#txtZip").parent().find(".error").remove();
+                $("#txtCity").parent().find(".error").remove();
+                $("#txtState").parent().find(".error").remove();
+            }
+
+        });
+    </script>--%>
+    <%-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             const collapseElement = document.getElementById("collapsecoupon");
             if (collapseElement) {
@@ -251,6 +285,6 @@
             }
         });
 </script>--%>
-    <%--<script src="/assets/js/Pages/shop-checkout.js"></script>--%>
+    <script src="/assets/js/Pages/shop-checkout.js"></script>
 </asp:Content>
 

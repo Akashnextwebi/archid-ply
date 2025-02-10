@@ -87,9 +87,9 @@
   max-width: 600px;
   padding-left: 50px;
 }
-.home-banner .hero-content h1 span {
+/*.home-banner .hero-content h1 span {
   color: var(--bs-secondary-org);
-}
+}*/
 
 /* Our Products */
 .our-products {

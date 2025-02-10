@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="col-lg-12">
                                     <label>Answer<span class="text-danger">*</span></label>
-                                    <asp:TextBox runat="server" Rows="4" TextMode="MultiLine" class="form-control mb-2 mr-sm-2 " ID="txtDesc" />
+                                    <asp:TextBox runat="server" TextMode="MultiLine" class="form-control mb-2 mr-sm-2 summernote" Style="height: 100px !important;" ID="txtDesc" />
                                     <asp:RequiredFieldValidator ID="req1" runat="server" ControlToValidate="txtDesc" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
                                 </div>
 

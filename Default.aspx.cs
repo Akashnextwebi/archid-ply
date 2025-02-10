@@ -386,13 +386,15 @@ public partial class _Default : System.Web.UI.Page
                 int result = ContactUs.InserContactUs(conAP, cat);
                 if (result > 0)
                 {
+                  
+                    Emails.ContactRequest(cat);
+                    Emails.ContactUSRequestToCustomer(txtName.Text.Trim(), txtEmail.Text.Trim());
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'We’ll get back to you shortly. Thank you for reaching out!',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "CloseModalScript", "$('#quickEnquiryModal').modal('hide');", true);
                     txtName.Text = "";
                     txtPhone.Text = "";
                     txtEmail.Text = "";
                     txtMessage.Text = "";
-                    Emails.ContactRequest(cat);
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'We’ll get back to you shortly. Thank you for reaching out!',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
-                    ScriptManager.RegisterStartupScript(this, GetType(), "CloseModalScript", "$('#quickEnquiryModal').modal('hide');", true);
                 }
                 else
                 {

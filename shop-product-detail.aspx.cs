@@ -192,7 +192,7 @@ public partial class shop_product_detail : System.Web.UI.Page
                 {
                     txtFullName.Text = txtEmail.Text = txtMessage.Text = txtPhone.Text = "";
                     Emails.sendEnquiryToCustomer(cat.UserName, cat.EmailId);
-                    Emails.SendEnquiryRequestToAdmin(cat.UserName, cat.ContactNo, cat.EmailId, cat.Products, cat.Message);
+                    Emails.SendEnquiryRequestToAdmin(txtFullName.Text.Trim(), txtPhone.Text.Trim(), txtEmail.Text.Trim(), strProductName, txtMessage.Text.Trim());
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Your enquiry has been submitted successfully!',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
                     Response.Redirect("/thank-you");
                 }

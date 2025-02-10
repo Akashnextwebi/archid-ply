@@ -32,43 +32,55 @@ public partial class product_detail : System.Web.UI.Page
         {
             string currentUrl = Request.Url.AbsoluteUri;
             string[] segments = currentUrl.Split('/');
+            var divCatelog = "";
             string url = segments.Length > 4 ? segments[segments.Length - 1] : string.Empty;
-                List<EnquiryProduct> products = EnquiryProduct.GetEnquiryProductByUrl(conAP, strUrl).ToList();
-                if (products.Count > 0)
+            List<EnquiryProduct> products = EnquiryProduct.GetEnquiryProductByUrl(conAP, strUrl).ToList();
+            if (products.Count > 0)
+            {
+                foreach (EnquiryProduct prod in products)
                 {
-                    foreach (EnquiryProduct prod in products)
-                    {   
-                        strProductName = prod.ProductName;
-                        strProductCategory = prod.Category;
-                        #region features divided
-                        List<ProductFeatures> features = ProductFeatures.GetProductFeatures(conAP, prod.Features);
-                        var sksloop = "";
-                        var sksloop1 = "";
+                    strProductName = prod.ProductName;
+                    strProductCategory = prod.Category;
+                    if (prod.Category == "2")
+                    {
+                        divCatelog = @"<div class='col-md-5'>
+<a href='/images_/others/venner-catelog.pdf' download class='btn w-100 bg-new-color btn-hover-bg-white btn-hover-border-warning' title='Catalouge'>Catalouge <i class='far fa-download ps-2 fs-13px'></i></a>
+                        </div>";
+                    }
+                    else
+                    {
+                        divCatelog = "";
 
-                        int i = 1;
-                        if (features.Count > 0)
+                    }
+                    #region features divided
+                    List<ProductFeatures> features = ProductFeatures.GetProductFeatures(conAP, prod.Features);
+                    var sksloop = "";
+                    var sksloop1 = "";
+
+                    int i = 1;
+                    if (features.Count > 0)
+                    {
+                        foreach (ProductFeatures x in features)
                         {
-                            foreach (ProductFeatures x in features)
+                            if (i % 2 == 0)
                             {
-                                if (i % 2 == 0)
-                                {
-                                    sksloop1 += @"<li>
+                                sksloop1 += @"<li>
                                         <img src='/" + x.Image + @"' width='45' class='img-fluid' />
                                         <span class='icon-box-title card-title'>" + x.Title + @"</span>
                                      </li>";
-                                }
-                                else
-                                {
-                                    sksloop += @"<li>
-                                        <img src='/" + x.Image + @"' width='45' class='img-fluid' />
-                                        <span class='icon-box-title card-title'>" + x.Title + @"</span>
-                                     </li>";
-                                }
-                                i++;
                             }
-
-
+                            else
+                            {
+                                sksloop += @"<li>
+                                        <img src='/" + x.Image + @"' width='45' class='img-fluid' />
+                                        <span class='icon-box-title card-title'>" + x.Title + @"</span>
+                                     </li>";
+                            }
+                            i++;
                         }
+
+
+                    }
                     #endregion
 
                     #region Specification divided
@@ -86,7 +98,7 @@ public partial class product_detail : System.Web.UI.Page
                                                     <span class='font-bold'>" + x.Title + @"</span>
                                                     <span class='d-block ml-auto text-body-emphasis fw-bold fea'>" + x.Description + @"</span>
                                                 </div>";
-                               
+
                             }
                             else
                             {
@@ -103,8 +115,8 @@ public partial class product_detail : System.Web.UI.Page
                     #endregion
 
                     List<EnquiryProductGallery> galleries = EnquiryProductGallery.GetEnquiryProductGallery(conAP, products[0].ProductGuid);
-                        if (galleries.Count > 0)
-                        {
+                    if (galleries.Count > 0)
+                    {
 
                         string menuImg = "";
                         string mainImg = "";
@@ -115,24 +127,24 @@ public partial class product_detail : System.Web.UI.Page
                         }
 
 
-                            strProductGallery += @"<div class='col-md-6 pe-lg-13'>
+                        strProductGallery += @"<div class='col-md-6 pe-lg-13'>
                     <div class='position-sticky top-0'>
                         <div class='row'>
                             <div class='col-xl-2 pe-xl-0 order-1 order-xl-0 mt-5 mt-xl-0'>
                                 <div id='vertical-slider-thumb' class='slick-slider slick-slider-thumb ps-1 ms-n3 me-n4 mx-xl-0' data-slick-options='{&#34;arrows&#34;:false,&#34;asNavFor&#34;:&#34;#vertical-slider-slides&#34;,&#34;dots&#34;:false,&#34;focusOnSelect&#34;:true,&#34;responsive&#34;:[{&#34;breakpoint&#34;:1260,&#34;settings&#34;:{&#34;vertical&#34;:false}}],&#34;slidesToShow&#34;:4,&#34;vertical&#34;:true}'>
-                                "+ menuImg + @"
+                                " + menuImg + @"
                                </div>
                             </div>
                             <div class='col-xl-10 ps-xl-8 pe-xl-0 order-0 order-xl-1'>
                                 <div id='vertical-slider-slides' class='slick-slider slick-slider-arrow-inside slick-slider-dots-inside slick-slider-dots-light g-0' data-slick-options='{&#34;arrows&#34;:false,&#34;asNavFor&#34;:&#34;#vertical-slider-thumb&#34;,&#34;dots&#34;:false,&#34;slidesToShow&#34;:1,&#34;vertical&#34;:true}'>
-                                    "+ mainImg + @"
+                                    " + mainImg + @"
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>";
-                        }
-                        strProducts += @"<div class='row justify-content-center'>" + strProductGallery + @"<div class='col-md-4 pt-md-0 pt-10'>
+                    }
+                    strProducts += @"<div class='row justify-content-center'>" + strProductGallery + @"<div class='col-md-4 pt-md-0 pt-10'>
                     <h1 class='mb-4 pb-2 fs-3'>" + prod.ProductName + @"</h1>
                     <p class='fs-17px'>" + prod.ShortDesc + @"</p>
 <h4 class='text-left mb-8'>Features</h4>
@@ -152,7 +164,7 @@ public partial class product_detail : System.Web.UI.Page
                                 <div class='row align-items-center'>
                                     <div class='col-md-12'>
                                         <div class='card border-2 mb-0'>
-                                            <div class='card-body px-0 pt-0 pb-0'>"+ specLoop  + @"</div>
+                                            <div class='card-body px-0 pt-0 pb-0'>" + specLoop + @"</div>
                                         </div>
                                     </div>
                                 </div>
@@ -162,11 +174,12 @@ public partial class product_detail : System.Web.UI.Page
                     <div class='row justify-content-center'>
                         <div class='col-md-5'>
                             <a href='javascript:void(0);' class='btn w-100 green-btn btn-hover-bg-primary btn-hover-border-primary' data-bs-toggle='modal' data-bs-target='#contactUsModal' title='Check Out'>Enquiry </a>
-                        </div>
+                        </div> 
+" + divCatelog + @"
                     </div>
                     </div>
                 </div>";
-                    }
+                }
             }
             else
             {
@@ -185,15 +198,15 @@ public partial class product_detail : System.Web.UI.Page
             strRelatedProducts = "";
             //List<SubCategory> subcategories = SubCategory.GetSubCategoryByUrl(conAP, subcaturl).Where(s => s.DisplayHome == "Yes").OrderBy(s => s.DisplayOrder).ToList();
             //if (subcategories.Count > 0)
-           // {
-               // foreach (SubCategory category in subcategories)
-                //{
-                    List<EnquiryProduct> products = EnquiryProduct.GetAllEnquiryProductByCategory(conAP, strProductCategory).ToList();
-                    if (products.Count > 0)
-                    {
-                        foreach (EnquiryProduct prodd in products)
-                        {
-                            strRelatedProducts += @"<div class='mb-6'>
+            // {
+            // foreach (SubCategory category in subcategories)
+            //{
+            List<EnquiryProduct> products = EnquiryProduct.GetAllEnquiryProductByCategory(conAP, strProductCategory).ToList();
+            if (products.Count > 0)
+            {
+                foreach (EnquiryProduct prodd in products)
+                {
+                    strRelatedProducts += @"<div class='mb-6'>
                         <div class='card card-product grid-2 bg-transparent border-0'>
                             <figure class='card-img-top position-relative mb-0 overflow-hidden'>
                                 <a href='/products/" + prodd.ProductUrl + @"' class='hover-zoom-in d-block' title='" + prodd.ProductName + @"'>
@@ -209,9 +222,9 @@ public partial class product_detail : System.Web.UI.Page
                         </div>
                     </div>";
 
-                        }
-                    }
-                //}
+                }
+            }
+            //}
             //}
         }
         catch (Exception ex)
@@ -237,10 +250,10 @@ public partial class product_detail : System.Web.UI.Page
                 int result = Enquiry.InserEnquiry(conAP, cat);
                 if (result > 0)
                 {
+                    Emails.sendEnquiryToCustomer(cat.UserName, cat.EmailId);
+                    Emails.SendEnquiryRequestToAdmin(txtFullName.Text.Trim(), txtPhone.Text.Trim(), txtEmail.Text.Trim(), HiddenField1.Value, txtMessage.Text.Trim());
                     txtFullName.Text = txtEmail.Text = txtMessage.Text = txtPhone.Text = "";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Your enquiry has been submitted successfully!',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
-                    Emails.sendEnquiryToCustomer(cat.UserName, cat.EmailId);
-                    Emails.SendEnquiryRequestToAdmin(cat.UserName, cat.ContactNo, cat.EmailId, cat.Products, cat.Message);
                 }
                 else
                 {

@@ -81,11 +81,11 @@ public class ProductStories
         List<ProductStories> ProductStories = new List<ProductStories>();
         try
         {
-            string qrury = @"Select top 10 * from 
+            string qrury = @"Select top 5 * from 
 (Select ROW_NUMBER() OVER(Order by  AddedOn desc) AS RowNo,
 (select count(id) from ProductStories where status='Active') as TotalCount,
 * from ProductStories
-where Status='Active') x where RowNo >" + (10 * (cPage - 1));
+where Status='Active') x where RowNo >" + (5 * (cPage - 1));
             using (SqlCommand cmd = new SqlCommand(qrury, conAP))
             {
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);

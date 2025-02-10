@@ -92,7 +92,7 @@ $(document).ready(function () {
                                     <div class='about-img'>
                                         <div class='container-fluid'>
                                             <div class='px-md-6'>
-                                                <div class='mx-n6 slick-slider' 
+                                                <div class='mx-n6 slick-slider slick-slider-product-stories' 
                                                     data-slick-options='{
                                                         "slidesToShow": 1,
                                                         "infinite": false,
@@ -119,14 +119,14 @@ $(document).ready(function () {
                 `;
                     } else {
                         listings += `
-                    <section class='why-choose-us section-padding bg-light'>
+                    <section class='why-choose-us section-padding'>
                         <div class='container container-xxl'>
                             <div class='row align-items-center justify-content-between'>
                                 <div class='col-lg-6 position-relative'>
                                     <div class='about-img'>
                                         <div class='container-fluid'>
                                             <div class='px-md-6'>
-                                                <div class='mx-n6 slick-slider' 
+                                                <div class='mx-n6 slick-slider slick-slider-product-stories'
                                                     data-slick-options='{
                                                         "slidesToShow": 1,
                                                         "infinite": false,
@@ -165,8 +165,27 @@ $(document).ready(function () {
                 $("#StoryListBindingSec").empty();
                 if (products.length > 0) {
                     $("#StoryListBindingSec").append(listings);
-                    BindPPage(10, parseInt(pno), products[0].TotalCount);
+                    BindPPage(5, parseInt(pno), products[0].TotalCount);
                 }
+
+                $(".slick-slider-product-stories").slick({
+                    slidesToShow: 1,
+                    infinite: false,
+                    autoplay: true,
+                    dots: true,
+                    arrows: false,
+                    responsive: [
+                        { breakpoint: 1366, settings: { slidesToShow: 1 } },
+                        { breakpoint: 992, settings: { slidesToShow: 1 } },
+                        { breakpoint: 768, settings: { slidesToShow: 1 } },
+                        { breakpoint: 576, settings: { slidesToShow: 1 } }
+                    ]
+                });
+
+                $(".slick-dots li").empty();
+                $(".slick-dots li").append("<span></span>");
+ 
+           
             },
             error: function (xhr, status, error) {
                 $("#StoryListBindingSec").empty();

@@ -13,6 +13,15 @@
     left: 97%;
     margin-left: 0.5rem;
 }
+        .bg-new-color{
+            background:#f4986d;
+            color:#fff;
+        }
+        .bg-new-color:hover{
+            border-color: #f4986d;
+    color: #f4986d; 
+    background-color: #fff; 
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">

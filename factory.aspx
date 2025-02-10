@@ -61,7 +61,7 @@
                     <div class="text-start">
                         <div class="text-start">
                             <h2 class="fs-28px mb-3">ARCHIDPLY DECOR LIMITED</h2>
-                            <p class="fs-18px">We’re talking about clean beauty gift sets, of course – and we’ve got a bouquet of beauties for yourself or someone you love.</p>
+                            <p class="fs-18px">All our products come to life in our cutting-edge facilities in Myanmar and Chintamani, Karnataka. Our flagship facility at Chintamani is spread across 12.5 acres and is where all our decorative veneers and pre-laminated boards are manufactured.</p>
                         </div>
 
                     </div>

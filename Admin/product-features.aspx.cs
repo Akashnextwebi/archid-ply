@@ -92,7 +92,7 @@ public partial class Admin_product_features : System.Web.UI.Page
                 }
                 else if (resmsg == "Size")
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Brand image size should be 300 * 300 px.', actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Image size should be 300 * 300 px.', actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
                     return;
                 }
                 lblStatus.Visible = true;
@@ -119,6 +119,7 @@ public partial class Admin_product_features : System.Web.UI.Page
                             {
                                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Feature updated successfully.',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
 
+                            return;
                             }
                             else
                             {
@@ -141,7 +142,7 @@ public partial class Admin_product_features : System.Web.UI.Page
                         if (res.Count > 0)
                         {
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text:'Feature already exist...',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
-
+                            return;
                         }
                         else
                         {

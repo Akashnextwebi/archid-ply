@@ -7,7 +7,11 @@
         modal-backdrop {
             background: rgba(0, 0, 0, 0.5);
         }
-
+            .hero .hero-title-2 {
+        font-size: 52px;
+        line-height: 58px;
+        font-weight: 400;
+    }
         .m-content {
             background: #f8f9fa;
             border-radius: 15px;
@@ -61,6 +65,24 @@
             opacity: 1;
             transition: all 0.3s ease-out;
         }
+
+        .customeHR {
+            margin-top: 1.5rem !important;
+            margin-bottom: 1.5rem !important;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            width: 100%;
+            margin: 20px 0;
+            display: block;
+        }
+        .highlightword {
+    color: #D4AF37;
+    font-weight: bold;
+}
+
+.normalbanner {
+    color: #8A6D3B;
+    font-weight: bold;
+}
     </style>
     <link href="/Admin/assets/libs/snackbar/snackbar.min.css" rel="stylesheet" />
 
@@ -85,6 +107,7 @@
                             </div>
                             <div class='cta-btn' data-animate='fadeInDown'>
                                 <a href='/shop' class='btn orange-btn'>Explore Now <i class='fa-solid fa-arrow-circle-right'></i>
+
                                 </a>
                             </div>
                         </div>
@@ -154,7 +177,7 @@
                         >
                           Makeup with extended range in colors for every human.
                         </p> -->
-                            <img src="assets/imgs/bonvivant-decorative1.png"
+                            <img src="assets/imgs/bonvivant-decorative2.png"
                                 alt=""
                                 class="sister-company" />
                             <div class="mt-7">
@@ -628,23 +651,32 @@
                             href="#"
                             data-bs-toggle="modal"
                             data-bs-target="#certimodal"
-                            data-title="Green Certificates"
-                            data-image="images_/certificates/PlygreenproC.jpg, images_/certificates/VengreenproC.jpg, images_/certificates/PrelamgreenproCMDF.jpg, images_/certificates/DoorgreenproC.jpg, images_/certificates/PrelamPartgreenproC.jpg">
+                            data-title="GREEN CERTIFICATES"
+                            data-image="Plywood GreenPro|images_/certificates/PlygreenproC.jpg, 
+                            Decorative Veneer GreenPro|images_/certificates/VengreenproC.jpg, 
+                            Prelaminated MDF GreenPro|images_/certificates/PrelamgreenproCMDF.jpg, 
+                           Doors GreenPro|images_/certificates/DoorgreenproC.jpg, 
+                            Prelaminated Particle Board GreenPro|images_/certificates/PrelamPartgreenproC.jpg">
                             <img class="w-auto mx-auto light-mode-img"
                                 src="images_/certificates/greenpro.jpg"
                                 alt="Green Certificates" />
                         </a>
                     </div>
-                    <%--pfd--%>
+                    <%--pdf--%>
                     <div class="client-logo-item" data-animate="fadeInUp">
                         <a class="lh-1 color-inherit text-decoration-none certi-trigger"
                             href="#"
                             data-bs-toggle="modal"
                             data-bs-target="#certimodal"
                             data-title="BUREAU OF INDIAN STANDARDS"
-                            data-image="images_/certificates/License%202202%20door.pdf">
+                            data-image="License 2202 door|images_/certificates/License%202202%20door.pdf,
+                            Licence 12823 Prelam|images_/certificates/Lisence%2012823%20Prelam.pdf,
+                            License 710 BWP Plywood|images_/certificates/License%20710.pdf,
+                            Licence 303 Plywood|images_/certificates/Licence%20303%20.pdf,
+                        1328 licence Decorative Veneer|images_/certificates/1328%20lisence%20Decorative%20Veneer.pdf,
+                            ">
                             <img class="w-auto mx-auto light-mode-img"
-                                src="images_/certificates/pefc.png"
+                                src="images_/certificates/bis.png"
                                 alt="BUREAU OF INDIAN STANDARDS" />
                         </a>
 
@@ -655,34 +687,52 @@
                             href="#"
                             data-bs-toggle="modal"
                             data-bs-target="#certimodal"
-                            data-title="Parker Certification"
-                            data-image="images_/certificates/igbc.jpg">
+                            data-title="Certification"
+                            data-image="Archidply Decor Ltd|images_/certificates/Archidply%20Decor%20Ltd-%20IGBC.pdf">
                             <img class="w-auto mx-auto light-mode-img"
                                 src="images_/certificates/igbc.jpg"
-                                alt="Parker" />
+                                alt="Certificate Updated Soon" />
                         </a>
                     </div>
-
                     <div class="client-logo-item" data-animate="fadeInUp">
                         <a class="lh-1 color-inherit text-decoration-none certi-trigger"
                             href="#"
                             data-bs-toggle="modal"
                             data-bs-target="#certimodal"
-                            data-title="The Beast Certification"
-                            data-image="images_/certificates/igbc1.jpg">
+                            data-title="Warranty certificates"
+                            data-image="Pure Pro|images_/certificates/Warranty%20Certficate_Pure%20Pro.pdf,
+    Pure Pro Plus|images_/certificates/Warranty%20Certficate_Pure%20Pro%20Plus_2024_A4.pdf,
+    Pure Gold|images_/certificates/Warranty%20Certficate_Pure%20Gold_2024_A4.pdf,
+    Pure 16|images_/certificates/Warranty%20Certficate_Pure%2016_2024_A4.pdf,
+    Pure 16 Plus|images_/certificates/Warranty%20Certficate_Pure%2016%20Plus.pdf,
+    Club Plus|images_/certificates/Lifetime_Warranty_ClubPlus_2024_A4.pdf,
+    Archidply Club|images_/certificates/ArchidPly_Club_31%20Years_2024_A4.pdf,
+    Bonvivant|images_/certificates/Lifetime_Warranty_Bonvivant_2024_A4.pdf,
+    ">
                             <img class="w-auto mx-auto light-mode-img"
-                                src="images_/certificates/igbc1.jpg"
+                                src="images_/certificates/warrenty4.png"
                                 alt="The Beast" />
                         </a>
                     </div>
-
+                   <%-- <div class="client-logo-item" data-animate="fadeInUp">
+                        <a class="lh-1 color-inherit text-decoration-none certi-trigger"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#certimodal"
+                            data-title="Certification"
+                            data-image="Updated soon">
+                            <img class="w-auto mx-auto light-mode-img"
+                                src="images_/certificates/isi.png"
+                                alt="ISI" />
+                        </a>
+                    </div>--%>
                     <div class="client-logo-item" data-animate="fadeInUp">
                         <a class="lh-1 color-inherit text-decoration-none certi-trigger"
                             href="#"
                             data-bs-toggle="modal"
                             data-bs-target="#certimodal"
-                            data-title="Hayden Certification"
-                            data-image="images_/certificates/indonesian-legel-wood.png">
+                            data-title=" Certification"
+                            data-image="Updated soon">
                             <img class="w-auto mx-auto light-mode-img"
                                 src="images_/certificates/indonesian-legel-wood.png"
                                 alt="Hayden" />
@@ -694,11 +744,11 @@
                             href="#"
                             data-bs-toggle="modal"
                             data-bs-target="#certimodal"
-                            data-title="Good Mood Certification"
-                            data-image="images_/certificates/pefc.png">
+                            data-title="Certification"
+                            data-image="Updated soon">
                             <img class="w-auto mx-auto light-mode-img"
                                 src="images_/certificates/pefc.png"
-                                alt="Good Mood" />
+                                alt="PEFC" />
                         </a>
                     </div>
                 </div>
@@ -1109,13 +1159,9 @@
                             <div class="bg-image video-01 d-flex justify-content-center align-items-center  position-relative py-18 py-lg-0 py-md-23 lazy-bg"
                                 data-bg-src="images_/show/factory.jpg" style="height: 400px">
 
-                                <a href="https://www.youtube.com/watch?v=QSYS7-IJvdk" class="view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1">
+                                <a href="https://youtu.be/FvwDCc-xp1s?si=CCUxrUmuxKxl-ect" class="view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1">
                                     <svg class="icon">
                                         <use xlink:href="#icon-play-fill"></use></svg></a>
-
-
-
-
 
                             </div>
                             <span>Factory</span>
@@ -1125,7 +1171,7 @@
                         <div class="fact-card">
                             <div class="bg-image video-01 d-flex justify-content-center align-items-center position-relative py-18 py-lg-0 py-md-23 lazy-bg"
                                 data-bg-src="images_/s1/SDP_4622.jpg" style="height: 400px">
-                                <a href="https://www.youtube.com/watch?v=QSYS7-IJvdk" class="view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1">
+                                <a href="https://youtu.be/vwW0iTGBohU?si=L20-Yrq4jZyZmMxI" class="view-video iframe-link video-btn d-flex justify-content-center align-items-center fs-30px lh-115px btn btn-outline-light border border-white border-2 rounded-circle transition-all-1">
                                     <svg class="icon">
                                         <use xlink:href="#icon-play-fill"></use></svg></a>
 
@@ -1246,7 +1292,6 @@
                     </div>
                     <div class="modal-body px-sm-13 px-8 text-center">
                         <div id="certiContent" class="d-flex flex-column align-items-center">
-
                         </div>
                     </div>
                 </div>
@@ -1256,41 +1301,165 @@
         <script src="/Admin/assets/libs/snackbar/snackbar.min.js"></script>
         <script src="/assets/js/Pages/defaultpage.js"></script>
         <script>
+
             document.addEventListener("DOMContentLoaded", function () {
                 document.querySelectorAll(".certi-trigger").forEach(item => {
                     item.addEventListener("click", function () {
-                        let title = this.getAttribute("data-title");
+                        let modalTitle = this.getAttribute("data-title");
                         let imageData = this.getAttribute("data-image");
                         let certiContent = document.getElementById("certiContent");
 
-                        document.getElementById("certiTitle").textContent = title;
+                        document.getElementById("certiTitle").textContent = modalTitle;
                         certiContent.innerHTML = "";
 
-                        if (imageData.endsWith(".pdf")) {
-                            let pdfEmbed = document.createElement("embed");
-                            pdfEmbed.src = imageData;
-                            pdfEmbed.type = "application/pdf";
-                            pdfEmbed.width = "100%";
-                            pdfEmbed.height = "500px";
-                            certiContent.appendChild(pdfEmbed);
-                        } else if (imageData.includes(",")) {
-                            let imageArray = imageData.split(",");
-                            imageArray.forEach(imageSrc => {
+                        let filesArray = imageData.split(",");
+
+                        filesArray.forEach((fileData, index) => {
+                            let [fileTitle, fileSrc] = fileData.trim().split("|");
+
+                            let titleElement = document.createElement("h4");
+                            titleElement.textContent = fileTitle;
+                            titleElement.classList.add("text-center", "mt-10");
+
+                            certiContent.appendChild(titleElement);
+
+                            if (fileSrc.toLowerCase().endsWith(".pdf")) {
+                                let pdfEmbed = document.createElement("embed");
+                                pdfEmbed.src = fileSrc.trim();
+                                pdfEmbed.type = "application/pdf";
+                                pdfEmbed.width = "100%";
+                                pdfEmbed.height = "500px";
+                                certiContent.appendChild(pdfEmbed);
+                            } else {
                                 let imgElement = document.createElement("img");
-                                imgElement.src = imageSrc.trim();
-                                imgElement.classList.add("img-fluid", "mb-15");
+                                imgElement.src = fileSrc.trim();
+                                imgElement.classList.add("img-fluid", "mb-3");
                                 certiContent.appendChild(imgElement);
-                            });
-                        } else {
-                            let imgElement = document.createElement("img");
-                            imgElement.src = imageData;
-                            imgElement.classList.add("img-fluid");
-                            certiContent.appendChild(imgElement);
-                        }
+                            }
+
+                            if (index !== filesArray.length - 1) {
+                                let hrElement = document.createElement("hr");
+                                hrElement.classList.add("customeHR");
+                                certiContent.appendChild(hrElement);
+                            }
+                        });
                     });
                 });
             });
 
+
+
+            /* document.addEventListener("DOMContentLoaded", function () {
+                 document.querySelectorAll(".certi-trigger").forEach(item => {
+                     item.addEventListener("click", function () {
+                         let modalTitle = this.getAttribute("data-title");
+                         let imageData = this.getAttribute("data-image");
+                         let certiContent = document.getElementById("certiContent");
+ 
+                         document.getElementById("certiTitle").textContent = modalTitle;
+                         certiContent.innerHTML = "";
+ 
+                         let filesArray = imageData.split(",");
+ 
+                         filesArray.forEach(fileData => {
+                             let [fileTitle, fileSrc] = fileData.trim().split("|");
+ 
+                             let titleElement = document.createElement("h4");
+                             titleElement.textContent = fileTitle;
+                             titleElement.classList.add("text-center", "mt-10");
+ 
+                             if (fileSrc.toLowerCase().endsWith(".pdf")) {
+                                 let pdfEmbed = document.createElement("embed");
+                                 pdfEmbed.src = fileSrc.trim();
+                                 pdfEmbed.type = "application/pdf";
+                                 pdfEmbed.width = "100%";
+                                 pdfEmbed.height = "500px";
+ 
+                                 certiContent.appendChild(titleElement);
+                                 certiContent.appendChild(pdfEmbed);
+                             } else {
+                                 let imgElement = document.createElement("img");
+                                 imgElement.src = fileSrc.trim();
+                                 imgElement.classList.add("img-fluid", "mb-3");
+ 
+                                 certiContent.appendChild(titleElement);
+                                 certiContent.appendChild(imgElement);
+                             }
+ 
+                         });
+                     });
+                 });
+             });*/
+
+
+            /* document.addEventListener("DOMContentLoaded", function () {
+                 document.querySelectorAll(".certi-trigger").forEach(item => {
+                     item.addEventListener("click", function () {
+                         let title = this.getAttribute("data-title");
+                         let imageData = this.getAttribute("data-image");
+                         let certiContent = document.getElementById("certiContent");
+ 
+                         document.getElementById("certiTitle").textContent = title;
+                         certiContent.innerHTML = "";
+                         let filesArray = imageData.split(",");
+ 
+                         filesArray.forEach(fileSrc => {
+                             fileSrc = fileSrc.trim();
+                             if (fileSrc.toLowerCase().endsWith(".pdf")) {
+                                 let pdfEmbed = document.createElement("embed");
+                                 pdfEmbed.src = fileSrc;
+                                 pdfEmbed.type = "application/pdf";
+                                 pdfEmbed.width = "100%";
+                                 pdfEmbed.height = "500px";
+                                 pdfEmbed.classList.add("mb-15"); 
+                                 certiContent.appendChild(pdfEmbed);
+                             } else {
+                                 let imgElement = document.createElement("img");
+                                 imgElement.src = fileSrc;
+                                 imgElement.classList.add("img-fluid", "mb-15");
+                                 certiContent.appendChild(imgElement);
+                             }
+                         });
+                     });
+                 });
+             });*/
+
+
+            /* document.addEventListener("DOMContentLoaded", function () {
+                 document.querySelectorAll(".certi-trigger").forEach(item => {
+                     item.addEventListener("click", function () {
+                         let title = this.getAttribute("data-title");
+                         let imageData = this.getAttribute("data-image");
+                         let certiContent = document.getElementById("certiContent");
+ 
+                         document.getElementById("certiTitle").textContent = title;
+                         certiContent.innerHTML = "";
+ 
+                         if (imageData.endsWith(".pdf")) {
+                             let pdfEmbed = document.createElement("embed");
+                             pdfEmbed.src = imageData;
+                             pdfEmbed.type = "application/pdf";
+                             pdfEmbed.width = "100%";
+                             pdfEmbed.height = "500px";
+                             certiContent.appendChild(pdfEmbed);
+                         } else if (imageData.includes(",")) {
+                             let imageArray = imageData.split(",");
+                             imageArray.forEach(imageSrc => {
+                                 let imgElement = document.createElement("img");
+                                 imgElement.src = imageSrc.trim();
+                                 imgElement.classList.add("img-fluid", "mb-15");
+                                 certiContent.appendChild(imgElement);
+                             });
+                         } else {
+                             let imgElement = document.createElement("img");
+                             imgElement.src = imageData;
+                             imgElement.classList.add("img-fluid");
+                             certiContent.appendChild(imgElement);
+                         }
+                     });
+                 });
+             });
+ */
             document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(function () {
                     const myModal = new bootstrap.Modal(document.getElementById('quickEnquiryModal'));

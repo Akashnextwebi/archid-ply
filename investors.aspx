@@ -41,7 +41,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <a href="/investor-contact">
                             <div class="bd-callout bd-callout-info">
-                                Investor contact
+                                INVESTORS CONTACT
                             </div>
                         </a>
                     </div>

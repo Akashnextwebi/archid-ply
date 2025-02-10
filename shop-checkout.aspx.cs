@@ -1,6 +1,7 @@
 ﻿using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml.Wordprocessing;
+using Newtonsoft.Json;
 using Razorpay.Api;
 using RestSharp.Extensions;
 using System;
@@ -12,8 +13,10 @@ using System.Linq;
 using System.Net;
 using System.Reflection.Emit;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 public partial class shop_checkout : System.Web.UI.Page
 {
@@ -35,39 +38,77 @@ public partial class shop_checkout : System.Web.UI.Page
         }
         
     }
-    protected void CheckBox2_CheckedChanged(object sender, EventArgs e)
+    /*    protected void CheckBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!customCheck5.Checked)
+            {
+
+                DeliveryDiv.Visible = true;
+                txtDelAddress1.Text = txtAddress1.Text;
+                txtDelAddress2.Text = txtAddress2.Text;
+                txtDelCity.Text = txtCity.Text.Trim();
+                txtDelState.Text = txtState.Text.Trim();
+                txtDelZip.Text = txtZip.Text;
+                txtDelEmailID.Text = txtEmail.Text;
+                txtDelPhone.Text = txtPhone.Text;
+            }
+            else
+            {
+                DeliveryDiv.Visible = false;
+                txtDelAddress1.Text = txtAddress1.Text;
+                txtDelAddress2.Text = txtAddress2.Text;
+                txtDelCity.Text = txtCity.Text;
+                txtDelState.Text = txtState.Text;
+                txtDelZip.Text = txtZip.Text;
+                txtDelEmailID.Text = txtEmail.Text;
+                txtDelPhone.Text = txtPhone.Text;
+            }
+            txtDelEmailID.Focus();
+        }*/
+
+
+    [WebMethod]
+    public static string PincodeValidation(string val)
     {
-        if (!customCheck5.Checked)
+        string res = "";
+        try
         {
-          
-            DeliveryDiv.Visible = true;
-            txtDelAddress1.Text = txtAddress1.Text;
-            txtDelAddress2.Text = txtAddress2.Text;
-            txtDelCity.SelectedValue = ddlCity.SelectedValue;
-            txtDelState.SelectedValue = ddlState.SelectedValue;
-            txtDelZip.Text = txtZip.Text;
-            txtDelEmailID.Text = txtEmail.Text;
-            txtDelPhone.Text = txtPhone.Text;
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            using (var wb = new WebClient())
+            {
+                var response1 = wb.DownloadString("http://www.postalpincode.in/api/pincode/" + val);
+                var responseData1 = JsonConvert.DeserializeObject<PostOfficeList>(response1);
+                if (responseData1.Status.ToLower() == "success")
+                {
+                    var cnty = Convert.ToString(responseData1.PostOffice[0].Country);
+                    if (cnty.ToLower() == "india")
+                    {
+                        res = "S|" + responseData1.PostOffice[0].District + "|" + responseData1.PostOffice[0].State;
+                    }
+                    else
+                    {
+                        res = "N";
+                    }
+                }
+                else
+                {
+                    res = "N";
+                }
+            }
         }
-        else
+        catch (Exception ex)
         {
-            DeliveryDiv.Visible = false;
-            txtDelAddress1.Text = txtAddress1.Text;
-            txtDelAddress2.Text = txtAddress2.Text;
-            txtDelCity.SelectedValue = ddlCity.SelectedValue;
-            txtDelState.SelectedValue = ddlState.SelectedValue;
-            txtDelZip.Text = txtZip.Text;
-            txtDelEmailID.Text = txtEmail.Text;
-            txtDelPhone.Text = txtPhone.Text;
+            res = "E";
         }
-        txtDelEmailID.Focus();
+        return res;
     }
-    
     public void GetUserDetailsByUid()
     {
         try
         {
-            List<UserAddress> Details = UserDetails.GetLoggedUserAddress(conAP, Convert.ToString(Request.Cookies["arch_i"].Value)).ToList();
+            string uid = Request.Cookies["arch_i"].Value==""?"": Request.Cookies["arch_i"].Value;
+            List<UserAddress> Details = UserDetails.GetLoggedUserAddress(conAP, uid).ToList();
             if (Details.Count > 0)
             {
                 txtFName.Text = Details[0].FirstName;
@@ -385,20 +426,63 @@ public partial class shop_checkout : System.Web.UI.Page
         return r;
     }
     #endregion
+
+
+    public string PincodeValidate(string val)
+    {
+        string result = null;
+        try
+        {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+            using (var wb = new WebClient())
+            {
+                var response1 = wb.DownloadString("http://www.postalpincode.in/api/pincode/" + val);
+                var responseData1 = JsonConvert.DeserializeObject<PostOfficeList>(response1);
+
+                if (responseData1.Status.ToLower() == "success")
+                {
+                    var cnty = Convert.ToString(responseData1.PostOffice[0].Country);
+                    if (cnty.ToLower() == "india")
+                    {
+                        result = responseData1.PostOffice[0].District;
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "PincodeValidate", ex.Message);
+        }
+
+        return result;
+    }
+
     protected void submit_Click(object sender, EventArgs e)
     {
         string res = "";
         try
         {
-             List<PinCode> pin = PinCode.GetPincodeByPinCode(conAP, txtDelZip.Text.Trim());
-            if (pin.Count<=0)
+            var district = PincodeValidate(txtDelZip.Text.Trim());
+            if (district != "" || district!=null)
             {
-                lblzip.Visible = true;
-                lblzip.Text = "Delivery is not available for the entered pincode";
-                lblzip.Attributes.Add("Class", "text-danger");
-                txtDelZip.Focus();
-                return;
+                List<OperationalCities> oCity = OperationalCities.GetOperationalCitiesByOpCity(conAP, district);
+                if (oCity.Count<=0)
+                {
+                    lblCityValidation.Text = "Delivery is not available for " + district + "";
+                    lblCityValidation.Focus();
+                    return;
+                }
             }
+
+            /* List<OperationalCities> oCity = OperationalCities.GetOperationalCitiesByOpCity(conAP, txtDelCity.Text.Trim());
+             if (oCity.Count <= 0)
+             {
+                 lblCityValidation.Text = "Delivery is not available for the entered pincode or city";
+                 lblCityValidation.Focus();
+                 return;
+             }*/
             decimal discprice = 0, actprice = 0, price = 0;
             List<CartDetails> cart = CartDetails.GetAllCartDetails(conAP);
 
@@ -494,8 +578,8 @@ public partial class shop_checkout : System.Web.UI.Page
                     bill.Address1 = txtAddress1.Text.Trim();
                     bill.Address2 = txtAddress2.Text.Trim();
                     bill.Zip = txtZip.Text.Trim();
-                    bill.City = ddlCity.SelectedValue;
-                    bill.State = ddlState.SelectedValue;
+                    bill.City =txtCity.Text;
+                    bill.State = txtState.Text;
                     bill.AddedDateTime = orderedOn;
                     bill.Block = "";
                     bill.Country = ddlCountry.SelectedValue;
@@ -520,9 +604,9 @@ public partial class shop_checkout : System.Web.UI.Page
                         delA.Salutation = "";
                         delA.Address1 = txtAddress1.Text.Trim();
                         delA.Address2 = txtAddress2.Text.Trim();
-                        delA.City = ddlCity.SelectedValue; ;
+                        delA.City = txtCity.Text; ;
                         delA.Country = "India";
-                        delA.State = ddlState.SelectedValue;
+                        delA.State = txtState.Text;
                         delA.FirstName = txtFName.Text.Trim();
                         delA.LastName = txtLName.Text.Trim();
                         delA.Email = txtEmail.Text.Trim();
@@ -546,9 +630,9 @@ public partial class shop_checkout : System.Web.UI.Page
                         delA.Salutation = "";
                         delA.Address1 = txtDelAddress1.Text.Trim();
                         delA.Address2 = txtDelAddress2.Text.Trim();
-                        delA.City = txtDelCity.SelectedValue;
+                        delA.City = txtDelCity.Text.Trim();
                         delA.Country = "India";
-                        delA.State = txtDelState.SelectedValue;
+                        delA.State = txtDelState.Text.Trim();
                         delA.FirstName = txtFName.Text.Trim();
                         delA.LastName = txtLName.Text.Trim();
                         delA.Email = txtDelEmailID.Text.Trim();
@@ -672,5 +756,23 @@ public partial class shop_checkout : System.Web.UI.Page
         {
             CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "submit_Click", ex.Message);
         }
+    }
+
+    [WebMethod]
+    public static List<OperationalCities> GetOperationalCities()
+    {
+        SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
+        List<OperationalCities> cities = null;
+        try
+        {
+            cities = OperationalCities.GetOperationalCitiesByCity(conAP);
+        }
+        catch (Exception ex)
+        {
+
+            ExceptionCapture.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "GetOperationalCities", ex.Message);
+
+        }
+        return cities;
     }
 }

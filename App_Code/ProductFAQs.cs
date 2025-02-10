@@ -29,7 +29,7 @@ public class ProductFAQs
         List<ProductFAQs> faqs = new List<ProductFAQs>();
         try
         {
-            string query = "Select * from ProductFAQs where ProductId=@ProductId and Status='Active' order by Id desc";
+            string query = "Select * from ProductFAQs where ProductId=@ProductId and Status='Active' order by Id";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@ProductId", SqlDbType.NVarChar).Value = id;

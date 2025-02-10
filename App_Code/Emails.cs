@@ -1950,7 +1950,7 @@ public class Emails
                                                                                 <p style='font-size:16px;color:#573e40;line-height:24px!important;margin-bottom:30px;text-align:center;padding:0px 50px;'>
                                                                                     Please follow us on our social media page to check our products & new arrivals, special discount & offers for you, Stay connected & Warm Regards,
                                                                                 </p>
-                                                                                <p style='font-size:16px;color:#573e40;line-height:24px!important;margin-bottom:30px;text-align:center;padding:0px 50px;'>Team ArchidPly Decor<br>" + ConfigurationManager.AppSettings["domain"] + @"</p>
+                                                                                <p style='font-size:16px;color:#573e40;line-height:24px!important;margin-bottom:30px;text-align:center;padding:0px 50px;'>Team Archidply Decor<br>" + ConfigurationManager.AppSettings["domain"] + @"</p>
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -2033,8 +2033,8 @@ public class Emails
             }
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
 
-            mail.Subject = "Shiprocket Order Failure - ArchidPly ( " + DateTime.Now + " )";
-            mail.Body = "Hi Admin, <br><br>" + orderId + @" shiprocket order creation failed!<br>Regards,<br>ArchidPly";
+            mail.Subject = "Shiprocket Order Failure - Archidply ( " + DateTime.Now + " )";
+            mail.Body = "Hi Admin, <br><br>" + orderId + @" shiprocket order creation failed!<br>Regards,<br>Archidply";
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
             smtp.Host = ConfigurationManager.AppSettings["host"];
@@ -2067,8 +2067,8 @@ public class Emails
             }
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
 
-            mail.Subject = "Contact Us Request - ArchidPly ( " + DateTime.Now + " )";
-            mail.Body = "Hi Admin, <br><br>You have received a contactus request from " + con.UserName + ".<br><br><u><b><i>Details : </i></b></u><br>Name : " + con.UserName + "<br>Email-Id : " + con.EmailId + "<br>Mobile : " + con.ContactNo + "<br>Message : " + con.Message + "<br>Regards,<br>ArchidPly";
+            mail.Subject = "Contact Us Request - Archidply ( " + DateTime.Now + " )";
+            mail.Body = "Hi Admin, <br><br>You have received a contactus request from " + con.UserName + ".<br><br><u><b><i>Details : </i></b></u><br>Name : " + con.UserName + "<br>Email-Id : " + con.EmailId + "<br>Mobile : " + con.ContactNo + "<br>Message : " + con.Message + "<br>Regards,<br>Archidply";
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
             smtp.Host = ConfigurationManager.AppSettings["host"];
@@ -2101,8 +2101,8 @@ public class Emails
                 mail.Bcc.Add(ConfigurationManager.AppSettings["BCCMail"]);
             }
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
-            mail.Subject = "Consult Doctor Request - ArchidPly ( " + DateTime.Now + " )";
-            mail.Body = "Hi Admin, <br><br>You have received a contactus request from " + con.UserName + ".<br><br><u><b><i>Details : </i></b></u><br>Name : " + con.UserName + "<br>Email-Id : " + con.EmailId + "<br>Mobile : " + con.ContactNo + "<br>City : " + con.City + "<br>Message : " + con.Message + "<br>Regards,<br>ArchidPly";
+            mail.Subject = "Consult Doctor Request - Archidply ( " + DateTime.Now + " )";
+            mail.Body = "Hi Admin, <br><br>You have received a contactus request from " + con.UserName + ".<br><br><u><b><i>Details : </i></b></u><br>Name : " + con.UserName + "<br>Email-Id : " + con.EmailId + "<br>Mobile : " + con.ContactNo + "<br>City : " + con.City + "<br>Message : " + con.Message + "<br>Regards,<br>Archidply";
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
             smtp.Host = ConfigurationManager.AppSettings["host"];
@@ -2135,8 +2135,8 @@ public class Emails
                 mail.Bcc.Add(ConfigurationManager.AppSettings["BCCMail"]);
             }
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
-            mail.Subject = "Become a Seller - ArchidPly ( " + DateTime.Now + " )";
-            mail.Body = "Hi Admin, <br><br>You have received a request from " + con.UserName + ".<br><br><u><b><i>Details : </i></b></u><br>Name : " + con.UserName + "<br>Email-Id : " + con.EmailId + "<br>Mobile : " + con.ContactNo + "<br>Company : " + con.Company + "<br>Message : " + con.Message + "<br>Regards,<br>ArchidPly";
+            mail.Subject = "Become a Seller - Archidply ( " + DateTime.Now + " )";
+            mail.Body = "Hi Admin, <br><br>You have received a request from " + con.UserName + ".<br><br><u><b><i>Details : </i></b></u><br>Name : " + con.UserName + "<br>Email-Id : " + con.EmailId + "<br>Mobile : " + con.ContactNo + "<br>Company : " + con.Company + "<br>Message : " + con.Message + "<br>Regards,<br>Archidply";
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
             smtp.Host = ConfigurationManager.AppSettings["host"];
@@ -2676,7 +2676,7 @@ public class Emails
             mail.To.Add(email);
             mail.CC.Add(email1);
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
-            mail.Subject = "ArchidPly Order Confirmation";
+            mail.Subject = "Archidply Order Confirmation";
             mail.Body = mailBody;
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
@@ -2706,7 +2706,7 @@ public class Emails
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
     <meta name='format-detection' content='telephone=no' />
-    <title>ArchidPly</title>
+    <title>Archidply</title>
     <link rel='shortcut icon' href='http://nextwebi.com/emailtemplate/focuslay/logo.png' />
     <link href='https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap' rel='stylesheet' />
     <style type='text/css'>
@@ -3223,7 +3223,7 @@ public class Emails
                 mail.Bcc.Add(ConfigurationManager.AppSettings["BCCMail"]);
             }
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
-            mail.Subject = "ArchidPly Order Confirmation ( " + DateTime.Now + " )";
+            mail.Subject = "Archidply Order Confirmation ( " + DateTime.Now + " )";
             mail.Body = mailBody;
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
@@ -3253,7 +3253,7 @@ public class Emails
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
     <meta name='format-detection' content='telephone=no' />
-    <title>ArchidPly</title>
+    <title>Archidply</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap' rel='stylesheet' />
     <style type='text/css'>
         html {
@@ -3843,7 +3843,7 @@ public class Emails
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
     <meta name='format-detection' content='telephone=no' />
-    <title>ArchidPly</title>
+    <title>Archidply</title>
     <link rel='shortcut icon' href='" + ConfigurationManager.AppSettings["domain"] + @"/emailtemplate/focuslay/logo.png' />
     <link href='https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap' rel='stylesheet' />
     <style type='text/css'>
@@ -4270,9 +4270,9 @@ public class Emails
                                                                         Hi " + name + @",
                                                                     </p>
                                                                     <p style='font-size:13px;line-height:23px!important;text-align:left;margin-top:0px;color:#573e40;margin-bottom:30px;padding:0px 50px;'>
-                                                                        Greetings from ArchidPly, your order " + oid + @" is delivered successfully on " + CommonModel.UTCTime().ToString("dd-MMM-yyyy") + @", thank you for shopping with us.
+                                                                        Greetings from Archidply, your order " + oid + @" is delivered successfully on " + CommonModel.UTCTime().ToString("dd-MMM-yyyy") + @", thank you for shopping with us.
                                                                     </p>
-                                                                   <p style='font-size:13px;line-height:23px!important;text-align:left;margin-top:0px;color:#573e40;margin-bottom:30px;padding:0px 50px;'>Your feedback is important for us, Kindly write to feedback " + ConfigurationManager.AppSettings["from"] + @"<br><br>Team ArchidPly<br>" + ConfigurationManager.AppSettings["domain"] + @"</p>
+                                                                   <p style='font-size:13px;line-height:23px!important;text-align:left;margin-top:0px;color:#573e40;margin-bottom:30px;padding:0px 50px;'>Your feedback is important for us, Kindly write to feedback " + ConfigurationManager.AppSettings["from"] + @"<br><br>Team Archidply<br>" + ConfigurationManager.AppSettings["domain"] + @"</p>
                                                                 </td>
                                                             </tr>
 
@@ -4327,7 +4327,7 @@ public class Emails
             MailMessage mail = new MailMessage();
             mail.To.Add(email);
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
-            mail.Subject = "ArchidPly - " + oid + " Delivered";
+            mail.Subject = "Archidply - " + oid + " Delivered";
             mail.Body = mailbody;
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
@@ -4357,7 +4357,7 @@ public class Emails
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
     <meta name='format-detection' content='telephone=no' />
-    <title>ArchidPly</title>
+    <title>Archidply</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap' rel='stylesheet' />
     <style type='text/css'>
         html {
@@ -4784,7 +4784,7 @@ public class Emails
                                                                                     Hi " + name + @"
                                                                                 </p>
                                                                                 <p style='font-size:13px;color:#573e40;line-height:24px!important;margin-bottom:30px;text-align:left;padding:0px 50px;'>
-                                                                                    Greetings from ArchidPly, we have received your request for order cancellation, please note we are checking the best possibility as per cancellation terms & will intimate you.                                                                                 </p>
+                                                                                    Greetings from Archidply, we have received your request for order cancellation, please note we are checking the best possibility as per cancellation terms & will intimate you.                                                                                 </p>
                                                                                 <p style='font-size:13px;color:#573e40;line-height:24px!important;margin-bottom:30px;text-align:center;padding:0px 50px;'>
                                                                                     Thank you for shopping with us.<br>Your feedback is important for us, Kindly write to feedback " + ConfigurationManager.AppSettings["from"] + @"
                                                                                 </p>
@@ -4868,7 +4868,7 @@ public class Emails
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
     <meta name='format-detection' content='telephone=no' />
-    <title>ArchidPly</title>
+    <title>Archidply</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap' rel='stylesheet' />
     <style type='text/css'>
         html {
@@ -5295,7 +5295,7 @@ public class Emails
                                                                                     Hi " + name + @",
                                                                                 </p>
                                                                                 <p style='font-size:13px;color:#573e40;line-height:24px!important;margin-bottom:30px;text-align:left;padding:0px 50px;'>
-Greetings from ArchidPly, we have successfully created return of
+Greetings from Archidply, we have successfully created return of
 your order, Please keep the products in its original shape with
 its Price tag, original packing, our logistics team with shortly
 contact with you to take return. Once we receive the products,
@@ -5305,7 +5305,7 @@ intimated.
                                                                                 <p style='font-size:13px;color:#573e40;line-height:24px!important;margin-bottom:30px;text-align:center;padding:0px 50px;'>
                                                                                       Your feedback is important for us, Kindly write to feedback " + ConfigurationManager.AppSettings["from"] + @"
                                                                                 </p><p style='font-size:13px;color:#573e40;line-height:24px!important;margin-bottom:30px;padding:0px 50px;'>
-                                                                                      Team ArchidPly<br>" + ConfigurationManager.AppSettings["domain"] + @"
+                                                                                      Team Archidply<br>" + ConfigurationManager.AppSettings["domain"] + @"
                                                                                 </p>
 
                                                                                
@@ -5391,7 +5391,7 @@ intimated.
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
     <meta name='format-detection' content='telephone=no' />
-    <title>ArchidPly</title>
+    <title>Archidply</title>
     <link rel='shortcut icon' href='http://nextwebi.com/emailtemplate/focuslay/logo.png' />
     <link href='https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap' rel='stylesheet' />
     <style type='text/css'>
@@ -5900,7 +5900,7 @@ intimated.
             MailMessage mail = new MailMessage();
             mail.To.Add(ConfigurationManager.AppSettings["Mail"]);
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
-            mail.Subject = "ArchidPly Order Cancel Request";
+            mail.Subject = "Archidply Order Cancel Request";
             mail.Body = mailBody;
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
@@ -5930,7 +5930,7 @@ intimated.
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
     <meta name='format-detection' content='telephone=no' />
-    <title>ArchidPly</title>
+    <title>Archidply</title>
     <link rel='shortcut icon' href='http://nextwebi.com/emailtemplate/focuslay/logo.png' />
     <link href='https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap' rel='stylesheet' />
     <style type='text/css'>
@@ -6447,7 +6447,7 @@ intimated.
                 mail.Bcc.Add(ConfigurationManager.AppSettings["BCCMail"]);
             }
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
-            mail.Subject = "ArchidPly Order Return Request ( " + DateTime.Now + " )";
+            mail.Subject = "Archidply Order Return Request ( " + DateTime.Now + " )";
             mail.Body = mailBody;
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
@@ -6482,9 +6482,9 @@ intimated.
                 mail.Bcc.Add(ConfigurationManager.AppSettings["BCCMail"]);
             }
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
-            mail.Subject = "ArchidPly Decor";
+            mail.Subject = "Archidply Decor";
 
-            string Body = "Hello Admin," + "<br/>" + "You have received a Product Enquiry from " + name + " " + "<br/>" + "<br/>" + "<strong><u>Details:</u></strong>" + "<br/>" + "Name:" + name + "<br/>" + "Email Address :" + email + "<br/>" + "Mobile :" + MobileNo + "<br />" + "ProductName :" + products + "<br/>" + "Message : " + message + "<br/><br/><br/>" + "Regards" + "<br/><br/>" + "ArchidPly Decor" + "<br/>" + "";
+            string Body = "Hello Admin," + "<br/>" + "You have received a Product Enquiry from " + name + " " + "<br/>" + "<br/>" + "<strong><u>Details:</u></strong>" + "<br/>" + "Name:" + name + "<br/>" + "Email Address :" + email + "<br/>" + "Mobile :" + MobileNo + "<br />" + "ProductName :" + products + "<br/>" + "Message : " + message + "<br/><br/><br/>" + "Regards" + "<br/><br/>" + "Archidply Decor" + "<br/>" + "";
 
             mail.Body = Body;
             mail.IsBodyHtml = true;
@@ -6504,7 +6504,34 @@ intimated.
 
         }
     }
+    public static int ContactUSRequestToCustomer(string name, string email)
+    {
+        try
+        {
+            MailMessage mail = new MailMessage();
+            mail.To.Add(email);
 
+            mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
+            mail.Subject = "Archidply Decor";
+            string Body = "Dear " + name + ",<br/><br/>We have received your request, our team will get back to you soon.  <br/><br/>Regards,<br/>Archidply Decor<br/>";
+            mail.Body = Body;
+            mail.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = ConfigurationManager.AppSettings["host"];
+            smtp.Port = Convert.ToInt32(ConfigurationManager.AppSettings["port"]);
+            smtp.Credentials = new System.Net.NetworkCredential
+                   (ConfigurationManager.AppSettings["userName"], ConfigurationManager.AppSettings["password"]);
+            smtp.EnableSsl = Convert.ToBoolean(ConfigurationManager.AppSettings["enableSsl"]);
+            smtp.Send(mail);
+            return 1;
+        }
+        catch (Exception exx)
+        {
+
+            return 0;
+
+        }
+    }
     public static int sendEnquiryToCustomer(string name, string email)
     {
         try
@@ -6513,8 +6540,8 @@ intimated.
             mail.To.Add(email);
 
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
-            mail.Subject = "ArchidPly Decor";
-            string Body = "Dear " + name + ",<br/><br/>We have received your Product enquiry our team will get back to you soon.  <br/><br/>Regards,<br/>ArchidPly Decor<br/>";
+            mail.Subject = "Archidply Decor";
+            string Body = "Dear " + name + ",<br/><br/>We have received your Product enquiry our team will get back to you soon.  <br/><br/>Regards,<br/>Archidply Decor<br/>";
             mail.Body = Body;
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
@@ -6550,8 +6577,8 @@ intimated.
             }
 
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
-            mail.Subject = "ArchidPly Decor Job Apply Mail";
-            string Body = "Hello Admin," + "<br/>" + "<br/>You have received a Job Application from " + name + " " + "<br/>" + "<br/>" + "<br/>" + "Details:" + "<br/>" + "Name:" + name + "<br/>" + "Email Address :" + Email + "<br/>" + "InterestedField :" + InterestedField + "<br />" + "Experience : " + Exp + "<br/>" + "Phone : " + Phone + "<br/>" + "City : " + city + "<br/>" + "CoverLetter : <a href='" + ConfigurationManager.AppSettings["domain"] + "" + CoverLetter + "'>click to view</a><br/><br/><br/>" + "Best regards" + "<br/><br/>" + "ArchidPly Decor" + "<br/>" + "";
+            mail.Subject = "Archidply Decor Job Apply Mail";
+            string Body = "Hello Admin," + "<br/>" + "<br/>You have received a Job Application from " + name + " " + "<br/>" + "<br/>" + "<br/>" + "Details:" + "<br/>" + "Name:" + name + "<br/>" + "Email Address :" + Email + "<br/>" + "InterestedField :" + InterestedField + "<br />" + "Experience : " + Exp + "<br/>" + "Phone : " + Phone + "<br/>" + "City : " + city + "<br/>" + "CoverLetter : <a href='" + ConfigurationManager.AppSettings["domain"] + "" + CoverLetter + "'>click to view</a><br/><br/><br/>" + "Best regards" + "<br/><br/>" + "Archidply Decor" + "<br/>" + "";
 
             mail.Body = Body;
             mail.IsBodyHtml = true;
@@ -6580,9 +6607,9 @@ intimated.
             mail.To.Add(Email);
 
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
-            mail.Subject = "Thank You for Applying to ArchidPly Decor";
+            mail.Subject = "Thank You for Applying to Archidply Decor";
 
-            string Body = "Dear <strong>" + name + "</strong>,<br/><br/>Thank you for your interest in joining ArchidPly Decor team. We have received your application and our recruitment team is currently reviewing your submission.<br/><br/>We are thrilled to see your interest in becoming a part of our team. If your qualifications match our requirements, we will contact you soon to discuss the next steps. <br/><br/><br/> If you have any questions in the meantime, feel free to reach out to us at Mail: bangalore@archidply.com.<br/><br/><br/>Thanks & Regards<br/>ArchidPly Decor<br/>";
+            string Body = "Dear <strong>" + name + "</strong>,<br/><br/>Thank you for your interest in joining Archidply Decor team. We have received your application and our recruitment team is currently reviewing your submission.<br/><br/>We are thrilled to see your interest in becoming a part of our team. If your qualifications match our requirements, we will contact you soon to discuss the next steps. <br/><br/><br/> If you have any questions in the meantime, feel free to reach out to us at Mail: bangalore@archidply.com.<br/><br/><br/>Thanks & Regards<br/>Archidply Decor<br/>";
 
             mail.Body = Body;
             mail.IsBodyHtml = true;
@@ -6613,7 +6640,7 @@ intimated.
             mail.From = new MailAddress(ConfigurationManager.AppSettings["from"], ConfigurationManager.AppSettings["fromName"]);
             mail.Subject = "Thank You for Your Review!";
 
-            string Body = "Dear <strong>" + name + "</strong>,<br/><br/>Thank you for taking the time to share your thoughts about our product," + ProdName + " . We truly value your feedback and are thrilled to know about your experience..<br/><br/>Your insights help us improve and continue delivering the best experience possible. If you have any further comments or suggestions, feel free to reach out to us at any time. <br/><br/><br/>We hope to serve you again soon!.<br/><br/><br/>Thanks & Regards<br/>ArchidPly Decor<br/>";
+            string Body = "Dear <strong>" + name + "</strong>,<br/><br/>Thank you for taking the time to share your thoughts about our product," + ProdName + " . We truly value your feedback and are thrilled to know about your experience..<br/><br/>Your insights help us improve and continue delivering the best experience possible. If you have any further comments or suggestions, feel free to reach out to us at any time. <br/><br/><br/>We hope to serve you again soon!.<br/><br/><br/>Thanks & Regards<br/>Archidply Decor<br/>";
 
             mail.Body = Body;
             mail.IsBodyHtml = true;

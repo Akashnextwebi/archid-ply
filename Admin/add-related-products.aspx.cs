@@ -24,13 +24,13 @@ public partial class Admin_add_related_products : System.Web.UI.Page
     {
         try
         {
-            List<Category> comps = Category.GetAllCategory(conAP).OrderBy(s => s.CategoryName).ToList();
+            List<SubCategory> comps = SubCategory.GetAllSubCategory(conAP).OrderBy(s => s.SubCategoryName).ToList();
             DropDownList1.Items.Clear();
             if (comps.Count > 0)
             {
                 DropDownList1.DataSource = comps;
                 DropDownList1.DataValueField = "Id";
-                DropDownList1.DataTextField = "CategoryName";
+                DropDownList1.DataTextField = "SubCategoryName";
                 DropDownList1.DataBind();
             }
             DropDownList1.Items.Insert(0, new ListItem("Select Category", "0"));

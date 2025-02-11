@@ -23,11 +23,11 @@ public partial class Admin_product_order : System.Web.UI.Page
         try
         {
             ddlCategory.Items.Clear();
-            List<Category> cats = Category.GetAllCategory(conAP);
+            List<SubCategory> cats = SubCategory.GetAllSubCategory(conAP);
             if (cats.Count > 0)
             {
                 ddlCategory.DataSource = cats;
-                ddlCategory.DataTextField = "CategoryName";
+                ddlCategory.DataTextField = "SubCategoryName";
                 ddlCategory.DataValueField = "Id";
                 ddlCategory.DataBind();
             }
@@ -92,7 +92,7 @@ public partial class Admin_product_order : System.Web.UI.Page
         SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
         try
         {
-            List<ProductDetails> products = ProductDetails.GetAllProducts(conAP).Where(p => p.Category == category).OrderBy(x => x.DisplayOrder).ToList();
+            List<ProductDetails> products = ProductDetails.GetAllProducts(conAP).Where(p => p.SubCategory == category).OrderBy(x => x.DisplayOrder).ToList();
             foreach (var cat in products)
             {
                 fpl.Add(new ProductDetails() { ProductImage = cat.ProductImage, Id = cat.Id, ProductName = cat.ProductName });

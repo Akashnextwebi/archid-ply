@@ -166,7 +166,7 @@
                     <div class="card border-0 rounded-0 banner-01 hover-zoom-in hover-shine">
                         <img class="lazy-image object-fit-cover card-img light-mode-img"
                             src="#"
-                            data-src="assets/imgs/sister-company-2.png"
+                            data-src="assets/imgs/bonvivantImg.png"
                             alt="25% off Everything" />
                         <div class="card-img-overlay d-inline-flex flex-column p-md-12 m-md-2 p-8 justify-content-start align-items-start">
                             <!-- <h3 class="card-title lh-45px fs-3 pe-15">

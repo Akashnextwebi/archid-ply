@@ -294,6 +294,7 @@
                     </ul>
                 </div>
             </div>
+            <asp:HiddenField runat="server" ID="HiddenCatId" />
         </section>
         <script src="/assets/js/Pages/shop-product.js"></script>
     </main>

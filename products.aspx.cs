@@ -40,19 +40,19 @@ public partial class products : System.Web.UI.Page
                 {
                     strHeading = category.CategoryName;
                     strCategoryDesc = category.ShortDesc;
-                    List<SubCategory> subCategories = SubCategory.GetSubCategoryByCat(conAP, Convert.ToString(category.Id)).ToList();//Where(s => s.DisplayHome == "Yes").OrderBy(s => s.DisplayOrder).ToList();
-                    if (subCategories.Count > 0)
+                    List<EnquiryProduct> ep = EnquiryProduct.GetAllEnquiryProductByCategory(conAP, Convert.ToString(category.Id)).ToList();//Where(s => s.DisplayHome == "Yes").OrderBy(s => s.DisplayOrder).ToList();
+                    if (ep.Count > 0)
                     {
-                        foreach (SubCategory subCategory in subCategories)
+                        foreach (EnquiryProduct e in ep)
                         {
                             strCategoriesDetails += @"<div class='col-md-6 mb-8 mb-md-0' data-animate='fadeInUp'>
                                     <div class='card border-0 mb-10'>
                                         <div class='image-box-4'>
-                                            <img class='lazy-image img-fluid lazy-image light-mode-img' src='/" + subCategory.ImageUrl + @"' width='960' height='640' alt='unavialable'>
+                                            <img class='lazy-image img-fluid lazy-image light-mode-img' src='/" + e.ProductImage + @"' width='960' height='640' alt='unavialable'>
                                         </div>
                                         <div class='card-body text-body-emphasis pt-9 mt-2'>
-                                            <h5 class='card-titletext-decoration-none fs-4 mb-4 d-block fw-semibold'><a class='color-inherit text-decoration-none' href='/products/" + subCategory.Url + @"'>" + subCategory.SubCategoryName + @"</a></h5>
-                                            <a href='/products/" + subCategory.Url + @"' class='btn btn-link p-0 mt-2 text-decoration-none text-primary fw-semibold'>Read More<i class='far fa-arrow-right ps-2 fs-13px'></i>
+                                            <h5 class='card-titletext-decoration-none fs-4 mb-4 d-block fw-semibold'><a class='color-inherit text-decoration-none' href='/products/" + e.ProductUrl + @"'>" + e.ProductName + @"</a></h5>
+                                            <a href='/products/" + e.ProductUrl + @"' class='btn btn-link p-0 mt-2 text-decoration-none text-primary fw-semibold'>Read More<i class='far fa-arrow-right ps-2 fs-13px'></i>
                                             </a>
                                         </div>
                                     </div>

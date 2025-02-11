@@ -25,7 +25,7 @@ public partial class _Default : System.Web.UI.Page
         BindClientStories();
         BindFeatureProducts();
         BindBannerImages();
-        BindTop4Tags();
+        BindShopCategories();
         GetAllResources();
     }
     public void GetAllResources()
@@ -203,24 +203,24 @@ public partial class _Default : System.Web.UI.Page
             CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "BindTop3Blog", ex.Message);
         }
     }
-    public void BindTop4Tags()
+    public void BindShopCategories()
     {
         try
         {
             strTags = "";
-            List<Tags> tag = Tags.GetTop4Tags(conAP);
+            List<SubCategory> tag = SubCategory.GetAllSubCategory(conAP);
             if (tag.Count > 0)
             {
-                foreach (Tags t in tag)
+                foreach (SubCategory t in tag)
                 {
                     strTags += @" <div class='col-md-6 col-xl-3 col-6' data-animate='fadeInUp'>
                         <div class='card border-0 rounded-0 hover-zoom-in hover-shine'>
-                            <img class='lazy-image card-img object-fit-cover new-heigh' src='/" + t.TagImage + @"'  width='330' height='450' alt='Not Avail' />
+                            <img class='lazy-image card-img object-fit-cover new-heigh' src='/" + t.ImageUrl + @"'  width='330' height='450' alt='Not Avail' />
                             <div class='card-img-overlay d-inline-flex flex-column p-lg-8 p-4 justify-content-end text-center bg-dark bg-opacity-25'>
-                                <h3 class='card-title text-white lh-25px lh-lg-45px font-primary fw-normal fs-6 fs-lg-4'>" + t.Title + @"
+                                <h3 class='card-title text-white lh-25px lh-lg-45px font-primary fw-normal fs-6 fs-lg-4'>" + t.SubCategoryName + @"
                                 </h3>
                                 <div>
-                                    <a href='/shop/" + t.TagURL + @"' class='btn btn btn-link new-font p-0 fw-semibold text-white border-bottom border-0 rounded-0 border-currentColor text-decoration-none'>Shop Now</a>
+                                    <a href='/shop/" + t.Url + @"' class='btn btn btn-link new-font p-0 fw-semibold text-white border-bottom border-0 rounded-0 border-currentColor text-decoration-none'>Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -231,7 +231,7 @@ public partial class _Default : System.Web.UI.Page
         catch (Exception ex)
         {
 
-            CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "BindTop3Blog", ex.Message);
+            CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "BindShopCategories", ex.Message);
         }
     }
     public void BindFeatureProducts()

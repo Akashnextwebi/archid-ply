@@ -108,15 +108,15 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-lg-4 mb-3">
-                                                    <label>Category<sup>*</sup></label>
-                                                    <asp:DropDownList runat="server" class="form-control mb-2 mr-sm-2 basic SubCategory" ID="ddlCategory" AutoPostBack="true" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged">
+                                                <div class="col-lg-4 mb-3 d-none">
+                                                    <label>Category</label>
+                                                    <asp:DropDownList runat="server" class="form-control mb-2 mr-sm-2 basic SubCategory" ID="ddlCategory">
                                                         <asp:ListItem Value="">Select Category</asp:ListItem>
                                                     </asp:DropDownList>
-                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ddlCategory" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
+                                                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ddlCategory" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>--%>
                                                 </div>
                                                 <div class="col-lg-4 mb-3">
-                                                    <label class="form-label" for="project-title-input">SubCategory <sup>*</sup></label>
+                                                    <label class="form-label" for="project-title-input">Category <sup>*</sup></label>
                                                     <asp:DropDownList runat="server" class="form-control mb-2 mr-sm-2" ID="ddlSubCategory">
                                                     </asp:DropDownList>
                                                     <asp:RequiredFieldValidator ID="rfv2" runat="server" ControlToValidate="ddlSubCategory" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
@@ -142,14 +142,13 @@
                                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Enter a valid Name." ValidationExpression="^[a-zA-Z ]*$" ControlToValidate="txtUrl" ValidationGroup="Contact" ForeColor="Red" Display="Dynamic"></asp:RegularExpressionValidator>
                                                     <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender6" runat="server" FilterMode="ValidChars" FilterType="Custom,LowercaseLetters,UppercaseLetters,Numbers" ValidChars="-" TargetControlID="txtUrl"></asp:FilteredTextBoxExtender>
                                                 </div>
-                                                <div class="col-lg-4 mb-3">
-                                                    <label>Tag<sup>*</sup></label>
+                                                <div class="col-lg-4 mb-3 d-none">
+                                                    <label>Tag</label>
                                                     <asp:DropDownList ID="drpTag" runat="server" CssClass="form-control mb-2 mr-sm-2" ></asp:DropDownList>
-                                                    <asp:RequiredFieldValidator ID="rfv3" runat="server" ControlToValidate="drpTag" InitialValue="0" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
-
+                                                    <%--<asp:RequiredFieldValidator ID="rfv3" runat="server" ControlToValidate="drpTag" InitialValue="0" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>--%>
                                                 </div>
 
-                                                <div class="col-lg-4 mb-3">
+                                                <div class="col-lg-4 mb-3 d-none">
                                                     <label>SKU Code</label>
                                                     <asp:TextBox runat="server" MaxLength="100" class="form-control mb-2 mr-sm-2" ID="txtSKUCode" />
                                                     <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtSKUCode" Display="Dynamic" ForeColor="Red" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>--%>
@@ -173,14 +172,16 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12 mb-3">
-                                                    <label>Product Details</label>
+                                                    <label>Product Details<sup>*</sup></label>
                                                     <asp:TextBox runat="server" TextMode="MultiLine" class="form-control mb-2 mr-sm-2 summernote" Style="height: 100px !important;" ID="txtProductDesc" />
-                                                </div>
-                                                <div class="col-lg-4 mb-3">
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtProductDesc" Display="Dynamic" ForeColor="Red" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
+                                               
+                                                    </div>
+                                                <div class="col-lg-4 mb-3 d-none">
                                                     <label>Place of Origin</label>
                                                     <asp:TextBox runat="server" MaxLength="100" class="form-control mb-2 mr-sm-2 acceptOnlyAlpha" ID="txtOrigin" />
                                                 </div>
-                                                <div class="col-lg-4 mb-3">
+                                                <div class="col-lg-4 mb-3 d-none">
                                                     <label>Review Keyword</label>
                                                     <asp:TextBox runat="server" MaxLength="100" class="form-control mb-2 mr-sm-2" ID="txtReview" />
                                                 </div>
@@ -198,7 +199,7 @@
                                                     <asp:CheckBox CssClass="form-control" ID="chbDispHome" runat="server" />
                                                     <span></span>
                                                 </div>
-                                                <div class="col-lg-2 mb-3">
+                                                <div class="col-lg-2 mb-3 d-none">
                                                     <label>Best Seller</label>
                                                     <asp:CheckBox CssClass="form-control" ID="chkBestSeller" runat="server" />
                                                 </div>

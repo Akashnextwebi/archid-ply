@@ -88,16 +88,16 @@ public class ProductDetails
         }
         return productDetails;
     }
-    public static List<ProductDetails> GetAllProductsByFilter(SqlConnection conAP, int cPage,string Pcat,string Ptag)
+    public static List<ProductDetails> GetAllProductsByFilter(SqlConnection conAP, int cPage,string Pcat)
     {
         List<ProductDetails> Products = new List<ProductDetails>();
         try
         {
-            var query = @"SELECT TOP 8 * FROM (SELECT ROW_NUMBER() OVER (ORDER BY ProductOrder DESC) AS RowNo, (SELECT COUNT(ID) FROM ProductDetails WHERE Status = 'Active' AND (@Category = '' OR Category = @Category) AND (@ProductTags='' or ProductTags=@ProductTags )) AS TotalCount, * FROM ProductDetails WHERE Status = 'Active' AND (@Category = '' OR Category = @Category) AND (@ProductTags='' or ProductTags=@ProductTags )) x WHERE RowNo > " + (8 * (cPage - 1));
+          //  var queryold = @"SELECT TOP 8 * FROM (SELECT ROW_NUMBER() OVER (ORDER BY ProductOrder DESC) AS RowNo, (SELECT COUNT(ID) FROM ProductDetails WHERE Status = 'Active' AND (@SubCategory = '' OR SubCategory = @SubCategory) AND (@ProductTags='' or ProductTags=@ProductTags )) AS TotalCount, * FROM ProductDetails WHERE Status = 'Active' AND (@Category = '' OR Category = @Category) AND (@ProductTags='' or ProductTags=@ProductTags )) x WHERE RowNo > " + (8 * (cPage - 1));
+            var query = @"SELECT TOP 8 * FROM (SELECT ROW_NUMBER() OVER (ORDER BY ProductOrder DESC) AS RowNo, (SELECT COUNT(ID) FROM ProductDetails WHERE Status = 'Active' AND (@SubCategory = '' OR SubCategory = @SubCategory)) AS TotalCount, * FROM ProductDetails WHERE Status = 'Active' AND (@SubCategory = '' OR SubCategory = @SubCategory)) x WHERE RowNo > " + (8 * (cPage - 1));
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
-                cmd.Parameters.AddWithValue("@Category", SqlDbType.Int).Value = Pcat;
-                cmd.Parameters.AddWithValue("@ProductTags", SqlDbType.Int).Value = Ptag;
+                cmd.Parameters.AddWithValue("@SubCategory", SqlDbType.Int).Value = Pcat;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -149,7 +149,7 @@ public class ProductDetails
         List<ProductDetails> productDetails = new List<ProductDetails>();
         try
         {
-            string query = "SELECT pd.*, (SELECT TOP 1 CategoryName FROM Category WHERE id = pd.Category) AS CategoryName,(SELECT TOP 1 UserName FROM CreateUser WHERE UserGuid = pd.UpdatedBy) AS UpdatedBy1 FROM ProductDetails AS pd WHERE pd.Status != 'Deleted';";
+            string query = "SELECT pd.*, (SELECT TOP 1 SubCategory FROM SubCategory WHERE id = pd.SubCategory) AS CategoryName,(SELECT TOP 1 UserName FROM CreateUser WHERE UserGuid = pd.UpdatedBy) AS UpdatedBy1 FROM ProductDetails AS pd WHERE pd.Status != 'Deleted';";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -353,7 +353,7 @@ public class ProductDetails
         ProductDetails pds = null;
         try
         {
-            string query = "Select *,(SELECT TOP 1 CategoryName FROM Category WHERE id = ProductDetails.Category) AS CategoryName, (Select Top 1 UserName From CreateUser Where UserGuid=ProductDetails.UpdatedBy) UpdatedBy1 from ProductDetails where Status!='Deleted' and Id=@id";
+            string query = "Select *,(SELECT TOP 1 SubCategory FROM SubCategory WHERE id = ProductDetails.SubCategory) AS CategoryName, (Select Top 1 UserName From CreateUser Where UserGuid=ProductDetails.UpdatedBy) UpdatedBy1 from ProductDetails where Status!='Deleted' and Id=@id";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = id;

@@ -20,7 +20,7 @@ public partial class Admin_subcategory : System.Web.UI.Page
         btnSave.Attributes.Add("onclick", " this.disabled = 'true';this.value='Please Wait...'; " + ClientScript.GetPostBackEventReference(btnSave, null) + ";");
         if (!IsPostBack)
         {
-            GetAllCategory();
+            //GetAllCategory();
 
             if (Request.QueryString["id"] != null)
             {
@@ -120,17 +120,17 @@ public partial class Admin_subcategory : System.Web.UI.Page
             if (categories.Count > 0)
             {
                 btnSave.Text = "Update";
-                txtSubCategory.Text = categories[0].SubCategoryName;
+                txtShopCategory.Text = categories[0].SubCategoryName;
                 txtURL.Text = categories[0].Url;
                 txtMetaDesc.Text = categories[0].MetaDesc;
                 txtMetaKeys.Text = categories[0].MetaKey;
                 txtPageTitle.Text = categories[0].PageTitle;
-                txtSubCategoryDesc.Text = categories[0].FullDesc;
+                txtShopCategoryDesc.Text = categories[0].FullDesc;
                 addSubCategoryBtn.Visible = true;
                 chbDispHome.Checked = categories[0].DisplayHome == "Yes" ? true : false;
                 txtDisplayOrder.Text = categories[0].DisplayOrder;
                 txtShortDesc.Text = categories[0].ShortDesc;
-                ddlCateory.SelectedIndex = ddlCateory.Items.IndexOf(ddlCateory.Items.FindByValue(categories[0].Category));
+                //ddlCateory.SelectedIndex = ddlCateory.Items.IndexOf(ddlCateory.Items.FindByValue(categories[0].Category));
                 if (categories[0].ImageUrl != "")
                 {
                     lblThumb.Text = categories[0].ImageUrl;
@@ -144,7 +144,7 @@ public partial class Admin_subcategory : System.Web.UI.Page
         }
     }
 
-    public void GetAllCategory()
+    /*public void GetAllCategory()
     {
         try
         {
@@ -163,7 +163,7 @@ public partial class Admin_subcategory : System.Web.UI.Page
         {
             CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "GetAllCategory", ex.Message);
         }
-    }
+    }*/
     protected void btnSave_Click(object sender, EventArgs e)
     {
         try
@@ -187,28 +187,27 @@ public partial class Admin_subcategory : System.Web.UI.Page
 
                 }
                 SubCategory cat = new SubCategory();
-                cat.SubCategoryName = txtSubCategory.Text.Trim();
+                cat.SubCategoryName = txtShopCategory.Text.Trim();
                 cat.Url = Regex.Replace(txtURL.Text.Trim(), @"[^0-9a-zA-Z-]+", "-");
-                cat.Category = ddlCateory.SelectedValue;
+                cat.Category = "";
                 cat.PageTitle = txtPageTitle.Text.Trim();
                 cat.MetaKey = txtMetaKeys.Text.Trim();
                 cat.MetaDesc = txtMetaDesc.Text.Trim();
-                cat.FullDesc = txtSubCategoryDesc.Text.Trim();
+                cat.FullDesc = txtShopCategoryDesc.Text.Trim();
                 cat.ShortDesc = txtShortDesc.Text.Trim();
                 cat.DisplayHome = chbDispHome.Checked ? "Yes" : "No";
                 cat.DisplayOrder = txtDisplayOrder.Text == "" ? "1000" : txtDisplayOrder.Text;
                 cat.UpdatedBy = Request.Cookies["ap_aid"].Value;
                 cat.ImageUrl = UploadImage();
 
-                List<SubCategory> res = SubCategory.GetSubCategoryByCatAndSub(conAP, txtSubCategory.Text.Trim(), ddlCateory.SelectedValue);//.Where(s => s.SubCategoryName.ToLower() == cat.SubCategoryName.ToLower() && s.Category.ToLower() == cat.Category.ToLower()).ToList();
+                List<SubCategory> res = SubCategory.GetSubCategoryByCatAndSub(conAP, txtShopCategory.Text.Trim());//.Where(s => s.SubCategoryName.ToLower() == cat.SubCategoryName.ToLower() && s.Category.ToLower() == cat.Category.ToLower()).ToList();
                 if (btnSave.Text == "Update")
                 {
                     if (CreateUser.CheckAccess(conAP, pageName, "Edit", Request.Cookies["ap_aid"].Value))
                     {
                         if (res.Count > 0 && res[0].Id != Convert.ToInt32(Request.QueryString["id"]))
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text:'SubCategory already exist...',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
-
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text:'Shop Category already exist...',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
                         }
                         else
                         {
@@ -216,7 +215,7 @@ public partial class Admin_subcategory : System.Web.UI.Page
                             int result = SubCategory.UpdateSubCategory(conAP, cat);
                             if (result > 0)
                             {
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'SubCategory updated successfully.',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Shop Category updated successfully.',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
 
                                 GetSubCategory();
                             }
@@ -239,7 +238,8 @@ public partial class Admin_subcategory : System.Web.UI.Page
                     {
                         if (res.Count > 0)
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text:'SubCategory already exist...',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text:'Shop Category already exist...',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
+                            return;
 
                         }
                         else
@@ -249,11 +249,11 @@ public partial class Admin_subcategory : System.Web.UI.Page
                             int result = SubCategory.InsertSubCategory(conAP, cat);
                             if (result > 0)
                             {
-                                txtSubCategory.Text = txtDisplayOrder.Text = txtURL.Text
+                                txtShopCategory.Text = txtDisplayOrder.Text = txtURL.Text
                                     = txtMetaDesc.Text = txtPageTitle.Text = txtMetaKeys.Text
-                                    = txtSubCategoryDesc.Text = ddlCateory.SelectedValue = "";
+                                    = txtShopCategoryDesc.Text = ddlCateory.SelectedValue = "";
                                 chbDispHome.Checked = false;
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'SubCategory added successfully.',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Shop Category added successfully.',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
 
                             }
                             else
@@ -287,7 +287,7 @@ public partial class Admin_subcategory : System.Web.UI.Page
         try
         {
             SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
-            if (CreateUser.CheckAccess(conAP, "subcategory.aspx", "Delete", HttpContext.Current.Request.Cookies["ap_aid"].Value))
+            if (CreateUser.CheckAccess(conAP, "shopcategory.aspx", "Delete", HttpContext.Current.Request.Cookies["ap_aid"].Value))
             {
                 SubCategory cat = new SubCategory();
                 cat.Id = Convert.ToInt32(id);
@@ -317,6 +317,6 @@ public partial class Admin_subcategory : System.Web.UI.Page
 
     protected void btnSave_Click1(object sender, EventArgs e)
     {
-        Response.Redirect("subcategory.aspx");
+        Response.Redirect("shopcategory.aspx");
     }
 }

@@ -24,9 +24,9 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
         btnSeo.Attributes.Add("onclick", " this.disabled = 'true';this.value='Please Wait...'; " + ClientScript.GetPostBackEventReference(btnSeo, null) + ";");
         if (!IsPostBack)
         {
-            BindCategories();
-            BindBrand();
-            GetAllTags();
+            BindSubCategories();
+           // BindBrand();
+            //GetAllTags();
             idPid.Value = Guid.NewGuid().ToString();
             if (Request.QueryString["id"] != null)
             {
@@ -38,7 +38,7 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
     }
 
     #region Product region
-    protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
+   /* protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
     {
         BindSubCategories(ddlCategory.SelectedItem.Value);
         if (Request.QueryString["id"] != null)
@@ -47,7 +47,7 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
             idPid.Value = Request.QueryString["id"];
             GetEditProductDetails();
         }
-    }
+    }*/
     public void BindBrand()
     {
         try
@@ -118,8 +118,8 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
                 strCategory = pds.CategoryName;
                 btnSave.Text = "Update";
                 addProduct.Visible = true;
-                ddlCategory.SelectedIndex = ddlCategory.Items.IndexOf(ddlCategory.Items.FindByValue(pds.Category));
-                ddlBrand.SelectedIndex = ddlBrand.Items.IndexOf(ddlBrand.Items.FindByValue(pds.Brand));
+               // ddlCategory.SelectedIndex = ddlCategory.Items.IndexOf(ddlCategory.Items.FindByValue(pds.Category));
+                //ddlBrand.SelectedIndex = ddlBrand.Items.IndexOf(ddlBrand.Items.FindByValue(pds.Brand));
                 txtProdName.Text = pds.ProductName;
                 txtURL.Text = pds.ProductUrl;
                 txtShort.Text = pds.ShortDesc;
@@ -172,8 +172,6 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
                     strBannerImage = "<img src='/" + pds.ProductImage + "' style='max-height:60px;margin-bottom:10px;' />";
                     lblThumb.Text = pds.ProductImage;
                 }
-                BindSubCategories(pds.Category);
-                ddlSubCategory.SelectedIndex = ddlSubCategory.Items.IndexOf(ddlSubCategory.Items.FindByValue(pds.SubCategory));
             }
         }
         catch (Exception ex)
@@ -181,12 +179,12 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
             CommonModel.CaptureException(HttpContext.Current.Request.Url.PathAndQuery, "GetCategory", ex.Message);
         }
     }
-    public void BindSubCategories(string category)
+    public void BindSubCategories()
     {
         try
         {
             ddlSubCategory.Items.Clear();
-            var subCat = SubCategory.GetAllSubCategoryByCategory(conAP, category);
+            var subCat = SubCategory.GetAllSubCategoryByCategory(conAP);
             if (subCat.Rows.Count > 0)
             {
                 ddlSubCategory.DataSource = subCat;
@@ -194,7 +192,7 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
                 ddlSubCategory.DataTextField = "SubCategory";
                 ddlSubCategory.DataBind();
             }
-            ddlSubCategory.Items.Insert(0, new ListItem("- Select Sub Category -", ""));
+            ddlSubCategory.Items.Insert(0, new ListItem("- Select Category -", ""));
         }
         catch (Exception ex)
         {
@@ -236,9 +234,9 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
                 }
                 string pageName = Path.GetFileName(Request.Path);
                 ProductDetails cat = new ProductDetails();
-                cat.Category = ddlCategory.SelectedItem.Value;
+                cat.Category = "";
                 cat.SubCategory = ddlSubCategory.SelectedItem.Value;
-                cat.Brand = ddlBrand.SelectedItem.Value;
+                cat.Brand = "";
                 cat.ProductName = txtProdName.Text.Trim();
                 cat.SKUCode = txtSKUCode.Text.Trim();
                 cat.TaxGroup = "18";
@@ -247,12 +245,12 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
                 cat.FullDesc = txtProductDesc.Text.Trim();
                 cat.InStock = chkInStock.Checked ? "Yes" : "No";
                 cat.Featured = chkFeatured.Checked ? "Yes" : "No";
-                cat.Enquiry = chkEnquiry.Checked ? "Yes" : "No";
-                cat.Shop = chkShop.Checked ? "Yes" : "No";
-                cat.BestSeller = chkBestSeller.Checked ? "Yes" : "No";
+                cat.Enquiry = "";
+                cat.Shop = "";
+                cat.BestSeller = "";
                 cat.Status = chbDispHome.Checked ? "Active" : "Draft";
                 cat.PageTitle = txtPTitle.Text.Trim();
-                cat.ReviewKeyword = txtReview.Text.Trim();
+                cat.ReviewKeyword = "";
                 cat.ItemNumber = txtItemNum.Text.Trim();
                 cat.MetaKey = txtMKeys.Text.Trim();
                 cat.MetaDesc = txtMetaDesc.Text.Trim();
@@ -276,7 +274,7 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
                 #endregion*/
 
 
-                cat.ProductTags = drpTag.SelectedValue;
+                cat.ProductTags = "";
 
                 if (btnSave.Text == "Update")
                 {

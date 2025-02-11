@@ -1,5 +1,10 @@
 ﻿
 $(document).ready(function () {
+    var CatId = $('[id*=HiddenCatId]').val();
+    if (CatId && CatId !== "0") {
+        $('[id*=ddlCategory]').val(CatId).change();
+        BindAllShopProducts();
+    }
     BindAllShopProducts();
 
     $(document.body).on('click', ".pPVClick", function () {
@@ -48,6 +53,13 @@ $(document.body).on('change', "[id*=ddlCategory]", function () {
     BindAllShopProducts();
 });
 
+$(document.body).on('text', "[id*=HiddenCatId]", function () {
+    var Pcat = $(this).find('option:selected').text();
+    $(".CatName").text(Pcat);
+    BindAllShopProducts();
+});
+
+
 function BindAllShopProducts() {
     var pno = "1";
     if ($(".pPagination a").hasClass("current")) {
@@ -59,7 +71,7 @@ function BindAllShopProducts() {
     var urlSegments = currentURL.split('/');
     var PTag = urlSegments[urlSegments.length - 1] == "shop" ? "" : urlSegments[urlSegments.length - 1];
   
-    var dts = { pno: pno, Pcat: Pcat, PTag: PTag };
+    var dts = { pno: pno, Pcat: Pcat};
     $.ajax({
         type: 'POST',
         url: '/shop-products.aspx/AllShopProducts',

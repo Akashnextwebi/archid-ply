@@ -35,6 +35,7 @@ public class EnquiryProduct
     public DateTime UpdatedOn { set; get; }
     public DateTime ExpiryDate { get; set; }
     public string UpdatedIp { set; get; }
+    public string DisplayOrder { set; get; }
     public string UpdatedBy { set; get; }
     public string Status { set; get; }
     public string ItemNumber { set; get; }
@@ -75,6 +76,7 @@ public class EnquiryProduct
                            UpdatedOn = Convert.ToDateTime(Convert.ToString(dr["UpdatedOn"])),
                            UpdatedIp = Convert.ToString(dr["UpdatedIp"]),
                            Status = Convert.ToString(dr["Status"]),
+                           DisplayOrder = Convert.ToString(dr["DisplayOrder"]),
                            ProductImage = Convert.ToString(dr["ProductImage"]),
                            RelatedProducts = Convert.ToString(dr["RelatedProducts"]),
                        }).ToList();
@@ -91,8 +93,8 @@ public class EnquiryProduct
         List<EnquiryProduct> pds = null;
         try
         {
-            string query = "SELECT *, (SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (SELECT TOP 1 UserName FROM CreateUser WHERE UserGuid = EnquiryProduct.UpdatedBy) AS UpdatedBy1 FROM EnquiryProduct INNER JOIN Subcategory ON EnquiryProduct.Subcategory = Subcategory.Id WHERE EnquiryProduct.Status != 'Deleted' AND EnquiryProduct.Category = @Category AND Subcategory.DisplayHome = 'Yes';";
-           // string queryold = "Select *,(SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (Select Top 1 UserName From CreateUser Where UserGuid=EnquiryProduct.UpdatedBy) UpdatedBy1 from EnquiryProduct where Status!='Deleted' and Category=@Category";
+            //string query = "SELECT *, (SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (SELECT TOP 1 UserName FROM CreateUser WHERE UserGuid = EnquiryProduct.UpdatedBy) AS UpdatedBy1 FROM EnquiryProduct INNER JOIN Subcategory ON EnquiryProduct.Subcategory = Subcategory.Id WHERE EnquiryProduct.Status != 'Deleted' AND EnquiryProduct.Category = @Category AND Subcategory.DisplayHome = 'Yes';";
+          string query = "Select *,(SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (Select Top 1 UserName From CreateUser Where UserGuid=EnquiryProduct.UpdatedBy) UpdatedBy1 from EnquiryProduct where Status!='Deleted' and Category=@Category Order By DisplayOrder";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@Category", SqlDbType.Int).Value = Category;
@@ -123,6 +125,7 @@ public class EnquiryProduct
                            UpdatedIp = Convert.ToString(dr["UpdatedIp"]),
                            Status = Convert.ToString(dr["Status"]),
                            ProductImage = Convert.ToString(dr["ProductImage"]),
+                           DisplayOrder = Convert.ToString(dr["DisplayOrder"]),
                            RelatedProducts = Convert.ToString(dr["RelatedProducts"]),
                        }).ToList();
             }
@@ -163,6 +166,7 @@ public class EnquiryProduct
                      Featured = Convert.ToString(dr["Featured"]),
                      PageTitle = Convert.ToString(dr["PageTitle"]),
                      MetaKey = Convert.ToString(dr["MetaKey"]),
+                     DisplayOrder = Convert.ToString(dr["DisplayOrder"]),
                      MetaDesc = Convert.ToString(dr["MetaDesc"]),
                      UpdatedBy = Convert.ToString(dr["UpdatedBy1"]),
                      UpdatedOn = Convert.ToDateTime(Convert.ToString(dr["UpdatedOn"])),
@@ -207,6 +211,7 @@ public class EnquiryProduct
                     pds.FullDesc = Convert.ToString(dt.Rows[0]["FullDesc"]);
                     pds.ProductTags = Convert.ToString(dt.Rows[0]["ProductTags"]);
                     pds.PageTitle = Convert.ToString(dt.Rows[0]["PageTitle"]);
+                    pds.DisplayOrder = Convert.ToString(dt.Rows[0]["DisplayOrder"]);
                     pds.MetaKey = Convert.ToString(dt.Rows[0]["MetaKey"]);
                     pds.MetaDesc = Convert.ToString(dt.Rows[0]["MetaDesc"]);
                     pds.UpdatedBy = Convert.ToString(dt.Rows[0]["UpdatedBy1"]);
@@ -261,6 +266,7 @@ public class EnquiryProduct
                     pds.Status = Convert.ToString(dt.Rows[0]["Status"]);
                     pds.Featured = Convert.ToString(dt.Rows[0]["Featured"]);
                     pds.ItemNumber = Convert.ToString(dt.Rows[0]["ItemNumber"]);
+                    pds.DisplayOrder = Convert.ToString(dt.Rows[0]["DisplayOrder"]);
                     pds.ProductImage = Convert.ToString(dt.Rows[0]["ProductImage"]);
                 }
             }
@@ -306,6 +312,7 @@ public class EnquiryProduct
                                       UpdatedIp = Convert.ToString(dr["UpdatedIp"]),
                                       Status = Convert.ToString(dr["Status"]),
                                       ProductImage = Convert.ToString(dr["ProductImage"]),
+                                      DisplayOrder = Convert.ToString(dr["DisplayOrder"]),
                                       RelatedProducts = Convert.ToString(dr["RelatedProducts"]),
                                   }).ToList();
             }
@@ -345,11 +352,12 @@ public class EnquiryProduct
         int result = 0;
         try
         {
-            string query = "INSERT INTO EnquiryProduct (ProductGuid, Category, ProductName, ProductUrl, ShortDesc, FullDesc, Features, AddedOn, AddedBy, AddedIp, UpdatedOn, UpdatedBy, UpdatedIp, Status, PageTitle, MetaKey, MetaDesc, ProductImage, ProductTags, SubCategory, Featured, RelatedProducts, Brand, ItemNumber) VALUES (@ProductGuid, @Category, @ProductName, @ProductUrl, @ShortDesc, @FullDesc, @Features, @AddedOn, @AddedBy, @AddedIp, @UpdatedOn, @UpdatedBy, @UpdatedIp, @Status, @PageTitle, @MetaKey, @MetaDesc, @ProductImage, @ProductTags, @SubCategory, @Featured, @RelatedProducts, @Brand, @ItemNumber) SELECT SCOPE_IDENTITY()";
+            string query = "INSERT INTO EnquiryProduct (ProductGuid,DisplayOrder, Category, ProductName, ProductUrl, ShortDesc, FullDesc, Features, AddedOn, AddedBy, AddedIp, UpdatedOn, UpdatedBy, UpdatedIp, Status, PageTitle, MetaKey, MetaDesc, ProductImage, ProductTags, SubCategory, Featured, RelatedProducts, Brand, ItemNumber) VALUES (@ProductGuid,@DisplayOrder, @Category, @ProductName, @ProductUrl, @ShortDesc, @FullDesc, @Features, @AddedOn, @AddedBy, @AddedIp, @UpdatedOn, @UpdatedBy, @UpdatedIp, @Status, @PageTitle, @MetaKey, @MetaDesc, @ProductImage, @ProductTags, @SubCategory, @Featured, @RelatedProducts, @Brand, @ItemNumber) SELECT SCOPE_IDENTITY()";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@Features", SqlDbType.NVarChar).Value = cat.Features;
                 cmd.Parameters.AddWithValue("@ProductGuid", SqlDbType.NVarChar).Value = cat.ProductGuid;
+                cmd.Parameters.AddWithValue("@DisplayOrder", SqlDbType.NVarChar).Value = cat.DisplayOrder;
                 cmd.Parameters.AddWithValue("@Category", SqlDbType.NVarChar).Value = cat.Category;
                 cmd.Parameters.AddWithValue("@SubCategory", SqlDbType.NVarChar).Value = cat.SubCategory;
                 cmd.Parameters.AddWithValue("@Brand", SqlDbType.NVarChar).Value = cat.Brand;
@@ -388,10 +396,11 @@ public class EnquiryProduct
         int result = 0;
         try
         {
-            string query = "UPDATE EnquiryProduct SET Category=@Category, Features=@Features, Status=@sts, SubCategory=@SubCategory, Brand=@Brand, ProductName=@ProductName, ShortDesc=@ShortDesc, FullDesc=@FullDesc, ProductUrl=@ProductUrl, ProductTags=@ProductTags, ProductImage=@ProductImage, PageTitle=@PageTitle, MetaKey=@MetaKey, MetaDesc=@MetaDesc, Featured=@Featured, UpdatedBy=@UpdatedBy, ItemNumber=@ItemNumber, UpdatedOn=@UpdatedOn, UpdatedIp=@UpdatedIp WHERE Id=@Id";
+            string query = "UPDATE EnquiryProduct SET Category=@Category, DisplayOrder=@DisplayOrder,Features=@Features, Status=@sts, SubCategory=@SubCategory, Brand=@Brand, ProductName=@ProductName, ShortDesc=@ShortDesc, FullDesc=@FullDesc, ProductUrl=@ProductUrl, ProductTags=@ProductTags, ProductImage=@ProductImage, PageTitle=@PageTitle, MetaKey=@MetaKey, MetaDesc=@MetaDesc, Featured=@Featured, UpdatedBy=@UpdatedBy, ItemNumber=@ItemNumber, UpdatedOn=@UpdatedOn, UpdatedIp=@UpdatedIp WHERE Id=@Id";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@Id", SqlDbType.NVarChar).Value = cat.Id;
+                cmd.Parameters.AddWithValue("@DisplayOrder", SqlDbType.NVarChar).Value = cat.DisplayOrder;
                 cmd.Parameters.AddWithValue("@Category", SqlDbType.NVarChar).Value = cat.Category;
                 cmd.Parameters.AddWithValue("@Features", SqlDbType.NVarChar).Value = cat.Features;
                 cmd.Parameters.AddWithValue("@sts", SqlDbType.NVarChar).Value = cat.Status;

@@ -37,13 +37,12 @@ public partial class Admin_view_subcategory : System.Web.UI.Page
                 strCategory += @"<tr>
                                                 <td>" + (i + 1) + @"</td>
                                                 <td><a href='javascript:void(0);' ><img src='/" + cat.ImageUrl + @"' alt='' data-image='/"+cat.ImageUrl+@"' class='img-thumbnail rounded-circle avatar-sm viewImg'> </a></td>
-                                                <td>" + cat.Category + @"</td>
                                                 <td>" + cat.SubCategoryName + @"</td>
                                                 <td>" + (cat.DisplayHome.ToLower() == "yes" ? "<span class='badge badge-outline-success'>Yes</span>" : "<span class='badge badge-outline-danger'>No</span>") + @"</td>
                                                 <td><span class='badge badge-outline-primary'>" + cat.DisplayOrder + @"</span></td>
                                                 <td><a class='bs-tooltip' data-toggle='tooltip' data-placement='top' title='' data-original-title='Updated By : " + cat.UpdatedBy + @"' >" + cat.UpdatedOn.ToString("dd/MMM/yyyy hh:mm tt") + @"</a></td>
                                                 <td class='text-center'>
-                                                <a href='subcategory.aspx?id=" + cat.Id + @"' class='bs-tooltip fs-18' data-id='" + cat.Id + @"' data-bs-toggle='tooltip' data-placement='top' title='Edit'>
+                                                <a href='shopcategory.aspx?id=" + cat.Id + @"' class='bs-tooltip fs-18' data-id='" + cat.Id + @"' data-bs-toggle='tooltip' data-placement='top' title='Edit'>
                                                         <i class='mdi mdi-pencil'></i></a>
                                                     <a href='javascript:void(0);' class='bs-tooltip  fs-18 link-danger deleteItem' data-id='" + cat.Id + @"' data-bs-toggle='tooltip' data-placement='top' title='Delete'>
                                                         <i class='mdi mdi-trash-can-outline'></i></a>   
@@ -67,7 +66,7 @@ public partial class Admin_view_subcategory : System.Web.UI.Page
         try
         {
             SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
-            if (CreateUser.CheckAccess(conAP, "view-subcategory.aspx", "Delete", HttpContext.Current.Request.Cookies["ap_aid"].Value))
+            if (CreateUser.CheckAccess(conAP, "view-shopcategory.aspx", "Delete", HttpContext.Current.Request.Cookies["ap_aid"].Value))
             {
                 SubCategory cat = new SubCategory();
                 cat.Id = Convert.ToInt32(id);

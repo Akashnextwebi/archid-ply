@@ -39,7 +39,7 @@
             if (result.value) {
                 $.ajax({
                     type: 'POST',
-                    url: "view-subcategory.aspx/DeleteSubCategory",
+                    url: "view-shopcategory.aspx/DeleteSubCategory",
                     data: "{id: '" + id + "'}",
                     contentType: 'application/json; charset=utf-8',
                     dataType: "json",

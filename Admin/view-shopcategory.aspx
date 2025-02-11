@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPage.master" AutoEventWireup="true" CodeFile="view-subcategory.aspx.cs" Inherits="Admin_view_subcategory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPage.master" AutoEventWireup="true" CodeFile="view-shopcategory.aspx.cs" Inherits="Admin_view_subcategory" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -33,7 +33,6 @@
                                         <th>#</th>
                                         <th>Image</th>
                                         <th>Category</th>
-                                        <th>Sub Category</th>
                                         <th>Display Home</th>
                                         <th>Display Order</th>
                                         <th>Updated On</th>

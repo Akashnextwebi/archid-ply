@@ -34,7 +34,6 @@ public partial class Admin_view_category : System.Web.UI.Page
             {
                 strCategory += @"<tr>
                                                 <td>" + (i + 1) + @"</td>
-                                                <td><a href='javascript:void(0);' ><img src='/" + cat.ImageUrl + @"' alt='' data-image='/"+cat.ImageUrl+@"' class='img-thumbnail rounded-circle avatar-sm viewImg'> </a></td> 
                                                 <td>" + cat.CategoryName + @"</td>
                                                 <td>" + (cat.DisplayHome.ToLower() == "yes" ? "<span class='badge badge-outline-success'>Yes</span>" : "<span class='badge badge-outline-danger'>No</span>") + @"</td>
                                                 <td><span class='badge badge-outline-primary'>" + cat.DisplayOrder + @"</span></td>

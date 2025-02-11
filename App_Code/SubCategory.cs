@@ -52,15 +52,14 @@ public class SubCategory
         return dt;
     }
 
-    public static DataTable GetAllSubCategoryByCategory(SqlConnection conAP, string category)
+    public static DataTable GetAllSubCategoryByCategory(SqlConnection conAP)
     {
         DataTable dt = new DataTable();
         try
         {
-            string query = "SELECT * FROM SubCategory WHERE Status != 'Deleted' AND Category = @category";
+            string query = "SELECT * FROM SubCategory WHERE Status = 'Active'";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
-                cmd.Parameters.AddWithValue("@category", SqlDbType.NVarChar).Value = category;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
             }
@@ -76,7 +75,7 @@ public class SubCategory
         List<SubCategory> categories = new List<SubCategory>();
         try
         {
-            string query = "SELECT *, (SELECT TOP 1 CategoryName FROM Category WHERE id = SubCategory.category) AS categoryName, (SELECT UserName FROM CreateUser WHERE UserGuid = SubCategory.AddedBy) AS AddedBy1, (SELECT UserName FROM CreateUser WHERE UserGuid = SubCategory.UpdatedBy) AS UpdatedBy1 FROM SubCategory WHERE Status = 'Active';";
+            string query = "SELECT *, (SELECT TOP 1 CategoryName FROM Category WHERE id = SubCategory.category) AS categoryName, (SELECT UserName FROM CreateUser WHERE UserGuid = SubCategory.AddedBy) AS AddedBy1, (SELECT UserName FROM CreateUser WHERE UserGuid = SubCategory.UpdatedBy) AS UpdatedBy1 FROM SubCategory WHERE Status = 'Active' Order by DisplayOrder";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -87,7 +86,7 @@ public class SubCategory
                               {
                                   Id = Convert.ToInt32(Convert.ToString(dr["Id"])),
                                   SubCategoryName = Convert.ToString(dr["SubCategory"]),
-                                  Category = Convert.ToString(dr["categoryName"]),
+                                  Category = Convert.ToString(dr["Category"]),
                                   FullDesc = Convert.ToString(dr["FullDesc"]),
                                   ShortDesc = Convert.ToString(dr["ShortDesc"]),
                                   Url = Convert.ToString(dr["SubCategoryUrl"]),
@@ -327,18 +326,17 @@ public class SubCategory
         }
         return result;
     }
-    public static List<SubCategory> GetSubCategoryByCatAndSub(SqlConnection conAP, string subcat,string catg)
+    public static List<SubCategory> GetSubCategoryByCatAndSub(SqlConnection conAP, string subcat)
     {
         List<SubCategory> categories = new List<SubCategory>();
         try
         {
             decimal ids = 0;
-            string query = "Select *,(SELECT TOP 1 CategoryName FROM Category WHERE id = @category) AS categoryName from SubCategory Where Status='Active' and SubCategory=@SubCategory and Category=@Category";
+            string query = "Select * from SubCategory Where Status='Active' and SubCategory=@SubCategory";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 DataTable dt = new DataTable();
                 cmd.Parameters.AddWithValue("@SubCategory", SqlDbType.NVarChar).Value = subcat;
-                cmd.Parameters.AddWithValue("@Category", SqlDbType.NVarChar).Value = catg;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
                 if (dt.Rows.Count > 0)
@@ -348,7 +346,6 @@ public class SubCategory
                         SubCategory cat = new SubCategory();
                         cat.Id = Convert.ToInt32(Convert.ToString(dt.Rows[i]["Id"]));
                         cat.SubCategoryName = Convert.ToString(dt.Rows[i]["SubCategory"]);
-                        cat.CategoryName = Convert.ToString(dt.Rows[i]["categoryName"]);
                         cat.Url = Convert.ToString(dt.Rows[i]["SubCategoryUrl"]);
                         cat.FullDesc = Convert.ToString(dt.Rows[i]["FullDesc"]);
                         cat.ShortDesc = Convert.ToString(dt.Rows[i]["ShortDesc"]);
@@ -401,7 +398,7 @@ public class SubCategory
                         cat.MetaDesc = Convert.ToString(dt.Rows[i]["MetaDesc"]);
                         cat.DisplayHome = Convert.ToString(dt.Rows[i]["DisplayHome"]);
                         cat.DisplayOrder = Convert.ToString(dt.Rows[i]["DisplayOrder"]);
-                        cat.Category = Convert.ToString(dt.Rows[i]["categoryName"]);
+                        cat.Category = Convert.ToString(dt.Rows[i]["Category"]);
                         cat.AddedIp = Convert.ToString(dt.Rows[i]["AddedIP"]);
                         cat.AddedOn = Convert.ToDateTime(Convert.ToString(dt.Rows[i]["AddedOn"]));
                         cat.Status = Convert.ToString(dt.Rows[i]["Status"]);
@@ -421,7 +418,7 @@ public class SubCategory
         List<SubCategory> categories = new List<SubCategory>();
         try
         {
-            string query = "Select *,(SELECT TOP 1 CategoryName FROM Category WHERE id = SubCategory.category) AS categoryName from SubCategory Where Status='Active' and SubCategoryUrl=@SubCategoryUrl";
+            string query = "Select * from SubCategory Where Status='Active' and SubCategoryUrl=@SubCategoryUrl";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 DataTable dt = new DataTable();
@@ -444,7 +441,7 @@ public class SubCategory
                         cat.MetaDesc = Convert.ToString(dt.Rows[i]["MetaDesc"]);
                         cat.DisplayHome = Convert.ToString(dt.Rows[i]["DisplayHome"]);
                         cat.DisplayOrder = Convert.ToString(dt.Rows[i]["DisplayOrder"]);
-                        cat.Category = Convert.ToString(dt.Rows[i]["categoryName"]);
+                        cat.Category = Convert.ToString(dt.Rows[i]["Category"]);
                         cat.AddedIp = Convert.ToString(dt.Rows[i]["AddedIP"]);
                         cat.AddedOn = Convert.ToDateTime(Convert.ToString(dt.Rows[i]["AddedOn"]));
                         cat.Status = Convert.ToString(dt.Rows[i]["Status"]);

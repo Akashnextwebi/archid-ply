@@ -44,13 +44,13 @@ public partial class UserMaster : System.Web.UI.MasterPage
                     strFooterCat += @"<li class='pt-3 mb-4'><a href='/products-categories/" + category.CategoryUrl + @"'>" + category.CategoryName + @"</a></li>";
                     string subCat = "";
                     string subMobilCat = "";
-                    List<SubCategory> subCategories = SubCategory.GetSubCategoryByCat(conAP, Convert.ToString(category.Id)).ToList();//Where(s => s.DisplayHome == "Yes").OrderBy(s => s.DisplayOrder);
-                    if (subCategories.Count > 0)
+                    List<EnquiryProduct> ep = EnquiryProduct.GetAllEnquiryProductByCategory(conAP, Convert.ToString(category.Id)).ToList();//Where(s => s.DisplayHome == "Yes").OrderBy(s => s.DisplayOrder);
+                    if (ep.Count > 0)
                     {
-                        foreach (SubCategory subCategory in subCategories)
+                        foreach (EnquiryProduct e in ep)
                         {
-                            subCat += @"<ul class='list-unstyled mb-0'><li><a href='/products/" + subCategory.Url + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
-                            subMobilCat += @"<ul'><li><a href='/products/" + subCategory.Url + @"' ><span>" + subCategory.SubCategoryName + @"</span></a></li></ul>";
+                            subCat += @"<ul class='list-unstyled mb-0'><li><a href='/products/" + e.ProductUrl + @"' class='border-hover text-decoration-none py-3 d-block'><span class='border-hover-target'>" + e.ProductName + @"</span></a></li></ul>";
+                            subMobilCat += @"<ul'><li><a href='/products/" + e.ProductUrl + @"' ><span>" + e.ProductName + @"</span></a></li></ul>";
                         }
                     }
                     subCat = "<div class='col'><a href='/products-categories/" + category.CategoryUrl + @"'><h6 class='fs-18px'>" + category.CategoryName + @"</h6></a>" + subCat + "</div>";

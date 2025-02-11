@@ -8,13 +8,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0"><%=Request.QueryString["id"]==null?"Add":"Update" %> Category</h4>
+                        <h4 class="mb-sm-0"><%=Request.QueryString["id"]==null?"Add":"Update" %> Enquiry Product Category</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="dashboard.aspx">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Categories</a></li>
-                                <li class="breadcrumb-item active"><%=Request.QueryString["id"]==null?"Add":"Update" %> Category</li>
+                                <li class="breadcrumb-item active"><%=Request.QueryString["id"]==null?"Add":"Update" %> Enquiry Product Category</li>
                             </ol>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                     <asp:Label runat="server" ID="lblStatus" Visible="false"></asp:Label>
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1"><%=Request.QueryString["id"]==null?"Add":"Update" %>  Category</h4>
+                            <h4 class="card-title mb-0 flex-grow-1"><%=Request.QueryString["id"]==null?"Add":"Update" %> Enquiry Product Category</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-lg-4 mb-2">
+                                <div class="col-lg-4 mb-2 d-none">
                                     <label>Category Image<sup>*</sup></label>
                                     <asp:FileUpload CssClass="form-control" ID="FileUpload1" runat="server" />
                                     <small style="color: red;">.png, .jpeg, .jpg formats to be uploaded and size should be 300*300 px</small>

@@ -23,9 +23,9 @@ public partial class Admin_add_enquiry_products : System.Web.UI.Page
         if (!IsPostBack)
         {
             GetAllFeatures();
-            GetAllTags();
+           // GetAllTags();
             BindCategories();
-            BindBrand();
+           // BindBrand();
             if (Request.QueryString["id"] != null)
             {
                 GetEnquiryEnquiryProduct();
@@ -51,6 +51,7 @@ public partial class Admin_add_enquiry_products : System.Web.UI.Page
                 txtPTitle.Text = pds.PageTitle;
                 txtMetaDesc.Text = pds.MetaDesc;
                 txtMKeys.Text = pds.MetaKey;
+                txtOrder.Text = pds.DisplayOrder;
                 txtItemNum.Text = pds.ItemNumber;
                 chbDispHome.Checked = pds.Status == "Active" ? true : false;
                 chkFeatured.Checked = pds.Featured == "Yes" ? true : false;
@@ -79,7 +80,7 @@ public partial class Admin_add_enquiry_products : System.Web.UI.Page
                     strBannerImage = "<img src='/" + pds.ProductImage + "' style='max-height:60px;margin-bottom:10px;' />";
                     lblThumb.Text = pds.ProductImage;
                 }
-                BindSubCategories(pds.Category);
+              //  BindSubCategories(pds.Category);
                 ddlSubCategory.SelectedIndex = ddlSubCategory.Items.IndexOf(ddlSubCategory.Items.FindByValue(pds.SubCategory));
             }
         }
@@ -103,13 +104,13 @@ public partial class Admin_add_enquiry_products : System.Web.UI.Page
                 string pageName = Path.GetFileName(Request.Path);
                 EnquiryProduct cat = new EnquiryProduct();
                 cat.Category = ddlCategory.SelectedItem.Value;
-                cat.SubCategory = ddlSubCategory.SelectedItem.Value;
-                cat.Brand = ddlBrand.SelectedItem.Value;
-               var subCat = SubCategory.GetSubCategoryByID(conAP, ddlSubCategory.SelectedItem.Value);
-                cat.ProductName = Convert.ToString(subCat[0].SubCategoryName);
-                cat.ProductUrl = Convert.ToString(subCat[0].Url);
-               //cat.ProductName = txtProdName.Text.Trim();
-               //cat.ProductUrl = Regex.Replace(txtURL.Text.Trim(), @"[^0-9a-zA-Z-]+", "-");
+                cat.SubCategory = "";
+                cat.Brand = "";
+              // var subCat = SubCategory.GetSubCategoryByID(conAP, ddlSubCategory.SelectedItem.Value);
+               // cat.ProductName = Convert.ToString(subCat[0].SubCategoryName);
+               // cat.ProductUrl = Convert.ToString(subCat[0].Url);
+               cat.ProductName = txtProdName.Text.Trim();
+               cat.ProductUrl = Regex.Replace(txtURL.Text.Trim(), @"[^0-9a-zA-Z-]+", "-");
                 cat.ShortDesc = txtShort.Text.Trim();
                 cat.FullDesc = txtProductDesc.Text.Trim();
                 cat.Featured = chkFeatured.Checked ? "Yes" : "No";
@@ -121,6 +122,7 @@ public partial class Admin_add_enquiry_products : System.Web.UI.Page
                 cat.UpdatedBy = Request.Cookies["ap_aid"].Value;
                 cat.ProductImage = UploadImage();
                 cat.RelatedProducts = "";
+                cat.DisplayOrder = txtOrder.Text.Trim();
                 string tags = "";
                 #region Product Tags
                 foreach (ListItem li in drpTag.Items)
@@ -200,10 +202,8 @@ public partial class Admin_add_enquiry_products : System.Web.UI.Page
                         {
                             cat.Id = result;
                             ddlCategory.ClearSelection();
-                            ddlSubCategory.ClearSelection();
-                            ddlBrand.ClearSelection();
                             ddlFeatures.ClearSelection();
-                            txtProdName.Text = txtURL.Text = txtPTitle.Text = txtMetaDesc.Text = txtShort.Text = txtProductDesc.Text = txtItemNum.Text = txtMKeys.Text= txtMetaDesc.Text = txtMetaDesc.Text = "";
+                            txtProdName.Text = txtURL.Text =txtOrder.Text= txtPTitle.Text = txtMetaDesc.Text = txtShort.Text = txtProductDesc.Text = txtItemNum.Text = txtMKeys.Text= txtMetaDesc.Text = txtMetaDesc.Text = "";
                             chbDispHome.Checked = false;
                             chkFeatured.Checked = false;
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Product Added successfully!',actionTextColor: '#fff',backgroundColor: '#008a3d'});", true);
@@ -362,11 +362,11 @@ public partial class Admin_add_enquiry_products : System.Web.UI.Page
         Response.Redirect("add-enquiry-products.aspx");
 
     }
-    protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
+   /* protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
     {
         BindSubCategories(ddlCategory.SelectedItem.Value);
-    }
-    public void BindSubCategories(string category)
+    }*/
+  /*  public void BindSubCategories(string category)
     {
         try
         {
@@ -385,7 +385,7 @@ public partial class Admin_add_enquiry_products : System.Web.UI.Page
         {
             ExceptionCapture.CaptureException(Request.Url.PathAndQuery, "BindSubCategories", ex.Message);
         }
-    }
+    }*/
     public void GetAllTags()
     {
         try

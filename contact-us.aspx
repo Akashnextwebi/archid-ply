@@ -18,8 +18,8 @@
             margin-top: 65px;
         }
          .leaflet-container .leaflet-marker-pane img{
-     width:22px !important;
-     height:32px !important;
+     width:28px !important;
+     height:28px !important;
  }
             .card-style1 .card-main-img {
                 position: relative;

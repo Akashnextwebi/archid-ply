@@ -17,16 +17,17 @@
             z-index: 1;
             margin-top: 65px;
         }
-         .leaflet-container .leaflet-marker-pane img{
-     width:28px !important;
-     height:28px !important;
- }
+
             .card-style1 .card-main-img {
                 position: relative;
                 display: block;
                 z-index: 1;
             }
+            .leaflet-container .leaflet-marker-pane img{
+                height:28px !important;
+                width:28px !important;
 
+            }
             .card-style1 .card-image {
                 position: relative;
                 display: block;

@@ -10,7 +10,22 @@
             border: 2px solid red !important;
             box-shadow: 0 0 5px red;
         }
-
+         table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        .marketing h2{
+            font-size:24px !important;
+            margin-bottom:20px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
         .card-style1 {
             position: relative;
             display: block;
@@ -75,6 +90,35 @@
                 min-height: 350px;
                 width: 100%;
             }
+            .contact-card {
+     padding: 40px 20px;
+     background: #fff;
+     display: flex;
+     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+     flex-direction: column;
+     align-items: center;
+ }
+
+     .contact-card span {
+         font-size: 18px;
+         display: block;
+         font-weight: 600;
+     } .contact-card h3{
+           font-size:32px !important;
+       }
+
+     .contact-card p {
+         font-size: 20px;
+         margin-top: 5px;
+     }
+
+         .contact-card p a {
+             color: #31ade3;
+         }
+        .new-sticky{
+            position:sticky;
+            top:0px !important;
+        }
     </style>
     <link href="Admin/assets/libs/snackbar/snackbar.min.css" rel="stylesheet" />
 </asp:Content>
@@ -129,7 +173,96 @@
             </div>
         </section>
 
-       <div id="map"></div>
+         <section class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact-card">
+                            <span>Contact Us</span>
+                            <h3>South India Resident Representative 
+
+
+                            </h3>
+                            <p class="">
+                                Ph :
+                           <a href="tel:+919591849977">+91 9591849977 </a>/ <a href="tel: 7022012573
+">7022012573</a>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="contact-card">
+                            <span>Contact Us</span>
+                            <h3>India Resident Representative 
+
+                            </h3>
+                            <p class="">
+                                Ph :
+                           <a href="tel:+919591849977">+91 9513325133  </a>/ <a href="tel:+917314202546
+">7314202546</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       <div class="section-padding map-box">
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-7">
+                       <div class="new-sticky">
+                              <div id="map"></div></div>
+
+
+                   </div>
+                   <div class="col-lg-5">
+                       <div class="marketing">                           <h2>Marketing Team List</h2>
+
+                       <table>
+        <tr>
+            <th>Sl No</th>
+            <th>Marketing Team Name</th>
+            <th>Place</th>
+        </tr>
+        <tr><td>1</td><td>Viresh Vyas</td><td>Indore</td></tr>
+        <tr><td>2</td><td>BT Reddy</td><td>Bangalore</td></tr>
+        <tr><td>3</td><td>Adavayya M</td><td>Bangalore</td></tr>
+        <tr><td>4</td><td>Pradeep KR</td><td>Bangalore</td></tr>
+        <tr><td>5</td><td>Vijaykumar Gonbal</td><td>Bangalore</td></tr>
+        <tr><td>6</td><td>Ajeet Singh</td><td>Bangalore</td></tr>
+        <tr><td>7</td><td>Nandeesh BS</td><td>Bellary</td></tr>
+        <tr><td>8</td><td>Rajgopal Boga</td><td>Vijaywada / Tirupati</td></tr>
+        <tr><td>9</td><td>M Thyagaraja</td><td>Chittor AP</td></tr>
+        <tr><td>10</td><td>Viju David</td><td>Chennai</td></tr>
+        <tr><td>11</td><td>Sridharan</td><td>Chennai</td></tr>
+        <tr><td>12</td><td>V Silambarasan</td><td>Salem</td></tr>
+        <tr><td>13</td><td>Suresh Kumar M</td><td>Coimbatore</td></tr>
+        <tr><td>14</td><td>Venkat M</td><td>Namakkal</td></tr>
+        <tr><td>15</td><td>Shravan Kumar</td><td>Hyderabad</td></tr>
+        <tr><td>16</td><td>Salla Ramesh</td><td>Hyderabad</td></tr>
+        <tr><td>17</td><td>Koteswar Rao</td><td>Warrangal / Karimnagar</td></tr>
+        <tr><td>18</td><td>Mohammed Samuddin</td><td>Hyderabad</td></tr>
+        <tr><td>19</td><td>Suresh N</td><td>Secundrabad</td></tr>
+        <tr><td>20</td><td>Deepak Hardiya</td><td>Indore</td></tr>
+        <tr><td>21</td><td>Sanket Kumar</td><td>Indore</td></tr>
+        <tr><td>22</td><td>Vaibhav Srivastav</td><td>Indore</td></tr>
+        <tr><td>23</td><td>Bhavesh Purohit</td><td>Raipur</td></tr>
+        <tr><td>24</td><td>Hitesh Thaker</td><td>Ahmedabad</td></tr>
+        <tr><td>25</td><td>Manoj Bhatt</td><td>Mumbai</td></tr>
+        <tr><td>26</td><td>Manoj Hegde</td><td>Bangalore</td></tr>
+        <tr><td>27</td><td>Milan Shah</td><td>Bangalore</td></tr>
+        <tr><td>28</td><td>Shankar Narayan</td><td>Bangalore</td></tr>
+        <tr><td>29</td><td>Sinclair</td><td>Bangalore</td></tr>
+        <tr><td>30</td><td>Naveen Kumar V</td><td>Bangalore</td></tr>
+    </table>
+                           </div>
+
+                   </div>
+               </div>
+           </div>
+       </div>
 
         <section data-animated-id="1" class="bg-light d-none">
 

@@ -1425,7 +1425,6 @@
 
 
 
-
             // Locations
             var locations = [
                 // Special category locations
@@ -1455,7 +1454,8 @@
             ];
 
             locations.forEach(location => {
-                var iconUrl = "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png"; // Default icon
+              // var iconUrl = "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png"; // Default icon
+                var iconUrl = "/images_/pin.png"; // Default icon
 
                 if (location.category && categories[location.category]) {
                     if (categories[location.category] == "yellow") {

@@ -44,7 +44,7 @@ public partial class UserMaster : System.Web.UI.MasterPage
                     strFooterCat += @"<li class='pt-3 mb-4'><a href='/products-categories/" + category.CategoryUrl + @"'>" + category.CategoryName + @"</a></li>";
                     string subCat = "";
                     string subMobilCat = "";
-                    List<EnquiryProduct> ep = EnquiryProduct.GetAllEnquiryProductByCategory(conAP, Convert.ToString(category.Id)).ToList();//Where(s => s.DisplayHome == "Yes").OrderBy(s => s.DisplayOrder);
+                    List<EnquiryProduct> ep = EnquiryProduct.GetAllEnquiryProductByCategory(conAP, Convert.ToString(category.Id)).ToList();//OrderBy(s => s.DisplayOrder).ToList();
                     if (ep.Count > 0)
                     {
                         foreach (EnquiryProduct e in ep)

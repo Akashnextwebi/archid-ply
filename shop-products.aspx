@@ -91,9 +91,8 @@
                 <div class="text-center pt-13 pb-7">
                     <div class="container AboutCategory">
                         <p class="fs-18px">
-                            Our veneers use wood sourced from the jungles of Bolivia, rainforests of Indonesia, and even the valleys of Chile.<br />
-                            With each design as unique as their place of origin, this collection is every designer and architect’s dream come true!
-                        </p>
+                            <%=strAboutCategory %>
+                       </p>
                     </div>
                 </div>
                 <div class="row gy-50px justify-content-center" id="BindAllShopProductList">

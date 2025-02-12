@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 public partial class shop_products : System.Web.UI.Page
 {
     SqlConnection conAP = new SqlConnection(ConfigurationManager.ConnectionStrings["conAP"].ConnectionString);
-
+    public string strAboutCategory = "";
     protected void Page_Load(object sender, EventArgs e)
     {
         string url = Request.Url.AbsoluteUri;

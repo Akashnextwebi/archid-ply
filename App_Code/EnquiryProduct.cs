@@ -94,7 +94,7 @@ public class EnquiryProduct
         try
         {
             //string query = "SELECT *, (SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (SELECT TOP 1 UserName FROM CreateUser WHERE UserGuid = EnquiryProduct.UpdatedBy) AS UpdatedBy1 FROM EnquiryProduct INNER JOIN Subcategory ON EnquiryProduct.Subcategory = Subcategory.Id WHERE EnquiryProduct.Status != 'Deleted' AND EnquiryProduct.Category = @Category AND Subcategory.DisplayHome = 'Yes';";
-          string query = "Select *,(SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (Select Top 1 UserName From CreateUser Where UserGuid=EnquiryProduct.UpdatedBy) UpdatedBy1 from EnquiryProduct where Status!='Deleted' and Category=@Category Order By DisplayOrder";
+          string query = "Select *,(SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (Select Top 1 UserName From CreateUser Where UserGuid=EnquiryProduct.UpdatedBy) UpdatedBy1 from EnquiryProduct where Status!='Deleted' and Category=@Category ORDER BY CAST(DisplayOrder AS INT)";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@Category", SqlDbType.Int).Value = Category;

@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.master" AutoEventWireup="true" CodeFile="contact-us.aspx.cs" Inherits="contact_us" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <style>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<style>
+  #map { height: 100vh; width: 100%; background:#f1f1f1 }
+
         .input-error {
             border: 2px solid red !important;
             box-shadow: 0 0 5px red;
@@ -120,7 +124,10 @@
                 </div>
             </div>
         </section>
-        <section data-animated-id="1" class="bg-light">
+
+       <div id="map"></div>
+
+        <section data-animated-id="1" class="bg-light d-none">
 
             <div class="container pt-13">
                 <div class="text-center">
@@ -1289,6 +1296,194 @@
 
 
     </main>
+    <%--<script>
+        var map = L.map('map', {
+            center: [22.3511148, 78.6677428], // Center of India
+            zoom: 5,
+            minZoom: 4,
+            maxZoom: 10,
+            zoomControl: true,
+            scrollWheelZoom: true,
+            doubleClickZoom: true,
+            touchZoom: true,
+            dragging: true
+        });
+
+        // Restrict users to India's bounds
+        var indiaBounds = [
+            [6.746, 68.162],  // Southwest corner
+            [35.674, 97.395]  // Northeast corner
+        ];
+        map.setMaxBounds(indiaBounds);
+        map.on('drag', function () { map.panInsideBounds(indiaBounds, { animate: false }); });
+
+        // Load India GeoJSON for state boundaries
+        fetch("https://raw.githubusercontent.com/geohacker/india/master/state/india_telengana.geojson")
+            .then(response => response.json())
+            .then(data => {
+                L.geoJson(data, {
+                    style: function (feature) {
+                        return {
+                            color: "#242020",
+                            weight: 1,
+                            fillColor: "#fff",
+                            fillOpacity: 0.7
+                        };
+                    }
+                }).addTo(map);
+            });
+
+        // Define category colors
+        var categories = {
+            "STX": "blue",
+            "HHX": "yellow" // Updated HHX to yellow
+        };
+
+        // Locations
+        var locations = [
+            { state: "Karnataka", lat: 13.4020, lon: 78.0551, cities: ["Chintamani, Karnataka, India"], category: "STX" },
+            { state: "Karnataka", lat: 12.9716, lon: 77.5946, cities: ["Bangalore, India"], category: "HHX" },
+            { state: "Madhya Pradesh", lat: 22.7196, lon: 75.8577, cities: ["Indore, Madhya Pradesh, India"], category: "HHX" }
+
+
+
+        ];
+
+        locations.forEach(location => {
+            var iconColor = categories[location.category] || "red"; // Default to red if no category
+
+            var icon = L.divIcon({
+                className: "custom-marker",
+                html: `<div style="width:12px; height:12px; background:${iconColor}; border-radius:50%;"></div>`,
+                iconSize: [12, 12]
+            });
+
+            L.marker([location.lat, location.lon], { icon: icon })
+                .addTo(map)
+                .bindPopup(`<b>${location.state}</b><br>${location.cities.join(", ")}`);
+        });
+
+        // Legend for categories
+        var legend = L.control({ position: 'bottomleft' });
+
+        legend.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'info legend');
+            var categoriesList = ['STX', 'HHX'];
+
+            categoriesList.forEach(category => {
+                div.innerHTML += `<i style="background:${categories[category]}; width:15px; height:15px; display:inline-block; margin-right:5px;"></i> ${category}<br>`;
+            });
+
+            return div;
+        };
+
+        legend.addTo(map);
+    </script>--%>
+
+        <script>
+            var map = L.map('map', {
+                center: [22.3511148, 78.6677428], // Center of India
+                zoom: 5,
+                minZoom: 4,
+                maxZoom: 10,
+                zoomControl: true,
+                scrollWheelZoom: true,
+                doubleClickZoom: true,
+                touchZoom: true,
+                dragging: true
+            });
+
+            // Restrict users to India's bounds
+            var indiaBounds = [
+                [6.746, 68.162],  // Southwest corner
+                [35.674, 97.395]  // Northeast corner
+            ];
+            map.setMaxBounds(indiaBounds);
+            map.on('drag', function () { map.panInsideBounds(indiaBounds, { animate: false }); });
+
+            // Load India GeoJSON for state boundaries
+            fetch("https://raw.githubusercontent.com/geohacker/india/master/state/india_telengana.geojson")
+                .then(response => response.json())
+                .then(data => {
+                    L.geoJson(data, {
+                        style: function (feature) {
+                            return {
+                                color: "#242020",
+                                weight: 1,
+                                fillColor: "#fff",
+                                fillOpacity: 0.7
+                            };
+                        }
+                    }).addTo(map);
+                });
+
+            // Define category colors
+            var categories = {
+                "Registered Office": "red",
+                "Marketing Office": "yellow"
+            };
+
+            // Locations
+            var locations = [
+                // Special category locations
+                { state: "Karnataka", lat: 13.4020, lon: 78.0551, cities: ["Chintamani, Karnataka, India"], category: "Registered Office" },
+                { state: "Karnataka", lat: 15.3173, lon: 75.7139, cities: ["Bangalore, India"], category: "Marketing Office" },
+                { state: "Madhya Pradesh", lat: 22.9734, lon: 78.6569, cities: ["Indore, Madhya Pradesh, India"], category: "Marketing Office" },
+
+                // Normal locations (no categories)
+                { state: "Jammu & Kashmir", lat: 32.7266, lon: 74.8570, cities: ["Jammu"] },
+                { state: "Uttarakhand", lat: 30.3165, lon: 78.0322, cities: ["Dehradun"] },
+                { state: "Punjab", lat: 30.9010, lon: 75.8573, cities: ["Mohali", "Ludhiana"] },
+                { state: "Haryana", lat: 30.6942, lon: 76.8606, cities: ["Panchkula", "Faridabad"] },
+                { state: "Delhi", lat: 28.7041, lon: 77.1025, cities: ["Delhi"] },
+                { state: "Rajasthan", lat: 26.9124, lon: 75.7873, cities: ["Udaipur", "Jaipur"] },
+                { state: "Assam", lat: 26.1445, lon: 91.7362, cities: ["Guwahati"] },
+                { state: "Uttar Pradesh", lat: 26.8467, lon: 80.9462, cities: ["Lucknow", "Varanasi", "Kanpur", "Prayagraj"] },
+                { state: "West Bengal", lat: 22.5726, lon: 88.3639, cities: ["Kolkata"] },
+                { state: "Gujarat", lat: 23.0225, lon: 72.5714, cities: ["Ahmedabad", "Vadodara", "Surat"] },
+                { state: "Madhya Pradesh", lat: 22.9734, lon: 75.8577, cities: ["Jabalpur", "Indore", "Ratlam", "Bhopal", "Gwalior"] },
+                { state: "Maharashtra", lat: 19.0760, lon: 72.8777, cities: ["Pune", "Mumbai"] },
+                { state: "Odisha", lat: 20.2961, lon: 85.8245, cities: ["Bhubaneswar", "Brahmapur", "Sonepur"] },
+                { state: "Chhattisgarh", lat: 21.2514, lon: 81.6296, cities: ["Raipur", "Bilaspur", "Bhilai"] },
+                { state: "Karnataka", lat: 12.9716, lon: 77.5946, cities: ["Bangalore", "Belgaum", "Mangalore", "Davangere", "Hubli", "Chikmagalur", "Mysore", "Bellary"] },
+                { state: "Andhra Pradesh & Telangana", lat: 16.5062, lon: 80.6480, cities: ["Vijayawada", "Anantapur", "Guntur", "Rajahmundry", "Hyderabad", "Kakinada", "Nellore"] },
+                { state: "Tamil Nadu & Puducherry", lat: 13.0827, lon: 80.2707, cities: ["Chennai", "Coimbatore", "Salem", "Pondicherry", "Tiruppur", "Namakkal", "Dharmapuri", "Krishnagiri"] }
+            ];
+
+            locations.forEach(location => {
+                var iconUrl = "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png"; // Default icon
+
+                if (location.category && categories[location.category]) {
+                    iconUrl = `https://maps.google.com/mapfiles/ms/icons/${categories[location.category]}-dot.png`;
+                }
+
+                var icon = L.icon({
+                    iconUrl: iconUrl,
+                    iconSize: [32, 32]
+                });
+
+                L.marker([location.lat, location.lon], { icon: icon })
+                    .addTo(map)
+                    .bindPopup(`<b>${location.state}</b><br>${location.cities.join(", ")}`);
+            });
+
+            // Legend for categories
+            var legend = L.control({ position: 'bottomleft' });
+
+            legend.onAdd = function (map) {
+                var div = L.DomUtil.create('div', 'info legend');
+                var categoriesList = ['Registered Office', 'Marketing Office'];
+
+                categoriesList.forEach(category => {
+                    div.innerHTML += `<i style="background:${categories[category]}; width:15px; height:15px; display:inline-block; margin-right:5px;"></i> ${category}<br>`;
+                });
+
+                return div;
+            };
+
+            legend.addTo(map);
+        </script>
+
     <script src="Admin/assets/libs/snackbar/snackbar.min.js"></script>
 </asp:Content>
 

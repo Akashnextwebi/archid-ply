@@ -118,7 +118,7 @@ public partial class Admin_assets_add_products : System.Web.UI.Page
                 strCategory = pds.CategoryName;
                 btnSave.Text = "Update";
                 addProduct.Visible = true;
-               // ddlCategory.SelectedIndex = ddlCategory.Items.IndexOf(ddlCategory.Items.FindByValue(pds.Category));
+                ddlSubCategory.SelectedIndex = ddlSubCategory.Items.IndexOf(ddlSubCategory.Items.FindByValue(pds.SubCategory));
                 //ddlBrand.SelectedIndex = ddlBrand.Items.IndexOf(ddlBrand.Items.FindByValue(pds.Brand));
                 txtProdName.Text = pds.ProductName;
                 txtURL.Text = pds.ProductUrl;

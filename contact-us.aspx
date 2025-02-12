@@ -17,10 +17,7 @@
             z-index: 1;
             margin-top: 65px;
         }
-         .leaflet-container .leaflet-marker-pane img{
-     width:22px !important;
-     height:32px !important;
- }
+
             .card-style1 .card-main-img {
                 position: relative;
                 display: block;

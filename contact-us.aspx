@@ -1423,14 +1423,18 @@
                 "Marketing Office": "yellow"
             };
 
+
+
+
             // Locations
             var locations = [
                 // Special category locations
-                { state: "Karnataka", lat: 13.4020, lon: 78.0551, cities: ["Chintamani, Karnataka, India"], category: "Registered Office" },
-                { state: "Karnataka", lat: 15.3173, lon: 75.7139, cities: ["Bangalore, India"], category: "Marketing Office" },
+                { state: "Karnataka", lat: 13.416243, lon: 77.288418, cities: ["Chintamani, Karnataka, India"], category: "Marketing Office" },
+                { state: "Karnataka", lat: 15.3173, lon: 75.7139, cities: ["Bangalore, India"], category: "Registered Office" },
                 { state: "Madhya Pradesh", lat: 22.9734, lon: 78.6569, cities: ["Indore, Madhya Pradesh, India"], category: "Marketing Office" },
 
                 // Normal locations (no categories)
+
                 { state: "Jammu & Kashmir", lat: 32.7266, lon: 74.8570, cities: ["Jammu"] },
                 { state: "Uttarakhand", lat: 30.3165, lon: 78.0322, cities: ["Dehradun"] },
                 { state: "Punjab", lat: 30.9010, lon: 75.8573, cities: ["Mohali", "Ludhiana"] },
@@ -1445,7 +1449,7 @@
                 { state: "Maharashtra", lat: 19.0760, lon: 72.8777, cities: ["Pune", "Mumbai"] },
                 { state: "Odisha", lat: 20.2961, lon: 85.8245, cities: ["Bhubaneswar", "Brahmapur", "Sonepur"] },
                 { state: "Chhattisgarh", lat: 21.2514, lon: 81.6296, cities: ["Raipur", "Bilaspur", "Bhilai"] },
-                { state: "Karnataka", lat: 12.9716, lon: 77.5946, cities: ["Bangalore", "Belgaum", "Mangalore", "Davangere", "Hubli", "Chikmagalur", "Mysore", "Bellary"] },
+                { state: "Karnataka", lat: 14.520447, lon: 75.643303, cities: ["Bangalore", "Belgaum", "Mangalore", "Davangere", "Hubli", "Chikmagalur", "Mysore", "Bellary"] },
                 { state: "Andhra Pradesh & Telangana", lat: 16.5062, lon: 80.6480, cities: ["Vijayawada", "Anantapur", "Guntur", "Rajahmundry", "Hyderabad", "Kakinada", "Nellore"] },
                 { state: "Tamil Nadu & Puducherry", lat: 13.0827, lon: 80.2707, cities: ["Chennai", "Coimbatore", "Salem", "Pondicherry", "Tiruppur", "Namakkal", "Dharmapuri", "Krishnagiri"] }
             ];
@@ -1454,7 +1458,14 @@
                 var iconUrl = "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png"; // Default icon
 
                 if (location.category && categories[location.category]) {
-                    iconUrl = `https://maps.google.com/mapfiles/ms/icons/${categories[location.category]}-dot.png`;
+                    if (categories[location.category] == "yellow") {
+                        iconUrl = `/images_/yello.png`;
+
+                    } else {
+                        iconUrl = `/images_/red.png`;
+
+                    }
+                  //  iconUrl = `https://maps.google.com/mapfiles/ms/icons/${categories[location.category]}-dot.png`;
                 }
 
                 var icon = L.icon({

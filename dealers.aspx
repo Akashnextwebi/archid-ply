@@ -2,11 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
-        #map {
-            height: 600px;
-            width: 100%;
-        }
+        #map { height: 100vh; width: 100%; background:#f1f1f1 }
 
         .custom-label {
             background: #007bff;
@@ -473,51 +471,132 @@
         <section class="container container-xxl">
             <div id="map"></div>
         </section>
-         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-     <script>
-         var map = L.map('map', {
-             center: [22.3511148, 78.6677428], 
-             zoom: 5,
-             minZoom: 4, 
-             maxZoom: 10, 
-             maxBounds: [
-                 [6.746, 68.162], 
-                 [35.674, 97.395]  
-             ],
-             maxBoundsViscosity: 1.0
-         });
+        <script>
+            var map = L.map('map', {
+                center: [22.3511148, 78.6677428], // Center India
+                zoom: 5,
+                minZoom: 4,
+                maxZoom: 10,
+                zoomControl: true, // Enable zoom buttons
+                scrollWheelZoom: true, // Enable scroll zoom
+                doubleClickZoom: true, // Enable double-click zoom
+                touchZoom: true, // Enable touch zoom
+                dragging: true // Allow panning within India
+            });
 
-         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-             attribution: '&copy; OpenStreetMap contributors'
-         }).addTo(map);
+            // Restrict users to India's bounds
+            var indiaBounds = [
+                [6.746, 68.162],  // Southwest corner
+                [35.674, 97.395]  // Northeast corner
+            ];
+            map.setMaxBounds(indiaBounds);
+            map.on('drag', function () { map.panInsideBounds(indiaBounds, { animate: false }); });
 
-         var locations = [
-             { state: "Jammu & Kashmir", lat: 32.7266, lon: 74.8570, cities: ["Jammu"] },
-             { state: "Uttarakhand", lat: 30.3165, lon: 78.0322, cities: ["Dehradun"] },
-             { state: "Punjab", lat: 30.9010, lon: 75.8573, cities: ["Mohali", "Ludhiana"] },
-             { state: "Haryana", lat: 30.6942, lon: 76.8606, cities: ["Panchkula", "Faridabad"] },
-             { state: "Delhi", lat: 28.7041, lon: 77.1025, cities: ["Delhi"] },
-             { state: "Rajasthan", lat: 26.9124, lon: 75.7873, cities: ["Udaipur", "Jaipur"] },
-             { state: "Assam", lat: 26.1445, lon: 91.7362, cities: ["Guwahati"] },
-             { state: "Uttar Pradesh", lat: 26.8467, lon: 80.9462, cities: ["Lucknow", "Varanasi", "Kanpur", "Prayagraj"] },
-             { state: "West Bengal", lat: 22.5726, lon: 88.3639, cities: ["Kolkata"] },
-             { state: "Gujarat", lat: 23.0225, lon: 72.5714, cities: ["Ahmedabad", "Vadodara", "Surat"] },
-             { state: "Madhya Pradesh", lat: 22.7196, lon: 75.8577, cities: ["Jabalpur", "Indore", "Ratlam", "Bhopal", "Gwalior"] },
-             { state: "Maharashtra", lat: 19.0760, lon: 72.8777, cities: ["Pune", "Mumbai"] },
-             { state: "Odisha", lat: 20.2961, lon: 85.8245, cities: ["Bhubaneswar", "Brahmapur", "Sonepur"] },
-             { state: "Chhattisgarh", lat: 21.2514, lon: 81.6296, cities: ["Raipur", "Bilaspur", "Bhilai"] },
-             { state: "Karnataka", lat: 12.9716, lon: 77.5946, cities: ["Bangalore", "Belgaum", "Mangalore", "Davangere", "Hubli", "Chikmagalur", "Mysore", "Bellary"] },
-             { state: "Andhra Pradesh & Telangana", lat: 16.5062, lon: 80.6480, cities: ["Vijayawada", "Anantapur", "Guntur", "Rajahmundry", "Hyderabad", "Kakinada", "Nellore"] },
-             { state: "Tamil Nadu & Puducherry", lat: 13.0827, lon: 80.2707, cities: ["Chennai", "Coimbatore", "Salem", "Pondicherry", "Tiruppur", "Namakkal", "Dharmapuri", "Krishnagiri"] }
-         ];
+            // Load India GeoJSON for state boundaries
+            fetch("https://raw.githubusercontent.com/geohacker/india/master/state/india_telengana.geojson")
+                .then(response => response.json())
+                .then(data => {
+                    L.geoJson(data, {
+                        style: function (feature) {
+                            return {
+                                color: "#242020",  // Black outline
+                                weight: 1,
+                                fillColor: "#fff", // Orange fill for India
+                                fillOpacity: 0.7
+                            };
+                        }
+                    }).addTo(map);
+                });
 
-         locations.forEach(location => {
-             L.marker([location.lat, location.lon])
-                 .addTo(map)
-                 .bindPopup(`<b>${location.state}</b><br>${location.cities.join(", ")}`);
-         });
+            // Define locations with markers
+            var locations = [
+                { state: "Jammu & Kashmir", lat: 32.7266, lon: 74.8570, cities: ["Jammu"] },
+                { state: "Uttarakhand", lat: 30.3165, lon: 78.0322, cities: ["Dehradun"] },
+                { state: "Punjab", lat: 30.9010, lon: 75.8573, cities: ["Mohali", "Ludhiana"] },
+                { state: "Haryana", lat: 30.6942, lon: 76.8606, cities: ["Panchkula", "Faridabad"] },
+                { state: "Delhi", lat: 28.7041, lon: 77.1025, cities: ["Delhi"] },
+                { state: "Rajasthan", lat: 26.9124, lon: 75.7873, cities: ["Udaipur", "Jaipur"] },
+                { state: "Assam", lat: 26.1445, lon: 91.7362, cities: ["Guwahati"] },
+                { state: "Uttar Pradesh", lat: 26.8467, lon: 80.9462, cities: ["Lucknow", "Varanasi", "Kanpur", "Prayagraj"] },
+                { state: "West Bengal", lat: 22.5726, lon: 88.3639, cities: ["Kolkata"] },
+                { state: "Gujarat", lat: 23.0225, lon: 72.5714, cities: ["Ahmedabad", "Vadodara", "Surat"] },
+                { state: "Madhya Pradesh", lat: 22.7196, lon: 75.8577, cities: ["Jabalpur", "Indore", "Ratlam", "Bhopal", "Gwalior"] },
+                { state: "Maharashtra", lat: 19.0760, lon: 72.8777, cities: ["Pune", "Mumbai"] },
+                { state: "Odisha", lat: 20.2961, lon: 85.8245, cities: ["Bhubaneswar", "Brahmapur", "Sonepur"] },
+                { state: "Chhattisgarh", lat: 21.2514, lon: 81.6296, cities: ["Raipur", "Bilaspur", "Bhilai"] },
+                { state: "Karnataka", lat: 12.9716, lon: 77.5946, cities: ["Bangalore", "Belgaum", "Mangalore", "Davangere", "Hubli", "Chikmagalur", "Mysore", "Bellary"] },
+                { state: "Andhra Pradesh & Telangana", lat: 16.5062, lon: 80.6480, cities: ["Vijayawada", "Anantapur", "Guntur", "Rajahmundry", "Hyderabad", "Kakinada", "Nellore"] },
+                { state: "Tamil Nadu & Puducherry", lat: 13.0827, lon: 80.2707, cities: ["Chennai", "Coimbatore", "Salem", "Pondicherry", "Tiruppur", "Namakkal", "Dharmapuri", "Krishnagiri"] }
+            ];
+
+            // Add markers to the map
+            locations.forEach(location => {
+                L.marker([location.lat, location.lon])
+                    .addTo(map)
+                    .bindPopup(`<b>${location.state}</b><br>${location.cities.join(", ")}`);
+            });
 
     </script>
+ <%--<script>
+     var map = L.map('map', {
+         center: [22.3511148, 78.6677428],
+         zoom: 5,
+         minZoom: 4,
+         maxZoom: 10,
+         maxBounds: [
+             [6.746, 68.162],
+             [35.674, 97.395]
+         ],
+         maxBoundsViscosity: 1.0
+     });
+
+     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+         attribution: '&copy; OpenStreetMap contributors'
+     }).addTo(map);
+
+     // Load India GeoJSON for state boundaries
+     fetch("https://raw.githubusercontent.com/geohacker/india/master/state/india_telengana.geojson")
+         .then(response => response.json())
+         .then(data => {
+             L.geoJson(data, {
+                 style: function (feature) {
+                     return {
+                         color: "#000",  // Black outline
+                         weight: 1,
+                         fillColor: "#f4a261", // Orange fill for India
+                         fillOpacity: 0.5
+                     };
+                 }
+             }).addTo(map);
+         });
+
+     var locations = [
+         { state: "Jammu & Kashmir", lat: 32.7266, lon: 74.8570, cities: ["Jammu"] },
+         { state: "Uttarakhand", lat: 30.3165, lon: 78.0322, cities: ["Dehradun"] },
+         { state: "Punjab", lat: 30.9010, lon: 75.8573, cities: ["Mohali", "Ludhiana"] },
+         { state: "Haryana", lat: 30.6942, lon: 76.8606, cities: ["Panchkula", "Faridabad"] },
+         { state: "Delhi", lat: 28.7041, lon: 77.1025, cities: ["Delhi"] },
+         { state: "Rajasthan", lat: 26.9124, lon: 75.7873, cities: ["Udaipur", "Jaipur"] },
+         { state: "Assam", lat: 26.1445, lon: 91.7362, cities: ["Guwahati"] },
+         { state: "Uttar Pradesh", lat: 26.8467, lon: 80.9462, cities: ["Lucknow", "Varanasi", "Kanpur", "Prayagraj"] },
+         { state: "West Bengal", lat: 22.5726, lon: 88.3639, cities: ["Kolkata"] },
+         { state: "Gujarat", lat: 23.0225, lon: 72.5714, cities: ["Ahmedabad", "Vadodara", "Surat"] },
+         { state: "Madhya Pradesh", lat: 22.7196, lon: 75.8577, cities: ["Jabalpur", "Indore", "Ratlam", "Bhopal", "Gwalior"] },
+         { state: "Maharashtra", lat: 19.0760, lon: 72.8777, cities: ["Pune", "Mumbai"] },
+         { state: "Odisha", lat: 20.2961, lon: 85.8245, cities: ["Bhubaneswar", "Brahmapur", "Sonepur"] },
+         { state: "Chhattisgarh", lat: 21.2514, lon: 81.6296, cities: ["Raipur", "Bilaspur", "Bhilai"] },
+         { state: "Karnataka", lat: 12.9716, lon: 77.5946, cities: ["Bangalore", "Belgaum", "Mangalore", "Davangere", "Hubli", "Chikmagalur", "Mysore", "Bellary"] },
+         { state: "Andhra Pradesh & Telangana", lat: 16.5062, lon: 80.6480, cities: ["Vijayawada", "Anantapur", "Guntur", "Rajahmundry", "Hyderabad", "Kakinada", "Nellore"] },
+         { state: "Tamil Nadu & Puducherry", lat: 13.0827, lon: 80.2707, cities: ["Chennai", "Coimbatore", "Salem", "Pondicherry", "Tiruppur", "Namakkal", "Dharmapuri", "Krishnagiri"] }
+     ];
+
+     locations.forEach(location => {
+         L.marker([location.lat, location.lon])
+             .addTo(map)
+             .bindPopup(`<b>${location.state}</b><br>${location.cities.join(", ")}`);
+     });
+
+    </script>--%>
 
         <%--end--%>
 

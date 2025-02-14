@@ -26,7 +26,7 @@ public partial class Admin_reset_password : System.Web.UI.Page
                 string logins = CreateUser.CheckResetLink(conAP, Request.QueryString["r"]);
                 if (logins != "")
                 {
-                    int x = CreateUser.SetResetTiming(conAP, Request.QueryString["r"], txtPassword.Text.Trim());
+                    int x = CreateUser.SetResetTiming(conAP, Request.QueryString["r"], CommonModel.Encrypt(txtPassword.Text.Trim()));
                     if (x > 0)
                     {
                         lblStatus.Text = "<strong>Success !</strong><br/>Password changed successfully";

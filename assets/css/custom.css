@@ -516,6 +516,9 @@ a.cart-icon i{
 .product-features li {
     margin-bottom: 15px;
     font-weight: 600;
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }
 .product-features li img {
     width: 30px;

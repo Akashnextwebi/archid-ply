@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>ArchidPly | Admin</title>
+    <title>Archidply Decor | Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/archidply-favicon.png" />
@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="text-center mt-2">
                                         <h5 class="text-primary">Welcome Back !</h5>
-                                        <p class="text-muted">Sign in to continue to <b>ArchidPly</b> </p>
+                                        <p class="text-muted">Sign in to continue to <b>Archidply Decor</b> </p>
                                         <asp:Label ID="lblStatus" runat="server" Style="width: 100%;" Visible="false"></asp:Label>
                                     </div>
                                     <div class="p-2 mt-4 mb-4">

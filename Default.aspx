@@ -142,7 +142,7 @@
                     <div class="card border-0 rounded-0 banner-01 hover-zoom-in hover-shine">
                         <img class="lazy-image object-fit-cover card-img light-mode-img"
                             src="#"
-                            data-src="assets/imgs/sister-company-1.png"
+                            data-src="assets/imgs/pureply4.png"
                             alt="Intensive Glow C&#43; Serum" />
                         <div class="card-img-overlay d-inline-flex flex-column p-md-12 m-md-2 p-8 justify-content-start align-items-start">
                             <!-- <h6
@@ -728,9 +728,9 @@
                     </div>--%>
                     <div class="client-logo-item" data-animate="fadeInUp">
                         <a class="lh-1 color-inherit text-decoration-none certi-trigger"
-                            href="#"
+                            href="javascript:void();"
                             data-bs-toggle="modal"
-                            data-bs-target="#certimodal"
+                            data-bs-target="javascript:void();"
                             data-title=" Certification"
                             data-image="Updated soon">
                             <img class="w-auto mx-auto light-mode-img"
@@ -741,9 +741,9 @@
 
                     <div class="client-logo-item" data-animate="fadeInUp">
                         <a class="lh-1 color-inherit text-decoration-none certi-trigger"
-                            href="#"
+                            href="javascript:void();"
                             data-bs-toggle="modal"
-                            data-bs-target="#certimodal"
+                            data-bs-target="javascript:void();"
                             data-title="Certification"
                             data-image="Updated soon">
                             <img class="w-auto mx-auto light-mode-img"

@@ -206,11 +206,11 @@ public partial class Admin_create_category : System.Web.UI.Page
                 {
                     if (CreateUser.CheckAccess(conAP, pageName, "Add", Request.Cookies["ap_aid"].Value))
                     {
-                        if (!FileUpload1.HasFile)
+                       /* if (!FileUpload1.HasFile)
                         {
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Please select a category image to upload!',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);
                             return;
-                        }
+                        }*/
                         if (res.Count > 0)
                         {
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Snackbar.show({pos: 'top-right',text: 'Category already exist...',actionTextColor: '#fff',backgroundColor: '#ea1c1c'});", true);

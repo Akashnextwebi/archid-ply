@@ -1,10 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.master" AutoEventWireup="true" CodeFile="dealers.aspx.cs" Inherits="dealers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
-        #map { height: 100vh; width: 100%; background:#f1f1f1 }
+        #map {
+            height: 100vh;
+            width: 100%;
+            background: #f1f1f1
+        }
 
         .custom-label {
             background: #007bff;
@@ -18,6 +22,56 @@
         .form-select {
             background-color: #fff;
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .dealer-list h2 {
+            font-size: 24px !important;
+            margin-bottom: 20px;
+        }
+
+        .new-sticky {
+            position: sticky;
+            top: 0px !important;
+        }
+                    .contact-card {
+     padding: 40px 20px;
+     background: #fff;
+     display: flex;
+     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+     flex-direction: column;
+     align-items: center;
+ }
+
+     .contact-card span {
+         font-size: 18px;
+         display: block;
+         font-weight: 600;
+     } .contact-card h3{
+           font-size:32px !important;
+       }
+
+     .contact-card p {
+         font-size: 20px;
+         margin-top: 5px;
+     }
+
+         .contact-card p a {
+             color: #31ade3;
+         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -52,7 +106,7 @@
             <div class="row justify-content-center mt-5">
             </div>
         </div>
-        <div class="container">
+        <%--<div class="container">
             <div class="row justify-content-center">
                 <div class="dashboard-page-content" data-animated-id="1">
                     <div class="row mb-9 align-items-center">
@@ -73,366 +127,128 @@
 
                     <div class="row">
                         <%=strDealers %>
-                        <%--     <div class="col-xl-4">
-                            <div class="location-box">
-                                <div class="card rounded-4 p-7 mb-7">
-                                    <div class="card-body p-0">
-                                        <h2 class="fs-28px mb-2 mb-md-2">Name</h2>
-                                        <div class="col-md-12 mb-11">
-                                            <div class="d-flex align-items-start">
-                                                <div class="">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-20px mb-2 mt-5">
-                                                        Address
-                                                    </h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-2 pb-4 fs-6">
-                                                            Plot No-7, Sector-9,<br /> Integrated Industrial Area<br /> SIDCUL ,
-                                                            PANT Nagar,<br />  Rudrapur,Udham Singh Nagar,<br /> RUDRAPUR-236125
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-7">
-                                            <div class="d-flex align-items-start">
-                                                <div class="">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-5 mb-6">Contact</h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-3 fs-6">Mobile:<span class="text-body-emphasis"> 05944- 250270</span></p><p class="mb-0 fs-6">
-                                                            E-mail: bangalore@archidply.com
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>--%>
-
-                        <%--   <div class="col-xl-4">
-                            <div class="location-box">
-                                <div class="card rounded-4 p-7 mb-7">
-
-                                    <div class="card-body p-0">
-
-
-
-                                        <h2 class="fs-28px mb-2 mb-md-2">Name</h2>
-                                        <div class="col-md-12 mb-11">
-                                            <div class="d-flex align-items-start">
-                                                <div class="d-none">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-20px mb-2 mt-5">
-                                                        Address
-                                                    </h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-2 pb-4 fs-6">
-                                                            Plot No-7, Sector-9,<br /> Integrated Industrial Area<br /> SIDCUL ,
-                                                            PANT Nagar,<br />  Rudrapur,Udham Singh Nagar,<br /> RUDRAPUR-236125
-                                                        </p>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-md-6 mb-7">
-                                            <div class="d-flex align-items-start">
-                                                <div class="d-none">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-5 mb-6">Contact</h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-3 fs-6">Mobile:<span class="text-body-emphasis"> 05944- 250270</span></p><p class="mb-0 fs-6">
-                                                            E-mail: bangalore@archidply.com
-
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
-                        <div class="col-xl-4">
-                            <div class="location-box">
-                                <div class="card rounded-4 p-7 mb-7">
-
-                                    <div class="card-body p-0">
-
-
-
-                                        <h2 class="fs-28px mb-2 mb-md-2">Name</h2>
-                                        <div class="col-md-12 mb-11">
-                                            <div class="d-flex align-items-start">
-                                                <div class="d-none">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-20px mb-2 mt-5">
-                                                        Address
-                                                    </h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-2 pb-4 fs-6">
-                                                            Plot No-7, Sector-9,<br /> Integrated Industrial Area<br /> SIDCUL ,
-                                                            PANT Nagar,<br />  Rudrapur,Udham Singh Nagar,<br /> RUDRAPUR-236125
-                                                        </p>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-md-6 mb-7">
-                                            <div class="d-flex align-items-start">
-                                                <div class="d-none">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-5 mb-6">Contact</h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-3 fs-6">Mobile:<span class="text-body-emphasis"> 05944- 250270</span></p><p class="mb-0 fs-6">
-                                                            E-mail: bangalore@archidply.com
-
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                        <div class="col-xl-4">
-                            <div class="location-box">
-                                <div class="card rounded-4 p-7 mb-7">
-
-                                    <div class="card-body p-0">
-
-
-
-                                        <h2 class="fs-28px mb-2 mb-md-2">Name</h2>
-                                        <div class="col-md-12 mb-11">
-                                            <div class="d-flex align-items-start">
-                                                <div class="d-none">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-20px mb-2 mt-5">
-                                                        Address
-                                                    </h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-2 pb-4 fs-6">
-                                                            Plot No-7, Sector-9,<br /> Integrated Industrial Area<br /> SIDCUL ,
-                                                            PANT Nagar,<br />  Rudrapur,Udham Singh Nagar,<br /> RUDRAPUR-236125
-                                                        </p>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-md-6 mb-7">
-                                            <div class="d-flex align-items-start">
-                                                <div class="d-none">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-5 mb-6">Contact</h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-3 fs-6">Mobile:<span class="text-body-emphasis"> 05944- 250270</span></p><p class="mb-0 fs-6">
-                                                            E-mail: bangalore@archidply.com
-
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-xl-4">
-                            <div class="location-box">
-                                <div class="card rounded-4 p-7 mb-7">
-
-                                    <div class="card-body p-0">
-
-
-
-                                        <h2 class="fs-28px mb-2 mb-md-2">Name</h2>
-                                        <div class="col-md-12 mb-11">
-                                            <div class="d-flex align-items-start">
-                                                <div class="d-none">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-20px mb-2 mt-5">
-                                                        Address
-                                                    </h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-2 pb-4 fs-6">
-                                                            Plot No-7, Sector-9,<br /> Integrated Industrial Area<br /> SIDCUL ,
-                                                            PANT Nagar,<br />  Rudrapur,Udham Singh Nagar,<br /> RUDRAPUR-236125
-                                                        </p>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-md-6 mb-7">
-                                            <div class="d-flex align-items-start">
-                                                <div class="d-none">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-5 mb-6">Contact</h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-3 fs-6">Mobile:<span class="text-body-emphasis"> 05944- 250270</span></p><p class="mb-0 fs-6">
-                                                            E-mail: bangalore@archidply.com
-
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                        <div class="col-xl-4">
-                            <div class="location-box">
-                                <div class="card rounded-4 p-7 mb-7">
-
-                                    <div class="card-body p-0">
-
-
-
-                                        <h2 class="fs-28px mb-2 mb-md-2">Name</h2>
-                                        <div class="col-md-12 mb-11">
-                                            <div class="d-flex align-items-start">
-                                                <div class="d-none">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-20px mb-2 mt-5">
-                                                        Address
-                                                    </h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-2 pb-4 fs-6">
-                                                            Plot No-7, Sector-9,<br /> Integrated Industrial Area<br /> SIDCUL ,
-                                                            PANT Nagar,<br />  Rudrapur,Udham Singh Nagar,<br /> RUDRAPUR-236125
-                                                        </p>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-md-6 mb-7">
-                                            <div class="d-flex align-items-start">
-                                                <div class="d-none">
-                                                    <svg class="icon fs-2">
-                                                        <use xlink:href="#"></use>
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fs-5 mb-6">Contact</h3>
-                                                    <div class="fs-6">
-                                                        <p class="mb-3 fs-6">Mobile:<span class="text-body-emphasis"> 05944- 250270</span></p><p class="mb-0 fs-6">
-                                                            E-mail: bangalore@archidply.com
-
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                        </div>--%>
+                    
                     </div>
 
                 </div>
 
             </div>
-        </div>
-        <section id="special_offer_save_on_sets_2" class="">
+        </div>--%>
+
+        <%--for map start--%>
+        <section class="container">
+            <h2 class=" mb-15 text-center">Find Our Dealers Near You</h2>
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="new-sticky">
+                        <div id="map"></div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="dealer-list">
+                        <h2>Dealers List</h2>
+<table>
+    <tr>
+        <th>City</th>
+    </tr>
+    <tr><td>Ahmedabad</td></tr>
+    <tr><td>Anantpur</td></tr>
+    <tr><td>Bangalore</td></tr>
+    <tr><td>Belgaum</td></tr>
+    <tr><td>Bellary</td></tr>
+    <tr><td>Bhilai</td></tr>
+    <tr><td>Bhopal</td></tr>
+    <tr><td>Bhopal</td></tr>
+    <tr><td>Bilaspur</td></tr>
+    <tr><td>Bhubaneswar</td></tr>
+    <tr><td>Brahmapur</td></tr>
+    <tr><td>Chennai</td></tr>
+    <tr><td>Chikmagalur</td></tr>
+    <tr><td>Coimbatore</td></tr>
+    <tr><td>Davangere</td></tr>
+    <tr><td>Dehradun</td></tr>
+    <tr><td>Delhi</td></tr>
+    <tr><td>Dharmapuri</td></tr>
+    <tr><td>Guntur</td></tr>
+    <tr><td>Guwahati</td></tr>
+    <tr><td>Gwalior</td></tr>
+    <tr><td>Hubli</td></tr>
+    <tr><td>Hyderabad</td></tr>
+    <tr><td>Indore</td></tr>
+    <tr><td>Jabalpur</td></tr>
+    <tr><td>Jammu</td></tr>
+    <tr><td>Kanpur</td></tr>
+    <tr><td>Kakinada</td></tr>
+    <tr><td>Kolkata</td></tr>
+    <tr><td>Krishnagiri</td></tr>
+    <tr><td>Lucknow</td></tr>
+    <tr><td>Mangalore</td></tr>
+    <tr><td>Mohali, Ludhiana</td></tr>
+    <tr><td>Mumbai</td></tr>
+    <tr><td>Mysore</td></tr>
+    <tr><td>Namakkal</td></tr>
+    <tr><td>Nellore</td></tr>
+    <tr><td>Panchkula, Faridabad</td></tr>
+    <tr><td>Pondicherry</td></tr>
+    <tr><td>Prayagraj</td></tr>
+    <tr><td>Pune</td></tr>
+    <tr><td>Raipur</td></tr>
+    <tr><td>Rajahmundry</td></tr>
+    <tr><td>Ratlam</td></tr>
+    <tr><td>Salem</td></tr>
+    <tr><td>Sonepur</td></tr>
+    <tr><td>Surat</td></tr>
+    <tr><td>Tiruppur</td></tr>
+    <tr><td>Udaipur, Jaipur</td></tr>
+    <tr><td>Vadodara</td></tr>
+    <tr><td>Varanasi</td></tr>
+    <tr><td>Vijayawada</td></tr>
+</table>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding mt-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact-card">
+                            <span>Contact Us</span>
+                            <h3>Dealers – South India
+
+
+                            </h3>
+                            <p class="">
+                                Ph :
+                           <a href="tel:+919591849977">+91 9591849977 </a>/ <a href="tel: 7022012573
+">7022012573</a>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="contact-card">
+                            <span>Contact Us</span>
+                            <h3>Dealers – Rest of India
+
+                            </h3>
+                            <p class="">
+                                Ph :
+                           <a href="tel:+919591849977">+91 9513325133  </a>/ <a href="tel:+917314202546
+">7314202546</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="special_offer_save_on_sets_2" class="mt-10">
             <div class="container container-xxl">
-                <h2 class="mb-10 fs-2 text-center">Want to Become a <span class="text-primary">Dealer?</span></h2>
+                <h2 class="mb-10 mt-10 fs-2 text-center">Want to Become a <span class="text-primary">Dealer?</span></h2>
                 <div class="row align-items-center">
                     <div class="container text-center col-lg-6 px-0  order-2">
                         <%--<p class="mw-lg-100 fs-17px text-justify">Are you looking to grow your business by partnering with a trusted brand? Becoming a dealer with us gives you access to:</p>--%>
@@ -467,11 +283,128 @@
                 </div>
             </div>
         </section>
-        <%--for map start--%>
-        <section class="container container-xxl">
-            <div id="map"></div>
-        </section>
+
+
         <script>
+            var map = L.map('map', {
+                center: [22.3511148, 78.6677428], // Center of India
+                zoom: 5,
+                minZoom: 4,
+                maxZoom: 10,
+                zoomControl: true,
+                scrollWheelZoom: true,
+                doubleClickZoom: true,
+                touchZoom: true,
+                dragging: true
+            });
+
+            // Restrict users to India's bounds
+            var indiaBounds = [
+                [6.746, 68.162],  // Southwest corner
+                [35.674, 97.395]  // Northeast corner
+            ];
+            map.setMaxBounds(indiaBounds);
+            map.on('drag', function () { map.panInsideBounds(indiaBounds, { animate: false }); });
+
+            // Load India GeoJSON for state boundaries
+            fetch("https://raw.githubusercontent.com/geohacker/india/master/state/india_telengana.geojson")
+                .then(response => response.json())
+                .then(data => {
+                    L.geoJson(data, {
+                        style: function (feature) {
+                            return {
+                                color: "#242020",
+                                weight: 1,
+                                fillColor: "#fff",
+                                fillOpacity: 0.7
+                            };
+                        }
+                    }).addTo(map);
+                });
+
+            // Define category colors
+           /* var categories = {
+                "Chintamani unit": "blue",
+                "Registered Office": "red",
+                "Marketing Office": "yellow"
+            };
+*/
+
+
+            // Locations
+            var locations = [
+                // Special category locations
+               // { state: "Karnataka", lat: 13.416243, lon: 77.288418, cities: ["Chintamani, Karnataka, India"], category: "Chintamani unit" },
+               // { state: "Karnataka", lat: 15.3173, lon: 75.7139, cities: ["Bangalore, India"], category: "Marketing Office" },
+                //{ state: "Uttarakhand", lat: 30.0668, lon: 79.0193, cities: ["Uttarakhand, India"], category: "Registered Office" },
+
+                // Normal locations (no categories)
+
+                { state: "Jammu & Kashmir", lat: 32.7266, lon: 74.8570, cities: ["Jammu"] },
+                { state: "Uttarakhand", lat: 30.3165, lon: 78.0322, cities: ["Dehradun"] },
+                { state: "Punjab", lat: 30.9010, lon: 75.8573, cities: ["Mohali", "Ludhiana"] },
+                { state: "Haryana", lat: 30.6942, lon: 76.8606, cities: ["Panchkula", "Faridabad"] },
+                { state: "Delhi", lat: 28.7041, lon: 77.1025, cities: ["Delhi"] },
+                { state: "Rajasthan", lat: 26.9124, lon: 75.7873, cities: ["Udaipur", "Jaipur"] },
+                { state: "Assam", lat: 26.1445, lon: 91.7362, cities: ["Guwahati"] },
+                { state: "Uttar Pradesh", lat: 26.8467, lon: 80.9462, cities: ["Lucknow", "Varanasi", "Kanpur", "Prayagraj"] },
+                { state: "West Bengal", lat: 22.5726, lon: 88.3639, cities: ["Kolkata"] },
+                { state: "Gujarat", lat: 23.0225, lon: 72.5714, cities: ["Ahmedabad", "Vadodara", "Surat"] },
+                { state: "Madhya Pradesh", lat: 22.9734, lon: 75.8577, cities: ["Jabalpur", "Indore", "Ratlam", "Bhopal", "Gwalior"] },
+                { state: "Maharashtra", lat: 19.0760, lon: 72.8777, cities: ["Pune", "Mumbai"] },
+                { state: "Odisha", lat: 20.2961, lon: 85.8245, cities: ["Bhubaneswar", "Brahmapur", "Sonepur"] },
+                { state: "Chhattisgarh", lat: 21.2514, lon: 81.6296, cities: ["Raipur", "Bilaspur", "Bhilai"] },
+                { state: "Karnataka", lat: 14.520447, lon: 75.643303, cities: ["Bangalore", "Belgaum", "Mangalore", "Davangere", "Hubli", "Chikmagalur", "Mysore", "Bellary"] },
+                { state: "Andhra Pradesh & Telangana", lat: 16.5062, lon: 80.6480, cities: ["Vijayawada", "Anantapur", "Guntur", "Rajahmundry", "Hyderabad", "Kakinada", "Nellore"] },
+                { state: "Tamil Nadu & Puducherry", lat: 13.0827, lon: 80.2707, cities: ["Chennai", "Coimbatore", "Salem", "Pondicherry", "Tiruppur", "Namakkal", "Dharmapuri", "Krishnagiri"] }
+            ];
+
+            locations.forEach(location => {
+                // var iconUrl = "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png"; // Default icon
+                var iconUrl = "/images_/pin.png"; // Default icon
+
+/*                if (location.category && categories[location.category]) {
+                    if (categories[location.category] == "yellow") {
+                        iconUrl = `/images_/yello.png`;
+
+                    }
+                    else if (categories[location.category] == "blue") {
+                        iconUrl = `/images_/blue.png`;
+
+                    }
+                    else {
+                        iconUrl = `/images_/red.png`;
+
+                    }
+                    //  iconUrl = `https://maps.google.com/mapfiles/ms/icons/${categories[location.category]}-dot.png`;
+                }*/
+
+                var icon = L.icon({
+                    iconUrl: iconUrl,
+                    iconSize: [32, 32]
+                });
+
+                L.marker([location.lat, location.lon], { icon: icon })
+                    .addTo(map)
+                    .bindPopup(`<b>${location.state}</b><br>${location.cities.join(", ")}`);
+            });
+
+            // Legend for categories
+            /*var legend = L.control({ position: 'bottomleft' });
+            legend.onAdd = function (map) {
+                var div = L.DomUtil.create('div', 'info legend');
+                var categoriesList = ['Registered Office', 'Marketing Office', 'Chintamani unit'];
+
+                categoriesList.forEach(category => {
+                    div.innerHTML += `<i style="background:${categories[category]}; width:15px; height:15px; display:inline-block; margin-right:5px;"></i> ${category}<br>`;
+                });
+
+                return div;
+            };
+            legend.addTo(map);*/
+        </script>
+
+        <%--<script>
             var map = L.map('map', {
                 center: [22.3511148, 78.6677428], // Center India
                 zoom: 5,
@@ -536,187 +469,6 @@
                     .bindPopup(`<b>${location.state}</b><br>${location.cities.join(", ")}`);
             });
 
-    </script>
- <%--<script>
-     var map = L.map('map', {
-         center: [22.3511148, 78.6677428],
-         zoom: 5,
-         minZoom: 4,
-         maxZoom: 10,
-         maxBounds: [
-             [6.746, 68.162],
-             [35.674, 97.395]
-         ],
-         maxBoundsViscosity: 1.0
-     });
-
-     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-         attribution: '&copy; OpenStreetMap contributors'
-     }).addTo(map);
-
-     // Load India GeoJSON for state boundaries
-     fetch("https://raw.githubusercontent.com/geohacker/india/master/state/india_telengana.geojson")
-         .then(response => response.json())
-         .then(data => {
-             L.geoJson(data, {
-                 style: function (feature) {
-                     return {
-                         color: "#000",  // Black outline
-                         weight: 1,
-                         fillColor: "#f4a261", // Orange fill for India
-                         fillOpacity: 0.5
-                     };
-                 }
-             }).addTo(map);
-         });
-
-     var locations = [
-         { state: "Jammu & Kashmir", lat: 32.7266, lon: 74.8570, cities: ["Jammu"] },
-         { state: "Uttarakhand", lat: 30.3165, lon: 78.0322, cities: ["Dehradun"] },
-         { state: "Punjab", lat: 30.9010, lon: 75.8573, cities: ["Mohali", "Ludhiana"] },
-         { state: "Haryana", lat: 30.6942, lon: 76.8606, cities: ["Panchkula", "Faridabad"] },
-         { state: "Delhi", lat: 28.7041, lon: 77.1025, cities: ["Delhi"] },
-         { state: "Rajasthan", lat: 26.9124, lon: 75.7873, cities: ["Udaipur", "Jaipur"] },
-         { state: "Assam", lat: 26.1445, lon: 91.7362, cities: ["Guwahati"] },
-         { state: "Uttar Pradesh", lat: 26.8467, lon: 80.9462, cities: ["Lucknow", "Varanasi", "Kanpur", "Prayagraj"] },
-         { state: "West Bengal", lat: 22.5726, lon: 88.3639, cities: ["Kolkata"] },
-         { state: "Gujarat", lat: 23.0225, lon: 72.5714, cities: ["Ahmedabad", "Vadodara", "Surat"] },
-         { state: "Madhya Pradesh", lat: 22.7196, lon: 75.8577, cities: ["Jabalpur", "Indore", "Ratlam", "Bhopal", "Gwalior"] },
-         { state: "Maharashtra", lat: 19.0760, lon: 72.8777, cities: ["Pune", "Mumbai"] },
-         { state: "Odisha", lat: 20.2961, lon: 85.8245, cities: ["Bhubaneswar", "Brahmapur", "Sonepur"] },
-         { state: "Chhattisgarh", lat: 21.2514, lon: 81.6296, cities: ["Raipur", "Bilaspur", "Bhilai"] },
-         { state: "Karnataka", lat: 12.9716, lon: 77.5946, cities: ["Bangalore", "Belgaum", "Mangalore", "Davangere", "Hubli", "Chikmagalur", "Mysore", "Bellary"] },
-         { state: "Andhra Pradesh & Telangana", lat: 16.5062, lon: 80.6480, cities: ["Vijayawada", "Anantapur", "Guntur", "Rajahmundry", "Hyderabad", "Kakinada", "Nellore"] },
-         { state: "Tamil Nadu & Puducherry", lat: 13.0827, lon: 80.2707, cities: ["Chennai", "Coimbatore", "Salem", "Pondicherry", "Tiruppur", "Namakkal", "Dharmapuri", "Krishnagiri"] }
-     ];
-
-     locations.forEach(location => {
-         L.marker([location.lat, location.lon])
-             .addTo(map)
-             .bindPopup(`<b>${location.state}</b><br>${location.cities.join(", ")}`);
-     });
-
-    </script>--%>
-
-        <%--end--%>
-
-
-
-   <%--<script>
-       var map = L.map('map').setView([22.9734, 78.6569], 5); // Centered in India
-
-       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-           maxZoom: 18,
-           attribution: '© OpenStreetMap contributors'
-       }).addTo(map);
-
-       // Grouped cities by state
-       var stateLocations = {
-           "Jammu & Kashmir": [{ name: "Jammu", lat: 32.7266, lng: 74.8570 }],
-
-           "Uttarakhand": [{ name: "Dehradun", lat: 30.3165, lng: 78.0322 }],
-
-           "Punjab": [
-               { name: "Mohali", lat: 30.7046, lng: 76.7179 },
-               { name: "Ludhiana", lat: 30.9009, lng: 75.8573 }
-           ],
-
-           "Haryana": [
-               { name: "Panchkula", lat: 30.6952, lng: 76.8537 },
-               { name: "Faridabad", lat: 28.4089, lng: 77.3178 }
-           ],
-
-           "Delhi": [{ name: "Delhi", lat: 28.6139, lng: 77.2090 }],
-
-           "Rajasthan": [
-               { name: "Udaipur", lat: 24.5854, lng: 73.7125 },
-               { name: "Jaipur", lat: 26.9124, lng: 75.7873 }
-           ],
-
-           "Assam": [{ name: "Guwahati", lat: 26.1445, lng: 91.7362 }],
-
-           "Uttar Pradesh": [
-               { name: "Lucknow", lat: 26.8467, lng: 80.9462 },
-               { name: "Varanasi", lat: 25.3176, lng: 82.9739 },
-               { name: "Kanpur", lat: 26.4499, lng: 80.3319 },
-               { name: "Prayagraj", lat: 25.4358, lng: 81.8463 }
-           ],
-
-           "West Bengal": [{ name: "Kolkata", lat: 22.5726, lng: 88.3639 }],
-
-           "Gujarat": [
-               { name: "Ahmedabad", lat: 23.0225, lng: 72.5714 },
-               { name: "Vadodara", lat: 22.3072, lng: 73.1812 },
-               { name: "Surat", lat: 21.1702, lng: 72.8311 }
-           ],
-
-           "Madhya Pradesh": [
-               { name: "Jabalpur", lat: 23.1815, lng: 79.9864 },
-               { name: "Indore", lat: 22.7196, lng: 75.8577 },
-               { name: "Ratlam", lat: 23.3303, lng: 75.0403 },
-               { name: "Bhopal", lat: 23.2599, lng: 77.4126 },
-               { name: "Gwalior", lat: 26.2183, lng: 78.1828 }
-           ],
-
-           "Maharashtra": [
-               { name: "Pune", lat: 18.5204, lng: 73.8567 },
-               { name: "Mumbai", lat: 19.0760, lng: 72.8777 }
-           ],
-
-           "Odisha": [
-               { name: "Bhubaneswar", lat: 20.2961, lng: 85.8245 },
-               { name: "Brahmapur", lat: 19.3149, lng: 84.7941 },
-               { name: "Sonepur", lat: 20.8383, lng: 83.8963 }
-           ],
-
-           "Chhattisgarh": [
-               { name: "Raipur", lat: 21.2514, lng: 81.6296 },
-               { name: "Bilaspur", lat: 22.0796, lng: 82.1409 },
-               { name: "Bhilai", lat: 21.1938, lng: 81.3509 }
-           ],
-
-           "Karnataka": [
-               { name: "Bangalore", lat: 12.9716, lng: 77.5946 },
-               { name: "Belgaum", lat: 15.8497, lng: 74.4977 },
-               { name: "Mangalore", lat: 12.9141, lng: 74.8560 },
-               { name: "Davangere", lat: 14.4644, lng: 75.9211 },
-               { name: "Hubli", lat: 15.3647, lng: 75.1240 },
-               { name: "Chikmagalur", lat: 13.3161, lng: 75.7726 },
-               { name: "Mysore", lat: 12.2958, lng: 76.6394 },
-               { name: "Bellary", lat: 15.1394, lng: 76.9214 }
-           ],
-
-           "Andhra Pradesh & Telangana": [
-               { name: "Vijayawada", lat: 16.5062, lng: 80.6480 },
-               { name: "Anantapur", lat: 14.6819, lng: 77.6006 },
-               { name: "Guntur", lat: 16.3067, lng: 80.4365 },
-               { name: "Rajahmundry", lat: 17.0005, lng: 81.8040 },
-               { name: "Hyderabad", lat: 17.3850, lng: 78.4867 },
-               { name: "Kakinada", lat: 16.9891, lng: 82.2475 },
-               { name: "Nellore", lat: 14.4426, lng: 79.9865 }
-           ],
-
-           "Tamil Nadu & Puducherry": [
-               { name: "Chennai", lat: 13.0827, lng: 80.2707 },
-               { name: "Coimbatore", lat: 11.0168, lng: 76.9558 },
-               { name: "Salem", lat: 11.6643, lng: 78.1460 },
-               { name: "Pondicherry", lat: 11.9139, lng: 79.8145 },
-               { name: "Tiruppur", lat: 11.1085, lng: 77.3411 },
-               { name: "Namakkal", lat: 11.2213, lng: 78.1652 },
-               { name: "Dharmapuri", lat: 12.1357, lng: 78.1554 },
-               { name: "Krishnagiri", lat: 12.5170, lng: 78.2134 }
-           ]
-       };
-
-       // Add markers for each state with multiple cities in popups
-       for (var state in stateLocations) {
-           var cities = stateLocations[state].map(city => city.name).join(", ");
-           var firstCity = stateLocations[state][0]; // Choose first city for marker
-
-           L.marker([firstCity.lat, firstCity.lng])
-               .addTo(map)
-               .bindPopup(`<b>${state}</b><br>${cities}`);
-       }
     </script>--%>
     </main>
 </asp:Content>

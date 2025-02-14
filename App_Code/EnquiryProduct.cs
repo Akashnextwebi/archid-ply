@@ -94,7 +94,7 @@ public class EnquiryProduct
         try
         {
             //string query = "SELECT *, (SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (SELECT TOP 1 UserName FROM CreateUser WHERE UserGuid = EnquiryProduct.UpdatedBy) AS UpdatedBy1 FROM EnquiryProduct INNER JOIN Subcategory ON EnquiryProduct.Subcategory = Subcategory.Id WHERE EnquiryProduct.Status != 'Deleted' AND EnquiryProduct.Category = @Category AND Subcategory.DisplayHome = 'Yes';";
-          string query = "Select *,(SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (Select Top 1 UserName From CreateUser Where UserGuid=EnquiryProduct.UpdatedBy) UpdatedBy1 from EnquiryProduct where Status!='Deleted' and Category=@Category ORDER BY CAST(DisplayOrder AS INT)";
+          string query = "Select *,(SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (Select Top 1 UserName From CreateUser Where UserGuid=EnquiryProduct.UpdatedBy) UpdatedBy1 from EnquiryProduct where Status='Active' and Category=@Category ORDER BY CAST(DisplayOrder AS INT)";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@Category", SqlDbType.Int).Value = Category;
@@ -141,7 +141,7 @@ public class EnquiryProduct
         List<EnquiryProduct> pds = null;
         try
         {
-            string query = "Select top 1 *,(SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (Select Top 1 UserName From CreateUser Where UserGuid=EnquiryProduct.UpdatedBy) UpdatedBy1 from EnquiryProduct where Status!='Deleted' and ProductUrl=@ProductUrl";
+            string query = "Select top 1 *,(SELECT TOP 1 CategoryName FROM Category WHERE id = EnquiryProduct.Category) AS CategoryName, (Select Top 1 UserName From CreateUser Where UserGuid=EnquiryProduct.UpdatedBy) UpdatedBy1 from EnquiryProduct where Status='Active' and ProductUrl=@ProductUrl";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@ProductUrl", SqlDbType.Int).Value = url;

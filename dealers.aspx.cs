@@ -17,14 +17,14 @@ public partial class dealers : System.Web.UI.Page
     public string strDealers= "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        BindDealerList("");
+      /*  BindDealerList("");
         if (!IsPostBack)
         {
             BindDealerList("");
             GetAllCity();
-        }
+        }*/
     }
-    public void GetAllCity()
+   /* public void GetAllCity()
     {
         try
         {
@@ -47,7 +47,7 @@ public partial class dealers : System.Web.UI.Page
     protected void ddlCity_SelectedIndexChanged(object sender, EventArgs e)
     {
         BindDealerList(ddlCity.SelectedItem.Value);
-    }
+    }*/
     public void BindDealerList(string city)
     {
         try

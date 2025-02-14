@@ -54,22 +54,22 @@
                                     <asp:TextBox runat="server" data-id="Title" class="form-control mb-2 mr-sm-2 textcount1" ID="txtPageTitle" />
                                 </div>
 
-                                <div class="col-lg-4  mb-2">
+                                <div class="col-lg-6  mb-2">
                                     <label>Meta Desc</label>
                                     <asp:TextBox runat="server" data-id="MetaDesc" Rows="3" TextMode="MultiLine" class="form-control mb-2 mr-sm-2 textcount1" Style="height: 100px !important;" ID="txtMetaDesc" />
                                 </div>
-                                <div class="col-lg-4 mb-2">
+                                <div class="col-lg-6 mb-2">
                                     <label>Meta Keys</label>
                                     <asp:TextBox runat="server" TextMode="MultiLine"  Rows="3" class="form-control mb-2 mr-sm-2" Style="height: 100px !important;" ID="txtMetaKeys" />
                                 </div>
 
-                                <div class="col-lg-4 mb-2">
+                                <div class="col-lg-4 mb-2 d-none">
                                     <label>Short Description</label>
                                     <asp:TextBox runat="server" TextMode="MultiLine" Rows="3" class="form-control mb-2 mr-sm-2" Style="height: 100px !important;" ID="txtShortDesc" />
                                     <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtShortDesc" Display="Dynamic" ForeColor="Red" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>--%>
                                     </div>
                                 <div class="col-lg-12 mb-2">
-                                    <label>Full Description</label>
+                                    <label>Description</label>
                                     <asp:TextBox runat="server" TextMode="MultiLine" class="form-control mb-2 mr-sm-2 summernote" Style="height: 100px !important;" ID="txtShopCategoryDesc" />
                                     <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtShopCategoryDesc" Display="Dynamic" ForeColor="Red" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>--%>
                                     </div>

@@ -57,15 +57,15 @@
                                 </div>
 
 
-                                <div class="col-lg-12 mb-2">
+                                <div class="col-lg-12 mb-2 d-none">
                                     <label>Short Description<sup>*</sup></label>
                                     <asp:TextBox runat="server" TextMode="MultiLine" class="form-control mb-2 mr-sm-2" ID="txtShortDesc" />
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtShortDesc" Display="Dynamic" ForeColor="Red" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
 
                                 </div>
                                 <div class="col-lg-12 mb-2">
-                                    <label>Full Description</label>
+                                    <label>Description<sup>*</sup></label>
                                     <asp:TextBox runat="server" TextMode="MultiLine" class="form-control mb-2 mr-sm-2 summernote" Style="height: 100px !important;" ID="txtCategoryDesc" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCategoryDesc" Display="Dynamic" ForeColor="Red" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="row mt-3">

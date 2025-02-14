@@ -46,6 +46,7 @@ public partial class Admin_manage_our_reports : System.Web.UI.Page
                 strInvesterRelations += @"<tr>
                                                 <td>" + (i + 1) + @"</td>
                                                 <td>" + cat.Title + @"</td> 
+                                                <td>" + cat.DisplayOrder + @"</td> 
                                                 <td><a href='/" + cat.PDF + @"' download target='_blank'/><img src='assets/images/pdf.png' style='height:60px;' /></td>
                                                 <td>" + cat.AddedOn.ToString("dd/MMM/yyyy") + @"</td>
                                                 <td class='text-center'>
@@ -130,6 +131,7 @@ public partial class Admin_manage_our_reports : System.Web.UI.Page
             {
                 btnSave.Text = "Update";
                 txtTitle.Text = faqs[0].Title;
+                txtOrder.Text = faqs[0].DisplayOrder;
                 if (faqs[0].PDF != "")
                 {
                     divpdf.Visible = true;

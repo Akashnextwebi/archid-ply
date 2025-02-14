@@ -1,6 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.master" AutoEventWireup="true" CodeFile="investor-contact.aspx.cs" Inherits="investor_contact" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style>
+        .location-box{
+            min-height:unset !important;
+            height:100% !important;
+        }
+       
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
@@ -46,10 +53,10 @@
 
 
 
-                <div class="row">
-                    <div class="col-xl-6">
+                <div class="row align-items-center ">
+                    <div class="col-xl-6 align-items-stretch ">
                         <div class="location-box">
-                            <div class="card rounded-4 p-7 mb-7">
+                            <div class="card rounded-4 p-7 mb-7 location-box">
                                 <h5 class="card-title fs-6 mb-6">Investor sevices for all compliance matter Please contact
                                         our compliance officer
 
@@ -85,7 +92,7 @@
 
                                     </div>
 
-                                    <div class="col-md-6 mb-7">
+                                    <div class="col-md-6 col-lg-12 mb-7">
                                         <div class="d-flex align-items-start">
                                             <div class="d-none">
                                                 <svg class="icon fs-2">
@@ -95,7 +102,7 @@
                                             <div>
                                                 <h3 class="fs-5 mb-6">Contact</h3>
                                                 <div class="fs-6">
-                                                    <p class="mb-3 fs-6">Mobile:<span class="text-body-emphasis"> 05944- 250270</span></p>
+                                                    <p class="mb-3 fs-6">Mobile:<span class="text-body-emphasis"> 9448419394</span></p>
                                                     <p class="mb-0 fs-6">
                                                         E-mail: bangalore@archidply.com
 
@@ -113,7 +120,7 @@
 
 
                     </div>
-                    <div class="col-xl-6">
+                    <div class="col-xl-6 align-items-stretch ">
                         <div class="location-box">
                             <div class="card rounded-4 p-7 mb-7 location-box">
                                 <h5 class="card-title fs-6 mb-6">Registrar and share transfer agent
@@ -125,7 +132,7 @@
 
 
 
-                                    <h2 class="fs-28px mb-2 mb-md-2">Mr.K.S.Reddy
+                                    <h2 class="fs-28px mb-2 mb-md-2">KFIN TECHNOLOGIES LIMITED
                                     </h2>
                                     <div class="col-md-12 mb-11">
                                         <div class="d-flex align-items-start">
@@ -140,10 +147,11 @@
                                                 </h3>
                                                 <div class="fs-6">
                                                     <p class="mb-2 pb-4 fs-6">
-                                                        Plot NO.17 to 24, Vithalrao Nagar,
+                                                        Karvy Selenium, Tower- B, Plot No 31 & 32
                                                         <br />
-                                                        Madhabpur, Hyderabad - 500 086
-
+                                                        Serilingampally Mandal, 
+                                                        <br />
+                                                        Hyderabad, 500032
 
                                                     </p>
 
@@ -154,7 +162,7 @@
 
                                     </div>
 
-                                    <div class="col-md-6 mb-7">
+                                    <div class="col-md-6 col-lg-12 mb-7">
                                         <div class="d-flex align-items-start">
                                             <div class="d-none">
                                                 <svg class="icon fs-2">
@@ -164,11 +172,11 @@
                                             <div>
                                                 <h3 class="fs-5 mb-6">Contact</h3>
                                                 <div class="fs-6">
-                                                    <p class="mb-3 fs-6">Mobile:<span class="text-body-emphasis"> 1-800-3454001</span></p>
-                                                    <p class="mb-3 fs-6">Fax:<span class="text-body-emphasis"> 040 -23420814</span></p>
+                                                    <p class="mb-3 fs-6">Tel:<span class="text-body-emphasis"> +91 040 67161500</span></p>
+                                                    <p class="mb-3 fs-6">Fax:<span class="text-body-emphasis"> +91 040 23420814; M:+91 910 009 4099</span></p>
 
-                                                    <p class="mb-3 fs-6">E-mail:<span class="text-body-emphasis"> bangalore@archidply.com</span></p>
-                                                    <p class="mb-3 fs-6">Website:<span class="text-body-emphasis">  www.karvy.com</span></p>
+                                                    <p class="mb-3 fs-6">E-mail:<span class="text-body-emphasis">einward.ris@kfintech.com.com.</span></p>
+                                                    <p class="mb-3 fs-6">Website:<span class="text-body-emphasis"><a href="https://www.kfintech.com/">www.kfintech.com</a></span></p>
 
 
 

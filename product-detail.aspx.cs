@@ -44,7 +44,7 @@ public partial class product_detail : System.Web.UI.Page
                     if (prod.Category == "2")
                     {
                         divCatelog = @"<div class='col-md-5'>
-<a href='/images_/others/venner-catelog.pdf' download class='btn w-100 bg-new-color btn-hover-bg-white btn-hover-border-warning' title='Catalouge'>Catalouge <i class='far fa-download ps-2 fs-13px'></i></a>
+<a href='/images_/others/venner-catelog.pdf' download class='btn w-100 bg-new-color btn-hover-bg-white btn-hover-border-warning' title='catalogue'>Catalogue <i class='far fa-download ps-2 fs-13px'></i></a>
                         </div>";
                     }
                     else
@@ -158,6 +158,8 @@ public partial class product_detail : System.Web.UI.Page
                             </div>
                         </div>
                     </div>
+<h4 class='text-left mb-8'>Specifications</h4>
+
                    <div class='card border border-2  rounded mb-8' style='box-shadow: 0 0 10px 0 rgba(0,0,0,0.1)'>
                         <div class='card-body py-0 px-0'>
                             <div class='product-features'>

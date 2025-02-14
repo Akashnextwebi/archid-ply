@@ -39,7 +39,7 @@ public partial class products : System.Web.UI.Page
                 foreach (Category category in categories)
                 {
                     strHeading = category.CategoryName;
-                    strCategoryDesc = category.ShortDesc;
+                    strCategoryDesc = category.FullDesc;
                     List<EnquiryProduct> ep = EnquiryProduct.GetAllEnquiryProductByCategory(conAP, Convert.ToString(category.Id)).ToList();//Where(s => s.DisplayHome == "Yes").OrderBy(s => s.DisplayOrder).ToList();
                     if (ep.Count > 0)
                     {

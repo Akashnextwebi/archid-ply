@@ -12,6 +12,7 @@ public class InvesterRelations
 {
     public int Id { get; set; }
     public string Title { get; set; }
+    public string DisplayOrder { get; set; }
     public string InversterGuid { get; set; }
     public string PDF { get; set; }
     public DateTime AddedOn { get; set; }
@@ -24,10 +25,11 @@ public class InvesterRelations
         int result = 0;
         try
         {
-            string cmdText = "Insert Into InvesterRelations (InversterGuid,Title,PDF,Status,AddedIp,AddedOn,AddedBy) values(@InversterGuid,@Title,@PDF,@Status,@AddedIp,@AddedOn,@AddedBy) ";
+            string cmdText = "Insert Into InvesterRelations (DisplayOrder,InversterGuid,Title,PDF,Status,AddedIp,AddedOn,AddedBy) values(@DisplayOrder,@InversterGuid,@Title,@PDF,@Status,@AddedIp,@AddedOn,@AddedBy) ";
             using (SqlCommand sqlCommand = new SqlCommand(cmdText, conAP))
             {
                 sqlCommand.Parameters.AddWithValue("@Title", SqlDbType.NVarChar).Value = cat.Title;
+                sqlCommand.Parameters.AddWithValue("@DisplayOrder", SqlDbType.NVarChar).Value = cat.DisplayOrder;
                 sqlCommand.Parameters.AddWithValue("@InversterGuid", SqlDbType.NVarChar).Value = cat.InversterGuid;
                 sqlCommand.Parameters.AddWithValue("@PDF", SqlDbType.NVarChar).Value = cat.PDF;
                 sqlCommand.Parameters.AddWithValue("@AddedIp", SqlDbType.NVarChar).Value = CommonModel.IPAddress();
@@ -52,10 +54,11 @@ public class InvesterRelations
         int result = 0;
         try
         {
-            string cmdText = "Update InvesterRelations Set Title=@Title,PDF=@PDF,Status=@Status where Id=@Id";
+            string cmdText = "Update InvesterRelations Set DisplayOrder=@DisplayOrder,Title=@Title,PDF=@PDF,Status=@Status where Id=@Id";
             using (SqlCommand sqlCommand = new SqlCommand(cmdText, conAP))
             {
                 sqlCommand.Parameters.AddWithValue("@Id", SqlDbType.NVarChar).Value = cat.Id;
+                sqlCommand.Parameters.AddWithValue("@DisplayOrder", SqlDbType.NVarChar).Value = cat.DisplayOrder;
                 sqlCommand.Parameters.AddWithValue("@Title", SqlDbType.NVarChar).Value = cat.Title;
                 sqlCommand.Parameters.AddWithValue("@PDF", SqlDbType.NVarChar).Value = cat.PDF;
                 sqlCommand.Parameters.AddWithValue("@Status", SqlDbType.NVarChar).Value = cat.Status;
@@ -77,7 +80,7 @@ public class InvesterRelations
         List<InvesterRelations> result = new List<InvesterRelations>();
         try
         {
-            string cmdText = "Select * from InvesterRelations where Status!='Deleted' order by id desc";
+            string cmdText = "Select * from InvesterRelations where Status!='Deleted' order by CAST(DisplayOrder AS INT)";
             using (SqlCommand selectCommand = new SqlCommand(cmdText, conAP))
             {
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand);
@@ -88,6 +91,7 @@ public class InvesterRelations
                           {
                               Id = Convert.ToInt32(Convert.ToString(dr["Id"])),
                               Title = Convert.ToString(dr["Title"]),
+                              DisplayOrder = Convert.ToString(dr["DisplayOrder"]),
                               PDF = Convert.ToString(dr["PDF"]),
                               InversterGuid = Convert.ToString(dr["InversterGuid"]),
                               AddedIp = Convert.ToString(dr["AddedIp"]),
@@ -110,7 +114,7 @@ public class InvesterRelations
         List<InvesterRelations> result = new List<InvesterRelations>();
         try
         {
-            string cmdText = "Select * from InvesterRelations where Status=@Status and InversterGuid=@Id order by id desc";
+            string cmdText = "Select * from InvesterRelations where Status=@Status and InversterGuid=@Id order by CAST(DisplayOrder AS INT) desc";
             using (SqlCommand sqlCommand = new SqlCommand(cmdText, conAP))
             {
                 sqlCommand.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = id;
@@ -123,6 +127,7 @@ public class InvesterRelations
                           {
                               Id = Convert.ToInt32(Convert.ToString(dr["Id"])),
                               Title = Convert.ToString(dr["Title"]),
+                              DisplayOrder = Convert.ToString(dr["DisplayOrder"]),
                               InversterGuid = Convert.ToString(dr["InversterGuid"]),
                               PDF = Convert.ToString(dr["PDF"]),
                               AddedOn = Convert.ToDateTime(Convert.ToString(dr["AddedOn"])),
@@ -146,7 +151,7 @@ public class InvesterRelations
         List<InvesterRelations> result = new List<InvesterRelations>();
         try
         {
-            string cmdText = "Select * from InvesterRelations where Status=@Status and Id=@Id order by id desc";
+            string cmdText = "Select * from InvesterRelations where Status=@Status and Id=@Id order by CAST(DisplayOrder AS INT)";
             using (SqlCommand sqlCommand = new SqlCommand(cmdText, conAP))
             {
                 sqlCommand.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = id;
@@ -160,6 +165,7 @@ public class InvesterRelations
                               Id = Convert.ToInt32(Convert.ToString(dr["Id"])),
                               Title = Convert.ToString(dr["Title"]),
                               InversterGuid = Convert.ToString(dr["InversterGuid"]),
+                              DisplayOrder = Convert.ToString(dr["DisplayOrder"]),
                               PDF = Convert.ToString(dr["PDF"]),
                               AddedOn = Convert.ToDateTime(Convert.ToString(dr["AddedOn"])),
                               AddedBy = Convert.ToString(dr["AddedBy"]),

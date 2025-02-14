@@ -942,7 +942,7 @@ public class ProductDetails
         List<ProductDetails> categories = new List<ProductDetails>();
         try
         {
-            string query = "select * from ProductDetails where Id in (SELECT CAST(value AS INT) FROM STRING_SPLIT(@Related, '|')) and Status!='Deleted' order by Id ";
+            string query = "select * from ProductDetails where Id in (SELECT CAST(value AS INT) FROM STRING_SPLIT(@Related, '|')) and Status='Active' order by Id ";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 DataTable dt = new DataTable();
@@ -1134,7 +1134,7 @@ public class ProductDetails
         try
         {
 
-            string query = "Select *  from ProductDetails where Status='Active' and ProductGuid=@id";
+            string query = "Select *  from ProductDetails where Status!='Deleted' and ProductGuid=@id";
             using (SqlCommand cmd = new SqlCommand(query, conAP))
             {
                 cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = id;

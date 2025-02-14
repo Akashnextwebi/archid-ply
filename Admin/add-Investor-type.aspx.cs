@@ -37,12 +37,12 @@ public partial class Admin_add_Investor_relations : System.Web.UI.Page
         {
             if (Page.IsValid)
             {
-
                 string pageName = Path.GetFileName(Request.Path);
                 InvesterRelType cs = new InvesterRelType();
                 if (btnSave.Text == "Update")
                 {
                     cs.Id = Convert.ToInt32(Request.QueryString["id"]);
+                    cs.DisplayOrder = txtOrder.Text.Trim();
                     cs.Title = txtTitle.Text.Trim();
                     cs.AddedIp = CommonModel.IPAddress();
                     cs.AddedOn = TimeStamps.UTCTime();
@@ -75,6 +75,7 @@ public partial class Admin_add_Investor_relations : System.Web.UI.Page
                 {
                     cs.InversterGuid = Guid.NewGuid().ToString();
                     cs.Title = txtTitle.Text.Trim();
+                    cs.DisplayOrder = txtOrder.Text.Trim();
                     cs.AddedIp = CommonModel.IPAddress();
                     cs.AddedOn = TimeStamps.UTCTime();
                     cs.Status = "Active";
@@ -121,6 +122,7 @@ public partial class Admin_add_Investor_relations : System.Web.UI.Page
                 strInvesterRelType += @"<tr>
                                  <td>" + (i + 1) + @"</td>  
                                  <td>" + nb.Title + @"</td>
+                                 <td>" + nb.DisplayOrder + @"</td>
                                  <td><a href='add-Investor-relations.aspx?id=" + nb.InversterGuid + @"'class='btn btn-sm btn-secondary' data-id='"+nb.Id+ @"' data-toggle='tooltip' data-placement='top' title='Manage Investors' data-original-title='Manage Investors' />Click</td>
                                  <td><a href='javascript:void();' class='bs-tooltip' data-id='" + nb.Id + @"' data-bs-toggle='tooltip' data-bs-placement='top' title=''>" + nb.AddedOn.ToString("dd-MMM-yyyy") + @"</a></td>  
                                  <td class='text-center'>
@@ -148,6 +150,7 @@ public partial class Admin_add_Investor_relations : System.Web.UI.Page
                 btnSave.Text = "Update";
                 btnNew.Visible = true;
                 txtTitle.Text = PD.Title;
+                txtOrder.Text = PD.DisplayOrder;
             }
         }
         catch (Exception ex)

@@ -23,7 +23,7 @@ $(document).ready(function () {
                     var listings = "";
                     for (var i = 0; i < products.length; i++) {
                         listings += "<li>";
-                        listings += "<a href='/shop-products/" + products[i].surl + "'>";
+                        listings += "<a href='/" + products[i].Url + "'>";
                         listings += "<div class='d-flex align-items-center p-5'>";
                         listings += "<div class='imgBox me-5'>";
                         listings += "<img src='/" + products[i].imgurl + "' class='img-fluid' width='60'>";

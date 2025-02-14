@@ -28,10 +28,15 @@
                         </div>
                         <div class="card-body">
                             <div class="row gy-4">
-                                <div class="col-lg-6 mb-2">
+                                <div class="col-lg-4 mb-2">
                                     <label>Title<sup>*</sup></label>
                                     <asp:TextBox runat="server" class="form-control mb-2 mr-sm-2 txtName" ID="txtTitle" placeholder="Title" MaxLength="100" />
                                     <asp:RequiredFieldValidator ID="req1" runat="server" ControlToValidate="txtTitle" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
+                                </div>
+                                <div class="col-lg-4 mb-2">
+                                    <label>Display Order<sup>*</sup></label>
+                                    <asp:TextBox runat="server" class="form-control mb-2 mr-sm-2" ID="txtOrder" placeholder="Display Order" MaxLength="100" />
+                                    <asp:RequiredFieldValidator ID="req12" runat="server" ControlToValidate="txtOrder" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="col-lg-4  col-md-6">
                                     <div>
@@ -62,6 +67,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Title</th>
+                                            <th>Display Order</th>
                                             <th>Add Investors</th>
                                             <th>AddedOn</th>
                                             <th class="text-center">Action</th>

@@ -43,10 +43,15 @@
                                     <asp:FileUpload ID="UploadPDF" runat="server" CssClass="form-control mb-2 mr-sm-2" />
                                     <small style="color: red;">.pdf, .doc, formats are required.</small><br />
                                     <div id="divpdf" runat="server" visible="false">
-                                       <a href="/<%=strPDF %>" target="_blank">
-                                        <img src="assets/images/pdf.png" alt="" width="65" height="60"></a><br />
+                                        <a href="/<%=strPDF %>" target="_blank">
+                                            <img src="assets/images/pdf.png" alt="" width="65" height="60"></a><br />
                                         Check PDF
                                     </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <label>Display Order<sup>*</sup></label>
+                                    <asp:TextBox runat="server" class="form-control mb-2 mr-sm-2" ID="txtOrder" MaxLength="100" />
+                                    <asp:RequiredFieldValidator ID="req12" runat="server" ControlToValidate="txtOrder" Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ValidationGroup="Save" ErrorMessage="Field can't be empty"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
@@ -77,10 +82,10 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                            <th>Title</th>
-                                            <th>PDF</th>
-                                            <th>AddedOn</th>
-                                            <th class="text-center">Action</th>
+                                        <th>Title</th>
+                                        <th>PDF</th>
+                                        <th>AddedOn</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
